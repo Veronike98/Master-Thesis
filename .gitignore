@@ -1,0 +1,14 @@
+.DS_Store
+*.pyc
+*.pdf
+*.svg
+*.log
+*.aux
+*.gz
+*.out
+*.dvi
+*.toc
+*.fdb_latexmk
+*.fls
+
+venv*

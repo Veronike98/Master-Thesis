@@ -33,13 +33,18 @@ By this remark we can compute the second derivative of the transverse field:
 \frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} = \nabla_V\nabla_U U^{\mu} + R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}
 \]
 
-And this leads us to the other fundamental objects we need to define: 
+which his leads us to the second fundamental objects we need to define. 
 \begin{definition}
-	given a family of \emph{geodesics}, the transversal field \(V^{\mu}\) is said to be a \emph{Jacobi field} and it needs to satisfy the equation
+	Given a family of \emph{geodesics} \(\gamma_s(t) \coloneqq \zeta(s,t)\), the transversal field \(V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s)\) is said to be a \emph{Jacobi field}.
+\end{definition}
+
+This vector field has a very important characterization, which here we'll only state:
+\begin{lemma}
+\(V^{\mu}\) is said to be a \emph{Jacobi field} if and only if it satisfies the equation
 	\[
 	\frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} =  R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}
 	\].
-\end{definition}
+\end{lemma}
 
 
 

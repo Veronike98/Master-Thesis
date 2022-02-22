@@ -10,5 +10,8 @@
 *.toc
 *.fdb_latexmk
 *.fls
+*.xml
+*.bbl
+*.blg
 
 venv*

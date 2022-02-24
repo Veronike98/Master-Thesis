@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{book}
+\documentclass[12pt, a4paper]{article}
 
 % !TeX program = lualatex
 
@@ -6,9 +6,13 @@
 
 \input{newcommands}
 
+% Bibliografia
+\usepackage[backend=bibtex,doi=false,isbn=false,url=false]{biblatex}
+\addbibresource{bibliografia.bib}
+
 %todo: settare un nuovo font, ora non ci riesco
 
-\title{Master Thesis}
+\title{Master Thesis -- Abstract}
 
 \author{Veronica Sacchi\thanks{veronica.sacchi@sns.it}\\
 Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
@@ -18,12 +22,48 @@ Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 
 \maketitle
 
-\tableofcontents
+\section{Introduction}
+The aim of this project is to review and present some new developments about Singularity Theorems.
+Singularity theorems have been first proved in the \(1960\)s by Hawking \cite{hawking1966occurrence} and Penrose \cite{penrose1965gravitational} and represent a major step forward in the study of gravitational collapse.
+They, in fact, are able to prove  the existence of incomplete geodesics, within the spacetime manifold, making use of only very general assumptions.
+Any singularity theorems in fact mainly needs \(3\) ingredients:
+\begin{itemize}
+	\item A causality condition: this is needed to make sure there are no closed causal curves
+	\item A boundary or initial condition: we need a surface which is \emph{trapped}, which sort of means that all the future directed geodesics leaving this surface are initially focusing.
+	\item An energy conditions: this should embody the ``attractiveness'' of gravity.
+\end{itemize}
+
+It is particularly imprtant to notice that no assumption on symmetries of the spacetime is required; this allows to answer the question singularity theorems were born for, namely if the singularity formation in the Swarzschild and Friedmann metrics were a consequence of the very high degree of symmetry of the solution, or were a hint to a more general behaviour.
+
+\section{Classical Singularity Theorems}
+I refer to classical singularity theorems to indicate Penrose's and Hawking's (or slightly modified versions of them), characterized by the requirement of a pointwise energy condition.
+They do require this specific class of energy conditions because of the structure of the proof; here we provide a sketch of it to single out why that's necessary.
+
+We start from a submanifold (a Cauchy hypersurface in the case of Hawking's theorem) whose orthogonal, future directed geodesics are initially focusing (the existence of such a submanifold is one of the hypotheses of the theorem).
+
+Given a congruence of geodesics it is possible to compute the expansion, namely how the transversial area of the congruence does infinitesimally evolve. This is usually called \(\theta\) and is defined as 
+\[
+\theta \coloneqq \nabla_{\mu} U^{\mu} = \frac{1}{2} \text{Tr}\left[g^{-1}\dot{g}\right]
+\]
+where we indicate with \(\nabla_{\mu}\) the covariant derivative, with \(U^{\mu}\) the tangent field of the congurence, and \(g\) is the metric tensor.
+It is not difficult then to derive the Riccati inequality, which puts some constraints on how this quantity evloves along the geodesics:
+\[
+\frac{D}{d\tau} \theta \le -\frac{1}{3} \theta ^2 - R_{\mu\nu}U^{\mu}U^{\nu}
+\]
+Starting from a negative initial value for \(\theta\), using an energy condition that guarantees us 
+\[
+R_{\mu\nu}U^{\mu}U^{\nu} >=0
+\]
+\emph{everywhere}, with some analysis gymnastic, it is possible to prove that \(theta\) needs to blow up within a finite amount of proper time.
+We can then see why we required the energy conditions to hold everywhere.
+
+\section{Extended singularity theorems}
+``Unluckly'' the energy conditions most widely used (NEC for Penrose's and SEC for Hawking's theorem) are violeted by a large collection of (even classical) scalar fields, as for example the cosmological constant.
+
+It is therefore natural the question whether these theorems can be extended to be applicable to the spcetime we live in or not.
+
 \clearpage
 
-\chapter{Fundamental Concepts}
-\input{fundamental-concepts}
-\clearpage
-
+\printbibliography
 
 \end{document}          

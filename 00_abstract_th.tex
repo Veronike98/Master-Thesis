@@ -24,25 +24,26 @@ Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 \maketitle
 
 \section{Introduction}
-The aim of this project is to review and present some new developments about Singularity Theorems.
-Singularity theorems have been first proved in the \(1960\)s by Hawking \cite{hawking1966occurrence} and Penrose \cite{penrose1965gravitational} and represent a major step forward in the study of gravitational collapse.
-They, in fact, are able to prove  the existence of incomplete geodesics, within the spacetime manifold, making use of only very general assumptions.
-Any singularity theorem in fact mainly needs \(3\) ingredients:
+The aim of this project is to review and present new developments regarding Singularity Theorems.
+Singularity theorems were first proven in the \(1960\)s by Hawking \cite{hawking1966occurrence} and Penrose \cite{penrose1965gravitational} and represent a major step forward in the study of gravitational collapse.
+They are able to prove  the existence of incomplete geodesics within the spacetime manifold, making use of only very general assumptions.
+Any singularity theorem in fact needs \(3\) ingredients:
 \begin{itemize}
 	\item A causality condition: this is needed to make sure there are no closed causal curves.
-	\item A boundary or initial condition: we need a surface which is \emph{trapped}, which sort of means that all the future directed geodesics leaving this surface are initially focusing.
+	\item A boundary or initial condition: we need a surface which is \emph{trapped}, which means that all the future directed geodesics leaving this surface are initially focusing.
 	\item An energy condition: this should embody the ``attractiveness'' of gravity.
 \end{itemize}
 
-It is particularly important to notice that no assumption on symmetries of the spacetime is required; this allows to answer the question singularity theorems were born for, namely if the singularity formation in the Schwarzschild and Friedmann metrics were a consequence of the very high degree of symmetry of the solution, or were a hint to a more general behaviour.
+It is particularly important to notice that no assumption on symmetries of the spacetime is required; this allows to answer the question singularity theorems were born for, namely if the singularity formation in the Schwarzschild and FLRW metrics were a consequence of the very high degree of symmetry of the solution, or were a hint to a more general behaviour.
 
 \section{Classical Singularity Theorems}
+In this section we will mainly refer to the timelike case for the sake of simplicity, but the null case is similar.
 I refer to classical singularity theorems to indicate Penrose's and Hawking's (or slightly modified versions of them), characterized by the requirement of a pointwise energy condition.
-They do require this specific class of energy conditions because of the structure of the proof; here we provide a sketch of it to single out why that's necessary.
+They require this specific class of energy conditions because of the structure of the proof; here we provide a sketch of it to single out why they are necessary.
 
 We start from a submanifold (a Cauchy hypersurface in the case of Hawking's theorem) whose orthogonal, future directed geodesics are initially focusing (the existence of such a submanifold is one of the hypotheses of the theorem).
 
-Given a congruence of geodesics it is possible to compute the expansion, namely how the transversial area of the congruence does infinitesimally evolve. This is usually called \(\theta\) and is defined as 
+Given a congruence of geodesics it is possible to compute the expansion, namely how the transverse area of the congruence does infinitesimally evolve. This is usually called \(\theta\) and is defined as 
 \[
 \theta \coloneqq \nabla_{\mu} U^{\mu} = \frac{1}{2} \text{Tr}\left[g^{-1}\dot{g}\right]
 \]
@@ -55,56 +56,76 @@ Starting from a negative initial value for \(\theta\), an energy condition that 
 \[
 R_{\mu\nu}U^{\mu}U^{\nu} \ge 0
 \]
-\emph{everywhere}, with some analysis gymnastic, leads us to the fact that \(\theta\) needs to blow up within a finite amount of proper time.
+\emph{everywhere}, with some gymnastics, leads us to the fact that \(\theta\) needs to blow up within a finite amount of proper time.
 We can then see why we required the energy condition to hold everywhere.
 
 \section{Extended singularity theorems}
-``Unluckily'' the energy conditions most widely used (Null Energy Condition for Penrose's and Strong Energy Condition for Hawking's theorem) are violeted by a large collection of (even classical) scalar fields. 
+``Unluckily'' the energy conditions most widely used - Null Energy Condition (NEC) for Penrose's and Strong Energy Condition (SEC) for Hawking's theorem - are violeted by a large collection of (even classical) scalar fields. 
 Just to quickly mention a couple of important examples, SEC is violated by the cosmological constant, while NEC can be violated by non-minimally coupled scalar fields.
 
-Contracting the stress-energy tensor with a null-vector \(\textbf{k}\) we obtain:
-\begin{align*}
-	T_{ab}k^ak^b &= (k^a\nabla_a\phi)^2 + \xi G_{ab}k^ak^b\phi^2 -\xi(k^a\nabla_a)^2\phi^2 \\
-	&= (1 - 2\xi)(k^a\nabla_a\phi)^2 + \xi G_{ab}k^ak^b\phi^2 - 2\xi\phi(k^a\nabla_a)^2\phi
-\end{align*}
+%Contracting the stress-energy tensor with a null-vector \(\textbf{k}\) we obtain:
+%\begin{align*}
+%	T_{ab}k^ak^b &= (k^a\nabla_a\phi)^2 + \xi G_{ab}k^ak^b\phi^2 -\xi(k^a\nabla_a)^2\phi^2 \\
+%	&= (1 - 2\xi)(k^a\nabla_a\phi)^2 + \xi G_{ab}k^ak^b\phi^2 - 2\xi\phi(k^a\nabla_a)^2\phi
+%\end{align*}
+%
+%For any point \(x\) on a null geodesics with tangent field \(\textbf{k}\), we can choose \(\phi(x) = c_1\), \(k^a\nabla_a \phi(x) = 0\) and \((k^a\nabla_a)^2\phi = c_2\).
 
-For any point \(x\) on a null geodesics with tangent field \(\textbf{k}\), we can choose \(\phi(x) = c_1\), \(k^a\nabla_a \phi(x) = 0\) and \((k^a\nabla_a)^2\phi = c_2\).
+%Since \(\xi \neq 0 \) for each \(c_1\) it is possible to find \(c_2\) so that the above expression becomes negative, which means that NEC is violated.
+%One may then show that NEC can be violated in all cases with \(m \neq 0 \) and explicit examples of violations, including naked singularities and wormholes, were found in \cite{barcelo1999traversable} and \cite{barcelo2000scalar}.
 
-Since \(\xi \neq 0 \) for each \(c_1\) it is possible to find \(c_2\) so that the above expression becomes negative, which means that NEC is violated.
-One may then show that NEC can be violated in all cases with \(m \neq 0 \) and explicit examples of violations, including naked singularities and wormholes, were found in \cite{barcelo1999traversable} and \cite{barcelo2000scalar}.
+It is therefore natural ro raise the question whether these theorems can be extended to be applicable to the spacetime we live in or not. This question needs to be formalized into \(3\) different main questions:
+\begin{itemize}
+	\item what new energy conditions can we formulate?
+	\item Are this obeyed by the known fields populating our universe?
+	\item  Can we derive a singukarity theorem starting from those?
+\end{itemize}
+Several different energy conditions have been derived throughout the years (for a review see \cite{kontou2020energy} while \cite{tipler1978energy} for an early article).
 
-It is therefore natural ro raise the question whether these theorems can be extended to be applicable to the spacetime we live in or not.
-Several different energy conditions have been derived throughout the years (for a review see \cite{kontou2020energy} while \cite{tipler1978energy} for an early article)
-but all of them can be violeted (counterexamples can be built with Lagrangians with second order or higher derivatives interactions, but second order equations of motions).
-In front of this evident weakness, it has been though noticed how violations of some energy conditions at some points or regions of spacetime are usually compensated for - or even overcompensated for - at other points, both for quantum and classical fields \cite{ford1999quantum}.
+In front of the weakness of \emph{pointwise} conditions, it has been noticed how violations of some energy conditions at some points or regions of spacetime are usually compensated for - or even overcompensated for - at other points, both for quantum and classical fields \cite{ford1999quantum}.
 This is a major hint for \emph{averaged} energy conditions, where we require that a contraction of the stress tensor of a theory, averaged over a suitable spacetime region, is non negative.
-This is definitely weakening the energy condition hypothesis, as local violations are allowed, but it's not clear whether they will be strong enough to prove a singularity theorem.
+An important example of such a condition is ANEC (Averaged Null Energy Condition) that requires that:
+\[
+\int_{-\infty}^{+\infty} d\lambda T_{ab} \dot{\gamma}^a(\lambda) \dot{\gamma}^b(\lambda) \ge 0
+\]
+
+where \(\lambda\) is an affine parameter for an inextendible null geodesic \(gamma\), given that the integral is absolutely converging
 
 A first attempt in making use of these condition was made in \cite{fewster2011singularity},
 where the energy condition is weakened to an exponential average of a contraction of the stress tensor along causal geodesics.
-However, this result is archived with some difficulties and relying heavily on technical mathematical analysis tools, partially loosing the physical picture of the system.
+However, this result is achived relying heavily on technical mathematical analysis tools, and the condition is not shown to hold for any field.
 An analogous result was obtained recently \cite{fewster2020new}, but employing much more powerful tools from differential geometry, that embed very naturally the averaged conditons into the proof, by constructing an integral equation rather than a differential one.
 
 To make this method work though, quite some new tools and geometry machinery needs to be introduced: for this purpose, a specific section of the thesis will be dedicated to the introduction of Jacobi fields, Index forms and their properties.
 
-Here is a sketch of how such a proof is working in the timelike case: the main idea is that a geodesic from a point \( A\) is lenght maximizing up to a focal point, where the lenght is defined as:
+Here is a sketch of how such a proof is working in the timelike case \cite{fewster2020new}: the main idea is that a geodesic from a surface\( A\) is length maximizing up to a focal point, where the length is defined as:
 \[
 L[\gamma] \coloneqq \int_{0}^{\tau} |\dot{\gamma}(t) |dt
 \]
-We proceed then to take a family of geodesics emanating from \(A\) and parametrized by a parameter \(s\): we can compute the first and second deriviative of \(L\) with respect to \(s\), the latter one being related to the index form of this transversial field (it would be the second fundamental form in the null case).
+They proceed then to take a family of geodesics emanating from \(A\) and parametrized by a parameter \(s\): they can compute the first and second deriviative of \(L\) with respect to \(s\), the latter one being related to the index form of this transversial field (it would be the second fundamental form in the null case).
 Depending on the sign of this object we can tell whether there is a focal point or not, and hence if \(\gamma\) fails to be lenght maximizing within a fine amount of proper time.
 
-Conversely to what we had done before, we didn't solve any differential equation here, instead we naturally intoduced an integral inequality as a criteria for focal points' existence, which brings all the advantages we have been talking on before.
+Conversely to what it was done before, they didn't solve any differential equation here, instead they naturally intoduced an integral inequality as a criteria for focal points' existence, which brings all the advantages we have been talking on before.
 
-As the proof of singularity theorems follows way more naturally after introducing these objects, there is hope in the ability to extend them to much more promising energy conditions, potentially the AANEC (achronal averaged null energy condition) which has recently attracted lots of attention both for a possible physical interpretation (\cite{curiel2017primer}) and for its wide regime of validity (up to know, no existing quantum field is known to violate it).
+As the proof of singularity theorems follows way more naturally after introducing these objects, there is hope in the ability to extend them to more promising energy conditions, hopefully some that are not violated by known quantum fields.
+%, potentially the AANEC (achronal averaged null energy condition) which has recently attracted lots of attention both for a possible physical interpretation (\cite{curiel2017primer}) and for its wide regime of validity (up to know, no existing quantum field is known to violate it).
 
 \section{Black Hole Area Theorem}
-Very tied to the proof of Penrose's Singularity Theorem is the proof of the very famous Black Hole area theorem.
+Very tied to the proof of Penrose's Singularity Theorem is the proof of the very famous black hole area theorem.
+The theorem roughly states that the area of the event horizon can never decrease in time (also known as \emph{second law of black hole thermodynamics}); the precise statement of this theorem actually needs some subtleties but it will be payed more care to them in the development of the thesis.
+
+The theorem has been first proved by Hawking in %todo: cita Hawking BH (pag.43 Eleni-Sanders)
+and the proof only needs to assume NEC, so exactly the same condition that Penrose needed for his theorem.
+
 It has been already noticed that the proof provided in \cite{fewster2011singularity}
 for weaker energy conditions might have been extended to the black hole area theorem (see \cite{lesourd2018remark}) but no proof has ever been provided, to my current knowledge, of this theorem making use of the methods developed in \cite{fewster2020new}.
-In this work, we aim to create such a proof, possibly extend it to weaker energy conditions and gain an understanding about whether it needs a stronger condition or not than singularity theorems.
 
-This last question is raisen by the fact that we mildly expect Singularity Theorems to hold at least at a semiclassical level, while we know - due to Hawking radiation - that the Black Hole area theorem must be violated. Where the tipping point that separates this two proofs is, is unknown yet, and we hope that this investigation my shed some light on it.
+One of the focus of this work will be exactly the area theorem: we aim to create such a proof, possibly extend it to weaker energy conditions and gain an understanding about whether it needs a stronger condition or not than the one needed by singularity theorems.
+
+This last question is raised by the fact that we expect Singularity Theorems to hold at least at a semiclassical level, while we know - due to Hawking radiation - that the black hole area theorem must be violated. 
+In fact this radiation is expected to make the balck hole ``evaporate'', and as such loosing mass. The mass of the black hole is a linear function of the area of the event horizion, hence we see why that the evaporation would make the area decrease, violating the above mentioned theorem.
+
+Where the tipping point that separates these two proofs of Penrose's and area theorem is, is unknown, and we hope that this investigation my shed some light on it.
 
 
 

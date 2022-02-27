@@ -13,5 +13,9 @@
 *.bbl
 *.blg
 *.xml
+*blx.bib
+*.nav
+*.snm
+*.vrb
 
 venv*

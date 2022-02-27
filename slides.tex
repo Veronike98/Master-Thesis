@@ -1,0 +1,234 @@
+% !TeX spellcheck = <english>
+\documentclass[]{beamer}
+
+% !TeX program = lualatex
+
+\usepackage{pacchetti}
+\input{newcommands}
+
+% Bibliografia
+\usepackage[backend=bibtex,doi=false,isbn=false,url=false]{biblatex}
+\addbibresource{bibliografia.bib}
+
+% Colori
+\definecolor{bluunipi}{RGB}{25,62,131}
+\definecolor{tasselred}{RGB}{130,29,45}
+\definecolor{blond}{RGB}{251,231,161}
+\definecolor{skincolor}{RGB}{224,177,132}
+\definecolor{idea}{RGB}{254,231,2} 					%giallo ideee
+\definecolor{definition}{RGB}{63,9,185} %azzurro definizioni
+\definecolor{theorem}{RGB}{42,157,143}							 %verde teoremi
+\definecolor{titleorange}{RGB}{255,153,0} 					%arancio per i titoletti
+
+
+\usetheme{Frankfurt}
+\setbeamercovered{transparent} %per rendere sbiadito cio' che verra'
+\setbeamertemplate{navigation symbols}{}
+
+\usecolortheme{rose} 
+
+
+%Information to be included in the title page:
+\title[Singularity Theorems]
+{Singularity Theorems}
+%\subtitle[it]{\texttt{Inserisci sottotitolo}}
+\author[Veronica Sacchi]{Veronica Sacchi}      
+\institute[SNS]{\includegraphics[height=1.45cm]{Immagini/logoSNS/orizzontale-colore/orizzontale-colore.jpg}}
+\date[28-02-2022]{28th February 2022}
+%\logo{\includegraphics[height=1.1cm]{Immagini/logoSNS/tondo-colore/tondo-colore.png}}
+
+\begin{document}	
+	
+%	\usebackgroundtemplate{
+%		\adjustbox{height=0.8\paperheight, raise=-9cm, right=15cm}{
+%			\transparent{0.05}
+%			\includegraphics{Immagini/logoSNS/solo_logo.jpeg}
+%		}
+%	}
+	
+	\begin{frame}
+	\titlepage
+	\end{frame}
+	
+	\section{Introduction}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 2
+	\begin{frame}[fragile]
+	\frametitle{What is a singularity?}
+	\begin{defblock}{Singular spacetime \cite{wald2010general}}
+		A spacetime \(M\) is called \emph{singular} if there exists a geodesic which is not extendible arbitrarly back into the past or further into the future. 
+	\end{defblock}
+	\pause
+	
+	\begin{columns}
+		\column{0.45\textwidth}
+		\centering 
+		\begin{tikzpicture}[z={(0,.5)}, scale = 0.77]
+		\tikzmath{function f(\x) { return -1/\x^.7; }; function finv(\x) { return (-\x)^(-1/.7); };}
+		
+%		\foreach[evaluate=\a as \c using 75-25*sin(\a)] \a in {0,20,...,359}
+%		{\ifnum\a=20\draw[green!\a,domain=finv(-4):3] plot ({\x*cos(\a)},{f(\x)},{\x*sin(\a});\else\draw[black!\c,domain=finv(-4):3] plot ({\x*cos(\a)},{f(\x)},{\x*sin(\a});}
+
+		\foreach[evaluate=\a as \c using 75-25*sin(\a)] \a in {0,20,...,359} {\draw[black!\c,domain=finv(-4):3] plot ({\x*cos(\a)},{f(\x)},{\x*sin(\a});}
+		
+		\foreach[evaluate=\i as \r using (\i*finv(-4)+(10-\i)*3)/10] \i in {0,...,10} {\ifnum\i=4\draw[red,thick] (0,{f(\r)},0) circle ({\r} and {\r/2});\else\draw[preaction={draw=black!50},path fading=north] (0,{f(\r)},0) circle ({\r} and {\r/2});\fi}
+		\node[name = a, graduate, mirrored, saturated, female, shirt = blue, hair = blond, skin = skincolor, stripes = yellow, minimum size = 0.5cm] at (1.4,-0.3) {};
+		\node[ellipse callout, draw, fill=white, fill opacity=0.88, xshift = -1.0cm, yshift= -2.2cm, callout absolute pointer={(a.mouth)}, font=\tiny] {What will become of me?};
+		\end{tikzpicture}
+		
+		\column{0.55\textwidth}
+		\centering
+	
+	\begin{tikzpicture}[x={(1.8,0)},y={(0,1.8)},z={(.6,.6)},
+	pics/geodesic/.style n args={3}{code={
+			% #1 = draw options
+			% #2 = first path
+			% #3 = second path
+			\draw[path fading=north,#1,postaction={decorate,decoration={markings,mark=at position .75 with {\arrowreversed{stealth}}}}] #2 coordinate (continue) pic[pics/code={\fill circle(0.7pt);}]{};
+			\path[name path=geodesic] #3;
+			\begin{scope}[on background layer={}]
+			\draw[#1,dash pattern=on .9pt off .9pt,intersection segments={of=geodesic and lower boundary,sequence={L1}}];
+			\draw[path fading=south,#1,intersection segments={of=geodesic and lower boundary,sequence={L2}}];
+			\end{scope}
+	}}]
+	\colorlet{surfacecol}{orange}
+	\coordinate (a) (0,0,0);
+	\coordinate (b) at (2,-.3,0);
+	\coordinate (c) at (2,0,2);
+	\coordinate (d) at (0,0,2);
+	\tikzmath{
+		\outb0=140;\inb0=5;\oute0=210;\ine0=30;
+		\outb1=50;\inb1=-100;\oute1=80;\ine1=-120;
+	}
+	\foreach \p/\q/\i/\n in {b/a/0/b,c/d/0/e,b/c/1/b,a/d/1/e} {
+		\path[decorate,decoration={markings,mark=between positions 0 and 1 step 0.0999 with {\tikzmath{\j=int(\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}-1);}\coordinate (p-\i-\j-\n);}}]
+		(\p) to[out=\csname out\n\endcsname\i,in=\csname in\n\endcsname\i] (\q);
+	}
+	\fill[surfacecol!20,opacity=.5] (b) to[out=\outb0,in=\inb0] (a) to[out=\oute1,in=\ine1] (d) to[out=\ine0,in=\oute0] (c) to[out=\inb1,in=\outb1] (b);
+	\foreach \pb/\qb/\pe/\qe/\i/\j in {b/c/a/d/1/0,b/a/c/d/0/1} {
+		\foreach \tt[evaluate=\tt as \t using 0.0999*\tt] in {1,...,10} {
+			\tikzmath{
+				\myout={\outb{\i}*(1-\t)+\oute{\i}*\t};
+				\myin={\inb{\i}*(1-\t)+\ine{\i}*\t};
+				\myop=0.5;
+				\mylw=0.35;
+				if \tt==10 then {
+					\myop=1;\mylw=0.6;
+				};
+			}
+			\draw[surfacecol,opacity=\myop,line width=\mylw] (p-\j-\tt-b) to[out=\myout,in=\myin] (p-\j-\tt-e);
+	}}
+	\draw[surfacecol,line width=1.2,name path=lower boundary] (a) to[out=\inb0,in=\outb0] (b) to[out=\outb1,in=\inb1] (c);
+	
+	\draw[green,line width=1.2,name path=geodesic,postaction={decorate,decoration={markings,mark=at position .75 with {\arrow{stealth}}}}] (0.67,0,.15) to[out=110,in=-150] (2.37,0,0.73);
+	
+	\node[name = f, mexican, saturated, female, shirt = blue, hair = black, skin = skincolor, hat = orange, minimum size = 0.5cm] at (0.9,0.27,0.5) {};
+	
+	\node[ellipse callout, draw, fill=white, fill opacity=0.88, xshift = 1.4cm, yshift= -1.1cm, callout absolute pointer={(f.mouth)}, font=\tiny] {Where do I come from?};
+
+	\end{tikzpicture}
+\end{columns}
+
+	\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 3
+\section{Hawking's Singularity Theorem}
+\begin{frame}
+	\frametitle{Hawking's Singularity Theorem}
+	\begin{theoblock}{Hawking's Singularity Theorem \cite{wald2010general}}
+		Given a smooth, Lorentzian and time-oriented manifold \(M\) such that 
+		\begin{itemize}
+			\item \(M\) is globally hyperbolic.
+			\item Einstein equations and the strong energy condition hold.
+			\item There exists a Cauchy hypersurface \(\Sigma\) whose expansion \(\theta\) is \emph{negative} everywhere.
+		\end{itemize}
+	Then no past directed timelike curve from \(\Sigma\) can be extended arbitrarly far into the past.
+	\end{theoblock}
+
+	\pause
+	A couple of observation:
+	\begin{itemize}
+		\item<2-> the structure of the theorem;
+		\item<3-> the energy condition: for any timelike vector \(\xi^a\) 
+		{\small
+			\[
+		\left(T_{ab} - \frac{T}{d - 2}g_{ab}\right) \xi^a \xi^b \ge 0 \quad \implies \quad R_{ab} \xi^a \xi^b \ge 0.
+		\]}
+	\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 3
+\begin{frame}
+	\frametitle{The Raychaudhuri's equation}
+	Consider a congruence of timelike unit-speed geodesics issuing normally from \(\Sigma\), and let \(U^{\mu}\) be the associated tangent field.
+	\begin{defblock}{Expansion}
+		Given a congruence of geodesics its \emph{expansion} is defined as the trace of \(B_{\mu\nu} \coloneqq \nabla_{\nu}U_{\mu}\):
+		\[
+		\theta \coloneqq \Tr B = B_{\mu\nu}g^{\mu\nu}
+		\]
+	\end{defblock}
+\pause
+The Raychaudhuri's equations determines its evolution:
+{\small
+\begin{align*}
+	\frac{D}{D\tau} \theta &= -\frac{\theta^2}{3} -\sigma^{\mu\nu}\sigma_{\mu\nu} + \omega^{\mu\nu}\omega_{\mu\nu} - R_{\mu\nu}U^{\mu}U^{\nu} \\
+	&\le -\frac{\theta^2}{3} - R_{\mu\nu}U^{\mu}U^{\nu}
+\end{align*}}
+\vskip -14pt
+\pause
+\begin{ideablock}{Link to focal points}
+	\centering
+	\(|\theta| \rightarrow +\infty\quad \implies\) a focal point is developed.
+\end{ideablock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Slide 4
+
+\begin{frame}
+	\frametitle{The index form method \cite{fewster2020new}}
+	%todo: se riesci mettici un disegno per tranversial field
+	\begin{defblock}{Length of a timelike geodesic}
+		\[
+		L[\gamma] = \int_{0}^{\tau} |\dot{\gamma}(t)| dt
+		\]
+	\end{defblock}
+	Given a variation of \(\gamma\) with tranversial field \(V^{\mu}\), following \cite{o1983semi}, it is possible to compute the first and the second derivative of \(L\). Specifically:
+	{\small
+		\[
+	\frac{d^2}{ds^2}L[\gamma_s]\Bigg|_{s = 0} =\int_{0}^{\tau} \left(\frac{DV^{\mu}}{Dt} \frac{DV_{\mu}}{Dt} - R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta}\right) dt + K_{\mu\nu}V^{\mu}V^{\nu}|_{\gamma(0)}.
+	\]}
+
+	\begin{theoblock}{Focal points}
+		There exists a focal point to \(\Sigma\) along \(\gamma\) if and only if there exists a transversial field \(V^{\mu}\) such that \(I[V] > 0\).
+	\end{theoblock}
+\end{frame}
+
+\section{What's next?}
+\begin{frame}
+	\frametitle{What's next?}
+	\begin{theoblock}{Black Hole Area Theorem}
+		The boundary of the black hole region \(B\) is called event horizion \(H \coloneqq \partial B\). The theorem states that its area can never decrease in time if the Null energy condition holds.
+		\[
+		T_{ab}\xi^a\xi^b \ge 0 \implies d(\Sigma \cap H) \ge 0.
+		\]
+	\end{theoblock}
+\pause
+A couple of remarks:
+\begin{itemize}
+	\item<2-> In \cite{lesourd2018remark} Lesourd has already noticed how the work presented in \cite{fewster2011singularity} can be extended to prove this theorem; we aim to do the same for the work in \cite{fewster2020new}.
+	\item<3-> Is there a tipping point were Penrose's Singularity theorem holds but the black hole area theorem doesn't anymore?
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+	\centering
+	\vskip 7pt
+	{\Huge \textcolor{theorem}{Thank you for your attention!}}
+
+	\vskip 3pt
+	\textbf{Bibliography}
+	\printbibliography
+\end{frame}
+
+\end{document}

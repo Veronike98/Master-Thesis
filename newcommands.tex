@@ -1,26 +1,67 @@
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Colori 
 \definecolor{darkturquoise}{rgb}{0.0, 0.81, 0.82}
 \definecolor{cerisepink}{rgb}{0.93, 0.23, 0.51}
 \definecolor{brilliantlavender}{rgb}{0.96, 0.73, 1.0}
 \definecolor{fuchsiapink}{rgb}{1.0, 0.47, 1.0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEAD COMMANDS	
-\newtheorem{theorem}{Theorem}[section]
-
-\newtheorem{corollary}{Corollary}[theorem]
-
-\newtheorem{lemma}[theorem]{Lemma}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+%\newtheorem{theorem}{Theorem}[section]
+%
+%\newtheorem{corollary}{Corollary}[theorem]
+%
+%\newtheorem{lemma}[theorem]{Lemma}
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}[section]
+%
+%\theoremstyle{remark}
+%\newtheorem*{remark}{Remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATH SYMBOLS
 \newcommand{\R}{{\mathbb{R}}}
+\DeclareMathOperator{\Tr}{Tr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%box carini
+\newenvironment<>{ideablock}[1]{%
+	\setbeamercolor{block title}{fg=white,bg=idea}%
+	\begin{block}#2{#1}}{\end{block}}
+
+\newenvironment<>{defblock}[1]{%
+	\setbeamercolor{block title}{fg=white,bg=definition}%
+	\begin{block}#2{#1}}{\end{block}}
+
+\newenvironment<>{theoblock}[1]{%
+	\setbeamercolor{block title}{fg=white,bg=theorem}%
+	\begin{block}#2{#1}}{\end{block}}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% due nuovi comandi per allineare le cose bene
+\newcommand\parallelcontent[2]{
+	\begin{columns}[t]
+		\column{0.5\textwidth} #1
+		\column{0.5\textwidth} #2
+	\end{columns}
+}
+\newcommand\parallelitem[2]{
+	\parallelcontent
+	{\begin{itemize} \item #1 \end{itemize}}
+	{\begin{itemize} \item #2 \end{itemize}}
+}
 
+%per fare le parentesi sulla destra di una lista
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Graffe verticali per il testo
+\tikzset{My Node Style/.style={midway, right, xshift=3.0ex, align=left, font=\small, draw=none, thin, text=black}}
+
+\newcommand{\VerticalBrace}[4][]{%
+	% #1 = draw options
+	% #2 = top mark
+	% #2 = bottom mark
+	% #4 = label
+	\begin{tikzpicture}[overlay,remember picture]
+	\tikzmath{coordinate \p,\q;\p=(pic cs:#2);\q=(pic cs:#3);\maxx=max(\px,\qx);}
+	\draw[xshift=1ex,decorate,decoration={brace, amplitude=1.5ex}, #1] 
+	([yshift=1.5ex]{{pic cs:#2} -| \maxx pt,0})  -- ([yshift=-.5ex]{{pic cs:#3} -| \maxx pt,0})
+	node[My Node Style] {#4};
+	\end{tikzpicture}
+}

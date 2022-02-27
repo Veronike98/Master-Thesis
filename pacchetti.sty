@@ -1,25 +1,44 @@
 
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage[british]{babel}
+\usepackage[english=british]{csquotes} % le paraentesi angolate non sono belle, meglio questo
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm} % for theorem styles
 \usepackage{graphicx}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref} % link referenze
 \usepackage{siunitx} % unita' misura
-\usepackage{enumitem} % resume in enumerate environment
+%\usepackage{enumitem} % resume in enumerate environment
 \usepackage{caption} % margini figure
 \usepackage{subcaption} % fare sottofigure
 \usepackage{amssymb} % fare simboli come "circa maggiore"
-\usepackage{duckuments} % fare papere randomiche
 \usepackage{diagbox} %fare linee diagonali nelle tabelle
+
+%pacchetti per autisticare
+\usepackage{duckuments} % fare papere randomiche
+\usepackage{halloweenmath}
+
 %Pachetto per disegni 
 \usepackage{circuitikz} %Circuiti
 \usepackage{lscape} %mettere tabelle orizzontali
 \usepackage{tensor} %per mettere bene gli indici sui tensori
 \usepackage{mathtools}
+
+% LaTeX
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{math,fadings} %disegni
+\usepackage{tikzpeople} %per fare i personaggini
+%\usepackage{callouts} %per i fumetti
+\usetikzlibrary{shapes}
+\usepackage{tcolorbox} % fare i box colorati
+\usepackage{xcolor} % definire colori
+\usepackage{tikzsymbols} %per mettere le emoji
+\usepackage{adjustbox} %per il disegno in background
+\usepackage{transparent}
+\usepackage{tikz-cd}
 
 \usepackage{emoji}  %per usare le emoji
 \usepackage{fontspec} %per qualche font migliore
@@ -34,9 +53,19 @@
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{dateplot}
 
+%Disegnini
+\usepackage{pgfplots}
+\usepackage{contour}
+\usetikzlibrary{calc,math,decorations.markings,decorations.text,backgrounds,fadings}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{decorations.pathreplacing,math,calc,tikzmark}
+
+
 % Impostazione di visualizzazione
 \sisetup{separate-uncertainty}
 
+% Physics
+\usepackage{braket}
 
 
 

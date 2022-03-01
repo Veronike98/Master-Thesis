@@ -13,5 +13,8 @@
 *.xml
 *.bbl
 *.blg
+*.txt
+*-blx.bib
+
 
 venv*

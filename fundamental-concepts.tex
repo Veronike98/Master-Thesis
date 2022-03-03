@@ -1,5 +1,8 @@
 \section{Geodesics}
+The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed more specific references will be made.
+
 Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita connection.
+We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms mainfold and spacetime intercheangeably, unless otherwise stated.
 The first fundamental definiton we need is:
 \begin{definition}
 	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).\\
@@ -11,11 +14,18 @@ Calling \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, th
 \]
 
 
-A \emph{curve} is a 1-parameter map; similarly we can define a \emph{family of curves} as a 2-parameter map \(\zeta: I \times J \rightarrow M\), where \(I, J \subseteq \R\) are intervals. This gives us \(2\) tangent fields, which we call respectively \emph{longitudinal} and \emph{transverse}:
+A \emph{curve} is a \(1\)-parameter map; similarly we can define a \emph{family of curves} as a \(2\)-parameter map \(\zeta: I \times J \rightarrow M\), where \(I, J \subseteq \R\) are intervals. This gives us \(2\) tangent fields, which we call respectively \emph{longitudinal} and \emph{transverse}:
 \[
 U^{\mu} \coloneqq \frac{\partial}{\partial t} \zeta^{\mu}(t,s); \quad \quad \quad 
 V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s). 
 \]
+
+\begin{definition}
+	Given a curve \(\gamma\), a \emph{(smooth) variation of \(\gamma\)} is any (smooth) \(2\)-parameter map \(\zeta(s,t)\) such that 
+	\[
+	\left. \zeta(s, t) \right\vert_{s = 0} = \gamma(t).
+	\]
+\end{definition}
 
 \begin{remark}
 	Commutation of partial derivatives immediately gives 
@@ -46,9 +56,63 @@ This vector field has a very important characterization, which here we'll only s
 	\].
 \end{lemma}
 
+\section{Submanifolds}
 
+\begin{definition}
+	Let \(M\) be a submanifold of the semi-Riemannian manifold \(\bar{M}\), and \(j:M\rightarrow\bar{M}\) the inclusion map. Then \(M\) is a \emph{semi-Riemannian submanifold} if the pullback of the metric tensor \(j^*(g)\) is a metric tensor on \(M\).
+\end{definition}
 
+This definiton makes it clear that observers on the submanifold \(M\) agree on the notion of distance as if they were outside the submanifold. Nevertheless, observers within \(M\) see the world differently than observers from the outside: they in fact will inherit \(2\) different connections from their notion of metric. 
 
+The comparison between these \(2\) different Levi-Civita connections gives surge to the \emph{second fundamental form}, which provides an infinitesimal description of the shape of \(M\) within \(\bar{M}\).
+
+In order to introduce this important object notice first of all that:
+\[
+\forall p \in M \quad T_p\bar{M} = \underbrace{T_pM}_{\text{vectors tangent to }M}+ \underbrace{T_p(M)^{\perp}}_{\text{vectors othogonal to } M}
+\]
+
+\noindent and we will generally call \(\Pi_p^{\parallel}\coloneqq d_pj\) and \(\Pi_p^{\perp}\coloneqq \mathbb{1} - d_pj\) the projecive maps on these \(2\) subspaces.
+Adopting a similar notation, we can decompose the set of all smooth fields in \(T\bar{M}\) restricted to \(M\) as:
+\[
+\bar{\mathfrak{X}}(M) = \mathfrak{X}(M) + \mathfrak{X}(M)^{\perp}.
+\]
+
+Now, the connection \(\bar{D}\) on \(\bar{M}\) will naturally give raise to a connection on \(M\)
+\begin{align*}
+\bar{D} : \mathfrak{X}(M) \times \bar{\mathfrak{X}}(M) & \rightarrow \bar{\mathfrak{X}}(M) \\
+	 V \times X &\mapsto \bar{D}_V X
+\end{align*}
+
+by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\bar{M})\), and then restricting again on \(M\). It can be proved that \(\bar{D}_V X\) is a well-defined smooth vector field on \(M\). In particular
+\begin{lemma}
+	if \(V, W \in \mathfrak{X}(M)\) and \(D\) is the Levi-Civita connection on \(M\), it holds that
+	\[
+	D_V W = \Pi^{\parallel}\left(\bar{D}_V W\right).
+	\]
+\end{lemma}
+
+It's evident then that the Levi-Civita connection on \(M\) is loosing something repect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
+\begin{definition}
+	given \(M \subset \bar{M}\) a semi-Riemannian submanifold, the \emph{shape tensor} (or \emph{second fundamental form}) is defined as:
+	\begin{align*}
+		\mathbb{I} : \mathfrak{X}(M) \times \mathfrak{X}(M) &\longrightarrow \mathfrak{X}(M)^{\perp}\\
+							V \times W &\mapsto \Pi^{\perp}\left(\bar{D}_V W\right)
+	\end{align*}
+	\noindent and in particular is bilinear and symmetric.
+\end{definition}
+
+In order to gain a better understanding of what this object encodes, let's think for a moment about the following example. Given a field \(Y \in \mathfrak{X}(M)\) tangent to a curve \(\alpha\) of \(M\), parametrized by \(s\), we indicate:
+\[
+\dot{Y} \coloneqq \frac{\bar{D}Y}{ds} \quad \quad Y' \coloneqq \frac{DY}{ds}
+\]
+It is then easy to prove that:
+\[
+\ddot{\alpha} = \alpha'' + \mathbb{I}(\alpha', \alpha')
+\]
+
+and hence, we can think of \(\mathbb{I}\) as the additional external ``force'' needed to keep a point moving on \(M \subset \bar{M}\), a sort of costraining force. An equivalent interpretation is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
+
+%todo: inserisci disegno pag.103 O'Neill
 
 
 

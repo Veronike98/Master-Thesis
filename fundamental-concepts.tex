@@ -1,8 +1,8 @@
 \section{Geodesics}
-The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed more specific references will be made.
+The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
 
 Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita connection.
-We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms mainfold and spacetime intercheangeably, unless otherwise stated.
+We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms manifold and spacetime intercheangeably, unless otherwise stated.
 The first fundamental definiton we need is:
 \begin{definition}
 	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).\\
@@ -26,6 +26,8 @@ V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s).
 	\left. \zeta(s, t) \right\vert_{s = 0} = \gamma(t).
 	\]
 \end{definition}
+
+%todo: metti un bel disegno di una famigla di curve
 
 \begin{remark}
 	Commutation of partial derivatives immediately gives 
@@ -62,7 +64,7 @@ This vector field has a very important characterization, which here we'll only s
 	Let \(M\) be a submanifold of the semi-Riemannian manifold \(\bar{M}\), and \(j:M\rightarrow\bar{M}\) the inclusion map. Then \(M\) is a \emph{semi-Riemannian submanifold} if the pullback of the metric tensor \(j^*(g)\) is a metric tensor on \(M\).
 \end{definition}
 
-This definiton makes it clear that observers on the submanifold \(M\) agree on the notion of distance as if they were outside the submanifold. Nevertheless, observers within \(M\) see the world differently than observers from the outside: they in fact will inherit \(2\) different connections from their notion of metric. 
+This definiton makes it clear that observers on the submanifold \(M\) agree on the notion of distance as if they were outside the submanifold. Nevertheless, observers within \(M\) see the world differently than observers from the outside: they in fact will inherit \(2\) different connections from their respective notion of metric. 
 
 The comparison between these \(2\) different Levi-Civita connections gives surge to the \emph{second fundamental form}, which provides an infinitesimal description of the shape of \(M\) within \(\bar{M}\).
 
@@ -115,4 +117,83 @@ and hence, we can think of \(\mathbb{I}\) as the additional external ``force'' n
 %todo: inserisci disegno pag.103 O'Neill
 
 
+The second fundamental form induces vector field on \(M\) called \emph{mean curvature}.
+\begin{definition}
+		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathbb{I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(H \in \mathfrak{X}(M)^{\perp} \) defined by:
+		\[
+		H(p)^{\mu} = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathbb{I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
+		\]
+		where 
+		\[
+		\epsilon_i = 
+		\begin{cases}
+		+1 \quad \text{se } \textbf{e}_i \text{\`e di tipo \emph{tempo}} \\
+		-1 \quad \text{se } \textbf{e}_i \text{\`e di tipo \emph{spazio}}
+		\end{cases}
+		\]
+\end{definition}
 
+This definition will be particularly important for the proof of Null Singularity Theorems, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
+
+\section{Trapped surfaces}
+
+\begin{definition}
+	We say that a spacelike submanifold \(M\) is \emph{future-converging} provided its mean curvature vetor field \(H\) is past-pointing timelike.
+\end{definition}
+
+
+
+It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\perp}\) to show that
+\begin{lemma}
+	assuming \(M\) is a \emph{spacelike} submanifold, the follwoing statements are equivalent:
+	\begin{enumerate}
+		\item  \(k(v) =g(H, v) < 0 \) for all future pointing \emph{null} vectors \(v\) normal to M.
+		\item  \(k(w) =g(H, w) < 0 \) for all future pointing \emph{causal} vectors \(v\) normal to M.
+		\item \(H\) is past-pointing timelike.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	We will prove a chain of implications to gain the equivalence.
+	
+	\(\mathbf{2) \implies 1)]}\) this is trivial because any null vector is a causal vector.
+	
+	\(\mathbf{1) \implies 3)]}\) Let's write \(H^{\mu} = (H^0, \vec{H})\). It is possible to choose a spacelike \(3-\)vector \(\vec{v}\) such that \(\vert\vec{v}\cdot\vec{H}\vert = - \vert\vec{v}\vert\cdot\vert\vec{H}\vert\) and  then complete it to the future-pointing null vector \(v^{\mu} = (v^0, \vec{v})\) (where \(v^0 = \vert \vec{v}\vert > 0\)).
+	Now:
+	\[
+	H^{\mu}v_{\mu} = H^0v^0 - \vec{H}\cdot\vec{v} < 0 \quad \implies 
+	\quad v^0 H^0 < - \vert\vec{v}\vert\cdot\vert\vec{H}\vert < 0
+	\]
+	which, for the positivity of \(v^0\), implies that \(H^{\mu}\) is timelike and past-pointing.
+	
+	\(\mathbf{3) \implies 2)]}\) first of all observe that any causal vector can be written as the sum of \(2\) future-pointing vectors such that \(w^{\mu}= v^{\mu} + t^{\mu}\) where \(v\) is null, and \(t^{\mu} = (t^0, \vec{0})\) (with \(t^0 \ge 0\)). At this point:
+	\[
+	w^{\mu}H^{\mu} = v^{\mu}H^{\mu} + \underbrace{t^0H^0}_{\le0}
+	\]
+	Inoltre per Cauchy-Schwartz vale:
+	\[
+	v_{\mu}H^{\mu} = v^0H^0 - \vec{H}\cdot\vec{v} \le v^0H^0 +\vert \vec{H}\vert\cdot\underbrace{\vert\vec{v}\vert}_{v^0} = v^0\underbrace{(H^0 + \vert \vec{H}\vert)}_{<0} < 0.
+	\]
+\end{proof}
+
+\subsection{Causality conditions}
+
+The notion of \emph{causality} has to do with the fact that in a Lorentzian manifold, starting from a  point \(p\) it is not true that an observer or a light ray can travel to any other point \(q\), as they are allowed only to move along (future pointing) causal geodesics (i.e. whose tangent field is never spacelike).
+
+We will denote causality relations with the following notation, following \cite{o1983semi}.
+\begin{enumerate}
+	\item  \(p \guillemotleft q\) means there is a future-pointing \emph{timelike} curve in \(M\) connecting \(p\) to \(q\).
+	\item \(p \prec q\) means there is a future-pointing \emph{causal} curve from \(p\) to \(q\).
+\end{enumerate}
+
+Evidently \(p\guillemotleft q\) implies \(p\prec q\) but not vice versa. For a subset \(A \subseteq M\) we also define:
+\begin{enumerate}
+	\item the \emph{chronological future} of \(A\)
+	\[
+	I^+(A) =\{ q\in M :\quad\exists p \in A\text{ with } p\guillemotleft q\}.
+	\]
+	\item the \emph{causal future} of \(A\)
+	\[
+	I^+(A) =\{ q\in M : \quad\exists p \in A\text{ with } p\prec q\}.
+	\]
+\end{enumerate}

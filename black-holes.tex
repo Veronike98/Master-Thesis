@@ -1,0 +1,26 @@
+\section{Asymptotically flat spacetime}
+
+\section{Strongly Asymptotically Predictable Spacetimes}
+
+\section{Properties of Black Holes}
+
+
+Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
+\begin{theorem}[Black Hole Area Theorem]
+	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}k^{\mu}k^{\nu} \ge 0\) for all null vectors \(k^{\mu}\) (\emph{null convergence condition}). Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
+	\[
+	\mathcal{H}_1 = H \cap \Sigma_1 \quad \quad \mathcal{H}_2 = H \cap \Sigma_2
+	\]
+	Then the area of \(\mathcal{H}_2\) is greater or equal than the area of \(\mathcal{H}_1\).
+\end{theorem}
+
+\begin{proof}
+	This theorem is usually proven by showing, through a reductio ab absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow an alternative path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
+	
+	As we have seen the equivalence between the \(2\) definitions of trapped surfaces, %todo: write it down and reference
+	using a similar reasoning as for lemma \ref{lemma:charact-trapped}, we can see that the thesis is equivalent to proving that, for all \(p \in H\) and for every future-directed null (or, equivalently, causal) vector \(v^{\mu}\) in \(T_pH^{\perp}\):
+	\[
+	\mathfrak{H}^{\mu}(p)v_{\mu} \ge 0.
+	\]
+	
+\end{proof}

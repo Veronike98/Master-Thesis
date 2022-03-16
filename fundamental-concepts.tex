@@ -59,6 +59,7 @@ This vector field has a very important characterization, which here we'll only s
 \end{lemma}
 
 \section{Submanifolds}
+\label{sec:submanifolds}
 
 \begin{definition}
 	Let \(M\) be a submanifold of the semi-Riemannian manifold \(\bar{M}\), and \(j:M\rightarrow\bar{M}\) the inclusion map. Then \(M\) is a \emph{semi-Riemannian submanifold} if the pullback of the metric tensor \(j^*(g)\) is a metric tensor on \(M\).
@@ -86,7 +87,7 @@ Now, the connection \(\bar{D}\) on \(\bar{M}\) will naturally give raise to a co
 \end{align*}
 
 by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\bar{M})\), and then restricting again on \(M\). It can be proved that \(\bar{D}_V X\) is a well-defined smooth vector field on \(M\). In particular
-\begin{lemma}
+\begin{lemma} 
 	if \(V, W \in \mathfrak{X}(M)\) and \(D\) is the Levi-Civita connection on \(M\), it holds that
 	\[
 	D_V W = \Pi^{\parallel}\left(\bar{D}_V W\right).
@@ -117,11 +118,11 @@ and hence, we can think of \(\mathbb{I}\) as the additional external ``force'' n
 %todo: inserisci disegno pag.103 O'Neill
 
 
-The second fundamental form induces vector field on \(M\) called \emph{mean curvature}.
+The second fundamental form induces a vector field on \(M\) called \emph{mean curvature}.
 \begin{definition}
-		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathbb{I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(H \in \mathfrak{X}(M)^{\perp} \) defined by:
+		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathbb{I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathfrak{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
 		\[
-		H(p)^{\mu} = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathbb{I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
+		\mathfrak{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathbb{I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
 		\]
 		where 
 		\[
@@ -138,18 +139,18 @@ This definition will be particularly important for the proof of Null Singularity
 \section{Trapped surfaces}
 
 \begin{definition}
-	We say that a spacelike submanifold \(M\) is \emph{future-converging} provided its mean curvature vetor field \(H\) is past-pointing timelike.
+	We say that a spacelike submanifold \(M\) is \emph{future-converging} provided its mean curvature vetor field \(\mathfrak{H}\) is past-pointing timelike.
 \end{definition}
 
 
 
 It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\perp}\) to show that
-\begin{lemma}
+\begin{lemma} \label{lemma:charact-trapped}
 	assuming \(M\) is a \emph{spacelike} submanifold, the follwoing statements are equivalent:
 	\begin{enumerate}
-		\item  \(k(v) =g(H, v) < 0 \) for all future pointing \emph{null} vectors \(v\) normal to M.
-		\item  \(k(w) =g(H, w) < 0 \) for all future pointing \emph{causal} vectors \(v\) normal to M.
-		\item \(H\) is past-pointing timelike.
+		\item  \(k(v) =g(\mathfrak{H}, v) < 0 \) for all future pointing \emph{null} vectors \(v\) normal to M.
+		\item  \(k(w) =g(\mathfrak{H}, w) < 0 \) for all future pointing \emph{causal} vectors \(v\) normal to M.
+		\item \(\mathfrak{H}\) is past-pointing timelike.
 	\end{enumerate}
 \end{lemma}
 
@@ -158,21 +159,21 @@ It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\per
 	
 	\(\mathbf{2) \implies 1)]}\) this is trivial because any null vector is a causal vector.
 	
-	\(\mathbf{1) \implies 3)]}\) Let's write \(H^{\mu} = (H^0, \vec{H})\). It is possible to choose a spacelike \(3-\)vector \(\vec{v}\) such that \(\vert\vec{v}\cdot\vec{H}\vert = - \vert\vec{v}\vert\cdot\vert\vec{H}\vert\) and  then complete it to the future-pointing null vector \(v^{\mu} = (v^0, \vec{v})\) (where \(v^0 = \vert \vec{v}\vert > 0\)).
+	\(\mathbf{1) \implies 3)]}\) Let's write \(\mathfrak{H}^{\mu} = (\mathfrak{H}^0, \vec{\mathfrak{H}})\). It is possible to choose a spacelike \(3-\)vector \(\vec{v}\) such that \(\vert\vec{v}\cdot\vec{\mathfrak{H}}\vert = - \vert\vec{v}\vert\cdot\vert\vec{\mathfrak{H}}\vert\) and  then complete it to the future-pointing null vector \(v^{\mu} = (v^0, \vec{v})\) (where \(v^0 = \vert \vec{v}\vert > 0\)).
 	Now:
 	\[
-	H^{\mu}v_{\mu} = H^0v^0 - \vec{H}\cdot\vec{v} < 0 \quad \implies 
-	\quad v^0 H^0 < - \vert\vec{v}\vert\cdot\vert\vec{H}\vert < 0
+	\mathfrak{H}^{\mu}v_{\mu} = \mathfrak{H}^0v^0 - \vec{\mathfrak{H}}\cdot\vec{v} < 0 \quad \implies 
+	\quad v^0 \mathfrak{H}^0 < - \vert\vec{v}\vert\cdot\vert\vec{\mathfrak{H}}\vert < 0
 	\]
 	which, for the positivity of \(v^0\), implies that \(H^{\mu}\) is timelike and past-pointing.
 	
 	\(\mathbf{3) \implies 2)]}\) first of all observe that any causal vector can be written as the sum of \(2\) future-pointing vectors such that \(w^{\mu}= v^{\mu} + t^{\mu}\) where \(v\) is null, and \(t^{\mu} = (t^0, \vec{0})\) (with \(t^0 \ge 0\)). At this point:
 	\[
-	w^{\mu}H^{\mu} = v^{\mu}H^{\mu} + \underbrace{t^0H^0}_{\le0}
+	w^{\mu}\mathfrak{H}^{\mu} = v^{\mu}\mathfrak{H}^{\mu} + \underbrace{t^0 \mathfrak{H}^0}_{\le0}
 	\]
-	Inoltre per Cauchy-Schwartz vale:
+	Moreover, by Cauchy-Schwartz we have:
 	\[
-	v_{\mu}H^{\mu} = v^0H^0 - \vec{H}\cdot\vec{v} \le v^0H^0 +\vert \vec{H}\vert\cdot\underbrace{\vert\vec{v}\vert}_{v^0} = v^0\underbrace{(H^0 + \vert \vec{H}\vert)}_{<0} < 0.
+	v_{\mu}\mathfrak{H}^{\mu} = v^0 \mathfrak{H}^0 - \vec{\mathfrak{H}}\cdot\vec{v} \le v^0\mathfrak{H}^0 +\vert \vec{\mathfrak{H}}\vert\cdot\underbrace{\vert\vec{v}\vert}_{v^0} = v^0\underbrace{(\mathfrak{H}^0 + \vert \vec{\mathfrak{H}}\vert)}_{<0} < 0.
 	\]
 \end{proof}
 

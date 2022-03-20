@@ -1,12 +1,16 @@
 \section{Geodesics}
+\EAK{General comment: it might be useful to number your equations so you are able to cite them}
+
 The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
 
-Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita connection.
+Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita connection \EAK{not connection, covariant derivative}.
 We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms manifold and spacetime intercheangeably, unless otherwise stated.
 The first fundamental definiton we need is:
 \begin{definition}
 	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).\\
 \end{definition}    
+
+\EAK{Below you are talking about timelike geodesics, clarify it and mention that the parametrization is proper time}
 
 Calling \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, this definition is equivalent to the equation:
 \[
@@ -28,6 +32,8 @@ V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s).
 \end{definition}
 
 %todo: metti un bel disegno di una famigla di curve
+
+\EAK{Small comment: if the equation is at the end of a sentence we usually have a full stop at the end. }
 
 \begin{remark}
 	Commutation of partial derivatives immediately gives 
@@ -57,6 +63,8 @@ This vector field has a very important characterization, which here we'll only s
 	\frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} =  R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}
 	\].
 \end{lemma}
+
+\EAK{The previous subsection seems the relevant one to also define focal points and index forms}
 
 \section{Submanifolds}
 \label{sec:submanifolds}
@@ -94,7 +102,9 @@ by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\
 	\]
 \end{lemma}
 
-It's evident then that the Levi-Civita connection on \(M\) is loosing something repect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
+It's evident then that the Levi-Civita connection on \(M\) is \EAK{I don't understand the rest of this sentence. Perhaps: ``it is missing something in respect''} loosing something repect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
+
+\EAK{Math symbol for second fundamental form: $\mathrm{I\!I}$}
 \begin{definition}
 	given \(M \subset \bar{M}\) a semi-Riemannian submanifold, the \emph{shape tensor} (or \emph{second fundamental form}) is defined as:
 	\begin{align*}
@@ -119,6 +129,7 @@ and hence, we can think of \(\mathbb{I}\) as the additional external ``force'' n
 
 
 The second fundamental form induces a vector field on \(M\) called \emph{mean curvature}.
+\EAK{Maybe use $H^\mu$ for mean normal curvature? It is simpler and it goes with the other papers}
 \begin{definition}
 		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathbb{I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathfrak{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
 		\[
@@ -133,10 +144,13 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 		\end{cases}
 		\]
 \end{definition}
+\EAK{Italian above?}
 
 This definition will be particularly important for the proof of Null Singularity Theorems, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
 
 \section{Trapped surfaces}
+
+\EAK{This is the O'Neill definition but maybe we should opt for something simpler. Senovilla definition instead? Also not a fan of the parenthesis notation for inner product. Generally you should think what notation you prefer for your whole thesis and stick to that for consistency}
 
 \begin{definition}
 	We say that a spacelike submanifold \(M\) is \emph{future-converging} provided its mean curvature vetor field \(\mathfrak{H}\) is past-pointing timelike.
@@ -181,6 +195,8 @@ It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\per
 
 The notion of \emph{causality} has to do with the fact that in a Lorentzian manifold, starting from a  point \(p\) it is not true that an observer or a light ray can travel to any other point \(q\), as they are allowed only to move along (future pointing) causal geodesics (i.e. whose tangent field is never spacelike).
 
+
+\EAK{Why $\guillemotleft$ and not $\ll$? Similarly why $\prec$ and not $<$?}
 We will denote causality relations with the following notation, following \cite{o1983semi}.
 \begin{enumerate}
 	\item  \(p \guillemotleft q\) means there is a future-pointing \emph{timelike} curve in \(M\) connecting \(p\) to \(q\).
@@ -198,3 +214,4 @@ Evidently \(p\guillemotleft q\) implies \(p\prec q\) but not vice versa. For a s
 	I^+(A) =\{ q\in M : \quad\exists p \in A\text{ with } p\prec q\}.
 	\]
 \end{enumerate}
+\EAK{Might want to add the domain of dependence, Cauchy horizon, spatial/timelike/null infinities we discussed last time (also look at Wald). A conformal diagram might be nice too (something to think about later perhaps).}

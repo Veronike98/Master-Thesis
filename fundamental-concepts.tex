@@ -1,9 +1,9 @@
-\section{Geodesics}
+\section{Geodesics}\label{sec:geodesics}
 \EAK{General comment: it might be useful to number your equations so you are able to cite them}
 
 The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
 
-Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita connection \EAK{not connection, covariant derivative}.
+Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita covariant derivative \EAK{not connection, covariant derivative}.
 We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms manifold and spacetime intercheangeably, unless otherwise stated.
 The first fundamental definiton we need is:
 \begin{definition}
@@ -12,7 +12,7 @@ The first fundamental definiton we need is:
 
 \EAK{Below you are talking about timelike geodesics, clarify it and mention that the parametrization is proper time}
 
-Calling \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, this definition is equivalent to the equation:
+Restricting to the case of timelike geodesics parametrized by proper time, we may call \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, and the previous definition is equivalent to the equation:
 \[
 \nabla_U U^{\mu} \coloneqq \frac{D\tensor{U}{^\mu} }{dt} \equiv 0.
 \]
@@ -43,7 +43,7 @@ V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s).
 	and, by definition of the Riemann tensor
 	\[
 	[\nabla_U, \nabla_V]W^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}W^{\nu}U^{\alpha}V^{\beta}
-	\]
+	\].
 \end{remark}
 
 By this remark we can compute the second derivative of the transverse field:
@@ -102,13 +102,13 @@ by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\
 	\]
 \end{lemma}
 
-It's evident then that the Levi-Civita connection on \(M\) is \EAK{I don't understand the rest of this sentence. Perhaps: ``it is missing something in respect''} loosing something repect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
+It's evident then that the Levi-Civita connection on \(M\) is \EAK{I don't understand the rest of this sentence. Perhaps: ``it is missing something in respect''} missing something in respect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
 
 \EAK{Math symbol for second fundamental form: $\mathrm{I\!I}$}
 \begin{definition}
 	given \(M \subset \bar{M}\) a semi-Riemannian submanifold, the \emph{shape tensor} (or \emph{second fundamental form}) is defined as:
 	\begin{align*}
-		\mathbb{I} : \mathfrak{X}(M) \times \mathfrak{X}(M) &\longrightarrow \mathfrak{X}(M)^{\perp}\\
+		\mathrm{I\!I} : \mathfrak{X}(M) \times \mathfrak{X}(M) &\longrightarrow \mathfrak{X}(M)^{\perp}\\
 							V \times W &\mapsto \Pi^{\perp}\left(\bar{D}_V W\right)
 	\end{align*}
 	\noindent and in particular is bilinear and symmetric.
@@ -120,31 +120,33 @@ In order to gain a better understanding of what this object encodes, let's think
 \]
 It is then easy to prove that:
 \[
-\ddot{\alpha} = \alpha'' + \mathbb{I}(\alpha', \alpha')
+\ddot{\alpha} = \alpha'' + \mathrm{I\!I}(\alpha', \alpha')
 \]
 
-and hence, we can think of \(\mathbb{I}\) as the additional external ``force'' needed to keep a point moving on \(M \subset \bar{M}\), a sort of costraining force. An equivalent interpretation is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
+and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'' needed to keep a point moving on \(M \subset \bar{M}\), a sort of costraining force. An equivalent interpretation is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
 
 %todo: inserisci disegno pag.103 O'Neill
 
 
 The second fundamental form induces a vector field on \(M\) called \emph{mean curvature}.
 \EAK{Maybe use $H^\mu$ for mean normal curvature? It is simpler and it goes with the other papers}
+\VS{It used to be like that, but then I realized it might be confused with the event horizon in the black hole area theorem and I wanted to make them different: is that a terrible idea?}
 \begin{definition}
-		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathbb{I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathfrak{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
+		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathfrak{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
 		\[
-		\mathfrak{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathbb{I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
+		\mathfrak{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathrm{I\!I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
 		\]
 		where 
 		\[
 		\epsilon_i = 
 		\begin{cases}
-		+1 \quad \text{se } \textbf{e}_i \text{\`e di tipo \emph{tempo}} \\
-		-1 \quad \text{se } \textbf{e}_i \text{\`e di tipo \emph{spazio}}
+		+1 \quad \text{if } \textbf{e}_i \text{ is \emph{timelike}} \\
+		-1 \quad \text{if } \textbf{e}_i \text{ is \emph{spacelike}}
 		\end{cases}
 		\]
 \end{definition}
 \EAK{Italian above?}
+
 
 This definition will be particularly important for the proof of Null Singularity Theorems, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
 
@@ -191,7 +193,26 @@ It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\per
 	\]
 \end{proof}
 
-\subsection{Causality conditions}
+\section{Focal points}
+Now that we know what a submanifold is, an important question we might like to answer is \emph{given a submanifold \(P\subset M\) and a point \(q \notin P\), what is the ``best'' path from \(P\) to \(q\)?}; here``best'' means a path that maximizes (or minimizes) some relevant functional of the curves joining \(P\) to \(q\). The most important functional we would like to study is the lenght of the curve: it carries a powerful physical meaning but it turns out to be well-defined and sufficiently differentiable only for families of timelike curves. Here we would like to study null, or even causal curves, so the right functional to choose for a curve \(\gamma : [0, l] \rightarrow M\) is 
+\[
+E[\gamma] \coloneqq \frac{1}{2}\int_{0}^{l} g(\gamma'(\lambda), \gamma'(\lambda))d\lambda;
+\]
+this quantity can be proven to vary smoothy for any picewise smooth variation of \(\gamma\), regardless of its causal nature.
+
+We are now interested in studying the set of all picewise smooth curves joining \(P\) to \(q\), \(\Omega(P, q)\). By means of a rather simple computation we can work out the formula for the first and second variation of \(E\) on a family of curves \(\gamma_s(\lambda) \coloneqq
+\zeta(\lambda, s)\) in \(\Omega(P, q)\) (so we also have the restriction that \(\forall s \quad \zeta(0, s) \in M\)).
+
+\begin{lemma}
+	Let \(\zeta\) be a picewise smooth variation of the curve \(\gamma: [0, l] \rightarrow M\)  in \(\Omega(P, q)\), and call \(U\) and \(V\) the transverse fields, as in section \ref{sec:geodesics}. Then
+	\[
+	E'[\gamma_s]\vert_{s = 0} = - \int_{0}^{l} V^{\mu}()
+	\]
+	
+\end{lemma}
+
+
+\section{Causality conditions}
 
 The notion of \emph{causality} has to do with the fact that in a Lorentzian manifold, starting from a  point \(p\) it is not true that an observer or a light ray can travel to any other point \(q\), as they are allowed only to move along (future pointing) causal geodesics (i.e. whose tangent field is never spacelike).
 

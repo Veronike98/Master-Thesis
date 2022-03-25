@@ -3,19 +3,22 @@
 
 The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
 
-Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita covariant derivative \EAK{not connection, covariant derivative}.
+Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita covariant derivative.
 We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms manifold and spacetime intercheangeably, unless otherwise stated.
 The first fundamental definiton we need is:
 \begin{definition}
 	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).\\
 \end{definition}    
 
-\EAK{Below you are talking about timelike geodesics, clarify it and mention that the parametrization is proper time}
+%\EAK{Below you are talking about timelike geodesics, clarify it and mention that the parametrization is proper time}
 
 Restricting to the case of timelike geodesics parametrized by proper time, we may call \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, and the previous definition is equivalent to the equation:
-\[
+
+\begin{equation}
+\label{eq:tang-trans-fields}
 \nabla_U U^{\mu} \coloneqq \frac{D\tensor{U}{^\mu} }{dt} \equiv 0.
-\]
+\end{equation}
+
 
 
 A \emph{curve} is a \(1\)-parameter map; similarly we can define a \emph{family of curves} as a \(2\)-parameter map \(\zeta: I \times J \rightarrow M\), where \(I, J \subseteq \R\) are intervals. This gives us \(2\) tangent fields, which we call respectively \emph{longitudinal} and \emph{transverse}:
@@ -33,7 +36,7 @@ V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s).
 
 %todo: metti un bel disegno di una famigla di curve
 
-\EAK{Small comment: if the equation is at the end of a sentence we usually have a full stop at the end. }
+%\EAK{Small comment: if the equation is at the end of a sentence we usually have a full stop at the end. }
 
 \begin{remark}
 	Commutation of partial derivatives immediately gives 
@@ -64,7 +67,7 @@ This vector field has a very important characterization, which here we'll only s
 	\].
 \end{lemma}
 
-\EAK{The previous subsection seems the relevant one to also define focal points and index forms}
+%\EAK{The previous subsection seems the relevant one to also define focal points and index forms}
 
 \section{Submanifolds}
 \label{sec:submanifolds}
@@ -102,9 +105,9 @@ by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\
 	\]
 \end{lemma}
 
-It's evident then that the Levi-Civita connection on \(M\) is \EAK{I don't understand the rest of this sentence. Perhaps: ``it is missing something in respect''} missing something in respect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
+It's evident then that the Levi-Civita connection on \(M\) is missing something in respect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
 
-\EAK{Math symbol for second fundamental form: $\mathrm{I\!I}$}
+%\EAK{Math symbol for second fundamental form: $\mathrm{I\!I}$}
 \begin{definition}
 	given \(M \subset \bar{M}\) a semi-Riemannian submanifold, the \emph{shape tensor} (or \emph{second fundamental form}) is defined as:
 	\begin{align*}
@@ -145,8 +148,6 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 		\end{cases}
 		\]
 \end{definition}
-\EAK{Italian above?}
-
 
 This definition will be particularly important for the proof of Null Singularity Theorems, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
 
@@ -164,8 +165,8 @@ It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\per
 \begin{lemma} \label{lemma:charact-trapped}
 	assuming \(M\) is a \emph{spacelike} submanifold, the follwoing statements are equivalent:
 	\begin{enumerate}
-		\item  \(k(v) =g(\mathfrak{H}, v) < 0 \) for all future pointing \emph{null} vectors \(v\) normal to M.
-		\item  \(k(w) =g(\mathfrak{H}, w) < 0 \) for all future pointing \emph{causal} vectors \(v\) normal to M.
+		\item  \(k(v) =g_{\mu\nu}\mathfrak{H}^{\mu} v^{\nu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to M.
+		\item  \(k(w) =g_{\mu\nu}\mathfrak{H}^{\mu} w^{\nu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to M.
 		\item \(\mathfrak{H}\) is past-pointing timelike.
 	\end{enumerate}
 \end{lemma}
@@ -192,25 +193,6 @@ It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\per
 	v_{\mu}\mathfrak{H}^{\mu} = v^0 \mathfrak{H}^0 - \vec{\mathfrak{H}}\cdot\vec{v} \le v^0\mathfrak{H}^0 +\vert \vec{\mathfrak{H}}\vert\cdot\underbrace{\vert\vec{v}\vert}_{v^0} = v^0\underbrace{(\mathfrak{H}^0 + \vert \vec{\mathfrak{H}}\vert)}_{<0} < 0.
 	\]
 \end{proof}
-
-\section{Focal points}
-Now that we know what a submanifold is, an important question we might like to answer is \emph{given a submanifold \(P\subset M\) and a point \(q \notin P\), what is the ``best'' path from \(P\) to \(q\)?}; here``best'' means a path that maximizes (or minimizes) some relevant functional of the curves joining \(P\) to \(q\). The most important functional we would like to study is the lenght of the curve: it carries a powerful physical meaning but it turns out to be well-defined and sufficiently differentiable only for families of timelike curves. Here we would like to study null, or even causal curves, so the right functional to choose for a curve \(\gamma : [0, l] \rightarrow M\) is 
-\[
-E[\gamma] \coloneqq \frac{1}{2}\int_{0}^{l} g(\gamma'(\lambda), \gamma'(\lambda))d\lambda;
-\]
-this quantity can be proven to vary smoothy for any picewise smooth variation of \(\gamma\), regardless of its causal nature.
-
-We are now interested in studying the set of all picewise smooth curves joining \(P\) to \(q\), \(\Omega(P, q)\). By means of a rather simple computation we can work out the formula for the first and second variation of \(E\) on a family of curves \(\gamma_s(\lambda) \coloneqq
-\zeta(\lambda, s)\) in \(\Omega(P, q)\) (so we also have the restriction that \(\forall s \quad \zeta(0, s) \in M\)).
-
-\begin{lemma}
-	Let \(\zeta\) be a picewise smooth variation of the curve \(\gamma: [0, l] \rightarrow M\)  in \(\Omega(P, q)\), and call \(U\) and \(V\) the transverse fields, as in section \ref{sec:geodesics}. Then
-	\[
-	E'[\gamma_s]\vert_{s = 0} = - \int_{0}^{l} V^{\mu}()
-	\]
-	
-\end{lemma}
-
 
 \section{Causality conditions}
 

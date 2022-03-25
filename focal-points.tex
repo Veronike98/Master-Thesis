@@ -1,0 +1,60 @@
+
+Now that we know what a submanifold is, an important question we might like to answer is \emph{given a submanifold \(P\subset M\) and a point \(q \notin P\), what is the ``best'' path from \(P\) to \(q\)?}; here``best'' means a path that maximizes (or minimizes) some relevant functional of the curves joining \(P\) to \(q\). The most important functional we would like to study is the curve-lenght: it carries a powerful physical meaning but it turns out to be well-defined and sufficiently differentiable only for families of timelike curves. 
+
+Let's not worry for about it: for the study of critical points of the lenght functional the relevant objects are focal points.
+
+\section{Definitions and general properties}
+Let \(L[\gamma]\) be the lenght functional of the curve, defined as:
+\begin{equation*}
+	L[\gamma] \coloneqq \int_{a}^{b} \vert\vert \dot{\gamma}(\tau) \vert\vert d\tau;
+\end{equation*}
+where \(\vert\vert \dot{\gamma}(\tau) \vert\vert = \sqrt{g_{\mu\nu}U^{\mu}U^{\nu}}\) and \(\tau\) is the proper time of the curve.
+
+Given a picewise smooth family of timelike curves \(\zeta(t,s) \equiv \gamma_s(t)\) (with constant speed \(\vert U \vert = 1\)) it is only a matter of simple algebra to compute the first and second variation of \(L\) along the family.
+\begin{lemma}
+	\label{lemma:first-L-var}
+	If \(L\) is the lenght functional of the family \(\zeta:[a,b] \times (-\delta, \delta) \rightarrow M\) of timelike picewise smooth curves, then (take \(U\) and \(V\) as defined in \ref{eq:tang-trans-fields})
+	\begin{align*}
+		\frac{dL}{ds}\Big\vert_{s = 0} &= \int_{a}^{b} g_{\mu\nu} U^{\mu}\frac{D V^{\nu}}{D t} dt  \\
+		&=- \int_{a}^{b}  g_{\mu\nu} \frac{D U^{\mu}}{D t} V^{\nu} dt - \sum_{i = 1}^{k} g_{\mu\nu} \Delta U^{\mu}V^{\nu}\Big\vert_{t_i} + g_{\mu\nu} U^{\mu}V^{\nu}\Big\vert^b_a.
+	\end{align*}
+where \(t_i\) with \(i\in \{1, \ldots, k\}\) are the breaks of \(\zeta\).
+\end{lemma}
+
+%todo: write proof of it
+Then it becomes clear that 
+\begin{corollary}
+	a picewise smooth timelike curve segment \(\gamma\) is an (unbroken) null geodesic if and only if the first variation of the arc lenght is zero for every fixed endpoint variation of \(\gamma\).
+\end{corollary}
+\begin{proof}
+	If \(\gamma\) is an (unbroken) null geodesic we have \(\frac{D U^{\mu}}{D t} = 0\) and there are no breaking points. Moreover for fixed endpoint variations the last term is zero, and hence \(L'\vert_{s = 0} = 0\).
+	
+	Conversely, if we suppose that \(L'(s =0) = 0\) for every fixed endpoint variation of \(\gamma\), it is possible to show that each segment \(\gamma[t_i, t_{i + 1}]\) is a geodesic.
+	In fact, take \(\textbf{v}\) any tangent vector in \(T_{\gamma(t_i)}M\)  extended on \(\gamma\) by parallel transportation and \(f\) a bump function with support in \([t_i, t_{i + 1}]\); \(V = f\textbf{v}\) produces a fixed endpoint variation of \(\gamma\) and hence for any \(f\) we have 
+	\[
+	0 = L'\vert_{s = 0} = \int_{t_i}^{t_{i+1}} g_{\mu\nu}\frac{DU^{\mu}}{Dt} f v^{\nu} dt
+	\]
+	which leads to \(\frac{DU^{\mu}}{Dt} = 0\).
+	
+	We are left with showing that the breaks are trivial: let \(v\) be an arbitrary tangent vector in \(\gamma(t_i)\) extended on \(\gamma[t_{i - 1}, t_{i + 1}]\) and \(f\) is a bump function in \([t_{i - 1}, t_{i + 1}]\); we get for any \(v\):
+	\[
+	0 = L'\vert_{s = 0} = -g_{\mu\nu}v^{\nu}\Delta U^{\mu}(t_i)
+	\]
+	so \(\Delta U^{\mu}(t_i) = 0\).
+\end{proof}
+Here we would like to study null, or even causal curves, so the right functional to choose for a curve \(\gamma : [0, l] \rightarrow M\) is 
+\[
+E[\gamma] \coloneqq \frac{1}{2}\int_{0}^{l} g(\gamma'(\lambda), \gamma'(\lambda))d\lambda;
+\]
+this quantity can be proven to vary smoothy for any picewise smooth variation of \(\gamma\), regardless of its causal nature.
+
+We are now interested in studying the set of all picewise smooth curves joining \(P\) to \(q\), \(\Omega(P, q)\). By means of a rather simple computation we can work out the formula for the first and second variation of \(E\) on a family of curves \(\gamma_s(\lambda) \coloneqq
+\zeta(\lambda, s)\) in \(\Omega(P, q)\) (so we also have the restriction that \(\forall s \quad \zeta(0, s) \in M\)).
+
+\begin{lemma}
+	Let \(\zeta\) be a picewise smooth variation of the curve \(\gamma: [0, l] \rightarrow M\)  in \(\Omega(P, q)\), and call \(U\) and \(V\) the transverse fields, as in section \ref{sec:geodesics}. Then
+	\[
+	E'[\gamma_s]\vert_{s = 0} = - \int_{0}^{l} V^{\mu}()
+	\]
+	
+\end{lemma}

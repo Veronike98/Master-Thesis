@@ -1,11 +1,11 @@
 
 Now that we know what a submanifold is, an important question we might like to answer is \emph{given a submanifold \(P\subset M\) and a point \(q \notin P\), what is the ``best'' path from \(P\) to \(q\)?} 
 
-Here``best'' means a path that maximizes (or minimizes) some relevant functional of the curves joining \(P\) to \(q\). The most important functional we would like to study is the curve-lenght \(L[\gamma]\): it carries a powerful physical meaning but it turns out to be well-defined and sufficiently differentiable only for families of timelike curves. 
+Here ``best'' means a path that maximizes (or minimizes) some relevant functional of the curves joining \(P\) to \(q\). The most important functional we would like to study is the curve-lenght \(L[\gamma]\): it carries a powerful physical meaning but it turns out to be well-defined and sufficiently differentiable only for families of timelike curves. 
 
 %Let's not worry for a moment about it: for the study of critical points of the lenght functional the relevant objects are focal points.
 
-\section{Definitions and general properties}
+\section{Variations of \(E\)}
 
 In this work we would like to study null, or even causal curves: \(L\) is not smooth though so a better choice for what functional to study is the \emph{energy} or \emph{action}. Given a curve \(\gamma : [0, l] \rightarrow M\) it is defined as
 \begin{equation*}
@@ -45,7 +45,7 @@ We are now interested in studying the set of all picewise smooth curves joining 
 	\begin{equation}
 		\label{eq:second-E-var}
 		E''[\gamma_s]\vert_{s = 0} \coloneqq \frac{d^2E[\gamma_s]}{ds^2}\Big\vert_{s = 0} = 
-		\int_{0}^{l} \left[(\nabla_UV_{\mu})(\nabla_UV^{\mu}) - R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta}\right] d\lambda + (U_{\mu}\nabla_UV^{\mu})\Big\vert_0^l.
+		\int_{0}^{l} \left[(\nabla_UV_{\mu})(\nabla_UV^{\mu}) + R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta}\right] d\lambda + (U_{\mu}\nabla_VV^{\mu})\Big\vert_0^l.
 	\end{equation}
 	
 \end{lemma}
@@ -65,7 +65,7 @@ Then, integrating by parts we get
  \begin{align*}
  	\frac{d^2E[\gamma_s]}{ds^2} &= \frac{d}{ds} \left[\int_{0}^{l} U_{\mu}\nabla_UV^{\mu}(\lambda) d\lambda\right] = \\
  	&= \int_{0}^{l} (\nabla_VU^{\mu})(\nabla_UV_{\mu})(\lambda) + U^{\mu} \nabla_V\nabla_UV_{\mu} (\lambda) d\lambda=\\
- 	&= \int_{0}^{l} \left[(\nabla_UV_{\mu})(\nabla_UV^{\mu}) - R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}U^{\alpha}V^{\beta}\right] d\lambda + U^{\mu} \nabla_V\nabla_UV_{\mu} \Big\vert_0^l +\\
+ 	&= \int_{0}^{l} \left[(\nabla_UV_{\mu})(\nabla_UV^{\mu}) + R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta}\right] d\lambda + U^{\mu} \nabla_V\nabla_UV_{\mu} \Big\vert_0^l +\\
  	&+  \int_{0}^{l} \nabla_UU^{\mu} \nabla_VV_{\mu} (\lambda) d\lambda
  \end{align*}
 	the last term being zero when we reduce to \(s = 0\), if \(\gamma\) is a geodesic.
@@ -74,7 +74,7 @@ Then, integrating by parts we get
 
 We are now able to formally prove a rather intuitive property:
 \begin{prop}
-	The critical points of \(E\), defined as the curves \(\gamma\) such that for any variation \(\gamma_s\) \(E'[\gamma]\Big\vert_{s = 0} = 0\), are exactly the normal geodesics from \(P\) to \(q\).
+	The critical points of \(E\), defined as the curves \(\gamma\) such that for any variation \(\gamma_s\), \(E'[\gamma_s]\Big\vert_{s = 0} = 0\), are exactly the normal geodesics from \(P\) to \(q\).
 \end{prop}
 \begin{proof}
 	If \(\gamma\) is an (unbroken) null geodesic we have \(\nabla_UU = 0\) and there are no breaking points. Moreover for fixed endpoint variations \(V^{\mu}(l) = 0\), while for orthogonal geodesics
@@ -101,3 +101,107 @@ We are now able to formally prove a rather intuitive property:
 	\]
 	which concludes.
 \end{proof}
+
+By definition \(E''[\gamma]\) is exactly the Hessian \(\textbf{H}_{\gamma}\): the latter in fact is the unique \(\R\)-bilinear from \(T_{\gamma}\Omega\) such that 
+\[
+\textbf{H}_{\gamma}(V, V) = \frac{d^2E[\gamma_s]}{ds^2}\Big\vert_{s = 0}
+\]
+where \(\gamma_s\) is any variation of \(\gamma\) in \(\Omega(P, q)\) with transverial field \(V\).
+As we now know that \(\gamma\) needs to be orthogonal to \(P\) we could also write the second variation of \(E\) employing the second fundamental form:
+\begin{equation}
+	\label{eq:hessian}
+	\textbf{H}(V) \equiv\frac{d^2E[\gamma_s]}{ds^2}\Big\vert_{s = 0} = 
+	\int_{0}^{l} \left[(\nabla_UV_{\mu})(\nabla_UV^{\mu}) - R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta}\right] d\lambda - (U_{\mu}\mathrm{I\!I}^{\mu})(V, V)\Big\vert_{\gamma(0)}.
+\end{equation}
+
+\section{Focal points along null geodesics}
+We see then that the ``relevant'' set of curves to consider in \(\Omega(P, q)\) when studying \(E\) is the one of geodesics normal to \(P\); however this is not enough to guarantee that we found a minimum of \(E\) and therefore we want to develop a method to better distinguish elements in this subset of curves. Besides the study of the second derivative, which is what an analytic approach would suggest, we find a deep relationship with a new geometrical object: focal points.
+
+\vskip 4pt
+
+First of all we need to define the analogous of Jacobi fields for variations of curves where one of the endpoints is a submanifold: the \(P\)-Jacobi fields.
+\begin{definition}
+	Given a submanifold \(P\) in \(M\), a \(P\)-Jacobi field is the variation vector field of a geodesic \(\gamma \perp P\) through normal geodesics.
+\end{definition}
+
+%%%% pag.281 O'Neill ma secondo me non serve davvero
+%If \(V\) is such a field it is characterized by the fact that 
+%\[
+%\begin{cases}
+%V(0) \text{ is tangent to } P; \\
+%\Pi_{P}^{\parallel} \frac{dV}{d\lambda} = \Pi_{P}^{\parallel}
+%\end{cases}
+%\]
+
+\begin{definition}
+	Let \(\gamma\) be a geodesic of \(M\) normal to \(P \subset M\). Then \(\gamma(r)\), where \(r \neq 0\) is a \emph{focal point} of \(P\) along \(\gamma\) provided there is a nonzero \(P\)-Jacobi field \(V\) on \(\gamma\), with \(V(r) = 0\).
+\end{definition}
+
+A focal point of a submanifold \(P\) along a normal geodesic \(\gamma\) is an \emph{almost}-meeting point of nearby \(P\)-normal geodesics \underline{of the same causal character} of \(\gamma\). If \(\gamma\) is nonnull this is obvious by continuity, while if \(\gamma\) is null this is assured by the following:
+\begin{corollary}
+	Let \(\gamma\) be a null geodesic normal to a submanifold \(P\) of a Lorentizian manifold \(M\). A \(P\)-Jacobi field \(V\) on \(\gamma\) is the vector field of a variation of \(\gamma\) through null geodesics through \(P\) if and only if \(V \perp \gamma\).
+\end{corollary}
+
+\begin{proof}
+	Suppose \(\gamma_s\) is such a variation: then \(U_{\mu}U^{\mu}\equiv 0\) by definition, and then
+	\[
+	0 = \frac{1}{2}\nabla_V(U_{\mu}U^{\mu}) = \nabla_UV^{\mu}U_{\mu}
+	\]
+	Hence \(\nabla_UV(0) \perp \gamma\); but \(V(0)\) is tangent to \(P\), then we also have \(V(0) \perp \gamma\), which implies, by \ref{lemma:Jacobi-fields-properties}, that \(V \perp \gamma\).
+	
+	The converse is also true but a bit more complicated to prove, and a formal proof is provided by O'Neill in \cite{o1983semi} in Corollary 10.40.
+\end{proof}
+
+As we have that\(V(0) \perp P\) and \(V(l) = 0\) because we are taking a family of normal geodesics in \(\Omega(P, q)\) we have that \(V \perp \gamma\), so we know that when we study variation of \(E\) on a null geodesic \(\gamma\) we can restrict our attention to normal null geodesics.
+
+We are finally ready to prove the following key result:
+\begin{prop}
+	Let \(P\) be a spacelike sumbanifold of a Lorentz manifold. If there are no focal points of \(P\) along a normal null geodesic \(\gamma\in\Omega(P,q)\), then \(\textbf{H}_\gamma\) is positive semidefinite on \(T_{\gamma}^{\perp}\Omega = \{V \in T_{\gamma}\Omega \vert V \perp \gamma\}\). Furthermore if \(V \in T_{\gamma}^{\perp}\Omega \) and \(\textbf{H}_\gamma(V, V) = 0\) then \(V\) is tangent to \(\gamma\).
+\end{prop}
+
+\begin{proof}
+	Let \(e_1, \ldots, e_{n - 1}\) be a basis for the space of perpendicular \(P\)- Jacobi fields on \(\gamma\), Without loss of generality we can suppose \(e_1\) to be tangent to \(\gamma\), and as there are no focal points on \(\gamma\) we can write \(V = \sum_{i = 1}^{n - 1} f_ie_i\).
+	Now, call \(A \coloneqq \sum_{i = 1}^{n - 1} f'_ie_i\) and \(B \coloneqq \sum_{i = 1}^{n - 1} f_i\nabla_Ue_i\); then
+	\[
+	\nabla_UV = A + B
+	\]
+	so
+	\begin{align*}
+		\nabla_U(V_{\mu}B^{\mu}) &= (\nabla_UV_{\mu})B^{\mu} + V_{\mu}(\nabla_UB^{\mu}) = \\
+		 &= A_{\mu}B^{\mu} + B_{\mu}B^{\mu} + \sum_{i = 1}^{n - 1}f'_iV_{\mu}\nabla_Ue_i^{\mu} + \sum_{i = 1}^{n - 1}f_iV_{\mu}\nabla_U\nabla_Ue_i^{\mu}.
+	\end{align*}
+	By the Jacobi equation \eqref{eq:Jacobi} we have \(\nabla_U\nabla_Ue_i^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}e_i^{\beta}\). Moreover a simple computation leads to \((e_i)_{\mu}\nabla_Ue_j^{\mu} - (e_j)_{\mu}\nabla_Ue_i^{\mu} = 0\) and \(e_i\) is tangent to \(P\) so
+	\[
+	(\Pi^{\parallel}\nabla_Ue_i)^{\mu}e_j^{\mu} = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
+	\]
+	and by symmetry of the shape tensor we have \((e_i)_{\mu}e_j^{\mu} = (e_j)_{\mu}e_i^{\mu}\). This idenity implies:
+	\[
+	\sum_{i = 1}^{n - 1}f'_iV_{\mu}\nabla_Ue_i^{\mu} = \sum_{i, j = 1}^{n - 1}f'_if_j(e_j)_{\mu}\nabla_Ue_i^{\mu} = \sum_{i, j = 1}^{n - 1}f'_if_j(e_i)_{\mu}\nabla_Ue_j^{\mu} = A_{\mu}B^{\mu}
+	\]
+	So, as \((\nabla_UV^{\mu})(\nabla_UV_{\mu}) = (A^{\mu} + B^{\mu}) (A_{\mu} + B_{\mu})\)
+	\[
+	\implies \nabla_U(V_{\mu}B^{\mu}) = 2A_{\mu}B^{\mu} + B_{\mu}B^{\mu} - R_{\mu\nu\alpha\beta}V^{\mu}U^{\nu}V^{\alpha}U^{\beta}
+	\]
+	and we finally have
+	\begin{equation}
+	\label{eq:V-identity}
+		(\nabla_UV^{\mu})(\nabla_UV_{\mu}) + R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta} =  \nabla_U(V_{\mu}B^{\mu})  + A_{\mu}A^{\mu}.
+	\end{equation}
+	Now, substituting \eqref{eq:V-identity} into \eqref{eq:second-E-var} we get
+	\[
+	\textbf{H}_{\gamma} = \int_{0}^{l} A_{\mu}A^{\mu}(\lambda) d\lambda + V_{\mu}B^{\mu}\Big\vert_{s = 0} - U_{\mu}\mathrm{I\!I}^{\mu}(V, V)\vert_{\gamma(0)}.
+	\]
+	The last \(2\) terms cancel with each other because \(V(l) = 0\) and 
+	\begin{align*}
+		-V_{\mu}B^{\mu}(0) &= - \sum_{i = 1}^{n - 1}f_i V_{\mu}\nabla_Ue_i^{\mu}(0) =\\
+		& = - \sum_{i = 1}^{n - 1}f_i V_{\mu}\Pi^{\parallel}\left(\nabla_Ue_i^{\mu}\right)(0) =\\
+		& = \sum_{i = 1}^{n - 1}f_i U_{\mu}\mathrm{I\!I}^{\mu}(e_i, V)(0) = U_{\mu}\mathrm{I\!I}^{\mu}(V, V)(0).
+	\end{align*}
+	At this point we can observe that, as \(A^{\mu}\) is orthogonal to the null vector \(U^{\mu}\) \(A_{\mu}A^{\mu} \le 0\) (\(A^{\mu}\) needs to be spacelike, it's a simple consequence of Cauchy-Schwarts inequality), and also
+	\[
+	A_{\mu}A^{\mu} = 0 \iff A^{\mu}\parallel U^{\mu}
+	\]
+\end{proof}
+
+
+

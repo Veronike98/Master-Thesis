@@ -54,7 +54,7 @@ By this remark we can compute the second derivative of the transverse field:
 \frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} = \nabla_V\nabla_U U^{\mu} + R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}
 \]
 
-which his leads us to the second fundamental objects we need to define. 
+which his leads us to the second fundamental object we need to define. 
 \begin{definition}
 	Given a family of \emph{geodesics} \(\gamma_s(t) \coloneqq \zeta(s,t)\), the transversal field \(V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s)\) is said to be a \emph{Jacobi field}.
 \end{definition}
@@ -62,11 +62,27 @@ which his leads us to the second fundamental objects we need to define.
 This vector field has a very important characterization, which here we'll only state:
 \begin{lemma}
 \(V^{\mu}\) is a \emph{Jacobi field} if and only if it satisfies the equation
-	\[
-	\frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} =  R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}
-	\].
+	\begin{equation}
+	\label{eq:Jacobi}
+		\frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} =  R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}.
+	\end{equation}
 \end{lemma}
 
+Jacobi fields also have some nice properties we will find helpful in the prosecution of our work;
+\begin{lemma}
+	\label{lemma:Jacobi-fields-properties}
+	Let \(V\) be a Jacobi field on \(\gamma\); then
+	\[
+	V \perp \gamma \iff \exists a\neq b \quad\vert\quad V\perp \gamma(a),\gamma(b) \iff \exists a \quad\vert\quad Y, Y' \perp \gamma(a).
+	\]
+\end{lemma}
+\begin{proof}
+	The proof is nearly straightforward from the characterization of Jacobi field and the symmetries of the Riemann tensor:
+	\[
+	\frac{d^2}{dt^2} (U^{\mu}V_{\mu}) = R_{\mu\nu\alpha\beta}U^{\mu}U^{\nu}U^{\alpha}V^{\beta} = 0
+	\]
+	hence \(U^{\mu}V_{\mu} = As + B\), from which the result is immediate.
+\end{proof}
 %\EAK{The previous subsection seems the relevant one to also define focal points and index forms}
 
 \section{Submanifolds}
@@ -105,7 +121,7 @@ by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\
 	\]
 \end{lemma}
 
-It's evident then that the Levi-Civita connection on \(M\) is missing something in respect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
+It's evident then that the Levi-Civita connection on \(M\) is missing something with respect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
 
 %\EAK{Math symbol for second fundamental form: $\mathrm{I\!I}$}
 \begin{definition}

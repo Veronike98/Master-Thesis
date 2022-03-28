@@ -7,7 +7,7 @@ Here ``best'' means a path that maximizes (or minimizes) some relevant functiona
 
 \section{Variations of \(E\)}
 
-In this work we would like to study null, or even causal curves: \(L\) is not smooth though so a better choice for what functional to study is the \emph{energy} or \emph{action}. Given a curve \(\gamma : [0, l] \rightarrow M\) it is defined as
+In this work we would like to study null, or even causal curves: \(L\) is not smooth though so a better choice for what functional to study is the \emph{energy} or \emph{action}. Given a curve \(\gamma : [0, l] \rightarrow M\) affinely parametrized by \(\lambda\), \(E\) is defined as
 \begin{equation*}
 E[\gamma] \coloneqq \frac{1}{2}\int_{0}^{l} g(\gamma'(\lambda), \gamma'(\lambda))d\lambda;
 \end{equation*}
@@ -74,6 +74,7 @@ Then, integrating by parts we get
 
 We are now able to formally prove a rather intuitive property:
 \begin{prop}
+	\label{prop:perp-critical-gamma}
 	The critical points of \(E\), defined as the curves \(\gamma\) such that for any variation \(\gamma_s\), \(E'[\gamma_s]\Big\vert_{s = 0} = 0\), are exactly the normal geodesics from \(P\) to \(q\).
 \end{prop}
 \begin{proof}
@@ -111,7 +112,7 @@ As we now know that \(\gamma\) needs to be orthogonal to \(P\) we could also wri
 \begin{equation}
 	\label{eq:hessian}
 	\textbf{H}(V) \equiv\frac{d^2E[\gamma_s]}{ds^2}\Big\vert_{s = 0} = 
-	\int_{0}^{l} \left[(\nabla_UV_{\mu})(\nabla_UV^{\mu}) - R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta}\right] d\lambda - (U_{\mu}\mathrm{I\!I}^{\mu})(V, V)\Big\vert_{\gamma(0)}.
+	\int_{0}^{l} \left[(\nabla_UV_{\mu})(\nabla_UV^{\mu}) + R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta}\right] d\lambda - (U_{\mu}\mathrm{I\!I}^{\mu})(V, V)\Big\vert_{\gamma(0)}.
 \end{equation}
 
 \section{Focal points along null geodesics}
@@ -156,7 +157,8 @@ As we have that \(V(0) \perp P\) and \(V(l) = 0\), because we are taking a famil
 
 We are finally ready to prove the following key result:
 \begin{prop}
-	Let \(P\) be a spacelike sumbanifold of a Lorentz manifold. If there are no focal points of \(P\) along a normal null geodesic \(\gamma\in\Omega(P,q)\), then \(\textbf{H}_\gamma\) is positive semidefinite on \(T_{\gamma}^{\perp}\Omega = \{V \in T_{\gamma}\Omega \vert V \perp \gamma\}\). Furthermore if \(V \in T_{\gamma}^{\perp}\Omega \) and \(\textbf{H}_\gamma(V, V) = 0\) then \(V\) is tangent to \(\gamma\).
+	\label{prop:H-positivity-criteria}
+	Let \(P\) be a spacelike sumbanifold of a Lorentz manifold. If there are no focal points of \(P\) along a normal null geodesic \(\gamma\in\Omega(P,q)\), then \(\textbf{H}_\gamma\) is negative semidefinite on \(T_{\gamma}^{\perp}\Omega = \{V \in T_{\gamma}\Omega \vert V \perp \gamma\}\). Furthermore if \(V \in T_{\gamma}^{\perp}\Omega \) and \(\textbf{H}_\gamma(V, V) = 0\) then \(V\) is tangent to \(\gamma\).
 \end{prop}
 
 \begin{proof}
@@ -170,11 +172,11 @@ We are finally ready to prove the following key result:
 		\nabla_U(V_{\mu}B^{\mu}) &= (\nabla_UV_{\mu})B^{\mu} + V_{\mu}(\nabla_UB^{\mu}) = \\
 		 &= A_{\mu}B^{\mu} + B_{\mu}B^{\mu} + \sum_{i = 1}^{n - 1}f'_iV_{\mu}\nabla_Ue_i^{\mu} + \sum_{i = 1}^{n - 1}f_iV_{\mu}\nabla_U\nabla_Ue_i^{\mu}.
 	\end{align*}
-	By the Jacobi equation \eqref{eq:Jacobi} we have \(\nabla_U\nabla_Ue_i^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}e_i^{\beta}\). Moreover a simple computation leads to \((e_i)_{\mu}\nabla_Ue_j^{\mu} - (e_j)_{\mu}\nabla_Ue_i^{\mu} = 0\) and \(e_i\) is tangent to \(P\) so
+	By the Jacobi equation \eqref{eq:Jacobi} we have \(\nabla_U\nabla_Ue_i^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}e_i^{\beta}\). Moreover, a simple computation leads to \((e_i)_{\mu}\nabla_Ue_j^{\mu} - (e_j)_{\mu}\nabla_Ue_i^{\mu} = 0\) and \(e_i\) is tangent to \(P\) so
 	\[
-	(\Pi^{\parallel}\nabla_Ue_i)^{\mu}e_j^{\mu} = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
+	(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
 	\]
-	and by symmetry of the shape tensor we have \((e_i)_{\mu}e_j^{\mu} = (e_j)_{\mu}e_i^{\mu}\). This idenity implies:
+	and by symmetry of the shape tensor we then have \((\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_j)_{\mu}e_i^{\mu}\). This identity implies:
 	\[
 	\sum_{i = 1}^{n - 1}f'_iV_{\mu}\nabla_Ue_i^{\mu} = \sum_{i, j = 1}^{n - 1}f'_if_j(e_j)_{\mu}\nabla_Ue_i^{\mu} = \sum_{i, j = 1}^{n - 1}f'_if_j(e_i)_{\mu}\nabla_Ue_j^{\mu} = A_{\mu}B^{\mu}
 	\]
@@ -191,7 +193,7 @@ We are finally ready to prove the following key result:
 	\[
 	\textbf{H}_{\gamma} = \int_{0}^{l} A_{\mu}A^{\mu}(\lambda) d\lambda + V_{\mu}B^{\mu}\Big\vert_{s = 0} - U_{\mu}\mathrm{I\!I}^{\mu}(V, V)\vert_{\gamma(0)}.
 	\]
-	The last \(2\) terms cancel with each other because \(V(l) = 0\) and 
+	The last \(2\) terms cancel with each other because \(V^{\mu}(l) = 0\) and 
 	\begin{align*}
 		-V_{\mu}B^{\mu}(0) &= - \sum_{i = 1}^{n - 1}f_i V_{\mu}\nabla_Ue_i^{\mu}(0) =\\
 		& = - \sum_{i = 1}^{n - 1}f_i V_{\mu}\Pi^{\parallel}\left(\nabla_Ue_i^{\mu}\right)(0) =\\
@@ -201,7 +203,62 @@ We are finally ready to prove the following key result:
 	\[
 	A_{\mu}A^{\mu} = 0 \iff A^{\mu}\parallel U^{\mu}
 	\]
+	Since \(e_1\) is the only basis vector tangent to \(\gamma\), if \(\textbf{H} \equiv 0\) we must have \(\nabla_Uf_i = 0\) \(\forall i > 1\). But
+	\[
+	V^{\mu}(l) = 0 \implies f_i(l) = 0 \quad \forall i > 1 \implies f_i\equiv 0 \forall i > 1.
+	\]
+	Then \(V = f_1e_1\) which is tangent to \(\gamma\), which concludes.
 \end{proof}
+
+Proposition \ref{prop:H-positivity-criteria} is already establishing a criteria for the existence of focal points; however vector fields are rather complicated objects, and we can weaken this criteria a little more by ``averaging'' over many vector fields, and be left working only with a scalar trial function (instead of trial fields). This idea, and its consequences have been developed by Fewster and Kontou in \cite{fewster2020new}, and we are now going to follow their observations in what comes now.
+
+As always, taken the null geodesic \(\gamma\perp P\), let now \(e_i\) with \(i = 1, \ldots, n - 2\) be an orthonormal basis of \(T_{\gamma(0)}P\), and parallel transport them along \(\gamma\) to generate \(\{E_i\}_{i = 1, \ldots, n-2}\). Now, take \(f\) a smooth function with \(f(0) = 1\) and \(f(l) = 0\):
+\begin{equation*}
+	\textbf{H}(fE_i, fE_i) = \int_{0}^{l} -f'^2(\lambda) + f^2R_{\mu\nu\alpha\beta}U^{\mu}V^{\nu}V^{\alpha}U^{\beta} d\lambda- U_{\mu}\mathrm{I\!I}^{\mu}(E_i, E_i)\Big\vert_{\gamma(0)}.
+\end{equation*}
+
+We then sum over all \(i = 1, \ldots, n - 2\) to get:
+\begin{equation}
+	\label{eq:hessian-averagded}
+	\sum_{i=1}^{n - 2}\textbf{H}(fE_i, fE_i) = - \int_{0}^{l} \left((n - 2)f'^2(\lambda) - f^2R_{\nu\beta}U^{\nu}U^{\beta}\right) d\lambda - (n - 2)f^2U_{\mu}\mathfrak{H}^{\mu}\Big\vert_{\gamma(0)}.
+\end{equation}
+
+where we have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} - U^{\alpha}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}\) (with \(W^{\mu}\) a suitable null vector), so:
+	\[
+	R_{\nu\beta}U^{\nu}U^{\beta} = g^{\mu\alpha}R_{\mu\nu\alpha\beta}U^{\nu}U^{\beta} = - \sum_{i=1}^{n - 2}R_{\mu\nu\alpha\beta}E_i^{\mu}U^{\mu}E_i^{\alpha}U^{\beta}
+	\]
+	
+	and \(H\) is the mean normal curvature as defined in section \ref{sec:submanifolds}.
+
+	We can now state a sufficient condition for the existence of focal points, but some care is required by the fact that no natural parametrization of null geodesics exist.
+	The best way to state the result in an invariant form is to look at \(\gamma\) as an unparametrized \(1\)-dimensional submanifold of \(M\).
+	%todo: aggiungi la definzione di forme
+	\VS{I need to add the definition of forms here, or slightly modify what has been written}
+	As usual, calling \(U^{\mu}\) be the tangent vector of \(\gamma\), the result proved in \ref{prop:H-positivity-criteria} can be stated as:
+	\begin{prop}
+		\label{prop:fp-criteria}
+		Let \(P\) be a spacelike submanifold of \(M\) of co-dimension \(2\) and let \(\gamma\) be a null geodesic joining \(p \in P\) to \(q\in J^+(P)\). If there exist a a smooth \((-\frac{1}{2})\)-density which is non vanishing at \(p\) but is null at \(q\), and so that
+		\begin{equation}
+		\label{eq:fp-criteria}
+		\int_{\gamma} \big((n -2)(\nabla_Uf)^2 + f^2\text{Ric}(U, U) \big)\le -(n -2) g(f^2 U, \mathfrak{H})\Big\vert_{p},
+		\end{equation}
+		then there is a focal point to \(P\) along \(\gamma\). If the inequality is strict then the focal point is located before \(q\).
+	\end{prop}
+
+	In the end, we are finally able to prove this important proposition - also present in \cite{o1983semi} in (10.43) but we state it in the form of \cite{fewster2020new}- which will practically allow us to make use of these methods.
+	\begin{corollary}
+		\label{cor:fp-criteria}
+		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)lenght of \(\gamma\) \(L_V(\gamma)\) as the lenght of \(\gamma\) with respect to an affine parameter \(\lambda\) such that \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) in \(p\). It's true that if \(L_{\hat{\mathfrak{H}}} \ge \frac{1}{|\mathfrak{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathfrak{H} = - |\mathfrak{H}|\hat{\mathfrak{H}}\), with \(\hat{\mathfrak{H}}\) future pointing timelike versor).
+	\end{corollary}
+
+	\begin{proof}
+		Choose an affine coordinate \(\lambda\) on \(\gamma\) such that \(\hat{\mathfrak{H}}_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\); this does exist because \(\hat{\mathfrak{H}}\) is past-pointing timelike, and it can be proven similarly to the \(\mathbf{3) \implies 2)]}\) implication in the proof of \ref{lemma:charact-trapped}, remembering \(\hat{\mathfrak{H}}\) is future-pointing and timelike.
+		
+		Then we can call \(q = \gamma(l)\) with \(\ell = L_{\hat{\mathfrak{H}}}\); in these coordinates take \(f(\lambda) = 1 - \frac{\lambda}{\ell}\). The right hand side of \eqref{eq:fp-criteria} is then \((n-2)|\mathfrak{H}|\), while \(\text{LHS} \le \frac{n - 2}{\ell}\), and the thesis follows from \ref{prop:fp-criteria}.
+	\end{proof}
+	
+	
+	
 
 
 

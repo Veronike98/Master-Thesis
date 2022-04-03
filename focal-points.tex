@@ -232,15 +232,17 @@ where we have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} - U^{\alpha}W^{\mu} - \su
 
 	We can now state a sufficient condition for the existence of focal points, but some care is required by the fact that no natural parametrization of null geodesics exist.
 	The best way to state the result in an invariant form is to look at \(\gamma\) as an unparametrized \(1\)-dimensional submanifold of \(M\).
-	%todo: aggiungi la definzione di forme
-	\VS{I need to add the definition of forms here, or slightly modify what has been written}
-	As usual, calling \(U^{\mu}\) be the tangent vector of \(\gamma\), the result proved in \ref{prop:H-positivity-criteria} can be stated as:
+	Then, each affine parametrization of \(\gamma\) induces a \(1-\)form \(d\gamma_{\mu}\) and a tangent vector \(U^{\mu}\) such that:
+	\[
+	d\gamma(U) = d\gamma_{\mu}U^{\mu} \equiv 1
+	\]
+	and the result proved in \ref{prop:H-positivity-criteria} can be stated as:
 	\begin{prop}
 		\label{prop:fp-criteria}
-		Let \(P\) be a spacelike submanifold of \(M\) of co-dimension \(2\) and let \(\gamma\) be a null geodesic joining \(p \in P\) to \(q\in J^+(P)\). If there exist a a smooth \((-\frac{1}{2})\)-density which is non vanishing at \(p\) but is null at \(q\), and so that
+		Let \(P\) be a spacelike submanifold of \(M\) of co-dimension \(2\) and let \(\gamma\) be a null geodesic joining \(p \in P\) to \(q\in J^+(P)\). If there exist a a smooth \((-\frac{1}{2})\)-density which is non vanishing at \(p\) but is null at \(q\), and such that
 		\begin{equation}
 		\label{eq:fp-criteria}
-		\int_{\gamma} \big((n -2)(\nabla_Uf)^2 + f^2\text{Ric}(U, U) \big)\le -(n -2) g(f^2 U, \mathfrak{H})\Big\vert_{p},
+		\int_{\gamma} \big((n -2)(\nabla_Uf)^2 + f^2\text{Ric}(U, U) \big)d\gamma\le -(n -2) g(f^2 U, \mathfrak{H})\Big\vert_{p},
 		\end{equation}
 		then there is a focal point to \(P\) along \(\gamma\). If the inequality is strict then the focal point is located before \(q\).
 	\end{prop}
@@ -248,13 +250,13 @@ where we have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} - U^{\alpha}W^{\mu} - \su
 	In the end, we are finally able to prove this important proposition - also present in \cite{o1983semi} in (10.43) but we state it in the form of \cite{fewster2020new}- which will practically allow us to make use of these methods.
 	\begin{corollary}
 		\label{cor:fp-criteria}
-		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)lenght of \(\gamma\) \(L_V(\gamma)\) as the lenght of \(\gamma\) with respect to an affine parameter \(\lambda\) such that \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) in \(p\). It's true that if \(L_{\hat{\mathfrak{H}}} \ge \frac{1}{|\mathfrak{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathfrak{H} = - |\mathfrak{H}|\hat{\mathfrak{H}}\), with \(\hat{\mathfrak{H}}\) future pointing timelike versor).
+		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)lenght of \(\gamma\), \(L_V(\gamma)\), as the maximum value reached by an affine parameter \(\lambda\) such that in \(p\) it holds \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) and \(\gamma(\lambda = 0) = p\). It's true that if \(L_{\hat{\mathfrak{H}}} \ge \frac{1}{|\mathfrak{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathfrak{H} = - |\mathfrak{H}|\hat{\mathfrak{H}}\), with \(\hat{\mathfrak{H}}\) future pointing timelike versor).
 	\end{corollary}
 
 	\begin{proof}
 		Choose an affine coordinate \(\lambda\) on \(\gamma\) such that \(\hat{\mathfrak{H}}_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\); this does exist because \(\hat{\mathfrak{H}}\) is past-pointing timelike, and it can be proven similarly to the \(\mathbf{3) \implies 2)]}\) implication in the proof of \ref{lemma:charact-trapped}, remembering \(\hat{\mathfrak{H}}\) is future-pointing and timelike.
 		
-		Then we can call \(q = \gamma(l)\) with \(\ell = L_{\hat{\mathfrak{H}}}\); in these coordinates take \(f(\lambda) = 1 - \frac{\lambda}{\ell}\). The right hand side of \eqref{eq:fp-criteria} is then \((n-2)|\mathfrak{H}|\), while \(\text{LHS} \le \frac{n - 2}{\ell}\), and the thesis follows from \ref{prop:fp-criteria}.
+		Then we can call \(q = \gamma(l)\) with \(\ell = L_{\hat{\mathfrak{H}}}\); in these coordinates take \(f(\lambda) = 1 - \frac{\lambda}{\ell}\). The right hand side of \eqref{eq:fp-criteria} is equal to \((n-2)|\mathfrak{H}|\), while \(\text{LHS} \le \frac{n - 2}{\ell}\), and the thesis follows from \ref{prop:fp-criteria}.
 	\end{proof}
 	
 	

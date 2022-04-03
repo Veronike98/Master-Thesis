@@ -22,6 +22,74 @@ Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 \tableofcontents
 \clearpage
 
+\chapter*{Notation and Conventions}
+\thispagestyle{empty}
+%nice frame
+\usetikzlibrary{math,calc,decorations.pathmorphing}
+\tikzset{
+	fancy corner/.pic={
+		\draw (0,4) -- (0,2.5) to[bend left] (2.5,0) -- (4,0);
+		\draw (0.5,4) -- (0.5,0.5) -- (4,0.5);
+		\draw (1,4) -- (1,0) -- (0,0) -- (0,1) -- (4,1);
+	},
+	fancy edge/.pic={
+		\draw (1,0) -- (0,1) -- (-1,0) -- (0,-1) -- cycle;
+		\fill[red] (1,0) circle(.5pt);
+		\def\a{.7}
+		\foreach \xs in {1,-1} {
+			\begin{scope}[xscale=\xs,shift={(.2,0)}]
+				\draw (4,0) -- ({1+\a},0) -- (1,\a) -- ({1-\a},0) -- (1,{-\a}) -- ({1+\a},0);
+				\foreach \ys in {1,-1} {
+					\draw[yscale=\ys] (4,0.5) -- ({0.5*(3+\a)},0.5) -- +(135:0.6);
+				}
+			\end{scope}
+		}
+		\fill (0,0) circle (.2);
+	},
+	pics/fancy rectangle/.style n args={4}{code={
+			\pic at (#1,#3) {fancy corner};
+			\pic[yscale=-1] at (#1,#4) {fancy corner};
+			\pic[xscale=-1] at (#2,#3) {fancy corner};
+			\pic[xscale=-1,yscale=-1] at (#2,#4) {fancy corner};
+			\pic at ({(#1+#2)/2},{#3+.5}) {fancy edge};
+			\pic at ({(#1+#2)/2},{#4-.5}) {fancy edge};
+			\foreach \i in {0,0.5,1} {
+				\foreach \y in {#3,#4-1} {
+					\draw ({#1+3.9},{\y+\i}) -- ({#1+#2)/2-3.9},{\y+\i});
+					\draw ({#2-3.9},{\y+\i}) -- ({#1+#2)/2+3.9},{\y+\i});
+				}
+				\foreach \x in {#1,#2-1} {
+					\draw ({\x+\i},{#3+3.9}) -- ({\x+\i},{#4-3.9});
+			}}
+	}},
+}
+
+\def\decorationscale{.5} % decoration scale
+\colorlet{decoration color}{cyan!70} % decoration color
+
+	\begin{tikzpicture}[draw=decoration color,fill=decoration color,line width=2pt,remember picture,overlay,x={(\decorationscale,0)},y={(0,\decorationscale)}]
+	\tikzmath{
+		coordinate \ne,\sw;
+		\ne=(current page.north east)+(-1cm,-1cm);
+		\sw=(current page.south west)+(1cm,1cm);
+		\xx=(\swx/1cm)/\decorationscale;
+		\xxx=\nex/1cm/\decorationscale;
+		\yy=\swy/1cm/\decorationscale;
+		\yyy=\ney/1cm/\decorationscale;
+	}
+	\pic{fancy rectangle={\xx}{\xxx}{\yy}{\yyy}};
+	\end{tikzpicture}
+
+In this work we are going to use the \([-, + , +]\) conventions as labelled in the Misner, Thorne and Wheeler \cite{misner1973gravitation}. That means:
+\begin{itemize}
+	\item The metric signature is \((-, +, +, +)\).
+	\item The Riemann tensor in components is defined as:
+	\[
+	R\indices{^{\mu}_{\nu\alpha\beta}} = \partial_{\alpha}\Gamma^{\mu}_{\nu\beta} - \partial_{\beta}\Gamma^{\mu}_{\nu\alpha} + \Gamma^{\mu}_{\alpha\tau}\Gamma^{\tau}_{\nu\beta} - \Gamma^{\mu}_{\beta\tau}\Gamma^{\tau}_{\nu\alpha}.
+	\]
+	\item Einstein equations are \(R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = 8\pi T_{\mu\nu}\).
+\end{itemize}
+
 \chapter{Fundamental Concepts}
 \input{fundamental-concepts}
 %\clearpage

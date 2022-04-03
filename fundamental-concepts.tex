@@ -146,6 +146,30 @@ and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'
 
 %todo: inserisci disegno pag.103 O'Neill
 
+We now prove an identity which will be useful to remember in the future. First of all we need to define the analogous of Jacobi fields for variations of curves where one of the endpoints is a submanifold: the \(M\)-Jacobi fields.
+\begin{definition}
+	Given a submanifold \(M\) in \(bar{M}\), a \(M\)-Jacobi field is the variation vector field of a geodesic \(\gamma \perp M\) through normal geodesics.
+\end{definition}
+\begin{lemma}
+	\label{lemma:shape-identity}
+	Let \(M\) be a submanifold of \(\bar{M}\), \(\gamma\) a curve leaving \(M\) orthogonally in \(p\), with tangent vector field \(U^{\mu}\), and \(e_1, \ldots, e_m\) a basis for the space of perpendicular \(M-\)Jacobi fields on \(\gamma\).
+	Then 
+	\begin{equation}
+		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
+	\end{equation}
+\end{lemma}
+
+	\begin{proof}
+		As \(\gamma\) and its variations are orthogonal to \(M\) \(e_j^{\mu}U_{\mu} \equiv 0\), hence:
+		\[
+		0 = \nabla_{e_i}\left(e_j^{\mu}U_{\mu}\right) = \left(nabla_{e_i}U_{\mu}\right)e_j^{\mu} + U_{\mu}\left(nabla_{e_i}e_j^{\mu}\right)
+		\]
+		Again, \(U_{\mu}\) is orthogonal to \(M\), then \(U_{\mu}\left(nabla_{e_i}e_j^{\mu}\right) = U_{\mu}\left(\Pi^{\perp}nabla_{e_i}e_j^{\mu}\right)\), while \(e_i\) is a Jacobi field so \(nabla_{e_i}U^{\mu} = \nabla_Ue_i^{\mu}\). Plugging this back into the previous equation we get exactly
+		\[
+		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (nabla_{e_i}U)_{\mu} e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
+		\]
+	\end{proof}
+
 
 The second fundamental form induces a vector field on \(M\) called \emph{mean curvature}.
 \EAK{Maybe use $H^\mu$ for mean normal curvature? It is simpler and it goes with the other papers}

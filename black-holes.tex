@@ -4,6 +4,76 @@ Here we are interested only to grasp the idea of the definition and understand w
 
 Once again, the definition of this concept is rather subtle: the intuitive idea would be to specify some fall-off rates with which the metric \(g_{\mu\nu}\) ``tends to'' the flat metric  \(\eta_{\mu\nu}\). However, we no longer have a background flat metric, in terms of which the fall-off rates can be specified; in particular, generally there is no global inertial reference frame where to define a preferred radial coordinate \(r\).
 
+One way to work around this problems is to ask for the existence of \emph{any} system of coordinates \(x^0, x^1, x^2, x^3\), such that the metric components behave appropriately at large coordinate values - e.g. \(g_{\mu\nu} = \eta_{\mu\nu} + O(1/r)\), along causal directions.
+Even if this definition  is capturing the main idea, it is difficult to work with it because the coordinate invariance of any statement is not immediate, and must be carefully verified.
+Furthermore, usually we are interested in taking the limit ``\(r \rightarrow +\infty\)'', but the above notion of asymptotic flatness does not specify precisely how such limits are to be taken.
+
+These diffulties have been solved by formulating the notion of asymptotic flatness making use of ``points at infinity'' that can be ``addedd'' to the spacetime in a suitable way. This, indeed, is manifestly coordinate independent and, providing some definite boundary points that represent the limit to infinity, eliminates the difficulties of defining a direction to take such a limit.
+
+\subsection{A userful example: Radiation in Minkowski spacetime}
+Let's start analyzing an example, to make it clear what are the difficulties for the formulation of this concept, and to understand why the idea of ``adding a point to infinity'' is particularly clever.
+
+In spherical coordinates the metric of flat space takes the form:
+\[
+ds^2 = dt^2 - dr^2 - r^2(d\theta^2 + \sin^2\theta d\phi^2)
+\]
+Closely following what Wald shows, suppose we want to study properties of radiation carried to infinity by a massless field, such as a Klein-Gordon scalar field \(\varphi\). Since this means taking limits, going to inifinity along null directions, it is convenient to introduce advanced and retarded null coordinates
+\[
+\begin{cases}
+	 v = t + r\\
+	 u = t - r
+\end{cases}
+\implies 
+ds^2 = dudv - \frac{(v - u)^2}{4}(d\theta^2 + \sin^2\theta d\phi^2).
+\]
+Suppose we are concerned in analyzing outgoing radiation for example: then, keeping \(u\) fixed, we would like to compute what happens to out physical field \(\varphi\) in the limit \(v \rightarrow +\infty\), and extract information about the radiation.
+
+Howeve, taking such limit is a procedure that does not easily generalize to curved spacetime: it would be a lot easier if infinity was some definite ``place''. Well, no problem you might say, it would be enough to perform the change of coordinates \(V\coloneqq \frac{1}{v}\), and then evaluete the quantities of intrest at \(V = 0\). However, the spacetime metric components now look like:
+\[
+ds^2 = -\frac{1}{V^2}dudV - \frac{1}{4}\left(\frac{1}{V} - u\right)^2 (d\theta^2 + \sin^2\theta d\phi^2)
+\]
+
+These components are singular at \(V = 0\), so we cannot extend the spacetime metric there, and then we are not abe to perform any tensor analysis at \(V = 0\) as though it was an ordinary ``place''. 
+
+Now, consider instead a new, unphysical, metric \(\bar{g}_{\mu\nu}\), conformally flat with conformal factor \(\Omega = V\). Then, in these coordinates, the line element becomes
+\[
+d\bar{s}^2 = dudV - \frac{1}{4}\left(1- uV\right)^2 (d\theta^2 + \sin^2\theta d\phi^2)
+\]
+and these components are well behaved in \(V = 0\). Thus, it makes sense to extend the Minkowsky manifold, by ''adding in'' the points represented by \(V = 0\).
+\begin{remark}
+	The originally flat space \((\R^4, \eta_{\mu\nu})\) is inextendible as a spacetime, and in fact can not be smoothly continued to \(V = 0\). This new unphysical spacetime \((\bar{M},\bar{g}_{\mu\nu} )\), is a different spacetime, only conformally equivalent to Minkowsky, and can be extended at \(V = 0\).
+\end{remark}
+The idea is that here we have brought infinity to a ``finite'' distance by means of a conformal transformation, so we have become able to state precisely ``where infinity lies'' and we can perform tensor anaylsis.
+
+Is that the end of all our problems? Can we now evaluate tensor at \(V = 0\) using tensors built by \(\bar{g}_{\mu\nu}\) and forget about the original Minkowsky space?
+Well no. As said, this new space is unphysical, so we need to translate back any result in the original spacetime, and during such translation we would crash into the fact that the conversion factor \(\Omega = V= \frac{1}{v}\) hoplessly blows up for \(v \rightarrow 0\).
+
+Furthermore, we have found a new way to take the limit to ``future null infinity'', but it is not clear how to generalize it in the case we also want to go towards ``past null infinity'' (\(u \rightarrow -\infty\) and \(v\) fixed). However, all of these drawbacks can be remedied by a more judicious choice of the conformal transformation. Let's consider:
+\[
+\tilde{g}_{\mu\nu} = \Omega^2 g_{\mu\nu} \quad\quad \Omega^2 = \frac{4}{(1 + v^2)^{-1}(1 + u^2)^{-1}} 
+\]
+Now \(\tilde{g}_{\mu\nu}\) can be smoothly extended to a ``larger'' spacetime, such that the boundary of the Minkowsky region in this larger spacetime, provides us with an appropriate representation of ``infinity''.
+It can be easily seen by taking the change of coordinates
+\[
+\begin{cases}
+T = \tan^{-1}v +\ tan^{-1}u \text{ with } -\pi \le T + R \le \pi\\
+R = \tan^{-1}v - \tan^{-1}u \text{ with } -\pi \le T - R \le \pi \text{ and } R \ge 0
+\end{cases}
+\]
+
+\begin{equation}
+\label{eq:Einstein-static-metric}
+	\implies
+	d\tilde{s}^2 = dT^2 - dR^2 + \sin^2R(d\theta^2 + \sin^2\theta d\phi^2).
+\end{equation}
+
+\subsection{Definition of asymptotic flatness}
+Remarkably, the line element in \eqref{eq:Einstein-static-metric} is exactly the natural Lorentz metric on \(S^3 \times \R\), better known as \emph{Einstein static universe}. Then we have learned the following, interesting fact:
+\begin{prop}
+	There exists a conformal isometry of Minkowsky spacetime \((\R^4, \eta_{\mu\nu})\) into an open region \(O\) of the Einstein static universe \((S^3 \times \R, \tilde{g}_{\mu\nu})\)
+\end{prop}
+
+This allows us to define what we mean by ``conformal infinity'' of Minkowsky space, with which we refer to the boundary \(\partial O\) of the open region \(O\).
 
 \section{Strongly Asymptotically Predictable Spacetimes}
 

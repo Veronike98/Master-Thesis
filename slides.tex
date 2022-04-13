@@ -34,7 +34,7 @@
 %\subtitle[it]{\texttt{Inserisci sottotitolo}}
 \author[Veronica Sacchi]{Veronica Sacchi}      
 \institute[SNS]{\includegraphics[height=1.45cm]{Immagini/logoSNS/orizzontale-colore/orizzontale-colore.jpg}}
-\date[28-02-2022]{28th February 2022}
+\date[14-04-2022]{14th April 2022}
 %\logo{\includegraphics[height=1.1cm]{Immagini/logoSNS/tondo-colore/tondo-colore.png}}
 
 \begin{document}	
@@ -58,7 +58,6 @@
 	\begin{defblock}{Singular spacetime \cite{wald2010general}}
 		A spacetime \(M\) is called \emph{singular} if there exists a geodesic which is not extendible arbitrarly back into the past or further into the future. 
 	\end{defblock}
-	\pause
 	
 	\begin{columns}
 		\column{0.45\textwidth}
@@ -209,7 +208,7 @@ The Raychaudhuri's equations determines its evolution:
 	\begin{theoblock}{Black Hole Area Theorem}
 		The boundary of the black hole region \(B\) is called event horizion \(H \coloneqq \partial B\). The theorem states that its area can never decrease in time if the Null energy condition holds.
 		\[
-		T_{ab}\xi^a\xi^b \ge 0 \implies d(\Sigma \cap H) \ge 0.
+		T_{ab}\xi^a\xi^b \ge 0 \implies \delta\mathcal{A}(\Sigma \cap H) \ge 0.
 		\]
 	\end{theoblock}
 \pause
@@ -229,6 +228,29 @@ A couple of remarks:
 	\vskip 3pt
 	\textbf{Bibliography}
 	\printbibliography
+\end{frame}
+
+\begin{frame}
+	\frametitle{Averaged Energy Conditions}
+	\begin{ideablock}{Quantum Intrest}
+		Local violations of pointwise energy conditions are often compensated for - or even over compensated for - in other points of spacetime.
+		\[
+		\Big\Downarrow
+		\]
+		Consider conditions averaged over a suitable region of spacetime.
+		\[
+		\int_{\gamma} R_{\mu\nu}\xi^{\mu}\xi^{\nu}(\lambda)d\lambda \ge 0.
+		\]
+	\end{ideablock}
+	
+	\textbf{Problems}
+	\begin{itemize}
+		\item No clear physical interpretation.
+		\item Either too weak to prove a SIngularity theorem, or too strong to be proven by QFT.
+		\item Invariance under temporal evolution but tied to black hole thermodynamics laws, asymmetric under time inversion.
+	\end{itemize}
+	
+	
 \end{frame}
 
 \end{document}

@@ -106,13 +106,13 @@ In this way we would clearly solve both problems mentioned at the beginning of t
 
 \begin{remark}
 	However, there are some differences that must be pointed out with respect to the Minkowsky spacetime. There are mainly \(2\) important remarks:
-	\begin{enumerate}[label=(\roman*)]
+	\begin{enumerate}[label=(\Roman*)]
 		\item We don't want to impose that a spacetime becomes flat at a ``\emph{fixed} position at early or late times'', therefore we cannot expect timelike future \(i^{+}\) or past infinity \(i^{-}\) to be similar to those of Minkowsky. Then, we won't ask for any restriction on the structure of curved spacetime related to the presence of these \(2\) points.
 		\item  Even if we want to impose the metric to become flat at spatial infinity, smoothness - or even differentiability- are too strong requirements. Then, even if the conformal infinity of asymptotically flat spacetimes is required to contain \(i^0\), the smoothness properties that hold in the Minkowsky case must be significantly weakened.
 	\end{enumerate}
 \end{remark}
 
-All what has been said up to here is enough to give us the fundamental ideas with which we will need t work, but for the sake of completness we conclude this section providing a formal definition of asymptotic flatness. The reader interested in further comments can refer to the already cited chapter \(11\) of \cite{wald2010general}, or even to the rather technical discussion of Ashtekar \emph{at. al} \cite{ashtekar1978unified}.
+All what has been said up to here is enough to give us the fundamental ideas with which we will need to work, but for the sake of completness we conclude this section providing a formal definition of asymptotic flatness. The reader interested in further comments can refer to the already cited chapter \(11\) of \cite{wald2010general}, or even to the rather technical discussion of Ashtekar \emph{et.al} \cite{ashtekar1978unified}.
 \begin{definition}
 	A vacuum spacetime is called \emph{asymptotically flat at null and spatial infinity} if there exists a spacetime \((\tilde{M}, \tilde{g}_{\mu\nu})\), with \(\tilde{g}_{\mu\nu}\) \(C^{\infty}\) everywhere except possibly at a point \(i^0\) where it needs to be \(C^{>0}\), and a conformal isometry \(\psi: M \rightarrow \psi(M)\subset \tilde{M}\) with conformal factor \(\Omega\), so that the following confitions are satisfied:
 	\begin{enumerate}[label=(\arabic*)]
@@ -127,19 +127,52 @@ All what has been said up to here is enough to give us the fundamental ideas wit
 		\item Finally, the last requirement is really a techinal hypothesis, which is sort of stating that \(\mathscr{I}^+\) and \(\mathscr{I}^-\) have the ``right size''.
 		\begin{enumerate}
 			\item The map of null directions at \(i^0\) into the space of integral curves of \(n^{\mu} = \tilde{g}^{\mu\nu} \tilde{\nabla}_{\nu}\Omega\) on  \(\mathscr{I}^+\) and \(\mathscr{I}^-\) is a diffeomorphism. This is needed to say that \(\mathscr{I}^+\) and \(\mathscr{I}^-\) have topology \(S^2\times\R\).
-			\item For any smooth function \(\omega\) on \(\tilde{M} \setminus i^0\), with \(\omega > 0\) on \(M \cup \mathscr{I}^+ \cup \mathscr{I}^- \) and such that \(\tilde{\nabla}_{\mu}(\omega^4n^{mu}) = 0\) on \(\mathscr{I}^+ \cup \mathscr{I}^-\), the associated vector field \(\omega^{-1}n^{\mu}\) is complete over \(\mathscr{I}^+ \cup \mathscr{I}^-\). This condition is saying that ``all \(\mathscr{I}^+\) and \(\mathscr{I}^-\) are present'' in the conformally completed spacetime.
+			\item For any smooth function \(\omega\) on \(\tilde{M} \setminus i^0\), with \(\omega > 0\) on \(M \cup \mathscr{I}^+ \cup \mathscr{I}^- \) and such that \(\tilde{\nabla}_{\mu}(\omega^4n^{\mu}) = 0\) on \(\mathscr{I}^+ \cup \mathscr{I}^-\), the associated vector field \(\omega^{-1}n^{\mu}\) is complete over \(\mathscr{I}^+ \cup \mathscr{I}^-\). This condition is saying that ``all \(\mathscr{I}^+\) and \(\mathscr{I}^-\) are present'' in the conformally completed spacetime.
 			\end{enumerate}
 	\end{enumerate}
 \end{definition}
 
 As last observation of these section, we remark that we can separately define asymptotically flat spacetimes only at \emph{spatial} or \emph{null} infinity, by simply eliminating the irrelevant parts on the definition above.
-Finally, as pointed out by Wald, the definition of \emph{weak asymptotically simplicity} given by Penrose in \cite{penrose1965zero}, and often taken as a criterion for asymptotic flatness, is formally different by implies all the conditions of the above definition, apart from \((5b)\); this last one is needed in order to make sure that asymptotic flatness does not cease to hold even at finite retarded time \cite{geroch1978asymptotically}.
+Finally, as pointed out by Wald, the definition of \emph{weak asymptotically simplicity} given by Penrose in \cite{penrose1965zero}, and often taken as a criterion for asymptotic flatness, is formally different but implies all the conditions of the above definition, apart from \((5b)\); this last one is needed in order to make sure that asymptotic flatness does not cease to hold even at finite retarded time \cite{geroch1978asymptotically}.
+
 \section{Strongly Asymptotically Predictable Spacetimes}
+In order to study some properties of black holes we first need a precise definition of these objects. The first idea would be to translate the concept of ``regions of no-escape'' into the requirement \(B \coloneqq \{p \in M\vert J^+(p)\subseteq B \}\).
+However, this is not really satisfying, as in this way \emph{any} causal future, of \emph{any} set, in \emph{any} spacetime would be called a black hole. The key point is that we must take greater care in specifying what regions of spacetime is impossible to ``escape towards'' when trapped in a black hole.
+
+The clever idea is that for asymptotically flat spacetimes, the impossibility of escaping to future null infinity \(\mathscr{I}^+\) provides an appropriate definition of black hole. Going into more detail, we are saying that \(J^-(\mathscr{I}^+)\) is ``well behaved'' but doesn't include the all physical spacetime. This intuition leads to the following definition:
+\begin{definition}
+	Let \((M, g_{\mu\nu})\) be an asymptotically flat spacetime with associated unphysical spacetime \((\tilde{M}, \tilde{g}_{\mu\nu})\). We say that \((M, g_{\mu\nu})\)  is \emph{strongly asymptotically predictable} if in the unphysical spacetime there is an open region \(\tilde{V} \subset \tilde{M}\), with the closure \(\overline{M \cap J^-(\mathscr{I}^+)}\subset \tilde{V}\) such that \((\tilde{V}, \tilde{g}_{\mu\nu})\) is globally hyperbolic.
+\end{definition}
+
+\begin{remark}
+	Here the closure is taken in \(\tilde{M}\), so in particular, \(i^0 \in \tilde{V}\). 
+\end{remark}
+
+Now,
+\begin{definition}
+	A strongly asymptotically predictable spacetime \((M, g_{\mu\nu})\) is said to contain a \emph{black hole} if \(M\) is not contained in \(J^-(\mathscr{I}^+)\). Consequently the \emph{black hole region} is defined as 
+	\[
+	B \coloneqq M \setminus J^-(\mathscr{I}^+)
+	\]
+	and the boundary of \(B\) is called the \emph{event horizon} \(H\coloneqq \partial J^-(\mathscr{I}^+) \cap M \).
+\end{definition}
+
+Let us make a couple of remarks of why it is important to make some assumptions to give the definiton of such objects.
+
+\begin{remark}
+	\begin{enumerate}[label=(\Roman*)]
+		\item The notion of asymptotic flatness is needed to specify a definiton of the ``infinity'' that observers trapped in a black hole don't have any hope to reach anymore. The definition might be extended in some cases where a suitable notion of ``infinity'' is provided, but we are not able to say anything in general.
+		\item The requirement for strong asymptotic predictability is more an instrumental physical hypothesis, rather than a mathematical one, needed for well-posedness. It is really meant to ensure that physics is predictable on and outside \(H\).
+		
+		Indeed, asymptotically flat spacetimes which fail to be strongly predictabe are said to contain a \emph{naked singularity}, but these cases are believed not to be physically relevant. This statement is the main content of the Cosmic Censorship Conjecture: the curious reader may find its definition in chapter \(12\) of \cite{wald2010general} and some endless literature browsing the internet, starting from \cite{dias2018strong}.
+	\end{enumerate}
+\end{remark}
+
+%todo: si potrebbe fare una pagina di disegnini, tipo pag. 300 del wald
 
 \section{Properties of Black Holes}
 
-\EAK{the definition of black hole in that context might fit well here}
-
+%todo; scrivere che BH non possono separarsi
 Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
 %todo: restate the tehorem only using \mathscr{H}, non serve distinguere tra 1 e 2 secondo me.
 \begin{theorem}[Black Hole Area Theorem]

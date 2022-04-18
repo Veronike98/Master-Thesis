@@ -241,10 +241,10 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		\label{eq:fp-criteria}
 		\int_{\gamma} \big((n -2)(\nabla_Uf)^2 + f^2\text{Ric}(U, U) \big)d\gamma\le -(n -2) g(f^2 U, \mathfrak{H})\Big\vert_{p},
 		\end{equation}
-		then there is a focal point to \(P\) along \(\gamma\). If the inequality is strict then the focal point is located before \(q\).
+		then there is a focal point to \(P\) along \(\gamma\). If the inequality holds strictly then the focal point is located before \(q\).
 	\end{prop}
 
-	In the end, we are finally able to prove this important proposition - also present in \cite{o1983semi} in (10.43) but we state it in the form of \cite{fewster2020new}- which will practically allow us to make use of these methods.
+	In the end, we are finally able to prove this important proposition - also present in \cite{o1983semi} as (10.43), but we state it in the form of \cite{fewster2020new}- which will practically allow us to make use of these methods.
 	\begin{corollary}
 		\label{cor:fp-criteria}
 		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)lenght of \(\gamma\), \(L_V(\gamma)\), as the maximum value reached by an affine parameter \(\lambda\) such that in \(p\) it holds \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) and \(\gamma(\lambda = 0) = p\). It's true that if \(L_{\hat{\mathfrak{H}}} \ge \frac{1}{|\mathfrak{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathfrak{H} = - |\mathfrak{H}|\hat{\mathfrak{H}}\), with \(\hat{\mathfrak{H}}\) future pointing timelike versor).
@@ -277,20 +277,23 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	\]
 	which immediately gives the interpretation of \(B_{\mu\nu}\).
 	
-	It's now useful to decompose \(B_{\mu\nu}\) in its irreducible components:
+	As in \ref{eq:hessian-averagded} let \(e_i\) with \(i = 1, \ldots, n - 2\) be an orthonormal basis of \(T_{\gamma(0)}P\), and parallel transport them along \(\gamma\) to generate \(\{E_i\}_{i = 1, \ldots, n-2}\). We can again decompose the metric as \(g^{\mu\nu} = U^{\mu}W^{\nu} + U^{\nu}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\). It's now useful to decompose \(B_{\mu\nu}\) in its irreducible components:
 	\[
 	\begin{cases}
 	\omega_{\mu\nu} \coloneqq B_{[\mu\nu]} \hfill \text{the vorticity.} \\
-	\theta \coloneqq g^{\mu\nu}B_{\mu\nu}  \hfill \text{the expansion.} \\
-	\sigma_{\mu\nu} \coloneqq B_{(\mu\nu)} - \frac{\theta}{d}g_{\mu\nu} \hfill \quad \text{ the shear.}
+	\theta \coloneqq g^{\mu\nu}B_{\mu\nu}  = B_{\mu\nu} \left(g^{\mu\nu} - 2U^{(\mu}W^{\nu)}\right) \hfill \quad \text{the expansion.} \\
+	\sigma_{\mu\nu} \coloneqq B_{(\mu\nu)} - \frac{\theta}{d - 2}\left(g_{\mu\nu} - 2U_{(\mu}W_{\nu)}\right) \hfill \quad \text{ the shear.}
 	\end{cases}
 	\]
 	
+	and in particular
+	\[
+	\theta = - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu} B_{\mu\nu}.
+	\]
 	\begin{remark}
-		As in \ref{eq:hessian-averagded} let \(e_i\) with \(i = 1, \ldots, n - 2\) be an orthonormal basis of \(T_{\gamma(0)}P\), and parallel transport them along \(\gamma\) to generate \(\{E_i\}_{i = 1, \ldots, n-2}\). We can again decompose the metric as \(g^{\mu\nu} = U^{\mu}W^{\nu} + U^{\nu}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\), hence 
-		\[
-		\theta = - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu} B_{\mu\nu}.
-		\]
+		Here we have decomposed \(B_{\mu\nu}\) in its spin \(0, 1\) and \(2\) components, but we are not talking about the represantation of the usual Lorentz group: here we need \(\theta\) to be a singlet for any linear transformation that leaves \(- \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\) invariant. In particular, any contraction or dilatation in the \(U^{\mu}\) or \(W^{\mu}\) direction is part of the group we are representing.
+		
+		This, in some sense, is a way of saying that we care about a larger group of transformations: the important features is that they are isometries on \(P\), but the normal geodesics can be reparametrized, contracted or dilatated.
 	\end{remark}
 	
 	At this point we can compute the evolution equations for these \(3\) quantities; such equations are called Raychadhuri's equation.
@@ -300,8 +303,52 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		\label{eq:Raychadhuri-theta}
 		&\frac{D}{D\lambda}\theta = -\frac{\theta^2}{d - 2} - \sigma_{\mu\nu}\sigma^{\mu\nu} + \omega_{\mu\nu}\omega^{\mu\nu}  - R_{\mu\nu}U^{\mu}U^{\nu}; \\
 		\label{eq:Raychadhuri-vorticity}
-		&\frac{D}{D\lambda}\omega_{\mu\nu} = \frac{2}{3}\theta\omega_{\mu\nu} + 2\sigma\indices{^{\alpha}_{[\nu}}\omega\indices{_{\mu]\alpha}}.
+		&\frac{D}{D\lambda}\omega_{\mu\nu} = \frac{2\theta}{d - 2}\omega_{\mu\nu} + 2\sigma\indices{^{\alpha}_{[\nu}}\omega\indices{_{\mu]\alpha}}.
 	\end{align}
+	
+	\begin{proof}
+		First of all notice that 
+		\begin{align}
+			\label{eq:trace-shear}
+			\texttt{tr}[\sigma] &= g^{\mu\nu}\sigma_{\mu\nu} = 0\\
+			\label{eq:trace-vorticity}
+			\texttt{tr}[\omega] &= g^{\mu\nu}\omega_{\mu\nu} = 0.
+		\end{align}
+		
+		Moreover, from the definitions above it's trivial that we can write
+		\begin{equation}
+		\label{eq:B-decomposition}
+			B_{\mu\nu} = \frac{\theta}{d - 2} \left(g^{\mu\nu} - 2U^{(\mu}W^{\nu)}\right) +\omega_{\mu\nu} + \sigma_{\mu\nu}.
+		\end{equation}
+		so,
+		\begin{align*}
+			\frac{D}{D\lambda}\theta &= U^{\nu}\nabla_{\nu}\nabla_{\mu}U^{\mu} = U^{\nu}\nabla_{\mu}\nabla_{\nu}U^{\mu} + R\indices{^{\mu}_{\alpha\beta\mu}}U^{\alpha}U^{\beta} =\\
+			&= \nabla_{\mu}\underbrace{\left(U^{\nu}\nabla_{\nu}U^{\mu}\right)}_{0} - \left(\nabla_{\mu}U^{\nu}\right)\left(\nabla_{\nu}U^{\mu}\right) - R_{\alpha\beta}U^{\alpha}U^{\beta} =\\
+			&= - B\indices{^{\nu}_{\mu}}B\indices{^{\mu}_{\nu}} - R_{\alpha\beta}U^{\alpha}U^{\beta}.
+		\end{align*}
+		Now, simply plugging in \eqref{eq:B-decomposition}, and using the simmetries and \eqref{eq:trace-shear} and \eqref{eq:trace-vorticity}, one easily obtains \eqref{eq:Raychadhuri-theta}.
+		
+		Similarly, we can compute
+		\begin{align*}
+			\frac{D}{D\lambda}\omega_{\mu\nu} &= U^{\rho}\nabla_{\rho}\omega_{\mu\nu} = \frac{1}{2}U^{\rho}\nabla_{\rho}\left( \nabla_{\nu}U_{\mu} - \nabla_{\mu}U_{\nu} \right) = \\
+		&= \frac{1}{2}\underbrace{U^{\rho} \left[R_{\mu\beta\rho\nu} - R_{\nu\beta\rho\mu}\right]U^{\beta}}_{0} + \frac{1}{2}U^{\rho}\left(\nabla_{\nu}\nabla_{\rho}U_{\mu} - \nabla_{\mu}\nabla_{\rho}U_{\nu}\right) = \\
+		&= \frac{1}{2} \nabla_{\nu}\underbrace{\left( U^{\rho} \nabla_{\rho}U_{\mu}\right)}_{\equiv 0} -  \frac{1}{2} \nabla_{\mu}\underbrace{\left( U^{\rho} \nabla_{\rho}U_{\nu}\right)}_{\equiv 0} + \frac{1}{2}\left[\left(\nabla_{\nu}U^{\rho}\right)\left(\nabla_{\rho}U_{\mu}\right) - \left(\nabla_{\mu}U^{\rho}\right)\left(\nabla_{\rho}U_{\nu}\right) \right] =\\
+		&= \frac{1}{2} \left[B_{\mu\rho}B\indices{^{\rho}_{\nu}} - B_{\nu\rho}B\indices{^{\rho}_{\mu}} \right].
+		\end{align*}
+		We can use the decomposition \ref{eq:B-decomposition} to compute the antisymmetric part of \(B_{\mu\rho}B\indices{^{\rho}_{\nu}}\). For that purpose notice that all the quadratic terms are symmetric in \((\mu\nu)\), so we only need to take care of the mixed products. Once again, the product of the \(\theta\)-term with the shear term is symmetric as it corresponds to
+		\[
+		\frac{\theta}{d - 2}\left[(g_{\mu\rho} - 2U_{(\mu}W_{\rho)}) \sigma\indices{^{\rho}_{\nu}} + \sigma\indices{_{\mu}^{\rho}}(g_{\rho\nu} - 2U_{(\rho}W_{\nu)})\right] \subset B_{\mu\rho}B\indices{^{\rho}_{\nu}}
+		\]
+		We are left with the mixing between the \(\theta\)-term and the vorticity and between shear and vorticity. For the first one, recall that \(B_{\mu\nu}U^{\nu} = 0 B_{\mu\nu}U^{\mu}\) implies that \(\omega_{\mu\nu}U^{\mu} = 0\), so it reduces to
+		\[
+		\frac{\theta}{d - 2}\left[g_{\mu\rho}\omega\indices{^{\rho}_{\nu}} + \omega\indices{_{\mu}^{\rho}}g_{\rho\nu}\right] = 2 \frac{\theta}{d -2}\omega_{\mu\nu} \subset B_{\mu\rho}B\indices{^{\rho}_{\nu}}
+		\]
+		Finally the mixing term of shear and vorticity - using the antisimmetry of \(\omega_{\mu\nu}\) - simply corresponds to 
+		\[
+		\omega_{\mu\rho} \sigma\indices{^{\rho}_{\nu}} + \sigma_{\mu\rho} \omega\indices{^{\rho}_{\nu}} = 2 \sigma\indices{^{\rho}_{[\nu}}\omega\indices{_{\mu]\rho}} \subset B_{\mu\rho}B\indices{^{\rho}_{\nu}}.
+		\]
+		which concludes the proof.
+	\end{proof}
 	
 	From \eqref{eq:Raychadhuri-vorticity} we can immediately see that if \(\omega_{\mu\nu}\) is null at some point, it will be null everywhere on the congruence. As for geodesics orthogonal to an hypersurface it can be shown that \(\omega_{\mu\nu}(0) = 0\) at the intersection point, we can immediately infer that we can neglect the vorticity term in the evolution of \(\theta\) \eqref{eq:Raychadhuri-theta}.
 	
@@ -310,6 +357,79 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		\label{eq:Riccati-ineq}
 		\frac{D}{D\lambda}\theta \le -\frac{\theta^2}{d - 2} - R_{\mu\nu}U^{\mu}U^{\nu}.
 	\end{equation}
+	
+	Just to point out a parallel, \eqref{eq:Riccati-ineq} is the ``equivalent'' of \eqref{eq:fp-criteria} for the index form methods. Of course the \(2\) expressions are not equivalent to each other, but they fulfill more or less the same role in the two procedures. Let's have a closer look to what we mean by that.
+	
+	\begin{prop}
+		\label{prop:fp-criteria-Raychaudhuri}
+		Let \(\gamma_s\) be a family of null geodesics in \(\Omega(P,q)\), orthogonal to \(P\). Consider then \(\theta\) along \(\gamma \equiv \gamma_0\): if there exists \(\lambda^{\star}\) such that \(\vert\theta\vert \rightarrow \infty\) for \(\lambda \rightarrow \lambda^{\star}\) then \(\gamma(\lambda^{\star})\) is a focal point of \(P\) along \(\gamma\).
+	\end{prop}
+
+	\begin{proof}
+		As usual, consider the basis of the tangent space given by \(\{W^{\mu}, U^{\mu}, E_1^{\mu}, \ldots, E_{d - 2}^{\mu}\}\) so that
+		\[
+		g^{\mu\nu} = U^{\mu}W^{\nu} + U^{\nu}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}
+		\]
+		This means that the transversial field of the congruence, that must be a \(P\)-Jacobi field, can be written as:
+		\[
+		V^{\mu} = V^iE_i^{\mu} \quad \text{ where } \quad V^i = E^i_{\mu}V^{\mu};
+		\]
+		moreover we already know that \(\frac{D}{D\lambda}V^{\mu} = B\indices{^{\mu}_{\nu}}V^{\nu}\), so expanding in the above mentioned basis, and remembering that the \(\{E_i^{\mu}\}\) are parallell transported, we get:
+		\begin{equation}
+		\label{eq:1st-order-V_i}
+			\frac{D}{D\lambda}V^i = \frac{D}{D\lambda}\left(E^i_{\mu}V^{\mu}\right) = E^i_{\mu}\frac{D}{D\lambda}V^{\mu} = E^i_{\mu}B\indices{^{\mu}_{\nu}}E_j^{\nu}V^j = \mathrm{B}\indices{^i_j}V^j.
+		\end{equation}
+		At the same time, \(V^{\mu}\) is a Jacobi field, so it must satisfy \eqref{eq:Jacobi}, a second order system of ODEs:
+		\begin{equation}
+			\label{eq:Jacobi-E_i}
+			\frac{D^2}{D\lambda^2}V^i = E^i_{\mu}\frac{D^2}{D\lambda^2}V^{\mu} = E^i_{\mu}R\indices{^{\mu}_{\alpha\beta\nu}}U^{\alpha}U^{\beta}E_j^{\nu}V^j.
+		\end{equation}
+		
+		Equation \eqref{eq:Jacobi-E_i} would satisfy that we have \(2(d - 2)\) degrees of freedom (the initial conditions we have to impose to solve the differential equation); however, \eqref{eq:1st-order-V_i} shows that they are not all independent. This means that there must exist a \(\lambda\)-dependant linear map \(A\) so that:
+		\[
+		V^i(\lambda) = A\indices{^i_j}V^j(0)
+		\]
+		(which obviously must be the identity at \(\lambda = 0\)). \VS{Aren't we just saying that the parallel transport is a linear map?}
+		Substituting into \eqref{eq:1st-order-V_i} we get the evolution equation for \(A\):
+		\[
+		\frac{D}{D\lambda}A\indices{^i_j} = \mathrm{B}\indices{^i_k}A\indices{^k_j}
+		\]
+		It is a well-known fact of linear algebra that this implies the following differential equation for the determinant: %(provided \(A\) is non singular) forse non serve. Se serve il Wald sistema a pag. 226.
+		\begin{equation}
+		\label{eq;det-A}
+			\frac{D}{D\lambda}\texttt{det}A = \texttt{tr}\mathrm{B}\cdot \texttt{det}A 
+		\end{equation}
+		We are now able to make the following observations:
+		\begin{itemize}
+			\item[\ding{99}] If \(\theta = \texttt{tr}\mathrm{B}\) is bounded in \([0, \lambda_0]\), there mustn't be any \(\lambda \in [0, \lambda_0]\) for which \(\texttt{det}A(\lambda) = 0\); otheriwse \(\texttt{det}A = 0\) on the all interval, contradicting the fact that \(A(0) = \mathbb{1}\). It follows that \(\texttt{det}A\) can vanish for \(\lambda \rightarrow \lambda^{\star}\) only if \(\vert\texttt{tr}\mathrm{B}\vert \rightarrow \infty\) for \(\lambda \rightarrow \lambda^{\star}\).
+			%Se detA = 0 allora A e' singolare e in teoria non si puo' usare l'equazione. Nella pratica  si puo' fare lo stesso, osservando che se trB \`e limitato detA non pu\`o andare troppo vicino a 0, altrimenti non riesco a fare det
+			\item[\ding{99}] At the same time, substituiting the definition of \(A\) into \eqref{eq:Jacobi-E_i} one gets
+			\[
+			\frac{D^2 A}{D\lambda^2} = \mathrm{R}A \quad \text{ where } R\indices{^i_j} = E^i_{\mu}R\indices{^{\mu}_{\alpha\beta\nu}}U^{\alpha}U^{\beta}E_j^{\nu}
+			\]
+			so, assuming \(\mathrm{R}\) is regular, the solutions of this equation will remain regular at finite affine parameters, and in particular \(\texttt{det}A\) cannot diverge for finite values of \(\lambda\). 
+		\end{itemize}
+		From these \(2\) observations we may conclude that
+		\[
+		\vert\theta\vert = \vert\texttt{tr}B\vert \rightarrow \infty \text{ for } \lambda \rightarrow \lambda^{\star}\iff \texttt{det}A \rightarrow 0 \text{ for } \lambda \rightarrow \lambda^{\star}.
+		\]
+		But saying \(\texttt{det}A(\lambda^{\star}) = 0 \) is equivalent to stating that \(A(\lambda^{\star}) \) has non trivial kernel, and hence there exists a non trivial initial data \(V^{\mu}(0)\) for which \(V^{\mu}(\lambda^{\star}) = 0\). This is exactly the definition of \(\gamma(\lambda^{\star})\) being a focal point, so the proof id concluded.
+	\end{proof}
+
+	Proposition \ref{prop:fp-criteria-Raychaudhuri} is establishing another criterion for the existence of focal points, which in the proofs of any relativity theorem will play the same role as proposition \ref{prop:fp-criteria}. In this context, studying \ref{eq:Riccati-ineq} has the same effect as analyzing \ref{eq:fp-criteria}, because they are the equations that constrain the quantities of intrests for the existence criteria of focal points, and thus will provide us with quantitive information about what conditions we need for their existence.
+	
+	\section{A comparison between two methods}
+	It is clear that the \(2\) criteria \ref{prop:fp-criteria} and \ref{prop:fp-criteria-Raychaudhuri} developed so far are equivalent, in the sense that if \(\vert\theta\vert \rightarrow \infty\) then \eqref{eq:fp-criteria} must hold and vice-versa, but the \(2\) methods differ dramatically when it comes to the practical use we can make of them. The core point is that, if in the former method we have to study an integral problem, for the latter we have to work on a differential problem: it's already evident that it is much harder to state something about a quantity \emph{at each point} of the manifold, rather than working out some information about \emph{the average} over a suitable region of spacetime.
+	
+	Having said that, what stated above is only a broad intuition about why we should prefer one method to the other, but it's worthwhile understanding more deeply the interplay bewteen them, in order to better realize the strenghts and the weaknesses of both.
+	
+	
+
+	
+	
+	
+	
+	
 	
 
 	

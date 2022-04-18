@@ -162,20 +162,20 @@ We now prove an identity which will be useful to remember in the future. First o
 	\begin{proof}
 		As \(\gamma\) and its variations are orthogonal to \(M\) \(e_j^{\mu}U_{\mu} \equiv 0\), hence:
 		\[
-		0 = \nabla_{e_i}\left(e_j^{\mu}U_{\mu}\right) = \left(nabla_{e_i}U_{\mu}\right)e_j^{\mu} + U_{\mu}\left(nabla_{e_i}e_j^{\mu}\right)
+		0 = \nabla_{e_i}\left(e_j^{\mu}U_{\mu}\right) = \left(\nabla_{e_i}U_{\mu}\right)e_j^{\mu} + U_{\mu}\left(\nabla_{e_i}e_j^{\mu}\right)
 		\]
-		Again, \(U_{\mu}\) is orthogonal to \(M\), then \(U_{\mu}\left(nabla_{e_i}e_j^{\mu}\right) = U_{\mu}\left(\Pi^{\perp}nabla_{e_i}e_j^{\mu}\right)\), while \(e_i\) is a Jacobi field so \(nabla_{e_i}U^{\mu} = \nabla_Ue_i^{\mu}\). Plugging this back into the previous equation we get exactly
+		Again, \(U_{\mu}\) is orthogonal to \(M\), then \(U_{\mu}  \left(\nabla_{e_i}e_j^{\mu}\right)= U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right)\), while \(e_i\) is a Jacobi field so \(\nabla_{e_i}U^{\mu} = \nabla_Ue_i^{\mu}\). Plugging this back into the previous equation we get exactly
 		\[
-		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (nabla_{e_i}U)_{\mu} e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
+		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_{e_i}U)_{\mu} e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
 		\]
 	\end{proof}
 
 
 The second fundamental form induces a vector field on \(M\) called \emph{mean curvature}.
-\EAK{Maybe use $H^\mu$ for mean normal curvature? It is simpler and it goes with the other papers}
-\VS{It used to be like that, but then I realized it might be confused with the event horizon in the black hole area theorem and I wanted to make them different: is that a terrible idea?}
+
+
 \begin{definition}
-		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathfrak{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
+		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathrm{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
 		\[
 		\mathfrak{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathrm{I\!I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
 		\]
@@ -191,23 +191,35 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 
 This definition will be particularly important for the proof of Null Singularity Theorems, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
 
+Finally, let us prove a quick lemma that will be useful here and there throughout the all analysis of the thesis.
+\begin{lemma}
+	\label{lemma:metric-decomposition}
+	Let \(P\) be a spacelike hypersurface of codimension \(2\) and \(\gamma_s\) a congruence of null geodesics leaving normally from \(P\); call \(U^{\mu}\) the (null) tangent vector field and \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 1}\) an orthonormal basis of the tangent space to \(P\). Finally, parallel transoprt \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 2}\) along \(\gamma\) in order to gain \(n - 2\) vector fields \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\). Then there exists a null vector field \(W^{\mu}\) such that the metric can be decomposed as
+	\begin{equation}
+		g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	This is only a linear algebra exercise, which basically reduces to decompose the metric tensor on \(T_{\gamma_0}M = T_{\gamma(0)}P \oplus T_{\gamma(0)}P^{\perp}\). By definition \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\) is an orthonormal basis of \(T_{\gamma(0)}P\), so we are left with the decomposition on \(T_{\gamma(0)}P^{\perp}\), whose dimension is \(2\) by hypothesis.
+	We already know that a good vector in \(T_{\gamma(0)}P^{\perp}\) is \(U^{\mu}\) and that the signature is \((+, -)\), then there must be another null vector \(W^{\mu}\) such that \(W^{\mu}U_{\mu} = 1\) (we can think about \(\R^{1,1}\) as it's always possible to reduce to that for the tangent space of a single point). Now we have found a basis of \(T_{\gamma_0}M\), and it's easy to show that for any \(2\) vectors \(a\) and \(b\) we can decompose them in terms of this new basis, compute their inner product using both formulations of \(g\), and check they are equal.
+\end{proof}
+
 \section{Trapped surfaces}
 
-\EAK{This is the O'Neill definition but maybe we should opt for something simpler. Senovilla definition instead? Also not a fan of the parenthesis notation for inner product. Generally you should think what notation you prefer for your whole thesis and stick to that for consistency}
-
 \begin{definition}
-	We say that a spacelike submanifold \(M\) is \emph{future-converging} provided its mean curvature vetor field \(\mathfrak{H}\) is past-pointing timelike.
+	\label{def:trapped-surface}
+	We say that a spacelike submanifold \(P\) is \emph{future-converging} or \emph{future-trapped} provided its mean curvature vector field \(\mathrm{H}\) is past-pointing timelike.
 \end{definition}
 
 
-
-It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\perp}\) to show that
+It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\perp}\) to show that
 \begin{lemma} \label{lemma:charact-trapped}
-	assuming \(M\) is a \emph{spacelike} submanifold, the follwoing statements are equivalent:
+	assuming \(P\) is a \emph{spacelike} submanifold, the follwoing statements are equivalent:
 	\begin{enumerate}
-		\item  \(k(v) =g_{\mu\nu}\mathfrak{H}^{\mu} v^{\nu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to M.
-		\item  \(k(w) =g_{\mu\nu}\mathfrak{H}^{\mu} w^{\nu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to M.
-		\item \(\mathfrak{H}\) is past-pointing timelike.
+		\item  \(k(v) =g_{\mu\nu}\mathrm{H}^{\mu} v^{\nu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to P.
+		\item  \(k(w) =g_{\mu\nu}\mathrm{H}^{\mu} w^{\nu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to P.
+		\item \(\mathrm{H}\) is past-pointing timelike.
 	\end{enumerate}
 \end{lemma}
 
@@ -216,25 +228,91 @@ It is only a matter of simple linear algebra in each normal space \(T_p(M)^{\per
 	
 	\(\mathbf{2) \implies 1)]}\) this is trivial because any null vector is a causal vector.
 	
-	\(\mathbf{1) \implies 3)]}\) Let's write \(\mathfrak{H}^{\mu} = (\mathfrak{H}^0, \vec{\mathfrak{H}})\). It is possible to choose a spacelike \(3-\)vector \(\vec{v}\) such that \(\vert\vec{v}\cdot\vec{\mathfrak{H}}\vert = - \vert\vec{v}\vert\cdot\vert\vec{\mathfrak{H}}\vert\) and  then complete it to the future-pointing null vector \(v^{\mu} = (v^0, \vec{v})\) (where \(v^0 = \vert \vec{v}\vert > 0\)).
+	\(\mathbf{1) \implies 3)]}\) Let's write \(\mathrm{H}^{\mu} = (\mathrm{H}^0, \vec{\mathrm{H}})\). It is possible to choose a spacelike \(3-\)vector \(\vec{v}\) such that \(\vert\vec{v}\cdot\vec{\mathrm{H}}\vert = - \vert\vec{v}\vert\cdot\vert\vec{\mathrm{H}}\vert\) and  then complete it to the future-pointing null vector \(v^{\mu} = (v^0, \vec{v})\) (where \(v^0 = \vert \vec{v}\vert > 0\)).
 	Now:
 	\[
-	\mathfrak{H}^{\mu}v_{\mu} = \mathfrak{H}^0v^0 - \vec{\mathfrak{H}}\cdot\vec{v} < 0 \quad \implies 
-	\quad v^0 \mathfrak{H}^0 < - \vert\vec{v}\vert\cdot\vert\vec{\mathfrak{H}}\vert < 0
+	\mathrm{H}^{\mu}v_{\mu} = \mathrm{H}^0v^0 - \vec{\mathrm{H}}\cdot\vec{v} < 0 \quad \implies 
+	\quad v^0 \mathrm{H}^0 < - \vert\vec{v}\vert\cdot\vert\vec{\mathrm{H}}\vert < 0
 	\]
 	which, for the positivity of \(v^0\), implies that \(H^{\mu}\) is timelike and past-pointing.
 	
 	\(\mathbf{3) \implies 2)]}\) first of all observe that any causal vector can be written as the sum of \(2\) future-pointing vectors such that \(w^{\mu}= v^{\mu} + t^{\mu}\) where \(v\) is null, and \(t^{\mu} = (t^0, \vec{0})\) (with \(t^0 \ge 0\)). At this point:
 	\[
-	w^{\mu}\mathfrak{H}^{\mu} = v^{\mu}\mathfrak{H}^{\mu} + \underbrace{t^0 \mathfrak{H}^0}_{\le0}
+	w^{\mu}\mathrm{H}^{\mu} = v^{\mu}\mathrm{H}^{\mu} + \underbrace{t^0 \mathrm{H}^0}_{\le0}
 	\]
 	Moreover, by Cauchy-Schwartz we have:
 	\[
-	v_{\mu}\mathfrak{H}^{\mu} = v^0 \mathfrak{H}^0 - \vec{\mathfrak{H}}\cdot\vec{v} \le v^0\mathfrak{H}^0 +\vert \vec{\mathfrak{H}}\vert\cdot\underbrace{\vert\vec{v}\vert}_{v^0} = v^0\underbrace{(\mathfrak{H}^0 + \vert \vec{\mathfrak{H}}\vert)}_{<0} < 0.
+	v_{\mu}\mathrm{H}^{\mu} = v^0 \mathrm{H}^0 - \vec{\mathrm{H}}\cdot\vec{v} \le v^0\mathrm{H}^0 +\vert \vec{\mathrm{H}}\vert\cdot\underbrace{\vert\vec{v}\vert}_{v^0} = v^0\underbrace{(\mathrm{H}^0 + \vert \vec{\mathrm{H}}\vert)}_{<0} < 0.
 	\]
 \end{proof}
 
-	%todo: write prooof of variation of area, see Kriele.
+However, the one stated above \ref{def:trapped-surface} is not the definition that has been in use from the beginning of these objects. The most widely used definition is by far the one that passes through the definition of expansion: we will now state this definition for codimension \(2\) spacelike submanifold, and making use of the \emph{null} expansion, but the same idea can be generalized to  amuch larger class of submanifolds. Consider the spacelike codimension \(2\) submanifold \(P\subset M\), and the congruence of \emph{null} geodesics leaving normally from \(P\); call \(U^{\mu}\) the tangent fields.
+
+Of course there are \(2\) such congruences: we will call \emph{positive} congruence one of them, and \emph{negative} the other one, whose tangent field - except for riparametrization - will be \(W^{\mu}\). By lemma \ref{lemma:metric-decomposition} we can decompose the metric as 
+\[
+g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
+\]
+Moreover,
+\begin{definition}
+	 Consider the tensor field given by the gradient of the tangent field:
+	\[
+	B_{\mu\nu} = \nabla_{\nu}U_{\mu}.
+	\]
+	The trace of \(B_{\mu\nu}\) is going to be called \emph{positive null expansion}:
+	\[
+	\theta^{+} = \texttt{tr}\left[B\right] = g^{\mu\nu}B_{\mu\nu}.
+	\]
+	Similarly, if we chose the negative congruence we would have had
+	\[
+	\tilde{B}_{\mu\nu} = \nabla_{\nu}W_{\mu}.
+	\]
+	and its trace is defined as the \emph{negative null expansion}
+	\[
+	\theta^{-} = \texttt{tr}\left[\tilde{B}\right] = g^{\mu\nu}\tilde{B}_{\mu\nu}.
+	\]
+\end{definition}
+
+It's clear that for any point of the submanifold we are able to compute the positive and the negative expansion; this finally leads to the definition of trapped surface
+\begin{definition}
+	A codimension \(2\) spacelike hypersurface is called \emph{trapped} if both its positive and negative expansions are negative
+	\[
+	\theta^+ , \theta^- < 0.
+	\]
+\end{definition}
+
+We finally want to prove that the \(2\) defintions are indeed equivalent.
+\begin{lemma}
+	The \(2\) definitions of trapped surface are equivalent.
+\end{lemma}
+\begin{proof}
+	Let us use the same notation introduced above, for which \(P\) is the hypersurface under consideration, \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\) is an orthonormal basis of its tangent space, \(U^{\mu}\) and \(W^{\mu}\) \(2\) orthogonal null vectors such that \(U^{\mu}W_{\mu} = 1\) tangent to the respective orthogonal null congruences. As \(U^{\mu}\) is null and parallel transported we have
+	\begin{align*}
+		\theta^+ &= g^{\mu\nu}B_{\mu\nu} = \left(g^{\mu\nu} - U^{\mu}W^{\nu} - U^{\nu}W^{\mu}\right)B_{\mu\nu} =\\
+		&= - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}B_{\mu\nu} = - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\nabla_{\nu}U_{\mu} = \\
+		& = -  \sum_{i=1}^{n - 2}E_i^{\nu}\nabla_{\nu}\underbrace{\left(E_i^{\mu}U_{\mu}\right)}_{0} +  \sum_{i=1}^{n - 2}U_{\mu}E_i^{\nu}\nabla_{\nu}E_i^{\mu} = \sum_{i=1}^{n - 2}U_{\mu}\nabla_{E_i}E_i^{\mu} = \\
+		& = (n - 2) U_{\mu} \cdot \frac{1}{n - 2}\sum_{i=1}^{n - 2}\mathrm{I\!I}^{\mu} \left(E_i, E_i\right) = (n - 2) U_{\mu}\mathrm{H}^{\mu}.
+	\end{align*}
+	Similarly
+	\[
+	\theta^- = (n - 2) W_{\mu}\mathrm{H}^{\mu}.
+	\]
+	As \(P\) has codimension \(2\), \(U^{\mu}\) and \(W^{\mu}\) are the only indipendent nulll vectors orthogonal to \(P\), and then, by means of lemma \ref{lemma:charact-trapped}, we know that 
+	\[
+	\theta^+ , \theta^- < 0 \iff \mathrm{H}^{\mu} \text{ is past-pointing timelike,}
+	\]
+	establishing the equivalence between the \(2\) definitions.
+\end{proof}
+
+\begin{remark}
+	It's worth pointing out that, as Wald states in section \(9.2\) of \cite{wald2010general} about the expansion of a null congruence of geodesics, that there is no natural wat to directly compute \(\theta\), as we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence was orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(R^{2,1}\).
+	%todo: fai disegno sulle note del 17/04
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=1.7]{example-image-duck}
+	\end{figure}
+\end{remark}
+
+%todo: write prooof of variation of area, see Kriele.
 
 \section{Causality conditions}
 

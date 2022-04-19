@@ -217,7 +217,7 @@ As always, taken the null geodesic \(\gamma\perp P\), let now \(e_i\) with \(i =
 We then sum over all \(i = 1, \ldots, n - 2\) to get:
 \begin{equation}
 	\label{eq:hessian-averagded}
-	\sum_{i=1}^{n - 2}\textbf{H}(fE_i, fE_i) = - \int_{0}^{l} \left((n - 2)f'^2(\lambda) - f^2R_{\nu\beta}U^{\nu}U^{\beta}\right) d\lambda - (n - 2)f^2U_{\mu}\mathfrak{H}^{\mu}\Big\vert_{\gamma(0)}.
+	\sum_{i=1}^{n - 2}\textbf{H}(fE_i, fE_i) = - \int_{0}^{l} \left((n - 2)f'^2(\lambda) - f^2R_{\nu\beta}U^{\nu}U^{\beta}\right) d\lambda - (n - 2)f^2U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\gamma(0)}.
 \end{equation}
 
 We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}\) (with \(W^{\mu}\) a suitable null vector, such that \(W^{\mu}U_{\mu} = 1\) and \(W_{\mu}E_i^{\mu} = 0\), see \ref{lemma:metric-decomposition} for a proof), which means:
@@ -239,7 +239,7 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		Let \(P\) be a spacelike submanifold of \(M\) of co-dimension \(2\) and let \(\gamma\) be a null geodesic joining \(p \in P\) to \(q\in J^+(P)\). If there exist a a smooth \((-\frac{1}{2})\)-density which is non vanishing at \(p\) but is null at \(q\), and such that
 		\begin{equation}
 		\label{eq:fp-criteria}
-		\int_{\gamma} \big((n -2)(\nabla_Uf)^2 + f^2\text{Ric}(U, U) \big)d\gamma\le -(n -2) g(f^2 U, \mathfrak{H})\Big\vert_{p},
+		\int_{\gamma} \big((n -2)(\nabla_Uf)^2 + f^2\text{Ric}(U, U) \big)d\gamma\le -(n -2) g(f^2 U, \mathrm{H})\Big\vert_{p},
 		\end{equation}
 		then there is a focal point to \(P\) along \(\gamma\). If the inequality holds strictly then the focal point is located before \(q\).
 	\end{prop}
@@ -335,11 +335,11 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		&= \frac{1}{2} \nabla_{\nu}\underbrace{\left( U^{\rho} \nabla_{\rho}U_{\mu}\right)}_{\equiv 0} -  \frac{1}{2} \nabla_{\mu}\underbrace{\left( U^{\rho} \nabla_{\rho}U_{\nu}\right)}_{\equiv 0} + \frac{1}{2}\left[\left(\nabla_{\nu}U^{\rho}\right)\left(\nabla_{\rho}U_{\mu}\right) - \left(\nabla_{\mu}U^{\rho}\right)\left(\nabla_{\rho}U_{\nu}\right) \right] =\\
 		&= \frac{1}{2} \left[B_{\mu\rho}B\indices{^{\rho}_{\nu}} - B_{\nu\rho}B\indices{^{\rho}_{\mu}} \right].
 		\end{align*}
-		We can use the decomposition \ref{eq:B-decomposition} to compute the antisymmetric part of \(B_{\mu\rho}B\indices{^{\rho}_{\nu}}\). For that purpose notice that all the quadratic terms are symmetric in \((\mu\nu)\), so we only need to take care of the mixed products. Once again, the product of the \(\theta\)-term with the shear term is symmetric as it corresponds to
+		We can use the decomposition \ref{eq:B-decomposition} to compute the antisymmetric part of \(B_{\mu\rho}B\indices{^{\rho}_{\nu}}\). For that purpose notice that all the quadratic terms are symmetric in \((\mu\nu)\), so we only need to take care of the mixed products. Once again, the product of the \(\theta\)-term with the shear term is symmetric, as it corresponds to
 		\[
 		\frac{\theta}{d - 2}\left[(g_{\mu\rho} - 2U_{(\mu}W_{\rho)}) \sigma\indices{^{\rho}_{\nu}} + \sigma\indices{_{\mu}^{\rho}}(g_{\rho\nu} - 2U_{(\rho}W_{\nu)})\right] \subset B_{\mu\rho}B\indices{^{\rho}_{\nu}}
 		\]
-		We are left with the mixing between the \(\theta\)-term and the vorticity and between shear and vorticity. For the first one, recall that \(B_{\mu\nu}U^{\nu} = 0 B_{\mu\nu}U^{\mu}\) implies that \(\omega_{\mu\nu}U^{\mu} = 0\), so it reduces to
+		We are left with the mixing between the \(\theta\)-term and the vorticity and between shear and vorticity. For the first one, recall that \(B_{\mu\nu}U^{\nu} = 0 = B_{\mu\nu}U^{\mu}\) implies that \(\omega_{\mu\nu}U^{\mu} = 0\), so it reduces to
 		\[
 		\frac{\theta}{d - 2}\left[g_{\mu\rho}\omega\indices{^{\rho}_{\nu}} + \omega\indices{_{\mu}^{\rho}}g_{\rho\nu}\right] = 2 \frac{\theta}{d -2}\omega_{\mu\nu} \subset B_{\mu\rho}B\indices{^{\rho}_{\nu}}
 		\]
@@ -413,7 +413,7 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		\[
 		\vert\theta\vert = \vert\texttt{tr}B\vert \rightarrow \infty \text{ for } \lambda \rightarrow \lambda^{\star}\iff \texttt{det}A \rightarrow 0 \text{ for } \lambda \rightarrow \lambda^{\star}.
 		\]
-		But saying \(\texttt{det}A(\lambda^{\star}) = 0 \) is equivalent to stating that \(A(\lambda^{\star}) \) has non trivial kernel, and hence there exists a non trivial initial data \(V^{\mu}(0)\) for which \(V^{\mu}(\lambda^{\star}) = 0\). This is exactly the definition of \(\gamma(\lambda^{\star})\) being a focal point, so the proof id concluded.
+		But saying \(\texttt{det}A(\lambda^{\star}) = 0 \) is equivalent to stating that \(A(\lambda^{\star}) \) has non trivial kernel, and hence there exists a non trivial initial data \(V^{\mu}(0)\) for which \(V^{\mu}(\lambda^{\star}) = 0\). This is exactly the definition of \(\gamma(\lambda^{\star})\) being a focal point, so the proof is concluded.
 	\end{proof}
 
 	Proposition \ref{prop:fp-criteria-Raychaudhuri} is establishing another criterion for the existence of focal points, which in the proofs of any relativity theorem will play the same role as proposition \ref{prop:fp-criteria}. In this context, studying \ref{eq:Riccati-ineq} has the same effect as analyzing \ref{eq:fp-criteria}, because they are the equations that constrain the quantities of intrests for the existence criteria of focal points, and thus will provide us with quantitive information about what conditions we need for their existence.
@@ -423,8 +423,54 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	
 	Having said that, what stated above is only a broad intuition about why we should prefer one method to the other, but it's worthwhile understanding more deeply the interplay bewteen them, in order to better realize the strenghts and the weaknesses of both.
 	
+	In order to do so, we will now recall the discussion that can be found at the end of section \(2.1\) in \cite{fewster2020new}, but stating it for the null case.
+	The idea is to treat the right hand side of \ref{eq:fp-criteria} as a functional \(J[f]\), and to minimize it on the set of smooth functions obeying 
+	\[
+	\begin{cases}
+	f(0) = 1, \\
+	f(\ell) = 0.
+	\end{cases}
+	\]
+	For this purpose consider any smooth function \(g\), whose support is contained in \(supp_g \subseteq [0,1]\); evaluating \(J\) in \(f + \epsilon g\) it's easy to find:
+	\[
+	J[f + \epsilon g] = J[f] + \epsilon^2J[g] - 2\epsilon\int_{0}^{\ell} d\lambda \left[(n - 2) \frac{D^2f}{D\lambda^2} - fR_{\mu\nu}U^{\mu}U^{\nu}\right] \cdot g.
+	\]
+	It follows that there is at most one stationary point, the solution of
+	\begin{equation}
+	\label{eq:stationary-f}
+		(n - 2) \frac{D^2f}{D\lambda^2} - fR_{\mu\nu}U^{\mu}U^{\nu}(\lambda) = 0 \quad \quad f(0) = 1 \quad f(\ell) = 0;
+	\end{equation}
+	moreover, for the solution of such equation \eqref{eq:stationary-f} it holds
+	\begin{align*}
+	J[f] &= \int_{0}^{\ell} d\lambda \left\lbrace (n - 2) \left(\frac{Df}{D\lambda}\right)^2 +f^2R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \right\rbrace= \\
+%	
+	&= \int_{0}^{\ell} d\lambda \left\lbrace (n - 2) \left(\frac{Df}{D\lambda}\right)^2 +(n - 2)f\frac{D^2f}{D\lambda^2}  \right\rbrace =\\
+%	
+	&= (n - 2) \int_{0}^{\ell} d\lambda \left\lbrace f\frac{D^2f}{D\lambda^2} - f\frac{D^2f}{D\lambda^2} \right\rbrace + \left[(n - 2) f\frac{Df}{D\lambda} \right]_0^{\ell} =\\
+%	
+	&= (2 - n)\frac{Df}{D\lambda}(0).	
+	\end{align*}
 	
-
+	Therefore, a sufficient condition for \eqref{eq:fp-criteria} to hold is that
+	\begin{equation}
+		\label{eq:boundary-f}
+		\frac{Df}{D\lambda}(0) \ge U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\lambda = 0}
+	\end{equation}
+	Now, notice that \eqref{eq:stationary-f} is an equation of the form of the Raychaudhuri's equation. In fact, assuming \(f\) is non vanishing in \((0, \ell)\), we can set 
+	\[
+	\theta \coloneqq (n - 2) \frac{f'}{f} \implies
+	\begin{cases}
+	\eqref{eq:stationary-f} \implies \frac{D\theta}{D\lambda} = -\frac{\theta^2}{n - 2} + R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \\
+	\eqref{eq:boundary-f} \implies \theta(0) \ge U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\lambda = 0}.
+	\end{cases}	
+	\]
+	Instead, from the study of the Raychaudhuri's equation, recall the Riccati inequality \eqref{eq:Riccati-ineq}, and from \ref{lemma:equiv-trapped} we know that \(\theta = U_{\mu}\mathrm{H}^{\mu}\):
+	\[
+	\begin{cases}
+	\eqref{eq:Riccati-ineq} \implies \frac{D\theta}{D\lambda} \le -\frac{\theta^2}{n - 2} - R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \\
+	\text{Lemma }\ref{lemma:equiv-trapped} \implies \theta(0) = U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\lambda = 0}.
+	\end{cases}	
+	\]
 	
 	
 	

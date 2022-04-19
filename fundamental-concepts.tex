@@ -1,5 +1,4 @@
 \section{Geodesics}\label{sec:geodesics}
-\EAK{General comment: it might be useful to number your equations so you are able to cite them}
 
 The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
 
@@ -238,7 +237,7 @@ It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\per
 	
 	\(\mathbf{3) \implies 2)]}\) first of all observe that any causal vector can be written as the sum of \(2\) future-pointing vectors such that \(w^{\mu}= v^{\mu} + t^{\mu}\) where \(v\) is null, and \(t^{\mu} = (t^0, \vec{0})\) (with \(t^0 \ge 0\)). At this point:
 	\[
-	w^{\mu}\mathrm{H}^{\mu} = v^{\mu}\mathrm{H}^{\mu} + \underbrace{t^0 \mathrm{H}^0}_{\le0}
+	w_{\mu}\mathrm{H}^{\mu} = v_{\mu}\mathrm{H}^{\mu} + \underbrace{t^0 \mathrm{H}^0}_{\le0}
 	\]
 	Moreover, by Cauchy-Schwartz we have:
 	\[
@@ -246,7 +245,7 @@ It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\per
 	\]
 \end{proof}
 
-However, the one stated above \ref{def:trapped-surface} is not the definition that has been in use from the beginning of these objects. The most widely used definition is by far the one that passes through the definition of expansion: we will now state this definition for codimension \(2\) spacelike submanifold, and making use of the \emph{null} expansion, but the same idea can be generalized to  amuch larger class of submanifolds. Consider the spacelike codimension \(2\) submanifold \(P\subset M\), and the congruence of \emph{null} geodesics leaving normally from \(P\); call \(U^{\mu}\) the tangent fields.
+However, the one stated above \ref{def:trapped-surface} is not the definition that has been in use from the beginning of the analysis of these objects. The most widely used definition is by far the one that passes through the definition of expansion: we will now state this definition for codimension \(2\) spacelike submanifolds, and making use of the \emph{null} expansion, but the same idea can be generalized to a much larger class of submanifolds. Consider the spacelike codimension \(2\) submanifold \(P\subset M\), and the congruence of \emph{null} geodesics leaving normally from \(P\); call \(U^{\mu}\) the tangent field.
 
 Of course there are \(2\) such congruences: we will call \emph{positive} congruence one of them, and \emph{negative} the other one, whose tangent field - except for riparametrization - will be \(W^{\mu}\). By lemma \ref{lemma:metric-decomposition} we can decompose the metric as 
 \[
@@ -282,6 +281,7 @@ It's clear that for any point of the submanifold we are able to compute the posi
 
 We finally want to prove that the \(2\) defintions are indeed equivalent.
 \begin{lemma}
+	\label{lemma:equiv-trapped}
 	The \(2\) definitions of trapped surface are equivalent.
 \end{lemma}
 \begin{proof}
@@ -296,7 +296,7 @@ We finally want to prove that the \(2\) defintions are indeed equivalent.
 	\[
 	\theta^- = (n - 2) W_{\mu}\mathrm{H}^{\mu}.
 	\]
-	As \(P\) has codimension \(2\), \(U^{\mu}\) and \(W^{\mu}\) are the only indipendent nulll vectors orthogonal to \(P\), and then, by means of lemma \ref{lemma:charact-trapped}, we know that 
+	As \(P\) has codimension \(2\), \(U^{\mu}\) and \(W^{\mu}\) are the only indipendent null vectors orthogonal to \(P\), and then, by means of lemma \ref{lemma:charact-trapped}, we know that 
 	\[
 	\theta^+ , \theta^- < 0 \iff \mathrm{H}^{\mu} \text{ is past-pointing timelike,}
 	\]
@@ -304,7 +304,7 @@ We finally want to prove that the \(2\) defintions are indeed equivalent.
 \end{proof}
 
 \begin{remark}
-	It's worth pointing out that, as Wald states in section \(9.2\) of \cite{wald2010general} about the expansion of a null congruence of geodesics, that there is no natural wat to directly compute \(\theta\), as we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence was orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(R^{2,1}\).
+	It's worth pointing out that, as Wald states in section \(9.2\) of \cite{wald2010general} about the expansion of a null congruence of geodesics, there is no natural way to directly compute \(\theta\), as we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence is orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(R^{2,1}\).
 	%todo: fai disegno sulle note del 17/04
 	\begin{figure}[!h]
 		\centering

@@ -2,16 +2,16 @@
 
 The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
 
-Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentizan metric and \(\nabla\) the Levi-Civita covariant derivative.
-We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms manifold and spacetime intercheangeably, unless otherwise stated.
-The first fundamental definiton we need is:
+Let's start off with some basic concepts derived from differential geometry. We will generally address the spacetime manifold as \(M\), \(g\) its Lorentzian metric and \(\nabla\) the Levi-Civita covariant derivative.
+We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms manifold and spacetime interchangeably, unless otherwise stated.
+The first fundamental definition we need is:
 \begin{definition}
 	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).\\
 \end{definition}    
 
 %\EAK{Below you are talking about timelike geodesics, clarify it and mention that the parametrization is proper time}
 
-Restricting to the case of timelike geodesics parametrized by proper time, we may call \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, and the previous definition is equivalent to the equation:
+Restricting to the case of timelike geodesics parameterized by proper time, we may call \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, and the previous definition is equivalent to the equation:
 
 \begin{equation}
 \label{eq:tang-trans-fields}
@@ -91,7 +91,7 @@ Jacobi fields also have some nice properties we will find helpful in the prosecu
 	Let \(M\) be a submanifold of the semi-Riemannian manifold \(\bar{M}\), and \(j:M\rightarrow\bar{M}\) the inclusion map. Then \(M\) is a \emph{semi-Riemannian submanifold} if the pullback of the metric tensor \(j^*(g)\) is a metric tensor on \(M\).
 \end{definition}
 
-This definiton makes it clear that observers on the submanifold \(M\) agree on the notion of distance as if they were outside the submanifold. Nevertheless, observers within \(M\) see the world differently than observers from the outside: they in fact will inherit \(2\) different connections from their respective notion of metric. 
+This definition makes it clear that observers on the submanifold \(M\) agree on the notion of distance as if they were outside the submanifold. Nevertheless, observers within \(M\) see the world differently than observers from the outside: they in fact will inherit \(2\) different connections from their respective notion of metric. 
 
 The comparison between these \(2\) different Levi-Civita connections gives surge to the \emph{second fundamental form}, which provides an infinitesimal description of the shape of \(M\) within \(\bar{M}\).
 
@@ -100,7 +100,7 @@ In order to introduce this important object notice first of all that:
 \forall p \in M \quad T_p\bar{M} = \underbrace{T_pM}_{\text{vectors tangent to }M}+ \underbrace{T_p(M)^{\perp}}_{\text{vectors orthogonal to } M}
 \]
 
-\noindent and we will generally call \(\Pi_p^{\parallel}\coloneqq d_pj\) and \(\Pi_p^{\perp}\coloneqq \mathbb{1} - d_pj\) the projecive maps on these \(2\) subspaces.
+\noindent and we will generally call \(\Pi_p^{\parallel}\coloneqq d_pj\) and \(\Pi_p^{\perp}\coloneqq \mathbb{1} - d_pj\) the projective maps on these \(2\) subspaces.
 Adopting a similar notation, we can decompose the set of all smooth fields in \(T\bar{M}\) restricted to \(M\) as:
 \[
 \bar{\mathfrak{X}}(M) = \mathfrak{X}(M) + \mathfrak{X}(M)^{\perp}.
@@ -132,7 +132,7 @@ It's evident then that the Levi-Civita connection on \(M\) is missing something 
 	\noindent and in particular is bilinear and symmetric.
 \end{definition}
 
-In order to gain a better understanding of what this object encodes, let's think for a moment about the following example. Given a field \(Y \in \mathfrak{X}(M)\) tangent to a curve \(\alpha\) of \(M\), parametrized by \(s\), we indicate:
+In order to gain a better understanding of what this object encodes, let's think for a moment about the following example. Given a field \(Y \in \mathfrak{X}(M)\) tangent to a curve \(\alpha\) of \(M\), parameterized by \(s\), we indicate:
 \[
 \dot{Y} \coloneqq \frac{\bar{D}Y}{ds} \quad \quad Y' \coloneqq \frac{DY}{ds}
 \]
@@ -141,7 +141,7 @@ It is then easy to prove that:
 \ddot{\alpha} = \alpha'' + \mathrm{I\!I}(\alpha', \alpha')
 \]
 
-and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'' needed to keep a point moving on \(M \subset \bar{M}\), a sort of costraining force. An equivalent interpretation is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
+and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'' needed to keep a point moving on \(M \subset \bar{M}\), a sort of constraining force. An equivalent interpretation is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
 
 %todo: inserisci disegno pag.103 O'Neill
 
@@ -193,7 +193,7 @@ This definition will be particularly important for the proof of Null Singularity
 Finally, let us prove a quick lemma that will be useful here and there throughout the all analysis of the thesis.
 \begin{lemma}
 	\label{lemma:metric-decomposition}
-	Let \(P\) be a spacelike hypersurface of codimension \(2\) and \(\gamma_s\) a congruence of null geodesics leaving normally from \(P\); call \(U^{\mu}\) the (null) tangent vector field and \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 1}\) an orthonormal basis of the tangent space to \(P\). Finally, parallel transoprt \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 2}\) along \(\gamma\) in order to gain \(n - 2\) vector fields \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\). Then there exists a null vector field \(W^{\mu}\) such that the metric can be decomposed as
+	Let \(P\) be a spacelike hypersurface of codimension \(2\) and \(\gamma_s\) a congruence of null geodesics leaving normally from \(P\); call \(U^{\mu}\) the (null) tangent vector field and \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 1}\) an orthonormal basis of the tangent space to \(P\). Finally, parallel transport \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 2}\) along \(\gamma\) in order to gain \(n - 2\) vector fields \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\). Then there exists a null vector field \(W^{\mu}\) such that the metric can be decomposed as
 	\begin{equation}
 		g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
 	\end{equation}
@@ -214,7 +214,7 @@ Finally, let us prove a quick lemma that will be useful here and there throughou
 
 It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\perp}\) to show that
 \begin{lemma} \label{lemma:charact-trapped}
-	assuming \(P\) is a \emph{spacelike} submanifold, the follwoing statements are equivalent:
+	assuming \(P\) is a \emph{spacelike} submanifold, the following statements are equivalent:
 	\begin{enumerate}
 		\item  \(k(v) =g_{\mu\nu}\mathrm{H}^{\mu} v^{\nu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to P.
 		\item  \(k(w) =g_{\mu\nu}\mathrm{H}^{\mu} w^{\nu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to P.
@@ -279,7 +279,7 @@ It's clear that for any point of the submanifold we are able to compute the posi
 	\]
 \end{definition}
 
-We finally want to prove that the \(2\) defintions are indeed equivalent.
+We finally want to prove that the \(2\) definitions are indeed equivalent.
 \begin{lemma}
 	\label{lemma:equiv-trapped}
 	The \(2\) definitions of trapped surface are equivalent.
@@ -296,7 +296,7 @@ We finally want to prove that the \(2\) defintions are indeed equivalent.
 	\[
 	\theta^- = (n - 2) W_{\mu}\mathrm{H}^{\mu}.
 	\]
-	As \(P\) has codimension \(2\), \(U^{\mu}\) and \(W^{\mu}\) are the only indipendent null vectors orthogonal to \(P\), and then, by means of lemma \ref{lemma:charact-trapped}, we know that 
+	As \(P\) has codimension \(2\), \(U^{\mu}\) and \(W^{\mu}\) are the only independent null vectors orthogonal to \(P\), and then, by means of lemma \ref{lemma:charact-trapped}, we know that 
 	\[
 	\theta^+ , \theta^- < 0 \iff \mathrm{H}^{\mu} \text{ is past-pointing timelike,}
 	\]

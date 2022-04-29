@@ -1,19 +1,19 @@
 
 Now that we know what a submanifold is, an important question we might like to answer is \emph{given a submanifold \(P\subset M\) and a point \(q \notin P\), what is the ``best'' path from \(P\) to \(q\)?} 
 
-Here ``best'' means a path that maximizes (or minimizes) some relevant functional of the curves joining \(P\) to \(q\). The most important functional we would like to study is the curve-lenght \(L[\gamma]\): it carries a powerful physical meaning but it turns out to be well-defined and sufficiently differentiable only for families of timelike curves. 
+Here ``best'' means a path that maximizes (or minimizes) some relevant functional of the curves joining \(P\) to \(q\). The most important functional we would like to study is the curve-length \(L[\gamma]\): it carries a powerful physical meaning but it turns out to be well-defined and sufficiently differentiable only for families of timelike curves. 
 
-%Let's not worry for a moment about it: for the study of critical points of the lenght functional the relevant objects are focal points.
+%Let's not worry for a moment about it: for the study of critical points of the length functional the relevant objects are focal points.
 
 \section{Variations of \(E\)}
 
-In this work we would like to study null, or even causal curves: \(L\) is not smooth though so a better choice for what functional to study is the \emph{energy} or \emph{action}. Given a curve \(\gamma : [0, l] \rightarrow M\) affinely parametrized by \(\lambda\), \(E\) is defined as
+In this work we would like to study null, or even causal curves: \(L\) is not smooth though so a better choice for what functional to study is the \emph{energy} or \emph{action}. Given a curve \(\gamma : [0, l] \rightarrow M\) affinely parameterized by \(\lambda\), \(E\) is defined as
 \begin{equation*}
 E[\gamma] \coloneqq \frac{1}{2}\int_{0}^{l} g(\gamma'(\lambda), \gamma'(\lambda))d\lambda;
 \end{equation*}
 this quantity can be proven to vary smoothly for any picewise smooth variation of \(\gamma\), regardless of its causal nature.
 
-%Let \(L[\gamma]\) be the lenght functional of the curve, defined as:
+%Let \(L[\gamma]\) be the length functional of the curve, defined as:
 %\begin{equation*}
 %	L[\gamma] \coloneqq \int_{a}^{b} \vert\vert \dot{\gamma}(\tau) \vert\vert d\tau;
 %\end{equation*}
@@ -22,7 +22,7 @@ this quantity can be proven to vary smoothly for any picewise smooth variation o
 %Given a picewise smooth family of timelike curves \(\zeta(t,s) \equiv \gamma_s(t)\) (with constant speed \(\vert U \vert = 1\)) it is only a matter of simple algebra to compute the first and second variation of \(L\) along the family.
 %\begin{lemma}
 %	\label{lemma:first-L-var}
-%	If \(L\) is the lenght functional of the family \(\zeta:[a,b] \times (-\delta, \delta) \rightarrow M\) of timelike picewise smooth curves, then (take \(U\) and \(V\) as defined in \ref{eq:tang-trans-fields})
+%	If \(L\) is the length functional of the family \(\zeta:[a,b] \times (-\delta, \delta) \rightarrow M\) of timelike picewise smooth curves, then (take \(U\) and \(V\) as defined in \ref{eq:tang-trans-fields})
 %	\begin{align*}
 %		\frac{dL}{ds}\Big\vert_{s = 0} &= \int_{a}^{b} g_{\mu\nu} U^{\mu}\frac{D V^{\nu}}{D t} dt  \\
 %		&=- \int_{a}^{b}  g_{\mu\nu} \frac{D U^{\mu}}{D t} V^{\nu} dt - \sum_{i = 1}^{k} g_{\mu\nu} \Delta U^{\mu}V^{\nu}\Big\vert_{t_i} + g_{\mu\nu} U^{\mu}V^{\nu}\Big\vert^b_a.
@@ -59,7 +59,7 @@ Then, integrating by parts we get
 \begin{equation*}
 	\frac{dE[\gamma_s]}{ds} = \int_{0}^{l} \nabla_U\left(U_{\mu}(\lambda)V^{\mu}\right)(\lambda) d\lambda - \int_{0}^{l} V_{\mu}\nabla_UU^{\mu}(\lambda) d\lambda
 \end{equation*}
- and remembering that the transversial field is always continuous (all the curves are unbroken) we get \eqref{eq:first-E-var}.
+ and remembering that the transversal field is always continuous (all the curves are unbroken) we get \eqref{eq:first-E-var}.
  
  For the second variation we can keep on deriving, and remembering the definition of the Riemann tensor:
  \begin{align*}
@@ -107,7 +107,7 @@ By definition \(E''[\gamma]\) is exactly the Hessian \(\textbf{H}_{\gamma}\): th
 \[
 \textbf{H}_{\gamma}(V, V) = \frac{d^2E[\gamma_s]}{ds^2}\Big\vert_{s = 0}
 \]
-where \(\gamma_s\) is any variation of \(\gamma\) in \(\Omega(P, q)\) with transverial field \(V\).
+where \(\gamma_s\) is any variation of \(\gamma\) in \(\Omega(P, q)\) with transversal field \(V\).
 As we now know that \(\gamma\) needs to be orthogonal to \(P\) we could also write the second variation of \(E\) employing the second fundamental form:
 \begin{equation}
 	\label{eq:hessian}
@@ -134,10 +134,10 @@ We see then that the ``relevant'' set of curves to consider in \(\Omega(P, q)\) 
 	Let \(\gamma\) be a geodesic of \(M\) normal to \(P \subset M\). Then \(\gamma(r)\), where \(r \neq 0\) is a \emph{focal point} of \(P\) along \(\gamma\) provided there is a nonzero \(P\)-Jacobi field \(V\) on \(\gamma\), with \(V(r) = 0\).
 \end{definition}
 
-A focal point of a submanifold \(P\) along a normal geodesic \(\gamma\) is an \emph{almost}-meeting point of nearby \(P\)-normal geodesics \underline{of the same causal character} of \(\gamma\). If \(\gamma\) is nonnull this is obvious by continuity, while if \(\gamma\) is null this is assured by the following:
+A focal point of a submanifold \(P\) along a normal geodesic \(\gamma\) is an \emph{almost}-meeting point of nearby \(P\)-normal geodesics \underline{of the same causal character} of \(\gamma\). If \(\gamma\) is non-null this is obvious by continuity, while if \(\gamma\) is null this is assured by the following:
 \begin{corollary}
 	\label{cor:same-causal-character}
-	Let \(\gamma\) be a null geodesic normal to a submanifold \(P\) of a Lorentizian manifold \(M\). A \(P\)-Jacobi field \(V\) on \(\gamma\) is the vector field of a variation of \(\gamma\) through null geodesics through \(P\) if and only if \(V \perp \gamma\).
+	Let \(\gamma\) be a null geodesic normal to a submanifold \(P\) of a Lorentzian manifold \(M\). A \(P\)-Jacobi field \(V\) on \(\gamma\) is the vector field of a variation of \(\gamma\) through null geodesics through \(P\) if and only if \(V \perp \gamma\).
 \end{corollary}
 
 \begin{proof}
@@ -150,12 +150,12 @@ A focal point of a submanifold \(P\) along a normal geodesic \(\gamma\) is an \e
 	The converse is also true but a bit more complicated to prove, and a formal proof is provided by O'Neill in \cite{o1983semi} in Corollary 10.40.
 \end{proof}
 
-As we have that \(V(0) \perp P\) and \(V(l) = 0\), because we are taking a family of normal geodesics in \(\Omega(P, q)\), we get \(V \perp \gamma\), so we know that when we study variation of \(E\) on a null geodesic \(\gamma\) we can restrict our attention to familys of normal null geodesics.
+As we have that \(V(0) \perp P\) and \(V(l) = 0\), because we are taking a family of normal geodesics in \(\Omega(P, q)\), we get \(V \perp \gamma\), so we know that when we study variation of \(E\) on a null geodesic \(\gamma\) we can restrict our attention to families of normal null geodesics.
 
 We are finally ready to prove the following key result:
 \begin{prop}
 	\label{prop:H-positivity-criteria}
-	Let \(P\) be a spacelike sumbanifold of a Lorentz manifold. If there are no focal points of \(P\) along a normal null geodesic \(\gamma\in\Omega(P,q)\), then \(\textbf{H}_\gamma\) is negative semidefinite on \(T_{\gamma}^{\perp}\Omega = \{V \in T_{\gamma}\Omega \vert V \perp \gamma\}\). Furthermore if \(V \in T_{\gamma}^{\perp}\Omega \) and \(\textbf{H}_\gamma(V, V) = 0\) then \(V\) is tangent to \(\gamma\).
+	Let \(P\) be a spacelike submanifold of a Lorentz manifold. If there are no focal points of \(P\) along a normal null geodesic \(\gamma\in\Omega(P,q)\), then \(\textbf{H}_\gamma\) is negative semidefinite on \(T_{\gamma}^{\perp}\Omega = \{V \in T_{\gamma}\Omega \vert V \perp \gamma\}\). Furthermore if \(V \in T_{\gamma}^{\perp}\Omega \) and \(\textbf{H}_\gamma(V, V) = 0\) then \(V\) is tangent to \(\gamma\).
 \end{prop}
 
 \begin{proof}
@@ -247,7 +247,7 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	In the end, we are finally able to prove this important proposition - also present in \cite{o1983semi} as (10.43), but we state it in the form of \cite{fewster2020new}- which will practically allow us to make use of these methods.
 	\begin{corollary}
 		\label{cor:fp-criteria}
-		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)lenght of \(\gamma\), \(L_V(\gamma)\), as the maximum value reached by an affine parameter \(\lambda\) such that in \(p\) it holds \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) and \(\gamma(\lambda = 0) = p\). It's true that if \(L_{\hat{\mathfrak{H}}} \ge \frac{1}{|\mathfrak{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathfrak{H} = - |\mathfrak{H}|\hat{\mathfrak{H}}\), with \(\hat{\mathfrak{H}}\) future pointing timelike versor).
+		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)length of \(\gamma\), \(L_V(\gamma)\), as the maximum value reached by an affine parameter \(\lambda\) such that in \(p\) it holds \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) and \(\gamma(\lambda = 0) = p\). It's true that if \(L_{\hat{\mathfrak{H}}} \ge \frac{1}{|\mathfrak{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathfrak{H} = - |\mathfrak{H}|\hat{\mathfrak{H}}\), with \(\hat{\mathfrak{H}}\) future pointing timelike versor).
 	\end{corollary}
 
 	\begin{proof}
@@ -257,14 +257,14 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	\end{proof}
 	
 	\section{The Raychaudhuri's equation}
-	The method presented in section \ref{sec:fp-index-forms} is an alternative way to prove the existence of focal points along geodesics: the much more common procedure - used in all the classical proofs of Singularity theorems \cite{penrose1965gravitational} - goes through the Raychadhuri's equation. We are going to present this other method in this section, and then compare it to the one in the previous section, indeed arguing that the former is strictly more powerful than the latter.
+	The method presented in section \ref{sec:fp-index-forms} is an alternative way to prove the existence of focal points along geodesics: the much more common procedure - used in all the classical proofs of Singularity theorems \cite{penrose1965gravitational} - goes through the Raychaudhuri's equation. We are going to present this other method in this section, and then compare it to the one in the previous section, indeed arguing that the former is strictly more powerful than the latter.
 	
-	A discussion similar to the following can be found in many articles and textbooks; for consistecy of notation we will refer to chapter \(9\) of \cite{wald2010general} \VS{and to some lectures given by professor Fewster in Spring \(2019\) for the Advanced GR course at the University of York}.
-	Usually the discussion is conducted for the timelike case, and then generalized to the null case by claming it's analogous. Here instead we shall start directly from the null case and give the full details of the analysis.
+	A discussion similar to the following can be found in many articles and textbooks; for consistency of notation we will refer to chapter \(9\) of \cite{wald2010general} \VS{and to some lectures given by professor Fewster in Spring \(2019\) for the Advanced GR course at the University of York}.
+	Usually the discussion is conducted for the timelike case, and then generalized to the null case by claiming it's analogous. Here instead we shall start directly from the null case and give the full details of the analysis.
 	
-	As usal, start from a codimension \(2\) spacelike submanifold \(P\) and consider \(P\)-Jacobi fields on a normal null curve \(\gamma \perp P\) (parametrized by the affine parameter \(\lambda\)), with transverse field \(V^{\mu}\) and tangent field \(U^{\mu}\).
+	As usual, start from a codimension \(2\) spacelike submanifold \(P\) and consider \(P\)-Jacobi fields on a normal null curve \(\gamma \perp P\) (parameterized by the affine parameter \(\lambda\)), with transverse field \(V^{\mu}\) and tangent field \(U^{\mu}\).
 	\begin{remark}
-		In \cite{wald2010general} Wald, when referring to the null case, specifies that if \(V^{\mu}\) is a Jacobi field, then also \(V^{\mu} + (a + b\lambda) U^{\mu}\) is a Jacobi field - where \(a\) and \(b\) are some real constants - and wants to consider the quotient of the space of Jacobi fields \(\Omega (P,q)\) by this equivalence relation. Notice that the space of \(P\)-Jacobi fields is already a set of good representatives, and then can be reconducted to the quotient above mentioned; by restricting to study only \(P-\)Jacobi fields from the beginning we can simply forget about the equivalence relation and the discussion won't loose its general character.
+		In \cite{wald2010general} Wald, when referring to the null case, specifies that if \(V^{\mu}\) is a Jacobi field, then also \(V^{\mu} + (a + b\lambda) U^{\mu}\) is a Jacobi field - where \(a\) and \(b\) are some real constants - and wants to consider the quotient of the space of Jacobi fields \(\Omega (P,q)\) by this equivalence relation. Notice that the space of \(P\)-Jacobi fields is already a set of good representatives, and then can be reconnected to the quotient above mentioned; by restricting to study only \(P-\)Jacobi fields from the beginning we can simply forget about the equivalence relation and the discussion won't loose its general character.
 	\end{remark}
 
 	Consider the velocity gradient (with the Levi-Civita connection): this forms a tensor field
@@ -291,12 +291,12 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	\theta = - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu} B_{\mu\nu}.
 	\]
 	\begin{remark}
-		Here we have decomposed \(B_{\mu\nu}\) in its spin \(0, 1\) and \(2\) components, but we are not talking about the represantation of the usual Lorentz group: here we need \(\theta\) to be a singlet for any linear transformation that leaves \(- \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\) invariant. In particular, any contraction or dilatation in the \(U^{\mu}\) or \(W^{\mu}\) direction is part of the group we are representing.
+		Here we have decomposed \(B_{\mu\nu}\) in its spin \(0, 1\) and \(2\) components, but we are not talking about the representation of the usual Lorentz group: here we need \(\theta\) to be a singlet for any linear transformation that leaves \(- \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\) invariant. In particular, any contraction or dilatation in the \(U^{\mu}\) or \(W^{\mu}\) direction is part of the group we are representing.
 		
-		This, in some sense, is a way of saying that we care about a larger group of transformations: the important features is that they are isometries on \(P\), but the normal geodesics can be reparametrized, contracted or dilatated.
+		This, in some sense, is a way of saying that we care about a larger group of transformations: the important features is that they are isometries on \(P\), but the normal geodesics can be reparameterized, contracted or dilated.
 	\end{remark}
 	
-	At this point we can compute the evolution equations for these \(3\) quantities; such equations are called Raychadhuri's equation.
+	At this point we can compute the evolution equations for these \(3\) quantities; such equations are called Raychaudhuri's equation.
 	We are particularly interested in the ones for the expansion and the vorticity, so we will omit the one for the shear.
 	
 	\begin{align}
@@ -326,7 +326,7 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 			&= \nabla_{\mu}\underbrace{\left(U^{\nu}\nabla_{\nu}U^{\mu}\right)}_{0} - \left(\nabla_{\mu}U^{\nu}\right)\left(\nabla_{\nu}U^{\mu}\right) - R_{\alpha\beta}U^{\alpha}U^{\beta} =\\
 			&= - B\indices{^{\nu}_{\mu}}B\indices{^{\mu}_{\nu}} - R_{\alpha\beta}U^{\alpha}U^{\beta}.
 		\end{align*}
-		Now, simply plugging in \eqref{eq:B-decomposition}, and using the simmetries and \eqref{eq:trace-shear} and \eqref{eq:trace-vorticity}, one easily obtains \eqref{eq:Raychadhuri-theta}.
+		Now, simply plugging in \eqref{eq:B-decomposition}, and using the symmetries and \eqref{eq:trace-shear} and \eqref{eq:trace-vorticity}, one easily obtains \eqref{eq:Raychadhuri-theta}.
 		
 		Similarly, we can compute
 		\begin{align*}
@@ -343,7 +343,7 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		\[
 		\frac{\theta}{d - 2}\left[g_{\mu\rho}\omega\indices{^{\rho}_{\nu}} + \omega\indices{_{\mu}^{\rho}}g_{\rho\nu}\right] = 2 \frac{\theta}{d -2}\omega_{\mu\nu} \subset B_{\mu\rho}B\indices{^{\rho}_{\nu}}
 		\]
-		Finally the mixing term of shear and vorticity - using the antisimmetry of \(\omega_{\mu\nu}\) - simply corresponds to 
+		Finally the mixing term of shear and vorticity - using the antisymmetry of \(\omega_{\mu\nu}\) - simply corresponds to 
 		\[
 		\omega_{\mu\rho} \sigma\indices{^{\rho}_{\nu}} + \sigma_{\mu\rho} \omega\indices{^{\rho}_{\nu}} = 2 \sigma\indices{^{\rho}_{[\nu}}\omega\indices{_{\mu]\rho}} \subset B_{\mu\rho}B\indices{^{\rho}_{\nu}}.
 		\]
@@ -370,11 +370,11 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		\[
 		g^{\mu\nu} = U^{\mu}W^{\nu} + U^{\nu}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}
 		\]
-		This means that the transversial field of the congruence, that must be a \(P\)-Jacobi field, can be written as:
+		This means that the transversal field of the congruence, that must be a \(P\)-Jacobi field, can be written as:
 		\[
 		V^{\mu} = V^iE_i^{\mu} \quad \text{ where } \quad V^i = E^i_{\mu}V^{\mu};
 		\]
-		moreover we already know that \(\frac{D}{D\lambda}V^{\mu} = B\indices{^{\mu}_{\nu}}V^{\nu}\), so expanding in the above mentioned basis, and remembering that the \(\{E_i^{\mu}\}\) are parallell transported, we get:
+		moreover we already know that \(\frac{D}{D\lambda}V^{\mu} = B\indices{^{\mu}_{\nu}}V^{\nu}\), so expanding in the above mentioned basis, and remembering that the \(\{E_i^{\mu}\}\) are parallel transported, we get:
 		\begin{equation}
 		\label{eq:1st-order-V_i}
 			\frac{D}{D\lambda}V^i = \frac{D}{D\lambda}\left(E^i_{\mu}V^{\mu}\right) = E^i_{\mu}\frac{D}{D\lambda}V^{\mu} = E^i_{\mu}B\indices{^{\mu}_{\nu}}E_j^{\nu}V^j = \mathrm{B}\indices{^i_j}V^j.
@@ -394,16 +394,16 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		\[
 		\frac{D}{D\lambda}A\indices{^i_j} = \mathrm{B}\indices{^i_k}A\indices{^k_j}
 		\]
-		It is a well-known fact of linear algebra that this implies the following differential equation for the determinant: %(provided \(A\) is non singular) forse non serve. Se serve il Wald sistema a pag. 226.
+		It is a well-known fact of linear algebra that this implies the following differential equation for the determinant: %(provided \(A\) is non singular) forse non serve. Se serve il Wald sistema a pag. 226. Dai un'occhio anche a Hawking ed Ellis.
 		\begin{equation}
 		\label{eq;det-A}
 			\frac{D}{D\lambda}\texttt{det}A = \texttt{tr}\mathrm{B}\cdot \texttt{det}A 
 		\end{equation}
 		We are now able to make the following observations:
 		\begin{itemize}
-			\item[\ding{99}] If \(\theta = \texttt{tr}\mathrm{B}\) is bounded in \([0, \lambda_0]\), there mustn't be any \(\lambda \in [0, \lambda_0]\) for which \(\texttt{det}A(\lambda) = 0\); otheriwse \(\texttt{det}A = 0\) on the all interval, contradicting the fact that \(A(0) = \mathbb{1}\). It follows that \(\texttt{det}A\) can vanish for \(\lambda \rightarrow \lambda^{\star}\) only if \(\vert\texttt{tr}\mathrm{B}\vert \rightarrow \infty\) for \(\lambda \rightarrow \lambda^{\star}\).
+			\item[\ding{99}] If \(\theta = \texttt{tr}\mathrm{B}\) is bounded in \([0, \lambda_0]\), there mustn't be any \(\lambda \in [0, \lambda_0]\) for which \(\texttt{det}A(\lambda) = 0\); otherwise \(\texttt{det}A = 0\) on the all interval, contradicting the fact that \(A(0) = \mathbb{1}\). It follows that \(\texttt{det}A\) can vanish for \(\lambda \rightarrow \lambda^{\star}\) only if \(\vert\texttt{tr}\mathrm{B}\vert \rightarrow \infty\) for \(\lambda \rightarrow \lambda^{\star}\).
 			%Se detA = 0 allora A e' singolare e in teoria non si puo' usare l'equazione. Nella pratica  si puo' fare lo stesso, osservando che se trB \`e limitato detA non pu\`o andare troppo vicino a 0, altrimenti non riesco a fare det
-			\item[\ding{99}] At the same time, substituiting the definition of \(A\) into \eqref{eq:Jacobi-E_i} one gets
+			\item[\ding{99}] At the same time, substituting the definition of \(A\) into \eqref{eq:Jacobi-E_i} one gets
 			\[
 			\frac{D^2 A}{D\lambda^2} = \mathrm{R}A \quad \text{ where } R\indices{^i_j} = E^i_{\mu}R\indices{^{\mu}_{\alpha\beta\nu}}U^{\alpha}U^{\beta}E_j^{\nu}
 			\]
@@ -416,12 +416,12 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 		But saying \(\texttt{det}A(\lambda^{\star}) = 0 \) is equivalent to stating that \(A(\lambda^{\star}) \) has non trivial kernel, and hence there exists a non trivial initial data \(V^{\mu}(0)\) for which \(V^{\mu}(\lambda^{\star}) = 0\). This is exactly the definition of \(\gamma(\lambda^{\star})\) being a focal point, so the proof is concluded.
 	\end{proof}
 
-	Proposition \ref{prop:fp-criteria-Raychaudhuri} is establishing another criterion for the existence of focal points, which in the proofs of any relativity theorem will play the same role as proposition \ref{prop:fp-criteria}. In this context, studying \ref{eq:Riccati-ineq} has the same effect as analyzing \ref{eq:fp-criteria}, because they are the equations that constrain the quantities of intrests for the existence criteria of focal points, and thus will provide us with quantitive information about what conditions we need for their existence.
+	Proposition \ref{prop:fp-criteria-Raychaudhuri} is establishing another criterion for the existence of focal points, which in the proofs of any relativity theorem will play the same role as proposition \ref{prop:fp-criteria}. In this context, studying \ref{eq:Riccati-ineq} has the same effect as analyzing \ref{eq:fp-criteria}, because they are the equations that constrain the quantities of interests for the existence criteria of focal points, and thus will provide us with quantitative information about what conditions we need for their existence.
 	
 	\section{A comparison between two methods}
 	It is clear that the \(2\) criteria \ref{prop:fp-criteria} and \ref{prop:fp-criteria-Raychaudhuri} developed so far are equivalent, in the sense that if \(\vert\theta\vert \rightarrow \infty\) then \eqref{eq:fp-criteria} must hold and vice-versa, but the \(2\) methods differ dramatically when it comes to the practical use we can make of them. The core point is that, if in the former method we have to study an integral problem, for the latter we have to work on a differential problem: it's already evident that it is much harder to state something about a quantity \emph{at each point} of the manifold, rather than working out some information about \emph{the average} over a suitable region of spacetime.
 	
-	Having said that, what stated above is only a broad intuition about why we should prefer one method to the other, but it's worthwhile understanding more deeply the interplay bewteen them, in order to better realize the strenghts and the weaknesses of both.
+	Having said that, what stated above is only a broad intuition about why we should prefer one method to the other, but it's worthwhile understanding more deeply the interplay between them, in order to better realize the strengths and the weaknesses of both.
 	
 	In order to do so, we will now recall the discussion that can be found at the end of section \(2.1\) in \cite{fewster2020new}, but stating it for the null case.
 	The idea is to treat the right hand side of \ref{eq:fp-criteria} as a functional \(J[f]\), and to minimize it on the set of smooth functions obeying 

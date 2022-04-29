@@ -1,6 +1,6 @@
 \section{Asymptotically flat spacetime}
 For this section we refer mainly to chapter \(11\) of \cite{wald1991general}, entirely dedicated to this class of spacetimes.
-Here we are interested only to grasp the idea of the definition and understand why it's a fundamental concept, needed to lay the basis for good definitions of black holes and related objects, even if the idea of asymptotic flateness is interesting by itself.
+Here we are interested only to grasp the idea of the definition and understand why it's a fundamental concept, needed to lay the basis for good definitions of black holes and related objects, even if the idea of asymptotic flatness is interesting by itself.
 
 Once again, the definition of this concept is rather subtle: the intuitive idea would be to specify some fall-off rates with which the metric \(g_{\mu\nu}\) ``tends to'' the flat metric  \(\eta_{\mu\nu}\). However, we no longer have a background flat metric, in terms of which the fall-off rates can be specified; in particular, generally there is no global inertial reference frame where to define a preferred radial coordinate \(r\).
 
@@ -8,16 +8,16 @@ One way to work around this problems is to ask for the existence of \emph{any} s
 Even if this definition  is capturing the main idea, it is difficult to work with it because the coordinate invariance of any statement is not immediate, and must be carefully verified.
 Furthermore, usually we are interested in taking the limit ``\(r \rightarrow +\infty\)'', but the above notion of asymptotic flatness does not specify precisely how such limits are to be taken.
 
-These diffulties have been solved by formulating the notion of asymptotic flatness making use of ``points at infinity'' that can be ``added'' to the spacetime in a suitable way. This, indeed, is manifestly coordinate independent and, providing some definite boundary points that represent the limit to infinity, eliminates the difficulties of defining a direction where to take such a limit.
+These difficulties have been solved by formulating the notion of asymptotic flatness making use of ``points at infinity'' that can be ``added'' to the spacetime in a suitable way. This, indeed, is manifestly coordinate independent and, providing some definite boundary points that represent the limit to infinity, eliminates the difficulties of defining a direction where to take such a limit.
 
-\subsection{A userful example: Radiation in Minkowski spacetime}
+\subsection{A useful example: Radiation in Minkowski spacetime}
 Let's start analyzing an example, to make it clear what are the difficulties for the formulation of this concept, and to understand why the idea of ``adding a point to infinity'' is particularly clever.
 
 In spherical coordinates the metric of flat space takes the form:
 \[
 ds^2 = dt^2 - dr^2 - r^2(d\theta^2 + \sin^2\theta d\phi^2)
 \]
-Closely following what Wald \cite{wald2010general} shows, suppose we want to study properties of radiation carried to infinity by a massless field, such as a Klein-Gordon scalar field \(\varphi\). Since this means taking limits, going to inifinity along null directions, it is convenient to introduce advanced and retarded null coordinates
+Closely following what Wald \cite{wald2010general} shows, suppose we want to study properties of radiation carried to infinity by a massless field, such as a Klein-Gordon scalar field \(\varphi\). Since this means taking limits, going to infinity along null directions, it is convenient to introduce advanced and retarded null coordinates
 \[
 \begin{cases}
 	 v = t + r\\
@@ -28,33 +28,33 @@ ds^2 = dudv - \frac{(v - u)^2}{4}(d\theta^2 + \sin^2\theta d\phi^2).
 \]
 Suppose we are concerned in analyzing outgoing radiation for example: then, keeping \(u\) fixed, we would like to compute what happens to out physical field \(\varphi\) in the limit \(v \rightarrow +\infty\), and extract information about the radiation.
 
-Howeve, taking such limit is a procedure that does not easily generalize to curved spacetime: it would be a lot easier if infinity was some definite ``place''. Well - no problem, you might say - it would be enough to perform the change of coordinates \(V\coloneqq \frac{1}{v}\), and then evaluate the quantities of intrest at \(V = 0\). However, the spacetime metric components now look like:
+However, taking such limit is a procedure that does not easily generalize to curved spacetime: it would be a lot easier if infinity was some definite ``place''. Well - no problem, you might say - it would be enough to perform the change of coordinates \(V\coloneqq \frac{1}{v}\), and then evaluate the quantities of interest at \(V = 0\). However, the spacetime metric components now look like:
 \[
 ds^2 = -\frac{1}{V^2}dudV - \frac{1}{4}\left(\frac{1}{V} - u\right)^2 (d\theta^2 + \sin^2\theta d\phi^2)
 \]
 
-These components are singular at \(V = 0\), so we cannot extend the spacetime metric there, and then we are not abe to perform any tensor analysis at \(V = 0\) as though it was an ordinary ``place''. 
+These components are singular at \(V = 0\), so we cannot extend the spacetime metric there, and then we are not able to perform any tensor analysis at \(V = 0\) as though it was an ordinary ``place''. 
 
 Now, consider instead a new, unphysical, metric \(\bar{g}_{\mu\nu}\), conformally flat with conformal factor \(\Omega = V\). Then, in these coordinates, the line element becomes
 \[
 d\bar{s}^2 = -dudV - \frac{1}{4}\left(1- uV\right)^2 (d\theta^2 + \sin^2\theta d\phi^2)
 \]
-and these components are well behaved in \(V = 0\). Thus, it makes sense to extend the Minkowsky manifold, by ''adding in'' the points represented by \(V = 0\).
+and these components are well behaved in \(V = 0\). Thus, it makes sense to extend the Minkowski manifold, by ''adding in'' the points represented by \(V = 0\).
 \begin{remark}
-	The originally flat space \((\R^4, \eta_{\mu\nu})\) is inextendible as a spacetime, and in fact cannot be smoothly continued to \(V = 0\). This new unphysical spacetime \((\bar{M},\bar{g}_{\mu\nu} )\), is a different spacetime, only conformally equivalent to Minkowsky, and can be extended at \(V = 0\).
+	The originally flat space \((\R^4, \eta_{\mu\nu})\) is unextendable as a spacetime, and in fact cannot be smoothly continued to \(V = 0\). This new unphysical spacetime \((\bar{M},\bar{g}_{\mu\nu} )\), is a different spacetime, only conformally equivalent to Minkowski, and can be extended at \(V = 0\).
 \end{remark}
-The idea is that here we have brought infinity to a ``finite'' distance by means of a conformal transformation, so we have become able to state precisely ``where infinity lies'' and we can perform tensor anaylsis.
+The idea is that here we have brought infinity to a ``finite'' distance by means of a conformal transformation, so we have become able to state precisely ``where infinity lies'' and we can perform tensor analysis.
 
-Is that the end of all our problems? Can we now evaluate any tensor at \(V = 0\) using tensors built by \(\bar{g}_{\mu\nu}\), and forget about the original Minkowsky space?
+Is that the end of all our problems? Can we now evaluate any tensor at \(V = 0\) using tensors built by \(\bar{g}_{\mu\nu}\), and forget about the original Minkowski space?
 Well, not exactly...
 
-\noindent As said, this new space is unphysical, so we need to translate back any result in the original spacetime, and during such translation we would crash into the fact that the conversion factor \(\Omega = V= \frac{1}{v}\) hoplessly blows up for \(v \rightarrow 0\).
+\noindent As said, this new space is unphysical, so we need to translate back any result in the original spacetime, and during such translation we would crash into the fact that the conversion factor \(\Omega = V= \frac{1}{v}\) hopelessly blows up for \(v \rightarrow 0\).
 
 Furthermore, we have found a new way to take the limit to ``future null infinity'', but it is not clear how to generalize it in the case we also want to go towards ``past null infinity'' (\(u \rightarrow -\infty\) and \(v\) fixed). However, all of these drawbacks can be remedied by a more judicious choice of the conformal transformation. Let's consider:
 \[
 \tilde{g}_{\mu\nu} = \Omega^2 g_{\mu\nu} \quad\quad \Omega^2 = \frac{4}{(1 + v^2)^{-1}(1 + u^2)^{-1}} 
 \]
-Now \(\tilde{g}_{\mu\nu}\) can be smoothly extended to a ``larger'' spacetime, such that the boundary of the Minkowsky region in this larger spacetime, provides us with an appropriate representation of ``infinity''.
+Now \(\tilde{g}_{\mu\nu}\) can be smoothly extended to a ``larger'' spacetime, such that the boundary of the Minkowski region in this larger spacetime, provides us with an appropriate representation of ``infinity''.
 It can be easily seen by taking the change of coordinates
 \[
 \begin{cases}
@@ -72,10 +72,10 @@ R = \tan^{-1}v - \tan^{-1}u \text{ with } -\pi \le T - R \le \pi \text{ and } R 
 \subsection{Definition of asymptotic flatness}
 Remarkably, the line element in \eqref{eq:Einstein-static-metric} is exactly the natural Lorentz metric on \(S^3 \times \R\), better known as \emph{Einstein static universe}. Then we have learned the following, interesting fact:
 \begin{prop}
-	There exists a conformal isometry of Minkowsky spacetime \((\R^4, \eta_{\mu\nu})\) into an open region \(O\) of the Einstein static universe \((S^3 \times \R, \tilde{g}_{\mu\nu})\)
+	There exists a conformal isometry of Minkowski spacetime \((\R^4, \eta_{\mu\nu})\) into an open region \(O\) of the Einstein static universe \((S^3 \times \R, \tilde{g}_{\mu\nu})\)
 \end{prop}
 
-This allows us to define what we mean by ``conformal infinity'' of Minkowsky space, with which we refer to the boundary \(\partial O\) of the open region \(O\).
+This allows us to define what we mean by ``conformal infinity'' of Minkowski space, with which we refer to the boundary \(\partial O\) of the open region \(O\).
 %todo: add drawing  pag. 273 of Wald
 \begin{figure}
 	\centering
@@ -93,38 +93,38 @@ As illustrated in figure \ref{fig:Einstein-static-universe}, this boundary \(\pa
 	\item \emph{Future timelike infinity} \(i^{+}\), the ``top vertex point'' given by the coordinates \((R = 0, T = \pi)\).
 \end{enumerate}
 
-It can be noticed that all timelike geodesics of Minkowsky spacetime begin at \(i^-\) and end at \(i^+\), null geodesics go from \(\mathscr{I}^-\) to \(\mathscr{I}^+\), while spacelike geodesics begin and end at \(i^0\).
+It can be noticed that all timelike geodesics of Minkowski spacetime begin at \(i^-\) and end at \(i^+\), null geodesics go from \(\mathscr{I}^-\) to \(\mathscr{I}^+\), while spacelike geodesics begin and end at \(i^0\).
 
-From this definiton of conformal infinity of Minkowsky spacetime it's possible formulate precise asymptotic conditions on physical fields representing the exterior field resulting from a localized source, simply requiring that a suitable power of the conformal factor \(\Omega^{-1}\) (the exact power depends on the stringency of the asymptotic condition and on the physical field under consideration), times the field itself can be extended to conformal infinity \(\partial O\) in a suitably well-behaved manner.
+From this definition of conformal infinity of Minkowski spacetime it's possible formulate precise asymptotic conditions on physical fields representing the exterior field resulting from a localized source, simply requiring that a suitable power of the conformal factor \(\Omega^{-1}\) (the exact power depends on the stringency of the asymptotic condition and on the physical field under consideration), times the field itself can be extended to conformal infinity \(\partial O\) in a suitably well-behaved manner.
 
-WIth these conditions, quantities which used to be the result of limits such as \(r\rightarrow +\infty\) or \(v\rightarrow \infty\) are now represented as ordinary tensor fields on \(\partial O\). This is a very satisfactory solution to the second problem that was pointed out in the introduction of this section, namely in which direction the limit to spatial infinity should be taken.
+With these conditions, quantities which used to be the result of limits such as \(r\rightarrow +\infty\) or \(v\rightarrow \infty\) are now represented as ordinary tensor fields on \(\partial O\). This is a very satisfactory solution to the second problem that was pointed out in the introduction of this section, namely in which direction the limit to spatial infinity should be taken.
 
 We then turn to the first problem, defining the notion of \emph{asymptotically flat} curved spacetime.
 
-The key idea is exactly that the ability to peform an immersion of Minkowsky spacetime into Einstein static universe via a conformal isometry crucially depends on the property ``at infinity'' of the spacetime. The idea is then to \emph{define} a spacetime to be \emph{asymptotically flat} if we can perform any similar contruction, namely if there is aa conformal isometry that maps the original spacetime into an ``unphysical'' manifold \((\tilde{M}, \tilde{g}_{\mu\nu})\) with properties similar to the Minkowsky case.
-In this way we would clearly solve both problems mentioned at the beginning of the section, since we would have a manifestly invariant formulation of asymptotic flatness, and we have a precise framework to define the conept of ``infinity''.
+The key idea is exactly that the ability to perform an immersion of Minkowski spacetime into Einstein static universe via a conformal isometry crucially depends on the property ``at infinity'' of the spacetime. The idea is then to \emph{define} a spacetime to be \emph{asymptotically flat} if we can perform any similar construction, namely if there is a conformal isometry that maps the original spacetime into an ``unphysical'' manifold \((\tilde{M}, \tilde{g}_{\mu\nu})\) with properties similar to the Minkowski case.
+In this way we would clearly solve both problems mentioned at the beginning of the section, since we would have a manifestly invariant formulation of asymptotic flatness, and we have a precise framework to define the concept of ``infinity''.
 
 \begin{remark}
-	However, there are some differences that must be pointed out with respect to the Minkowsky spacetime. There are mainly \(2\) important remarks:
+	However, there are some differences that must be pointed out with respect to the Minkowski spacetime. There are mainly \(2\) important remarks:
 	\begin{enumerate}[label=(\Roman*)]
-		\item We don't want to impose that a spacetime becomes flat at a ``\emph{fixed} position at early or late times'', therefore we cannot expect timelike future \(i^{+}\) or past infinity \(i^{-}\) to be similar to those of Minkowsky. Then, we won't ask for any restriction on the structure of curved spacetime related to the presence of these \(2\) points.
-		\item  Even if we want to impose the metric to become flat at spatial infinity, smoothness - or even differentiability- are too strong requirements. Then, even if the conformal infinity of asymptotically flat spacetimes is required to contain \(i^0\), the smoothness properties that hold in the Minkowsky case must be significantly weakened.
+		\item We don't want to impose that a spacetime becomes flat at a ``\emph{fixed} position at early or late times'', therefore we cannot expect timelike future \(i^{+}\) or past infinity \(i^{-}\) to be similar to those of Minkowski. Then, we won't ask for any restriction on the structure of curved spacetime related to the presence of these \(2\) points.
+		\item  Even if we want to impose the metric to become flat at spatial infinity, smoothness - or even differentiability- are too strong requirements. Then, even if the conformal infinity of asymptotically flat spacetimes is required to contain \(i^0\), the smoothness properties that hold in the Minkowski case must be significantly weakened.
 	\end{enumerate}
 \end{remark}
 
-All what has been said up to here is enough to give us the fundamental ideas with which we will need to work, but for the sake of completness we conclude this section providing a formal definition of asymptotic flatness. The reader interested in further comments can refer to the already cited chapter \(11\) of \cite{wald2010general}, or even to the rather technical discussion of Ashtekar \emph{et.al} \cite{ashtekar1978unified}.
+All what has been said up to here is enough to give us the fundamental ideas with which we will need to work, but for the sake of completeness we conclude this section providing a formal definition of asymptotic flatness. The reader interested in further comments can refer to the already cited chapter \(11\) of \cite{wald2010general}, or even to the rather technical discussion of Ashtekar \emph{et.al} \cite{ashtekar1978unified}.
 \begin{definition}
-	A vacuum spacetime is called \emph{asymptotically flat at null and spatial infinity} if there exists a spacetime \((\tilde{M}, \tilde{g}_{\mu\nu})\), with \(\tilde{g}_{\mu\nu}\) \(C^{\infty}\) everywhere except possibly at a point \(i^0\) where it needs to be \(C^{>0}\), and a conformal isometry \(\psi: M \rightarrow \psi(M)\subset \tilde{M}\) with conformal factor \(\Omega\), so that the following confitions are satisfied:
+	A vacuum spacetime is called \emph{asymptotically flat at null and spatial infinity} if there exists a spacetime \((\tilde{M}, \tilde{g}_{\mu\nu})\), with \(\tilde{g}_{\mu\nu}\) \(C^{\infty}\) everywhere except possibly at a point \(i^0\) where it needs to be \(C^{>0}\), and a conformal isometry \(\psi: M \rightarrow \psi(M)\subset \tilde{M}\) with conformal factor \(\Omega\), so that the following conditions are satisfied:
 	\begin{enumerate}[label=(\arabic*)]
 		\item The first condition is needed to state that in fact \(i^0\) represents exactly spatial infinity: \(\bar{J^+}(i^0) \cup \bar{J^-}(i^0) = \tilde{M} \setminus M\). Here \(\bar{J^+}(i^0)\) is the closure of \(J^+(i^0)\) and for notational simplicity we write \(M\) instead of \(\psi(M)\). Then \(i^0\) is spacelike related to any point in \(\dot{M}\), and the boundary \(\partial M\) is made of the union  of \(i^0\), \(\mathscr{I}^+ \coloneqq \partial J^+(i^0) \setminus i^0\) and \(\mathscr{I}^- \coloneqq \partial J^-(i^0) \setminus i^0\).
-		\item We need to rewuire that no causal pathologies occurr near infinity; namely there exists an open neighborhood \(V\) of \(\partial M = i^0 \cup \mathscr{I}^+ \cup \mathscr{I}^-\) such that the spacetime \((V, \tilde{g}_{\mu\nu})\) is strongly causal.
+		\item We need to require that no causal pathologies occur near infinity; namely there exists an open neighborhood \(V\) of \(\partial M = i^0 \cup \mathscr{I}^+ \cup \mathscr{I}^-\) such that the spacetime \((V, \tilde{g}_{\mu\nu})\) is strongly causal.
 		\item We want \(\Omega\) to be well defined near infinity, so we ask it to be able to be extended to a function on all \(\tilde{M}\) so that it is \(C^2\) at \(i^0\) and \(C^{\infty}\) anywhere else.
 		\item \begin{enumerate}
 			\item \(\Omega = 0\) at \(\mathscr{I}^+\) and \(\mathscr{I}^-\), with \(\tilde{\nabla}_{\mu} \Omega = 0\).
 			\item \(\Omega = 0\) at \(i^0\), with \(\lim_{i^0} \tilde{\nabla}_{\mu} \Omega = 0\) and \(\lim_{i^0} \tilde{\nabla}_{\mu} \tilde{\nabla}_{\nu}\Omega = 2\tilde{g}_{\mu\nu}(i^0)\).
 			\end{enumerate}
 			The requirement of \(\Omega\) vanishing on \(\partial M\) is saying that at those points an ``infinite stretching'' is involved in going from the unphysical \(\tilde{g}_{\mu\nu}\) to the physical \(g_{\mu\nu}\), so \(i^0\), \(\mathscr{I}^-\) and \(\mathscr{I}^+\) truly represent the infinity of the physical spacetime. Furthermore the requirements on the derivatives of \(\Omega\) imply that the physical metric becomes flat at as one goes to infinity.
-		\item Finally, the last requirement is really a techinal hypothesis, which is sort of stating that \(\mathscr{I}^+\) and \(\mathscr{I}^-\) have the ``right size''.
+		\item Finally, the last requirement is really a technical hypothesis, which is sort of stating that \(\mathscr{I}^+\) and \(\mathscr{I}^-\) have the ``right size''.
 		\begin{enumerate}
 			\item The map of null directions at \(i^0\) into the space of integral curves of \(n^{\mu} = \tilde{g}^{\mu\nu} \tilde{\nabla}_{\nu}\Omega\) on  \(\mathscr{I}^+\) and \(\mathscr{I}^-\) is a diffeomorphism. This is needed to say that \(\mathscr{I}^+\) and \(\mathscr{I}^-\) have topology \(S^2\times\R\).
 			\item For any smooth function \(\omega\) on \(\tilde{M} \setminus i^0\), with \(\omega > 0\) on \(M \cup \mathscr{I}^+ \cup \mathscr{I}^- \) and such that \(\tilde{\nabla}_{\mu}(\omega^4n^{\mu}) = 0\) on \(\mathscr{I}^+ \cup \mathscr{I}^-\), the associated vector field \(\omega^{-1}n^{\mu}\) is complete over \(\mathscr{I}^+ \cup \mathscr{I}^-\). This condition is saying that ``all \(\mathscr{I}^+\) and \(\mathscr{I}^-\) are present'' in the conformally completed spacetime.
@@ -157,14 +157,14 @@ Now,
 	and the boundary of \(B\) is called the \emph{event horizon} \(H\coloneqq \partial J^-(\mathscr{I}^+) \cap M \).
 \end{definition}
 
-Let us make a couple of remarks of why it is important to make some assumptions to give the definiton of such objects.
+Let us make a couple of remarks of why it is important to make some assumptions to give the definition of such objects.
 
 \begin{remark}
 	\begin{enumerate}[label=(\Roman*)]
-		\item The notion of asymptotic flatness is needed to specify a definiton of the ``infinity'' that observers trapped in a black hole don't have any hope to reach anymore. The definition might be extended in some cases where a suitable notion of ``infinity'' is provided, but we are not able to say anything in general.
+		\item The notion of asymptotic flatness is needed to specify a definition of the ``infinity'' that observers trapped in a black hole don't have any hope to reach anymore. The definition might be extended in some cases where a suitable notion of ``infinity'' is provided, but we are not able to say anything in general.
 		\item The requirement for strong asymptotic predictability is more an instrumental physical hypothesis, rather than a mathematical one, needed for well-posedness. It is really meant to ensure that physics is predictable on and outside \(H\).
 		
-		Indeed, asymptotically flat spacetimes which fail to be strongly predictabe are said to contain a \emph{naked singularity}, but these cases are believed not to be physically relevant. This statement is the main content of the Cosmic Censorship Conjecture: the curious reader may find its definition in chapter \(12\) of \cite{wald2010general} and some endless literature browsing the internet, starting from \cite{dias2018strong}.
+		Indeed, asymptotically flat spacetimes which fail to be strongly predictable are said to contain a \emph{naked singularity}, but these cases are believed not to be physically relevant. This statement is the main content of the Cosmic Censorship Conjecture: the curious reader may find its definition in chapter \(12\) of \cite{wald2010general} and some endless literature browsing the internet, starting from \cite{dias2018strong}.
 	\end{enumerate}
 \end{remark}
 
@@ -184,14 +184,14 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 \end{theorem}
 
 \begin{proof}
-	This theorem is usually proven by showing, through a reductio ab absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow an alternative path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
+	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow an alternative path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
 	
 	As we have seen the equivalence between the \(2\) definitions of trapped surfaces, %todo: write it down and reference
 	using a similar reasoning as for lemma \ref{lemma:charact-trapped}, we can see that the thesis is equivalent to proving that, for all \(p \in H\) and it exists a future-directed null (or, equivalently, causal) vector \(v^{\mu}\) in \(T_pH^{\perp}\):
 	\[
 	\mathfrak{H}^{\mu}(p)v_{\mu} \ge 0.
 	\]
-	Conversely, suppose that \(\exists p\in H\) such that \(\forall v^{\mu} \in T_pH^{\perp}\), with \(v^{\mu} \) future directed casusal vector, such that \(\mathfrak{H}^{\mu}(p)v_{\mu} < 0.\) Then, by \ref{lemma:charact-trapped} we know that \(\mathfrak{H}^{\mu}(p)\) is past-pointing timelike.
+	Conversely, suppose that \(\exists p\in H\) such that \(\forall v^{\mu} \in T_pH^{\perp}\), with \(v^{\mu} \) future directed causal vector, such that \(\mathfrak{H}^{\mu}(p)v_{\mu} < 0.\) Then, by \ref{lemma:charact-trapped} we know that \(\mathfrak{H}^{\mu}(p)\) is past-pointing timelike.
 	
 	We can now proceed as usual, following for example \cite{wald2010general}. Take the Cauchy surface \(\Sigma\) for the unphysical spacetime \(\tilde{V}\), that passes through \(p\), and define \(\mathscr{H} = H \cap \Sigma\). Since \(\mathfrak{H}^{\mu}(p)\) is past-pointing timelike at \(p\), for continuity we might deform \(\mathscr{H}\) outward in a neighborhood of \(p\) in \(\Sigma\), to obtain a \(2\)-surface \(\mathscr{H}'\) which intersects \(J^-(\mathscr{I}^+)\) non trivially, and such that is past pointing timelike for any point in the intersection \(\mathscr{H}' \cup J^-(\mathscr{I}^+)\).
 	

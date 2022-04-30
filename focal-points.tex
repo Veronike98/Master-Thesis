@@ -247,13 +247,13 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	In the end, we are finally able to prove this important proposition - also present in \cite{o1983semi} as (10.43), but we state it in the form of \cite{fewster2020new}- which will practically allow us to make use of these methods.
 	\begin{corollary}
 		\label{cor:fp-criteria}
-		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)length of \(\gamma\), \(L_V(\gamma)\), as the maximum value reached by an affine parameter \(\lambda\) such that in \(p\) it holds \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) and \(\gamma(\lambda = 0) = p\). It's true that if \(L_{\hat{\mathfrak{H}}} \ge \frac{1}{|\mathfrak{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathfrak{H} = - |\mathfrak{H}|\hat{\mathfrak{H}}\), with \(\hat{\mathfrak{H}}\) future pointing timelike versor).
+		Let \(P\) be a spacelike submanifold of codimension \(2\) as usual, and additionally suppose it is future converging; we also ask for the null-converging condition \(\text{Ric}(U, U) \le 0\) to hold everywhere on \(\gamma\). Then, refer to the \(V-\)length of \(\gamma\), \(L_V(\gamma)\), as the maximum value reached by an affine parameter \(\lambda\) such that in \(p\) it holds \(V_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\) and \(\gamma(\lambda = 0) = p\). It's true that if \(L_{\hat{\mathrm{H}}} \ge \frac{1}{|\mathrm{H}|}\) then there is a focal point to \(P\) along \(\gamma\). (We have written \(\mathrm{H} = - |\mathrm{H}|\hat{\mathrm{H}}\), with \(\hat{\mathrm{H}}\) future pointing timelike versor).
 	\end{corollary}
 
 	\begin{proof}
-		Choose an affine coordinate \(\lambda\) on \(\gamma\) such that \(\hat{\mathfrak{H}}_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\); this does exist because \(\hat{\mathfrak{H}}\) is past-pointing timelike, and it can be proven similarly to the \(\mathbf{3) \implies 2)]}\) implication in the proof of \ref{lemma:charact-trapped}, remembering \(\hat{\mathfrak{H}}\) is future-pointing and timelike.
+		Choose an affine coordinate \(\lambda\) on \(\gamma\) such that \(\hat{\mathrm{H}}_{\mu}\frac{d\gamma^{\mu}}{d\lambda} = 1\); this does exist because \(\mathrm{H}}\) is future-pointing timelike (it can be proven similarly to the \(\mathbf{3) \implies 2)]}\) implication in the proof of \ref{lemma:charact-trapped}).
 		
-		Then we can call \(q = \gamma(l)\) with \(\ell = L_{\hat{\mathfrak{H}}}\); in these coordinates take \(f(\lambda) = 1 - \frac{\lambda}{\ell}\). The right hand side of \eqref{eq:fp-criteria} is equal to \((n-2)|\mathfrak{H}|\), while \(\text{LHS} \le \frac{n - 2}{\ell}\), and the thesis follows from \ref{prop:fp-criteria}.
+		Then we can call \(q = \gamma(l)\) with \(\ell = L_{\hat{\mathrm{H}}}\); in these coordinates take \(f(\lambda) = 1 - \frac{\lambda}{\ell}\). The right hand side of \eqref{eq:fp-criteria} is equal to \((n-2)|\mathrm{H}|\), while \(\text{LHS} \le \frac{n - 2}{\ell}\), and the thesis follows from \ref{prop:fp-criteria}.
 	\end{proof}
 	
 	\section{The Raychaudhuri's equation}
@@ -278,13 +278,15 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	which immediately gives the interpretation of \(B_{\mu\nu}\).
 	
 	As in \ref{eq:hessian-averagded} let \(e_i\) with \(i = 1, \ldots, n - 2\) be an orthonormal basis of \(T_{\gamma(0)}P\), and parallel transport them along \(\gamma\) to generate \(\{E_i\}_{i = 1, \ldots, n-2}\). We can again decompose the metric as \(g^{\mu\nu} = U^{\mu}W^{\nu} + U^{\nu}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\). It's now useful to decompose \(B_{\mu\nu}\) in its irreducible components:
-	\[
-	\begin{cases}
-	\omega_{\mu\nu} \coloneqq B_{[\mu\nu]} \hfill \text{the vorticity.} \\
-	\theta \coloneqq g^{\mu\nu}B_{\mu\nu}  = B_{\mu\nu} \left(g^{\mu\nu} - 2U^{(\mu}W^{\nu)}\right) \hfill \quad \text{the expansion.} \\
-	\sigma_{\mu\nu} \coloneqq B_{(\mu\nu)} - \frac{\theta}{d - 2}\left(g_{\mu\nu} - 2U_{(\mu}W_{\nu)}\right) \hfill \quad \text{ the shear.}
-	\end{cases}
-	\]
+	
+	\begin{equation}
+	\label{eq:def-expansion-vorticity-shear}
+		\begin{cases}
+		\omega_{\mu\nu} \coloneqq B_{[\mu\nu]} \hfill \text{the vorticity.} \\
+		\theta \coloneqq g^{\mu\nu}B_{\mu\nu}  = B_{\mu\nu} \left(g^{\mu\nu} - 2U^{(\mu}W^{\nu)}\right) \hfill \quad \text{the expansion.} \\
+		\sigma_{\mu\nu} \coloneqq B_{(\mu\nu)} - \frac{\theta}{d - 2}\left(g_{\mu\nu} - 2U_{(\mu}W_{\nu)}\right) \hfill \quad \text{ the shear.}
+		\end{cases}
+	\end{equation}
 	
 	and in particular
 	\[
@@ -405,7 +407,7 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 			%Se detA = 0 allora A e' singolare e in teoria non si puo' usare l'equazione. Nella pratica  si puo' fare lo stesso, osservando che se trB \`e limitato detA non pu\`o andare troppo vicino a 0, altrimenti non riesco a fare det
 			\item[\ding{99}] At the same time, substituting the definition of \(A\) into \eqref{eq:Jacobi-E_i} one gets
 			\[
-			\frac{D^2 A}{D\lambda^2} = \mathrm{R}A \quad \text{ where } R\indices{^i_j} = E^i_{\mu}R\indices{^{\mu}_{\alpha\beta\nu}}U^{\alpha}U^{\beta}E_j^{\nu}
+			\frac{D^2 A}{D\lambda^2} = \mathrm{R}A \quad \text{ where } \mathrm{R}\indices{^i_j} = E^i_{\mu}R\indices{^{\mu}_{\alpha\beta\nu}}U^{\alpha}U^{\beta}E_j^{\nu}
 			\]
 			so, assuming \(\mathrm{R}\) is regular, the solutions of this equation will remain regular at finite affine parameters, and in particular \(\texttt{det}A\) cannot diverge for finite values of \(\lambda\). 
 		\end{itemize}
@@ -458,12 +460,14 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	\end{equation}
 	Now, notice that \eqref{eq:stationary-f} is an equation of the form of the Raychaudhuri's equation. In fact, assuming \(f\) is non vanishing in \((0, \ell)\), we can set 
 	\[
-	\theta \coloneqq (n - 2) \frac{f'}{f} \implies
+	\tilde{\theta}\coloneqq (n - 2) \frac{f'}{f} \implies
 	\begin{cases}
-	\eqref{eq:stationary-f} \implies \frac{D\theta}{D\lambda} = -\frac{\theta^2}{n - 2} + R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \\
-	\eqref{eq:boundary-f} \implies \theta(0) \ge U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\lambda = 0}.
+	\eqref{eq:stationary-f} \implies \frac{D\tilde{\theta}}{D\lambda} = -\frac{\tilde{\theta}^2}{n - 2} + R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \\
+	\eqref{eq:boundary-f} \implies \tilde{\theta}(0) \ge U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\lambda = 0}.
 	\end{cases}	
 	\]
+	\VS{TODO there is a MISTAKE in the sign for the Ricci, find and correct it!}
+	
 	Instead, from the study of the Raychaudhuri's equation, recall the Riccati inequality \eqref{eq:Riccati-ineq}, and from \ref{lemma:equiv-trapped} we know that \(\theta = U_{\mu}\mathrm{H}^{\mu}\):
 	\[
 	\begin{cases}
@@ -471,6 +475,21 @@ We have used \(g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1
 	\text{Lemma }\ref{lemma:equiv-trapped} \implies \theta(0) = U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\lambda = 0}.
 	\end{cases}	
 	\]
+	
+	\begin{remark}
+		Notice that \(\tilde{\theta}\) doesn't necessarily coincide with the expansion (in general it won't), it's just a quantity that solves a differential problem similar to the one satisfied by \(\theta\). 
+		
+		However, the definition of \(\tilde{\theta}\) resembles equation \((5.9)\) of \cite{witten2020light}, where the null expansion is defined as:
+		\[
+		\theta = \frac{\dot{A}}{A} = \frac{1}{2}\dot{g}\texttt{Tr}\left[g^{-1}\dot{g}\right].
+		\]
+		It's possible to show that this definition is equivalent to the one stated in \eqref{eq:def-expansion-vorticity-shear}, and \(A\) is the transverse area of a little bundle of the chosen congruence of geodesics.
+		
+		It is clear that the trial function needed in \ref{eq:fp-criteria} cannot be entirely \emph{physical}, exactly because it's a \emph{trial} function, and there isn't any physical principle for which one should be better than another a priori, but from the parallel with the area, one wonders if the minimum point of \(J\) has a deeper physical interpretation.
+	\end{remark}
+
+\section{Promptness}
+
 	
 	
 	

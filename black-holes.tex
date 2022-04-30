@@ -180,29 +180,29 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 	\[
 	\mathscr{H}_1 = H \cap \Sigma_1 \quad \quad \mathscr{H}_2 = H \cap \Sigma_2
 	\]
-	Then the area of \(\mathcal{H}_2\) is greater or equal than the area of \(\mathcal{H}_1\).
+	Then the area of \(\mathscr{H}_2\) is greater or equal than the area of \(\mathscr{H}_1\).
 \end{theorem}
 
 \begin{proof}
 	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow an alternative path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
 	
-	As we have seen the equivalence between the \(2\) definitions of trapped surfaces, %todo: write it down and reference
-	using a similar reasoning as for lemma \ref{lemma:charact-trapped}, we can see that the thesis is equivalent to proving that, for all \(p \in H\) and it exists a future-directed null (or, equivalently, causal) vector \(v^{\mu}\) in \(T_pH^{\perp}\):
+	We have seen the equivalence between the \(2\) definitions of trapped surfaces \ref{lemma:equiv-trapped}; inspired by lemma \ref{lemma:charact-trapped}, we want to prove that, for each \(p \in H\) and for any Cauchy surface \(\Sigma\) for the unphysical spacetime \(\tilde{V}\) that passes through \(p\), defined \(\mathscr{H}_1 = H \cap \Sigma\), it exists a future-directed null vector \(v^{\mu}\) in \(T_p\mathscr{H}_1^{\perp}\) such that
 	\[
-	\mathfrak{H}^{\mu}(p)v_{\mu} \ge 0.
+	\mathrm{H}^{\mu}(p)v_{\mu} \ge 0.
 	\]
-	Conversely, suppose that \(\exists p\in H\) such that \(\forall v^{\mu} \in T_pH^{\perp}\), with \(v^{\mu} \) future directed causal vector, such that \(\mathfrak{H}^{\mu}(p)v_{\mu} < 0.\) Then, by \ref{lemma:charact-trapped} we know that \(\mathfrak{H}^{\mu}(p)\) is past-pointing timelike.
+	Conversely, suppose that \(\exists p\in H\) such that \(\forall v^{\mu} \in T_p\mathscr{H}_1^{\perp}\), future directed causal vectors, it holds \(\mathrm{H}^{\mu}(p)v_{\mu} < 0.\) Then, by \ref{lemma:charact-trapped} we know that \(\mathrm{H}^{\mu}(p)\) is past-pointing timelike on a neighborhood of \(p\) in \(\mathscr{H}_1\).
 	
-	We can now proceed as usual, following for example \cite{wald2010general}. Take the Cauchy surface \(\Sigma\) for the unphysical spacetime \(\tilde{V}\), that passes through \(p\), and define \(\mathscr{H} = H \cap \Sigma\). Since \(\mathfrak{H}^{\mu}(p)\) is past-pointing timelike at \(p\), for continuity we might deform \(\mathscr{H}\) outward in a neighborhood of \(p\) in \(\Sigma\), to obtain a \(2\)-surface \(\mathscr{H}'\) which intersects \(J^-(\mathscr{I}^+)\) non trivially, and such that is past pointing timelike for any point in the intersection \(\mathscr{H}' \cup J^-(\mathscr{I}^+)\).
+	We can now proceed as usual, following \cite{wald2010general} for example. Since \(\mathrm{H}^{\mu}(p)\) is past-pointing timelike at \(p\), for continuity we might deform \(\mathscr{H}_1\) outward in a neighborhood of \(p\) in \(\Sigma\), to obtain a \(2\)-surface \(\mathscr{H}'\) which intersects \(J^-(\mathscr{I}^+)\) non trivially, and such that is past pointing timelike for any point in the intersection \(\mathscr{H}' \cap J^-(\mathscr{I}^+)\).
 	
-	Call \(K\) the closed region in \(\Sigma\) between \(\mathscr{H}\) and \(\mathscr{H}'\), and pick a point \(q \in \mathscr{I}^+ \cup \partial J^+(K)\). Because of proposition \ref{prop:perp-critical-gamma} we know that the null geodesic generator of \(\partial J^+(K)\) must meet \(\mathscr{H}'\) orthogonally; however proposition \ref{cor:fp-criteria}, tells us that such generator must have a focal point within a finite value of the affine parameter, and thus gives a contradiction. Hence 
+	Call \(K\) the closed region in \(\Sigma\) between \(\mathscr{H}_1\) and \(\mathscr{H}'\), and pick a point \(q \in \mathscr{I}^+ \cup \partial J^+(K)\). Because of proposition \ref{prop:perp-critical-gamma} we know that the null geodesic generator of \(\partial J^+(K)\) must meet \(\mathscr{H}'\) orthogonally; however proposition \ref{cor:fp-criteria}, tells us that such generator must have a focal point within a finite value of the affine parameter, and this gives a contradiction. Hence 
 	\[
-	\forall p \in H \quad \exists v^{\mu} \in T_pH^{\perp} \text{ causal and future directed, such that }  \mathfrak{H}^{\mu}(p)v_{\mu} \ge 0.
+	\forall p \in H \quad \forall \mathscr{H}_1 \text{ through } P\quad \exists v^{\mu} \in T_p\mathscr{H}_1^{\perp} \text{ causal and future directed, such that }  \mathrm{H}^{\mu}(p)v_{\mu} \ge 0.
 	\]
-	In particular we can build a vector field \(V \in TH^{\perp}\) such that \(\mathfrak{H}^{\mu}(p)V_{\mu}(p) \ge 0\) everywhere on \(H\).
-	Then, as proved in \cite{kriele1999spacetime} and reported in section \ref{sec:submanifolds}, we have that:
+	In particular we can build a causal, future-directed vector field \(V \in TH^{\perp}\) such that \(\mathrm{H}^{\mu}(p)V_{\mu}(p) \ge 0\) everywhere on \(H\).
+	Then, we know that \(V^{\mu}\) is null for \ref{lemma:charact-trapped}, and, as proved in \cite{kriele1999spacetime} and reported in section \ref{sec:submanifolds}, we have that:
 	\begin{equation*}
-		\delta_VA_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathfrak{H}^{\mu}(p)V_{\mu} \ge 0
+		\delta_VA_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)V_{\mu} \ge 0
 	\end{equation*}
-	when we modify \(\mathscr{H}_1\) along the flow of \(V\), or, in other words, the area of \(\mathscr{H}_1\) can never decrease.
+	so when we modify \(\mathscr{H}_1\) along the flow of \(V\) the area of \(\mathscr{H}_1\) can never decrease.
+	\VS{Todo: ora bisogna dire che V e' il tangnente del null geodesic generator... o anche solo che tutti gli altri orizzonti stanno nell'immagine di questo flusso qui.}
 \end{proof}

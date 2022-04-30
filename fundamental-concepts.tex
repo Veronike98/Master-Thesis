@@ -216,8 +216,8 @@ It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\per
 \begin{lemma} \label{lemma:charact-trapped}
 	assuming \(P\) is a \emph{spacelike} submanifold, the following statements are equivalent:
 	\begin{enumerate}
-		\item  \(k(v) =g_{\mu\nu}\mathrm{H}^{\mu} v^{\nu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to P.
-		\item  \(k(w) =g_{\mu\nu}\mathrm{H}^{\mu} w^{\nu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to P.
+		\item  \(k(v) =\mathrm{H}^{\mu} v_{\nu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to P.
+		\item  \(k(w) =\mathrm{H}^{\mu} w_{\nu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to P.
 		\item \(\mathrm{H}\) is past-pointing timelike.
 	\end{enumerate}
 \end{lemma}
@@ -312,7 +312,22 @@ We finally want to prove that the \(2\) definitions are indeed equivalent.
 	\end{figure}
 \end{remark}
 
-%todo: write prooof of variation of area, see Kriele.
+
+Even if we already have \(2\) good definitions of \emph{trapped} surface, they are both rather mathematical, while we would like to develop a better intuition of the features of these objects. The most outstanding property is described by the following lemma; we report the statement given in \cite{senovilla2022critical}. A proof for hypersurfaces of codimension \(1\) can be found in \cite{kriele1999spacetime} as Lemma \(4.4.8\), and can be generalized to submanifolds of any dimension, but we don't report the proof here.
+\VS{Should I write the proof of this fact here?}
+\begin{lemma}
+	\label{lemma:variation-area}
+	Let \(P\) be any spacelike subnaifold of any dimension, and denote as \(A_P\) its area. Then choose an arbitrary vector field \(\xi^{\mu}\): this will induce a flow \(F_t\), and \(P\) can be deformes along this flow. The initial variation of the area due to this deformation is
+	\[
+	\delta_{\xi}A_P = \int_{P} \texttt{div}_P (\Pi^{\parallel}\xi) + \mathrm{H}^{\mu}\xi_{\mu}.
+	\]
+\end{lemma}
+ Clearly, if \(P\) is without boundary the first term integrates out for Stokes theorem (\(\texttt{div}_P\) is the divergence of \(P\)), and we are left with
+ \begin{equation}
+ 	\label{eq:variation-area}
+ 	\delta_{\xi}A_P = \int_{P} \mathrm{H}^{\mu}\xi_{\mu}.
+ \end{equation}
+	This equation is telling us that \(P\) is trapped if and only if its area is doomed to decrease, no matter how they evolve (as long as they keep causality). In this sense they are trapped, or rather, \emph{trapping}, because everything they contain will be surrounded by a submanifold of less and less area... Until some catastrohe might occur!
 
 \section{Causality conditions}
 

@@ -184,25 +184,49 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 \end{theorem}
 
 \begin{proof}
-	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow an alternative path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
+	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow a slightly different path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
 	
-	We have seen the equivalence between the \(2\) definitions of trapped surfaces \ref{lemma:equiv-trapped}; inspired by lemma \ref{lemma:charact-trapped}, we want to prove that, for each \(p \in H\) and for any Cauchy surface \(\Sigma\) for the unphysical spacetime \(\tilde{V}\) that passes through \(p\), defined \(\mathscr{H}_1 = H \cap \Sigma\), it exists a future-directed null vector \(v^{\mu}\) in \(T_p\mathscr{H}_1^{\perp}\) such that
+	The core of the proof is showing that, for the tangent field \(U^{\mu}\) of the null generators of the horizon \(H\), it holds everywhere that:
+	\begin{equation}
+	\label{eq:exp-null-generators}
+		\mathrm{H}^{\mu}U_{\mu} \ge 0
+	\end{equation}
+	
+	By contradiction, suppose instead that \(\mathrm{H}^{\mu}U_{\mu} < 0\) at \(p\). Let \(\Sigma_1\) be any Cauchy hypersurface for \(\tilde{V}\) through \(p\), and call \(\mathscr{H}_1 = H \cap \Sigma_1\).
+	As \(\mathrm{H}^{\mu}U_{\mu}(p) < 0\) in a neighborhood of \(p\) we can deform \(\mathscr{H}_1\) outword on \(\Sigma_1\), to \(\mathscr{H}_1'\), such that
 	\[
-	\mathrm{H}^{\mu}(p)v_{\mu} \ge 0.
+	\begin{cases}
+	J^-(\mathscr{I}^+) \cap \mathscr{H}_1' \neq \emptyset; \\
+	\mathrm{H}^{\mu}U'_{\mu} < 0 \text{ everywhere on } 	J^-(\mathscr{I}^+) \cap \mathscr{H}_1'
+	\end{cases}
 	\]
-	Conversely, suppose that \(\exists p\in H\) such that \(\forall v^{\mu} \in T_p\mathscr{H}_1^{\perp}\), future directed causal vectors, it holds \(\mathrm{H}^{\mu}(p)v_{\mu} < 0.\) Then, by \ref{lemma:charact-trapped} we know that \(\mathrm{H}^{\mu}(p)\) is past-pointing timelike on a neighborhood of \(p\) in \(\mathscr{H}_1\).
+	where, called \(K\) the closed region in \(\Sigma_1\) between \(\mathscr{H}_1\) and \(\mathscr{H}_1'\), \(U'^{\mu}\) is the tangent vector of the null geodesic generator of \(\partial J^+(K)\).
 	
-	We can now proceed as usual, following \cite{wald2010general} for example. Since \(\mathrm{H}^{\mu}(p)\) is past-pointing timelike at \(p\), for continuity we might deform \(\mathscr{H}_1\) outward in a neighborhood of \(p\) in \(\Sigma\), to obtain a \(2\)-surface \(\mathscr{H}'\) which intersects \(J^-(\mathscr{I}^+)\) non trivially, and such that is past pointing timelike for any point in the intersection \(\mathscr{H}' \cap J^-(\mathscr{I}^+)\).
-	
-	Call \(K\) the closed region in \(\Sigma\) between \(\mathscr{H}_1\) and \(\mathscr{H}'\), and pick a point \(q \in \mathscr{I}^+ \cup \partial J^+(K)\). Because of proposition \ref{prop:perp-critical-gamma} we know that the null geodesic generator of \(\partial J^+(K)\) must meet \(\mathscr{H}'\) orthogonally; however proposition \ref{cor:fp-criteria}, tells us that such generator must have a focal point within a finite value of the affine parameter, and this gives a contradiction. Hence 
+	Pick a point \(q \in \mathscr{I}^+ \cap \partial J^+(K)\):  (\VS{This exists for sth similar to 12.2.6 of Wald})
+	the null geodesic generator through \(q\) will meet \(\mathscr{H}_1'\) orthogonally because of \ref{prop:perp-critical-gamma}; however in \(p' = \gamma \cap \mathscr{H}_1'\) \(U_{\mu}\mathrm{H}^{\mu} < 0\), so by proposition \ref{prop:fp-criteria} we know that a focal point to \(\mathscr{H}_1'\) must develop on \(\gamma\) before reaching \(q\). In fact, it is enough to choose \(f = 1 - \frac{\lambda}{\ell}\), with \(\lambda\) affine parameter such that:
 	\[
-	\forall p \in H \quad \forall \mathscr{H}_1 \text{ through } P\quad \exists v^{\mu} \in T_p\mathscr{H}_1^{\perp} \text{ causal and future directed, such that }  \mathrm{H}^{\mu}(p)v_{\mu} \ge 0.
+	\begin{cases}
+	\hat{\mathrm{H}}^{\mu}U_{\mu} = 1 \\
+	\gamma(\lambda = 0) = p' \\
+	\ell \ge  \frac{1}{\vert U_{\mu}\mathrm{H}^{\mu} \vert}
+	\end{cases}
 	\]
-	In particular we can build a causal, future-directed vector field \(V \in TH^{\perp}\) such that \(\mathrm{H}^{\mu}(p)V_{\mu}(p) \ge 0\) everywhere on \(H\).
-	Then, we know that \(V^{\mu}\) is null for \ref{lemma:charact-trapped}, and, as proved in \cite{kriele1999spacetime} and reported in section \ref{sec:submanifolds}, we have that:
+	and %todo: sistemare il segno
+	\[
+	\int_{0}^{\ell} \big((n -2)(\nabla_Uf)^2 - f^2R_{\mu\nu}U^{\mu}U^{\nu} \big)d\lambda\le 
+	- \frac{n -2}{\ell} \le -(n -2) f^2 U_{\mu} \mathrm{H}^{\mu} \le
+	-(n -2) g(f^2 U, \mathrm{H})\Big\vert_{p},
+	\]
+	This is impossible, because the null generator cannot contain any focal point, and hence 
+	\[
+	\forall p \in H \quad \mathrm{H}^{\mu}U_{\mu}(p) \ge 0.
+	\]
+		
+	To conclude, it is enough to observe that each \(p\in \mathscr{H}_1\) lies on a null generator \(\gamma\) contained in \(H\). As \(\Sigma_2\) is a Cauchy hypersurface as well, \(\gamma\) must intersect \(\Sigma_2\) in a point \(q \in \mathscr{H}_2\). Then, the flow along null generators maps \(\mathscr{H}_1\) into a portion of \(\mathscr{H}_2\).
+	
+	But we know that under deformation along the flow of a vector field, the area of a submanifold evolves as \ref{eq:variation-area}, so:
 	\begin{equation*}
-		\delta_VA_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)V_{\mu} \ge 0
+		\delta_UA_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)V_{\mu} \ge 0
 	\end{equation*}
-	so when we modify \(\mathscr{H}_1\) along the flow of \(V\) the area of \(\mathscr{H}_1\) can never decrease.
-	\VS{Todo: ora bisogna dire che V e' il tangnente del null geodesic generator... o anche solo che tutti gli altri orizzonti stanno nell'immagine di questo flusso qui.}
+	which is telling us that when we modify \(\mathscr{H}_1\) along the flow of the null generators the area of \(\mathscr{H}_1\) can never decrease.
 \end{proof}

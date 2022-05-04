@@ -186,23 +186,31 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 \begin{proof}
 	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow a slightly different path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
 	
+	Let \(\Sigma_1\) be any Cauchy hypersurface for \(\tilde{V}\) through \(p\), and call \(\mathscr{H}_1 = H \cap \Sigma_1\), as above. Finally refer to \(\mathrm{H}^{\mu}\) as the mean normal curvature of \(\mathscr{H}_1\).
 	The core of the proof is showing that, for the tangent field \(U^{\mu}\) of the null generators of the horizon \(H\), it holds everywhere that:
 	\begin{equation}
 	\label{eq:exp-null-generators}
-		\mathrm{H}^{\mu}U_{\mu} \ge 0
+		\mathrm{H}^{\mu}U_{\mu} \ge 0.
 	\end{equation}
+	By contradiction, suppose instead that \(\mathrm{H}^{\mu}U_{\mu} < 0\) at \(p\in \mathscr{H}_1\). We then want to extend the function \(\mathrm{H}^{\mu}U_{\mu}\) in a continuous way on \(\Sigma_1\) (at least in a neighborhood of \(\mathscr{H}_1\)). 
 	
-	By contradiction, suppose instead that \(\mathrm{H}^{\mu}U_{\mu} < 0\) at \(p\). Let \(\Sigma_1\) be any Cauchy hypersurface for \(\tilde{V}\) through \(p\), and call \(\mathscr{H}_1 = H \cap \Sigma_1\).
-	As \(\mathrm{H}^{\mu}U_{\mu}(p) < 0\) in a neighborhood of \(p\) we can deform \(\mathscr{H}_1\) outword on \(\Sigma_1\), to \(\mathscr{H}_1'\), such that
+	In order to do that, take any deformation of \(\mathscr{H}_1\) outward on \(\Sigma_1\), say \(\mathscr{H}_1'\) and call \(K\) the closed region in \(\Sigma_1\) between \(\mathscr{H}_1\) and \(\mathscr{H}_1'\); the boundary of its future \(\partial J^+(K)\) is a null hypersurface of codimension \(1\), and hence comes with its own null generators, with tangent field \(U'^{\mu}\). This allows us to define the function in \(p' \in\mathscr{H}_1'\) as simply the contraction 
+	\(\mathrm{H}'^{\mu}U'_{\mu}\) (with \(\mathrm{H}'^{\mu}\) mean normal curvature of \(\mathscr{H}_1'\)). Different deformations of \(\mathscr{H}_1\) may give different extensions, but that's not important, since we only need that there exists one so that the extension is smooth.
+	
+	\begin{figure}
+		\centering
+%		todo: fai figura per capire estensione, vedi iPad.
+		\includegraphics[scale=1.7]{example-image-duck}
+	\end{figure}
+	Given that extension, it exists a neighborhood of \(p\) in which \(\mathrm{H}^{\mu}U_{\mu}(p) < 0\), we can pick a deformation \(\mathscr{H}_1\) outward on \(\Sigma_1\), to \(\mathscr{H}_1'\), such that
 	\[
 	\begin{cases}
 	J^-(\mathscr{I}^+) \cap \mathscr{H}_1' \neq \emptyset; \\
 	\mathrm{H}^{\mu}U'_{\mu} < 0 \text{ everywhere on } 	J^-(\mathscr{I}^+) \cap \mathscr{H}_1'
 	\end{cases}
 	\]
-	where, called \(K\) the closed region in \(\Sigma_1\) between \(\mathscr{H}_1\) and \(\mathscr{H}_1'\), \(U'^{\mu}\) is the tangent vector of the null geodesic generator of \(\partial J^+(K)\).
 	
-	Pick a point \(q \in \mathscr{I}^+ \cap \partial J^+(K)\):  (\VS{This exists for sth similar to 12.2.6 of Wald})
+	Pick now a point \(q \in \mathscr{I}^+ \cap \partial J^+(K)\):  (\VS{This exists for sth similar to 12.2.6 of Wald})
 	the null geodesic generator through \(q\) will meet \(\mathscr{H}_1'\) orthogonally because of \ref{prop:perp-critical-gamma}; however in \(p' = \gamma \cap \mathscr{H}_1'\) \(U_{\mu}\mathrm{H}^{\mu} < 0\), so by proposition \ref{prop:fp-criteria} we know that a focal point to \(\mathscr{H}_1'\) must develop on \(\gamma\) before reaching \(q\). In fact, it is enough to choose \(f = 1 - \frac{\lambda}{\ell}\), with \(\lambda\) affine parameter such that:
 	\[
 	\begin{cases}
@@ -211,10 +219,10 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 	\ell \ge  \frac{1}{\vert U_{\mu}\mathrm{H}^{\mu} \vert}
 	\end{cases}
 	\]
-	and %todo: sistemare il segno
+	and 
 	\[
 	\int_{0}^{\ell} \big((n -2)(\nabla_Uf)^2 - f^2R_{\mu\nu}U^{\mu}U^{\nu} \big)d\lambda\le 
-	- \frac{n -2}{\ell} \le -(n -2) f^2 U_{\mu} \mathrm{H}^{\mu} \le
+	\frac{n -2}{\ell} \le -(n -2) U_{\mu} \mathrm{H}^{\mu} =
 	-(n -2) g(f^2 U, \mathrm{H})\Big\vert_{p},
 	\]
 	This is impossible, because the null generator cannot contain any focal point, and hence 

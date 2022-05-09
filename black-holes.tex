@@ -172,10 +172,14 @@ Let us make a couple of remarks of why it is important to make some assumptions 
 
 \section{Properties of Black Holes}
 
+\subsection{The classical Black Hole Area Theorem}
+\label{subsec:classical-bh-area}
+
 %todo; scrivere che BH non possono separarsi
 Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
 %todo: restate the tehorem only using \mathscr{H}, non serve distinguere tra 1 e 2 secondo me.
 \begin{theorem}[Black Hole Area Theorem]
+	\label{th:classical-bh-area}
 	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}k^{\mu}k^{\nu} \ge 0\) for all null vectors \(k^{\mu}\) (\emph{null convergence condition}). Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
 	\[
 	\mathscr{H}_1 = H \cap \Sigma_1 \quad \quad \mathscr{H}_2 = H \cap \Sigma_2
@@ -237,4 +241,34 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 		\delta_UA_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)V_{\mu} \ge 0
 	\end{equation*}
 	which is telling us that when we modify \(\mathscr{H}_1\) along the flow of the null generators the area of \(\mathscr{H}_1\) can never decrease.
+\end{proof}
+
+\subsection{The damped Averaged Null Energy Condition -- dANEC}
+In subsection \ref{subsec:classical-bh-area} we proved the black holes area theorem under classical hypothesis. As discussed in %todo: scrivi intro a energy conditions e metti una ref
+the Null Energy Conditions is violated by any sort of quantum fields, while we wonder in what cases - if any - the theorem can be extended in a semiclassical regime.
+
+One first attempt is obtained replacing the null energy conditions with its damped version; this result was already obtained by Lesourd in \cite{lesourd2018remark}, where it was used the Raychaudhuri's equation once again, while here we would like to propose an alternative proof, in the same spirit of theorem \ref{th:classical-bh-area}.
+\begin{definition}
+	A spacetime satisfies the \emph{damped averaged null energy condition} if along each future complete null geodesic \(\gamma\), affinely parametrized by \(\lambda\), there exists a non-negative constant \(c\ge 0\) such that:
+	\[
+	\liminf\limits_{\Lambda\rightarrow \infty} \int_{0}^{\Lambda} e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda - \frac{c}{2} > 0
+	\]
+	where \(U^{\mu}\) is \(\gamma\)'s tangent field.
+\end{definition}
+
+The statement of the theorem is the same as \ref{th:classical-bh-area}, but replacing the Null convergence condition with dANEC; the proof is pretty similar as well but this time we will need to choose a different trial function when using proposition \ref{prop:fp-criteria}.
+\begin{proof}
+	Define \(\mathscr{H}_1\), and consider \(U_{\mu}\mathrm{H}^{\mu}\) exactly as in \ref{th:classical-bh-area}. Again we want to show that it needs to be \(U_{\mu}\mathrm{H}^{\mu} > 0\) everywhere on the horizon. In order to do it, by contradiction, assume there exists \(p\in \mathscr{H}_1\) for which this doesn't hold, and construct the extension \(U'_{\mu}\mathrm{H}'^{\mu}\) in a neighborhood of \(p\) in the same way as before.
+	Now, pick \(f = e^{-c\frac{\lambda}{2}}\): the left hand side of \ref{eq:fp-criteria} in \(n = 4\)  dimensions becomes:
+	\[
+	\int_{0}^{+\infty} (n-2)\frac{c^2}{4} e^{-c\lambda} - e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda = \frac{c}{2} - \int_{0}^{+\infty} e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda 
+	\]
+	which is negative, for the assumption of dANEC.
+	Instead, \(U'_{\mu}\mathrm{H}'^{\mu} < 0 \) implies
+	\[
+	-(n - 2)U'_{\mu}\mathrm{H}'^{\mu} > 0.
+	\]
+	Form this we proved that \ref{eq:fp-criteria} holds, and hence  a focal point is formed along \(\gamma\), which is, again, absurd. 
+	
+	By this contradiction we have that along the null generators \(U_{\mu}\mathrm{H}^{\mu} > 0\), and the conclusion is reached exactly ad in \ref{th:classical-bh-area}.
 \end{proof}

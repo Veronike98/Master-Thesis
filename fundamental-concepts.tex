@@ -42,10 +42,10 @@ V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s).
 	\[
 	[U, V] = 0 \implies \nabla_U V^{\mu} = \nabla_V U^{\mu}
 	\]
-	and, by definition of the Riemann tensor
+	and, by definition of the Riemann tensor,
 	\[
-	[\nabla_U, \nabla_V]W^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}W^{\nu}U^{\alpha}V^{\beta}
-	\].
+	[\nabla_U, \nabla_V]W^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}W^{\nu}U^{\alpha}V^{\beta}.
+	\]
 \end{remark}
 
 By this remark we can compute the second derivative of the transverse field:
@@ -53,7 +53,7 @@ By this remark we can compute the second derivative of the transverse field:
 \frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} = \nabla_V\nabla_U U^{\mu} + R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}
 \]
 
-which his leads us to the second fundamental object we need to define. 
+which leads us to the second fundamental object we need to define. 
 \begin{definition}
 	Given a family of \emph{geodesics} \(\gamma_s(t) \coloneqq \zeta(s,t)\), the transversal field \(V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s)\) is said to be a \emph{Jacobi field}.
 \end{definition}
@@ -67,7 +67,7 @@ This vector field has a very important characterization, which here we'll only s
 	\end{equation}
 \end{lemma}
 
-Jacobi fields also have some nice properties we will find helpful in the prosecution of our work;
+Jacobi fields also have some nice properties we will find helpful in the prosecution of our work.
 \begin{lemma}
 	\label{lemma:Jacobi-fields-properties}
 	Let \(V\) be a Jacobi field on \(\gamma\); then
@@ -329,27 +329,54 @@ Even if we already have \(2\) good definitions of \emph{trapped} surface, they a
  \end{equation}
 	This equation is telling us that \(P\) is trapped if and only if its area is doomed to decrease, no matter how they evolve (as long as they keep causality). In this sense they are trapped, or rather, \emph{trapping}, because everything they contain will be surrounded by a submanifold of less and less area... Until some catastrohe might occur!
 
-\section{Causality conditions}
+\section{Causal structure}
 
 The notion of \emph{causality} has to do with the fact that in a Lorentzian manifold, starting from a  point \(p\) it is not true that an observer or a light ray can travel to any other point \(q\), as they are allowed only to move along (future pointing) causal geodesics (i.e. whose tangent field is never spacelike).
 
+First of all it is important to define what we mean by ``future'' and ''past''. For any given \(p\in M\) the tangent space \(V_p\) is isomporhic to Minkowski spacetime, and hence we are able to define the light cone contained in \(V_p\) through its origin. We will call that the \emph{light cone of} \(p\): note that this is a subset of \(V_p\) and not of \(M\) as for the \emph{null cone}.
+Now, for each \(p\) we can choose one half of the light cone to be the ``future'' and the other half to be the ``past''; we would also like to make a choice which is continuous and self-consistent, but this is not always possible!
 
-\EAK{Why $\guillemotleft$ and not $\ll$? Similarly why $\prec$ and not $<$?}
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.7]{example-image-duck}
+	%todo: aggiungi figura di spazio non time orientable -- Wald pag 189 fig. 8.1
+\end{figure}
+We will call \((M, g_{\mu\nu})\) \emph{time-orientable} if such a  choice can be pursued; in the following we will always assume that the manifold under consideration is time-orientable, otherwise we would have to deal with the highly unphysical case of not being able to distingiush between the notions of moving ``forward in time'' or ``backward in time''.
+
 We will denote causality relations with the following notation, following \cite{o1983semi}.
 \begin{enumerate}
-	\item  \(p \guillemotleft q\) means there is a future-pointing \emph{timelike} curve in \(M\) connecting \(p\) to \(q\).
-	\item \(p \prec q\) means there is a future-pointing \emph{causal} curve from \(p\) to \(q\).
+	\item  \(p \pprec q\) means there is a future-pointing \emph{timelike} curve in \(M\) connecting \(p\) to \(q\).
+	\item \(p \prec q\) means there is a future-pointing \emph{causal} curve from \(p\) to \(q\); \(p \preceq q\) means either \(p \prec q\) or \(p = q\).
 \end{enumerate}
 
-Evidently \(p\guillemotleft q\) implies \(p\prec q\) but not vice versa. For a subset \(A \subseteq M\) we also define:
+Evidently \(p\pprec q\) implies \(p\prec q\) but not vice versa. For a subset \(A \subseteq M\) we also define:
 \begin{enumerate}
 	\item the \emph{chronological future} of \(A\)
 	\[
-	I^+(A) =\{ q\in M :\quad\exists p \in A\text{ with } p\guillemotleft q\}.
+	I^+(A) =\{ q\in M :\quad\exists p \in A\text{ with } p\pprec q\}.
 	\]
+	These are events that can be reached for a massive particle starting at \(p\); for the stability of the timelike characterization under small perturbations of curves it's clear that \(I^+(p)\) is always an open set.
 	\item the \emph{causal future} of \(A\)
 	\[
-	I^+(A) =\{ q\in M : \quad\exists p \in A\text{ with } p\prec q\}.
+	J^+(A) =\{ q\in M : \quad\exists p \in A\text{ with } p\preceq q\}.
 	\]
+	These are events that, in principle, can be influenced by any signal emitted in \(p\). In Minkowski spacetime \(J^+(p)\) is always closed, but conversely from before, this doesn't generalize to arbitary spacetimes (simple counterexamples are given by Minkowski without a point).
 \end{enumerate}
+By reversing time orientation we get the corresponding \emph{past} definitions and from any proof for \emph{future} versions it's possible to infer the analogous for past ones.
+
+In Minkowski spacetime \(I^+(p)\) consists of exactly of the points that can be reached by future directed timelike \emph{geodesics} starting from \(p\), and the boundary \(\partial I^+(p)\) is generated by future directed \emph{null} geodesics (starting from \(p\)). In general neither of this statement is true, but they hold \emph{locally}: a formal statement and proof of this result is due to Hawking and Eliis and can be found in \cite{hawking1973large} as proposition \(4.5.1\).
+
+What we are really interested in though is the following corollary, that follows immediately from the property above mentioned.
+\begin{corollary}
+	If \(q \in J^+(p) \setminus I^+(p)\), then any causal curve connecting \(p\) to \(q\) must be a null geodesic.
+\end{corollary}
+
+\begin{proof}
+	If \( q \in J^+(p)\) and \(\gamma\) is a causal curve beginning at \(p\) and ending a \(q\), we can cover \(\gamma\) by convex normal neighborhood and then, since \(\gamma\) is compact, extract a finite subcover.
+	
+	If \(\gamma\) failed to be a null geodesic in any of these neighborhoods we could deform it to a \emph{timelike} curve in that neighborhood, and then extend this deformation to the other ones, to obtain a timelike curve from \(p\) to \(q\). Hence \(q\) would be in \(I^+(p)\) as well.
+\end{proof}
+
+With similar arguments we have that \(J^+(A) \subseteq \bar{I}^+(A)\), and since clearly \(I^+(A) \cup A \subseteq J^+(A)\) it's clear that \(\bar{J}^+(A) = \bar{I}^+(A)\) and \(\partial J^+(A) = \partial I^+(A)\).
+
 \EAK{Might want to add the domain of dependence, Cauchy horizon, spatial/timelike/null infinities we discussed last time (also look at Wald). A conformal diagram might be nice too (something to think about later perhaps).}

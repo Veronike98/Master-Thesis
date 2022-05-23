@@ -176,7 +176,7 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 \begin{definition}
 		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathrm{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
 		\[
-		\mathfrak{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathrm{I\!I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
+		\mathrm{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathrm{I\!I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
 		\]
 		where 
 		\[
@@ -331,7 +331,7 @@ Even if we already have \(2\) good definitions of \emph{trapped} surface, they a
 
 \section{Causal structure}
 
-The notion of \emph{causality} has to do with the fact that in a Lorentzian manifold, starting from a  point \(p\) it is not true that an observer or a light ray can travel to any other point \(q\), as they are allowed only to move along (future pointing) causal geodesics (i.e. whose tangent field is never spacelike).
+The notion of \emph{causality} has to do with the fact that in a Lorentzian manifold, starting from a  point \(p\) it is not true that an observer or a light ray can travel to any other point \(q\), as they are only allowed to move along (future pointing) causal geodesics (i.e. whose tangent field is never spacelike).
 
 First of all it is important to define what we mean by ``future'' and ''past''. For any given \(p\in M\) the tangent space \(V_p\) is isomporhic to Minkowski spacetime, and hence we are able to define the light cone contained in \(V_p\) through its origin. We will call that the \emph{light cone of} \(p\): note that this is a subset of \(V_p\) and not of \(M\) as for the \emph{null cone}.
 Now, for each \(p\) we can choose one half of the light cone to be the ``future'' and the other half to be the ``past''; we would also like to make a choice which is continuous and self-consistent, but this is not always possible!
@@ -377,6 +377,213 @@ What we are really interested in though is the following corollary, that follows
 	If \(\gamma\) failed to be a null geodesic in any of these neighborhoods we could deform it to a \emph{timelike} curve in that neighborhood, and then extend this deformation to the other ones, to obtain a timelike curve from \(p\) to \(q\). Hence \(q\) would be in \(I^+(p)\) as well.
 \end{proof}
 
-With similar arguments we have that \(J^+(A) \subseteq \bar{I}^+(A)\), and since clearly \(I^+(A) \cup A \subseteq J^+(A)\) it's clear that \(\bar{J}^+(A) = \bar{I}^+(A)\) and \(\partial J^+(A) = \partial I^+(A)\).
+With similar arguments we have that \(J^+(A) \subseteq \bar{I}^+(A)\), and since clearly \(I^+(A) \cup A \subseteq J^+(A)\) it's clear that \(\overline{J^+(A)} = \overline{I^+(A)}\) and \(\partial J^+(A) = \partial I^+(A)\).
 
-\EAK{Might want to add the domain of dependence, Cauchy horizon, spatial/timelike/null infinities we discussed last time (also look at Wald). A conformal diagram might be nice too (something to think about later perhaps).}
+\subsection{The boundary of the future}
+Given a submanifold \(A\), \(\partial J^+(A)\) will be called the \emph{boundary of the future} of \(A\): this is again a \(3-\)sumbanifold and has some interesting properties. As we will often work with this object it makes sense to stop for a moment and highlight some of its features.
+
+\begin{definition}
+	A set \(S\in M\) is said to be \emph{achronal} if there do not exist \(p, q \in S\) such that \(q\in I^+(p)\), or in other words \(p\) and \(q\) must not be joinable via a timelike curve. 
+\end{definition}
+
+\begin{remark}
+	There is no mutual implication between achronality and signature of the submanifold \(S\).
+	It is pretty clear that achronality doesn't imply that \(S\) needs to be spacelike (the following will provide an example), but a spacelike submanifold doesn't need to be achronal either. The most famous example is given by the cilynder spacetime, whose vertical axes is the time direction.
+
+	\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\coordinate (a) at (0,0);
+	\coordinate (b) at (1.4,0);
+	\coordinate (c) at (0,2.2);
+	\coordinate (d) at (1.4,2.2);
+	\coordinate (e) at (1.4, 0.8);
+	\coordinate (f) at (0, 1.6);
+	\coordinate (g) at (0.7, 1.9);
+	\coordinate (h) at (0.7, 0.20);
+	\draw (a)--(c);
+	\draw (b)--(d);
+	\draw[dashed] (0,0) arc (180:0:0.7 and 0.3);
+	\draw (0,0) arc (180:360:0.7 and 0.3);
+	%\draw[dashed] (0.7, 0) ellipse (0.7 and 0.3);
+	\draw (0.7, 2.2) ellipse (0.7 and 0.3);
+	\draw[orange] (a) to [out = 15, in = -115] (e);
+	\draw[dashed, orange] (e) to [out = 125, in = -20] (f);
+	\draw[orange] (f) to [out = 15, in = -145] (g);
+	\draw[thick, green] (h) -- (g);
+	\foreach \i in {h,g} {\fill[green] (\i) circle(.8pt);}
+	\node[below] at (h) {\footnotesize\(p\)};
+	\node[above] at (g) {\footnotesize\(q\)};
+	\node[left] at (f) {\footnotesize\(S\)};
+	
+	\end{tikzpicture}
+	\caption{\(t = \epsilon\phi\) is not achronal but can be spacelike.}
+\end{figure}
+
+\end{remark}
+
+\begin{theorem}
+	Let \((M, g_{\mu\nu})\) be a time orientable spacetime and let \(S\subset M\). Then \(\partial J^+(S)\) (if nonempty) is an achronal, three-dimensional embedded submanifold of \(M\).
+\end{theorem}
+\begin{proof}
+	We'll prove only the achronality part because it's the one that is most intersting to 
+	us, and we refer to the proof in O'Neill \cite{o1983semi} (which applies in general 
+	to any future set). Clearly \(I^+(S) \subseteq I^+(I^+(S))\); 
+	let \(p\in \partial J^+(S)\) and \(q \in I^+(p)\): then \(p \in I^-(q)\) and 
+	whole open neighborhood \(O\)  of \(p\) will be contained in \(I^-(q)\), 
+	because \(I^-(q)\) is open. 
+	Since \(p\) is in \(\partial I^+(S)\) \(O \cap I^+(S) \neq \emptyset\), \(q\) 
+	is to the future of some points in \(I^+(S)\) as well - \(q \in I^+(O \cap I^+(S)) \) -
+	 hence \(I^+(p) \subseteq I^+(S)\). 
+	 Similarly \(I^-(p) \subseteq M \setminus I^+(S)\).
+	
+	Now, if \(\partial I^+(S)\) failed to be achronal, we could have 
+	\(q,r \in \partial I^+(S)\) such that \(r \in I^+(q)\); but this would imply 
+	\(r \in I^+(S)\) and \(r \in \partial I^+(S)\) at the same time, which is a 
+	contradiction as \(I^+(S)\) is open, which is 
+	\(I^+(S) \cap \partial I^+(S) = \emptyset\).
+\end{proof}
+
+Curves on this submanifold are, in some weak sense, protected from ending: none of the points in \(\partial I^+(S)\) is able to prevent a curve from being extended further. To prove this statement precisely we need to introduce the concept of \emph{endpoint}.
+	\begin{definition}
+		A point \(p\in M\) is a \emph{future endpoint} of a curve \(\gamma\) if for every neighborhood \(O\) of \(p\) there exists a \(t_0\) such that \(\gamma(t) \in O \quad \forall t >t_0\). 
+		
+		A curve is said to be \emph{future inextendible} is it has no future endpoint.
+	\end{definition}
+
+	This concept of future inextendibility locally can pass to the limit, 
+	so it is possible to prove the following important result:
+\begin{theorem}
+	\label{th:null-generator}
+	Let \(C\) be a \emph{closed} subset of the spacetime manifold \(M\). 
+	Then every point in \(p\in \partial I^+(C)\) with \(p \notin C\) lies on a null 
+	geodesic \(\gamma\) which lies entirely in \(\partial I^+(C)\) and either is 
+	past inextendible or has a past endpoint on \(C\). Such geodesics are called \emph{null generators} of \(\partial J^+(C)\).
+\end{theorem}
+
+The proof can be found in many books and doesn't add a particular insight, so we 
+decided not to include it, but the curious reader might look at chapter \(8\) 
+of \cite{wald2010general}. 
+Notice that this theorem is \emph{not} saying that if we are lying on \(\partial I^+(C)\) 
+there exists a light ray that travels from \(C\) to us: a good example is provided by
+\(\R^{1,1}\) with a point removed, and is shown in fugure
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.7]{example-image-duck}
+	%todo: tipo figura pag.191 Wald
+	\caption{the curve on the left side of the cone is not able to reach \((0,0)\), but
+	is past inextendible since its past endpoint would be \((-1, 1)\), which doesn't belong
+	to the manifold though.}
+\end{figure}
+Indeed this property of ``completeness'' of \(\partial I^+(C)\) is in general non trivial to gain, and it requires some extra assumptions about the manifold. Such assumptions are exactly the causality conditions.
+
+\subsection{Causality Conditions}
+Even if all spacetimes have \emph{locally} the same causal structure as Special Relativity, globally things can change dramatically.
+
+The first, minimal requirement that we want to ask for is that \(M\) does not contain any  closed timelike curve; this is called the \emph{chronology condition}, and its failure would lead to some distressing paradoxes (one of the most famous is that an observer might take a trip to the past, kill one of its own ancestors and so prevent his own birth).
+
+\begin{lemma}
+	If \(M\) is compact, it contains a closed timelike curve.
+\end{lemma}
+The previous lemma makes us restrict to the study only of non compact manifolds.
+Slightly strentenighing the condition we have been talking about up to now we obtain the \emph{causality condition}, which asks \(M\) not to contain any closed \emph{causal} curve. This of course implies the chronology condition, but is not equivalent to it; however, even if a spacetime doesn not posses any closed causal curve it might still be ``on the verge'' of violating causality since there might be some causal curves that go arbitrarly close to interesct themselves.
+
+Such spacetimes are not considered physically resonable either because a small perturbation of the metric might actually break causality, so we want to rule out this possibility as well. One way to do so is asking for \emph{strong causality}.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.7]{example-image-duck}
+	%todo: inserisci esempio fig. 8.8 pag.197 wald
+\end{figure}
+\begin{definition}
+	\emph{Strong causality} holds at \(p\in M\) provided that given any neighborhood \(U\) of \(p\), there is a neighborhood \(V\subset U\) of \(p\) such that every causal curve segment with endpoints in \(V\) lies entirely in \(U\).
+
+	A spacetime is \emph{strongly causal} if strong causality holds for any \(p\in M\).
+\end{definition}
+
+	It is clear that if strong causality is violated at \(p\), then near \(p\) there exist causal curves arbitrarly close to intersecting themselves; at the same time it can be easily proved that in a strongly causal spacetime, if a causal curve leaves a compact \(K\subset M\), it can never return to it, so no curve can ever return arbitrarly close to itself.
+
+	Although strong causality implies causality, and suffices to rule out pathological cases as the ones mentioned before, it is still possible that modification of \(g_{\mu\nu}\) in arbitrarly small neighborhoods of \(1\) or more points produces closed causal curve. We need to refine further the conditon we ask for, to be sure we are never on the verge of producing causality violation. Such a condition is \emph{stable causality}:
+	\begin{definition}
+		A spacetime \((M, g_{\mu\nu})\) is \emph{stably causal} if there exists a timelike non-vanishing vector field \(X^{\mu}\) such that \((M, \tilde{g}_{\mu\nu})\) possess no closed timelike curves, where
+		\[
+			\tilde{g}_{\mu\nu}= g_{\mu\nu} - X^{\mu}X^{\nu}.
+		\]
+	\end{definition}
+	The idea behind this definition is that, by defining \(\tilde{g}_{\mu\nu}\), we are ``opening up'' the light cone, so if we were ``on the verge'' of violating causality now we are definitely not able to avoid it. As a reference, this definiton is equivalent to the following condition:
+	\begin{theorem}
+		\label{th:stable-causality}
+		A spacetime \((M, g_{\mu\nu})\) is \emph{stably causal} if and only if there exists a differentiable function \(f\) of \(M\) such that \(\nabla^{\mu}f\) is a past-directed timelike vector field.
+	\end{theorem}
+By theorem \ref{th:stable-causality} it is possible to see that stable causality implies strong causality, and this finally appears to be the notion of not being close to break causality.
+
+We concluded the previous subsection by saying that we will need causality to be linked to some notion of ``completeness'' of set of curves. In order to approach that let's define the concept of \emph{time separation}.
+\begin{definition}
+	If \(p,q\in M\) the \emph{time separation} \(\tau (p,q)\) from \(p\) to \(q\) is
+	\[
+		\tau (p,q) = \sup{L(\gamma): \gamma\text{ is a future pointing causal curve segment from } p \text{ to } q}.
+	\]
+\end{definition}
+We can think of \(\tau (p,q)\) as the proper time of the slowest trip in \(M\) from \(p\) to \(q\), and is sort of the dual of distance for Riemannian geometry.
+Similarly, time separation between sets of points is obtained by taking the supremum of \(\tau\) over the all set. Now,
+\begin{prop}
+	\label{prop:global-existence}
+	For \(p \prec q\), if the set \(J(p, q) = J^+(q) \cap J^-(q)\) is compact and strong causality holds on it, then there exists a causal geodesic from \(p\) to \(q\) of lenght \(\tau (p,q)\).
+\end{prop}
+When reduced to the timelike case, this theorem guarantees the existence of the actual path an inertial observer will follow from \(p\) to \(q\), and applying the analysis of chapter \ref{ch:focal-points} to the lenght functional would lead us to conclude that such curves must have no focal or conjugate point. For causal curves in general the link is not as direct, and more care needs to be payed, but we will try to shed some light on this correspondence in section \ref{sec:promptness}.
+
+Moreover, this is exactly what we need to extend theorem \ref{th:null-generator}: now \(\forall p\in \partial I^+(C)\)  there exists a null generators through \(p\) that intersect \(C\) \emph{and} it doesn't contain any focal point (see lemma \(14.30\) of \cite{o1983semi}).
+Indeed proposition \ref{prop:global-existence} motivates the following fundamental definition:
+\begin{definition}
+	\label{def:global-hyper}
+	a subset \(V\) of \(M\) is globally hyperbolic if 
+	\begin{enumerate}
+		\item strong causality holds on \(V\);
+  		\item for all \(p, q \in V\) such that \(p \prec q\) \(J(p,q)\) is compact and contained in \(V\).
+	\end{enumerate}
+\end{definition}
+
+We already understand why \ref{def:global-hyper} is an important definition, but it is not equally evident why we should denote that as a causality condition: an equivalent formulation is going to clear this out.
+
+\subsection{Domains of dependance}
+Let \(S\) be a closed achronal set (this is a techincal requirement); then
+\begin{definition}
+	The \emph{future domain of dependance} of \(S\), denoted by \(D^+(S)\), is defined as
+	the set of points \(p\in M\) such that every past inextendible causal curve through \(p\) intersects \(S\).
+\end{definition}
+
+The idea behind this definition is due to the fact that, as nothing travels faste than light, any signal passing through \(p\) must have gone through \(S\), so if we know enough information about the initial conditions on \(S\) we can predict what happens at \(p\in D^+(S)\). The requirement of \(S\) being achronal guarantees us that initial conditions on \(S\) don't risk failing to be ``self-consistent''.
+
+As usual, interchanging ``future'' and ``past'' we can define the \emph{past} domain of dependance \(D^-(S)\). The union of these \(2\) sets gives the full domain of dependance 
+\[
+	D(S) = D^-(S) \cup D^+(S),
+\]
+namely the set of points whose conditions are fixed once inital data on \(S\) are provided.
+\begin{definition}
+	A \emph{Cauchy hypersurface} is a subset \(S\) such that is met exactly once by every inextendible timelike curve.
+\end{definition}
+It is easy to shown that \(S\) is a closed achronal topological hypersurface, and clearly \(D(S) = M\).
+\begin{definition}
+	\label{def:global-hyper-2}
+	A spacetime \(M\) which posseses a Cauchy hypersurface is \emph{globally hyperbolic}.
+\end{definition}
+It can be proved that \ref{def:global-hyper} and \ref{def:global-hyper-2} are equivalent; more in general the interior of the domain of dependence of an achronal set is globally hyperbolic according to definition \ref{def:global-hyper}. Finally it implies all the notions of causality we have introduced before, as proved by Wald in theorem \(8.3.14\) of \cite{wald2010general} .
+\begin{theorem}
+	Let \(M,g_{\mu\nu})\) be a globally hyperbolic spacetime. Then \(M,g_{\mu\nu})\) is stably causal. Furthermore a global function \(f\) can be chosen such that each surface of constant \(f\) is a Cauchy surface. Thus \(M\) can be foliated by Cauchy surfaces and the topology of \(M\) is \(\R \time\Sigma\), where \(\Sigma\) denotes any Cauchy surface.
+\end{theorem}
+
+We can see why this is still a causality condition: instead of merely asking for initial data to be ``self-compatible'', we are going one step further, we want to make sure not only that we can state some conditions, but also that we are able to predict what happens everywhere in the universe. 
+
+Whether this is a reasonable assumption or not is debeated and not at all clear: failure of global hyperbolicity would mean that even knowing the all state of the universe at a fixed point in time, we wouldn't able to predict the all future, or infer everything that happened in the past. Such a breakdown of predictablity might be given - for example - by the existence of a singularity or by information coming from infinity (as suggested by Hawking in \cite{hawking1973large}). He in particular argues that there doesn't seem to be any physically compelling reason for believing in the existance of a Cauchy surface, supported by the existence of a number of solutions to Einstein field equations that are not globally hyperbolic.
+
+It therefore makes sense to introduce the following definition:
+\begin{definition}
+	Let \(S\) be a closed achronal set. Its \emph{future Cauchy Horizon} is defined as 
+	\[
+	H^+(S) \coloneqq \overline{D^+(S)} \setminus I^-[D^+(S)]	
+	\]
+\end{definition}
+	Similarly is defined the \emph{past horizion}, while the \emph{full} Cauchy horizon is
+	\[
+	H(S) = 	H^+(S) \cup H^-(S)
+	\]
+	It is possible to prove that this is equivalent to saying \(H(S) \coloneqq \partial D(S)\). Relativistically \(H(S)\) marks the limit of the spacetime region controlled by \(S\), and can be used to formulate useful criteria for global hyperbolicity; it has some interesting topological properties as well, but as we won't make particular use of this object we adivise the reader to refer to chapter \(14\) of \cite{o1983semi} or chapter \(10\) of \cite{wald2010general} for more details.

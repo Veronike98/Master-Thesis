@@ -1,6 +1,7 @@
 \documentclass[12pt, a4paper]{book}
 
 % !TeX program = lualatex
+% !BIB program = bibtex 
 
 \usepackage{pacchetti}
 
@@ -67,7 +68,7 @@ Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 }
 
 \def\decorationscale{.5} % decoration scale
-\colorlet{decoration color}{cyan!70} % decoration color
+\colorlet{decoration color}{turquoise!70} % decoration color
 
 	\begin{tikzpicture}[draw=decoration color,fill=decoration color,line width=2pt,remember picture,overlay,x={(\decorationscale,0)},y={(0,\decorationscale)}]
 	\tikzmath{
@@ -95,6 +96,13 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 	\]
 	\item[\ding{99}]  Einstein equations are \(R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = 8\pi T_{\mu\nu}\).
 \end{itemize}
+
+\begin{tikzpicture}
+	\draw [fill=turquoise,turquoise] (0,0) rectangle (1,1);
+	\draw [fill=goldenyellow,goldenyellow] (1,0) rectangle (2,1);
+	\draw [fill=fuchsia,fuchsia] (2,0) rectangle (3,1);
+	\draw [fill=turquoise,turquoise] (3,0) rectangle (4,1);
+\end{tikzpicture}
 
 \chapter{Fundamental Concepts}
 \input{fundamental-concepts}

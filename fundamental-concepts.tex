@@ -317,15 +317,15 @@ Even if we already have \(2\) good definitions of \emph{trapped} surface, they a
 \VS{Should I write the proof of this fact here?}
 \begin{lemma}
 	\label{lemma:variation-area}
-	Let \(P\) be any spacelike submanifold of any dimension, and denote as \(A_P\) its area. Then choose an arbitrary vector field \(\xi^{\mu}\): this will induce a flow \(F_t\), and \(P\) can be deformed along this flow. The initial variation of the area due to this deformation is
+	Let \(P\) be any spacelike submanifold of any dimension, and denote as \(\mathcal{A}_P\) its area. Then choose an arbitrary vector field \(\xi^{\mu}\): this will induce a flow \(F_t\), and \(P\) can be deformed along this flow. The initial variation of the area due to this deformation is
 	\[
-	\delta_{\xi}A_P = \int_{P} \texttt{div}_P (\Pi^{\parallel}\xi) + \mathrm{H}^{\mu}\xi_{\mu}.
+	\delta_{\xi}\mathcal{A}_P = \int_{P} \texttt{div}_P (\Pi^{\parallel}\xi) + \mathrm{H}^{\mu}\xi_{\mu}.
 	\]
 \end{lemma}
  Clearly, if \(P\) is without boundary the first term integrates out for Stokes theorem (\(\texttt{div}_P\) is the divergence of \(P\)), and we are left with
  \begin{equation}
  	\label{eq:variation-area}
- 	\delta_{\xi}A_P = \int_{P} \mathrm{H}^{\mu}\xi_{\mu}.
+ 	\delta_{\xi}\mathcal{A}_P = \int_{P} \mathrm{H}^{\mu}\xi_{\mu}.
  \end{equation}
 	This equation is telling us that \(P\) is trapped if and only if its area is doomed to decrease, no matter how they evolve (as long as they keep causality). In this sense they are trapped, or rather, \emph{trapping}, because everything they contain will be surrounded by a submanifold of less and less area... Until some catastrophe might occur!
 
@@ -407,11 +407,11 @@ Given a submanifold \(A\), \(\partial J^+(A)\) will be called the \emph{boundary
 	\draw (0,0) arc (180:360:0.7 and 0.3);
 	%\draw[dashed] (0.7, 0) ellipse (0.7 and 0.3);
 	\draw (0.7, 2.2) ellipse (0.7 and 0.3);
-	\draw[orange] (a) to [out = 15, in = -115] (e);
-	\draw[dashed, orange] (e) to [out = 125, in = -20] (f);
-	\draw[orange] (f) to [out = 15, in = -145] (g);
-	\draw[thick, green] (h) -- (g);
-	\foreach \i in {h,g} {\fill[green] (\i) circle(.8pt);}
+	\draw[fuchsia] (a) to [out = 15, in = -115] (e);
+	\draw[dashed, fuchsia] (e) to [out = 125, in = -20] (f);
+	\draw[fuchsia] (f) to [out = 15, in = -145] (g);
+	\draw[thick, turquoise] (h) -- (g);
+	\foreach \i in {h,g} {\fill[turquoise] (\i) circle(.8pt);}
 	\node[below] at (h) {\footnotesize\(p\)};
 	\node[above] at (g) {\footnotesize\(q\)};
 	\node[left] at (f) {\footnotesize\(S\)};
@@ -527,7 +527,7 @@ We can think of \(\tau (p,q)\) as the proper time of the slowest trip in \(M\) f
 Similarly, time separation between sets of points is obtained by taking the supremum of \(\tau\) over the all set. Now,
 \begin{prop}
 	\label{prop:global-existence}
-	For \(p \prec q\), if the set \(J(p, q) = J^+(q) \cap J^-(q)\) is compact and strong causality holds on it, then there exists a causal geodesic from \(p\) to \(q\) of lenght \(\tau (p,q)\).
+	For \(p \prec q\), if the set \(J(p, q) = J^+(q) \cap J^-(q)\) is compact and strong causality holds on it, then there exists a causal geodesic from \(p\) to \(q\) of length \(\tau (p,q)\).
 \end{prop}
 When reduced to the timelike case, this theorem guarantees the existence of the actual path an inertial observer will follow from \(p\) to \(q\), and applying the analysis of chapter \ref{ch:focal-points} to the lenght functional would lead us to conclude that such curves must have no focal or conjugate point. For causal curves in general the link is not as direct, and more care needs to be payed, but we will try to shed some light on this correspondence in section \ref{sec:promptness}.
 
@@ -551,7 +551,7 @@ Let \(S\) be a closed achronal set (this is a techincal requirement); then
 	the set of points \(p\in M\) such that every past inextendible causal curve through \(p\) intersects \(S\).
 \end{definition}
 
-The idea behind this definition is due to the fact that, as nothing travels faste than light, any signal passing through \(p\) must have gone through \(S\), so if we know enough information about the initial conditions on \(S\) we can predict what happens at \(p\in D^+(S)\). The requirement of \(S\) being achronal guarantees us that initial conditions on \(S\) don't risk failing to be ``self-consistent''.
+The idea behind this definition is due to the fact that, as nothing travels faster than light, any signal passing through \(p\) must have gone through \(S\), so if we know enough information about the initial conditions on \(S\) we can predict what happens at \(p\in D^+(S)\). The requirement of \(S\) being achronal guarantees us that initial conditions on \(S\) don't risk failing to be ``self-consistent''.
 
 As usual, interchanging ``future'' and ``past'' we can define the \emph{past} domain of dependance \(D^-(S)\). The union of these \(2\) sets gives the full domain of dependance 
 \[
@@ -587,3 +587,5 @@ It therefore makes sense to introduce the following definition:
 	H(S) = 	H^+(S) \cup H^-(S)
 	\]
 	It is possible to prove that this is equivalent to saying \(H(S) \coloneqq \partial D(S)\). Relativistically \(H(S)\) marks the limit of the spacetime region controlled by \(S\), and can be used to formulate useful criteria for global hyperbolicity; it has some interesting topological properties as well, but as we won't make particular use of this object we adivise the reader to refer to chapter \(14\) of \cite{o1983semi} or chapter \(10\) of \cite{wald2010general} for more details.
+
+	

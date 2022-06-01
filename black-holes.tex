@@ -312,29 +312,73 @@ Such a condition has some useful consequences on the functional \(J_{\ell}[f] = 
 	Then for this specific choice of \(f\) it holds:
 	\begin{equation}
 		\label{eq:J-sobolev-condition}
-		J[f] \le (n - 2)\mathcal{V} \coloneqq (1-A_m)\rho_0\ell_0 + \frac{Q_mC_m}{\ell_0^{2m-1}} + Q_0A_m\ell + \frac{(n - 2)B_m}{\ell - \ell_0} + \frac{Q_mC_m}{(\ell-\ell_0)^{2m-1}}.
+		J[f] \le (n - 2)\mathcal{V} \coloneqq -(1-A_m)\rho_0\ell_0 + \frac{Q_mC_m}{\ell_0^{2m-1}} + Q_0A_m\ell + \frac{(n - 2)B_m}{\ell - \ell_0} + \frac{Q_mC_m}{(\ell-\ell_0)^{2m-1}},
 	\end{equation}
+	where \(Q_m\), \(Q_0\) have been defined with the Sobolev condition, while \(A_m\), \(B_m\) and \(C_m\) are the sobolev norms of the regularized incomplete \(m-\)Beta function, its first and \(m-\)th derivative. For the sake of completeness their values are:
+	\[
+	A_m = \frac{1}{2} - \frac{(2m)!^4}{4(4m)!m!^4} \quad 
+	B_m= \frac{(2m-2)!^2(2m-1)!^2}{(4m-3)!(m - 1)!} \quad 
+	C_m = \frac{(2m-2)!(2m-1)!}{(m-1)!^2}. 
+	\]
 \end{lemma}
+
+\begin{proof}
+	The proof of this lemma can be found in \cite{fewster2020new} as lemma \(4.1\), and it proceeds as follows. Define a piecewise smooth function \(\varphi\) on \([0,\ell]\) by:
+	\[
+	\varphi(\lambda) = 
+	\begin{cases}
+		I(m, m;\frac{\lambda}{\ell_0}) \quad \hfill \lambda \in [0, \ell_0) \\
+		1 \hfill \lambda \in [\ell_0, \ell]
+	\end{cases}	
+	\]
+
+	\begin{figure}
+		\centering
+		\includegraphics[scale=1.7]{example-image-duck}
+		%todo: inserisci plot di f e phi
+	\end{figure}
+	
+	It's possible to see that \(\varphi f \in W_0^m([0,\ell])\), so writing \(f^2 = (\varphi f)^2 + (1 - \varphi^2)\) we have:
+	\begin{align*}
+		\int_0^{\ell} f(\lambda)^2\rho(\lambda) &\ge \int_0^{\ell} (1 - \varphi(\lambda)^2)\rho(\lambda)d\lambda - Q_m(\gamma) \vert\vert (\varphi f)^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert \varphi f\vert\vert^2 \\
+		&\ge  \rho_0\int_0^{\ell} (1 - \varphi(\lambda)^2)d\lambda - Q_m(\gamma) \vert\vert (\varphi f)^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert \varphi f\vert\vert^2.
+	\end{align*}
+
+	Moreover, the norms of the functions can be analytically computed for the specific choices that we made:
+	\[
+		\vert\vert \varphi f\vert\vert^2 = A_m\ell_0 + A_m(\ell - \ell_0)\quad\quad
+		\vert\vert (\varphi f)^{(m)}\vert\vert^2 = \frac{C_m}{\ell_0^{2m - 1}} - \frac{C_m}{(\ell - \ell_0)^{2m - 1}}
+		\quad\quad 
+		\vert\vert f'\vert\vert^2 = \frac{B_m}{\ell - \ell_0}
+	\]
+	Thus,
+	\[
+		J[f] \le \frac{B_m}{\ell - \ell_0} + \frac{C_m}{\ell_0^{2m - 1}} - \frac{C_m}{(\ell - \ell_0)^{2m - 1}} + A_m\ell - \rho_0\ell_0(1 - A_m) \coloneqq (n-2)\mathcal{V},
+	\]
+	and the estimate is complete.
+\end{proof}
 
 As in the previous section we are now able to infer some conditions on the area of black holes. However, in this case we don't reach exactly the same conclusion as before:
 \begin{theorem}
 	\label{th:sobolev-bh-area}
-	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying the Sobolev condition for all normal future-pointing null geodesics leaving from a Cauchy surface \(\Sigma_1\), and for a ``time'' \(\ell\). Moreover, assume that the quantity \(\rho(\lambda) \coloneqq R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \) on \(\gamma\) be lower controlled by \(\rho_0\) in \([0, \ell_0] \subseteq [0, \ell]\). 
+	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying the Sobolev condition for all normal future-pointing null geodesics leaving from a Cauchy surface \(\Sigma\), and for a ``time'' \(\ell\). Moreover, assume that the quantity \(\rho(\lambda) \coloneqq R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \) on \(\gamma\) be lower controlled by \(\rho_0\) in \([0, \ell_0] \subseteq [0, \ell]\). 
 	
-	Let \(\Sigma_2\) be the image of \(\Sigma_1\) along the flux of normal null geodesics after a standard affine parameter \(\ell\), \(\Sigma_2 = F_{\ell}(\Sigma_1)\); moreover, given \(H\) the event horizon, define
+	% Let \(\Sigma_2\) be the image of \(\Sigma_1\) along the flux of normal null geodesics after a standard affine parameter \(\ell\), \(\Sigma_2 = F_{\ell}(\Sigma_1)\); 
+	Moreover, if \(H\) is the event horizon, and
 	\[
-	\mathscr{H}_1 = H \cap \Sigma_1 \quad \quad \mathscr{H}_2 = H \cap \Sigma_2
+	\mathscr{H} = H \cap \Sigma ;
+	% \quad \quad \mathscr{H}_2 = H \cap \Sigma_2
 	\]
-	Then the area of \(\mathscr{H}_2\) cannot be lower than \(\mathcal{A}_{\mathscr{H}_1} (1 - \mathcal{V}\ell)\), where \(\mathcal{V}\) is some positive constant that depends on \(Q_0\) and \(Q_m\), among others, and is defined in \eqref{eq:J-sobolev-condition}.
+	then the area of \(\mathscr{H}\) istantaneously cannot decrease at a faster rate than \(\mathcal{V}\), 
+	where \(\mathcal{V}\) is some positive constant that depends on \(Q_0\) and \(Q_m\), among others, and is defined in \eqref{eq:J-sobolev-condition}.
 \end{theorem}
 
 \begin{proof}
-	For this proof we proceed in a similar way as in the previous subsections. 
-	To begin with, we want to prove that there exists a positive quantity \(\mathcal{V}\) such that, \(\forall p \in \mathscr{H}_1\) \(U_{\mu}\mathrm{H}^{\mu}(p) \ge -\mathcal{V}\), where \(U^{\mu}\) is the tangent field of the null generator of \(H\) through \(p\), and \(\mathrm{H}^{\mu}(p)\) is the mean normal curvature of \(\Sigma_1\) in \(p\). We proceed as follows
+	For this proof we proceed in a similar way as in the previous subsections; we want to prove that \(\forall p \in \mathscr{H}\) \(U_{\mu}\mathrm{H}^{\mu}(p) \ge -\mathcal{V}\), where \(U^{\mu}\) is the tangent field of the null generator of \(H\) through \(p\), and \(\mathrm{H}^{\mu}(p)\) is the mean normal curvature of \(\Sigma\) in \(p\). We proceed as follows
 	\begin{itemize}
-		\item[\ding{99}] By contradiction, assume there exists a \(p\in \mathscr{H}_1\) so that \(U_{\mu}\mathrm{H}^{\mu}(p) < -\mathcal{V}\).
-  		\item[\ding{99}] There exists an outward deformation on \(\Sigma_1\) of \(\mathscr{H}_1\), in a neighborhood of \(p\), on which \(U_{\mu}\mathrm{H}^{\mu}(p') < -\mathcal{V}\) holds everywhere. This point can be motivated exactly as it has been done for the proof of \ref{th:classical-bh-area}. In particular this implies that \(-(n -2) U_{\mu}\mathrm{H}^{\mu} > (n-2)\mathcal{V}\) for the null generators leaving of \(\partial J^+(K)\).
-    	\item[\ding{99}] By means of lemma \ref{lemma:J-sobolev-condition} we have that \(J[f] \le (n - 2)\mathcal{V}\), at least for the specific choice of \(f\) made in such lemma. This leads to a contradiction because - once again - proposition \ref{prop:fp-criteria} comes into play, and the null generator of \(\partial J^+(K)\) through \(p'\in \mathscr{H}'_1\) is doomed to contain a focal point, in contradiction with the global hyperbolicity of the region outside the black hole.
+		\item[\ding{99}] By contradiction, assume there exists a \(p\in \mathscr{H}\) so that \(U_{\mu}\mathrm{H}^{\mu}(p) < -\mathcal{V}\).
+  		\item[\ding{99}] There exists an outward deformation on \(\Sigma\) of \(\mathscr{H}\), in a neighborhood of \(p\), on which \(U_{\mu}\mathrm{H}^{\mu}(p') < -\mathcal{V}\) holds everywhere. This point can be motivated exactly as it has been done for the proof of \ref{th:classical-bh-area}. In particular this implies that \(-(n -2) U_{\mu}\mathrm{H}^{\mu} > (n-2)\mathcal{V}\) for the null generators leaving of \(\partial J^+(K)\).
+    	\item[\ding{99}] By means of lemma \ref{lemma:J-sobolev-condition} we have that \(J[f] \le (n - 2)\mathcal{V}\), at least for the specific choice of \(f\) made in such lemma. This leads to a contradiction because - once again - proposition \ref{prop:fp-criteria} comes into play, and the null generator of \(\partial J^+(K)\) through \(p'\in \mathscr{H}'\) is doomed to contain a focal point, in contradiction with the global hyperbolicity of the region outside the black hole.
 	\end{itemize}
 	We have then proved that 
 	\[
@@ -346,6 +390,16 @@ As in the previous section we are now able to infer some conditions on the area 
 	\end{equation*}
 	So far we have proved that the rate of change of the area of the horizon near the reference ``time instance'' given by \(\Sigma_1\) cannot be lower than a certain (negative) rate. 
 	
-	However, it is possible to constrain the average rate between \(\Sigma_1\) and \(\Sigma_2\) as follows.
+	It is not possible to constrain the average rate of evolution between \(2\) Cauchy surfaces \(\Sigma_1\) and \(\Sigma_2\) directly though, because we would need to assume the Sobolev condition, and the pointwise restriction \(\rho \ge \rho_0\) in the all region in between \(\Sigma_1\) and \(Sigma_2\), which would mean a significant weakening of our result.
 
 \end{proof}
+
+\begin{remark}
+	At this point, a couple of remarks are needed. 
+
+	\begin{itemize}
+		\item[\ding{99}] Coherently with the weakening on the energy condition hypothesis, we reach a weaker result: in fact we are still able to place a lower bound on the rate of change or the area, but the bound is not as strong as it is in the classical case; this is interesting though, because we expect the classical bound to be violated in a semiclassical context: in order to make sure we have reached a meaningful result ideally we need to shown an example where NEC is violated but our new hypothesis hold, and the area of the horizon shrinks, even for a very short time.
+  		\item[\ding{99}] Notice that \(1-A_m \ge 0\), so the lower is \(\rho_0\), the weaker is the hypothesis we ask for, but the weaker is our result as well. In fact \(\mathcal{V}\) increases when \(\rho\) diminishes, and so we gain a weaker and weaker bound; at the same time, is \(rho_0\) was positive and very large, \(\mathcal{V}\) would be negative, and so we would have that the area of the black hole not only cannot decrease, but it has to steadily increase.
+	\end{itemize}
+	
+\end{remark}

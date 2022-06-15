@@ -1,0 +1,102 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COLORI
+
+\definecolor{turquoise}{RGB}{0, 247, 230}
+\definecolor{goldenyellow}{RGB}{255, 218, 66}
+\definecolor{fuchsia}{RGB}{255, 0, 172}
+\definecolor{electric-blue}{RGB}{55, 0, 255}
+
+\definecolor{blond}{RGB}{251,231,161}
+\definecolor{skincolor}{RGB}{224,177,132}
+\definecolor{idea}{RGB}{254,231,2} 	        %giallo ideee
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEAD COMMANDS	
+\newcommand{\inghead}{% 
+	\textcolor{darkturquoise}{\LARGE\textbf{Ingredienti}\ }
+}
+
+\newcommand{\mathead}{% 
+	\textcolor{darkturquoise}{\LARGE\textbf{Materiale utile}\ }
+}
+\newcommand{\prephead}{% 
+	\textcolor{fuchsiapink}{\LARGE\textbf{Preparazione}\ } }
+\newcommand{\hinthead}{% 
+	\textcolor{cerisepink}{\huge{Tip:}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Math commands
+
+% Comandi per i teoremi, definizioni ed esmpi
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema} % reset theorem numbering for each chapter
+\newtheorem{post}{Postulato} % reset theorem numbering for each chapter
+\newtheorem{lem}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definizione} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}{Esempio} % same for example numbers
+\newtheorem*{ach}{Attenzione!}
+
+% Shortcut
+\newcommand{\SigmaX}{\hat{\sigma}^{(x)}}
+\newcommand{\SigmaY}{\hat{\sigma}^{(y)}}
+\newcommand{\SigmaZ}{\hat{\sigma}^{(z)}}
+
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Id}{\hat{\mathcal{I}}}
+\newcommand{\LinSet}{\mathscr{L}}
+\newcommand{\ChoiState}[1]{\hat{\rho}_\text{CJ}^{#1}}
+
+\DeclareMathOperator{\Tr}{tr}
+
+\newcommand{\VerticalBrace}[4][]{%
+	% #1 = draw options
+	% #2 = top mark
+	% #2 = bottom mark
+	% #4 = label
+	\begin{tikzpicture}[overlay,remember picture]
+	\tikzmath{coordinate \p,\q;\p=(pic cs:#2);\q=(pic cs:#3);\maxx=max(\px,\qx);}
+	\draw[xshift=1ex,decorate,decoration={brace, amplitude=1.5ex}, #1] 
+	([yshift=1.5ex]{{pic cs:#2} -| \maxx pt,0})  -- ([yshift=-.5ex]{{pic cs:#3} -| \maxx pt,0})
+	node[My Node Style] {#4};
+	\end{tikzpicture}
+}
+
+
+%box carini
+\newenvironment<>{ideablock}[1]{%
+	\setbeamercolor{block title}{fg=white,bg=fuchsia}%
+	\begin{block}#2{#1}}{\end{block}}
+
+\newenvironment<>{defblock}[1]{%
+	\setbeamercolor{block title}{fg=white,bg=goldenyellow}%
+	\begin{block}#2{#1}}{\end{block}}
+
+\newenvironment<>{theoblock}[1]{%
+	\setbeamercolor{block title}{fg=white,bg=turquoise!80!black}%
+	\begin{block}#2{#1}}{\end{block}}
+
+
+% due nuovi comandi per allineare le cose bene
+\newcommand\parallelcontent[2]{
+	\begin{columns}[t]
+		\column{0.5\textwidth} #1
+		\column{0.5\textwidth} #2
+	\end{columns}
+}
+\newcommand\parallelitem[2]{
+	\parallelcontent
+	{\begin{itemize} \item #1 \end{itemize}}
+	{\begin{itemize} \item #2 \end{itemize}}
+}
+
+%Citazioni
+\newcommand{\easycite}[2]{
+	[\textcolor{electric-blue}{#1 - #2}]
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATH SYMBOLS
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\N}{{\mathbb{N}}}
+
+ \newcommand{\pprec}{\prec\mathrel{\mkern-5mu}\prec}

@@ -18,7 +18,7 @@
 
 %Information to be included in the title page:
 \title[Generalization of BH Area theorem]
-{A generalization of the Black Holes Area Theorem}
+{A generalization of the Black Hole Area theorem}
 
 \author[Veronica Sacchi]{Veronica Sacchi}      
 \institute[SNS]{\includegraphics[height=1.45cm]{Immagini/logoSNS/orizzontale-colore/orizzontale-colore.pdf}}
@@ -44,19 +44,25 @@
 		\tableofcontents
 	\end{frame}
 
-	\subsection{The Classical Black Hole Area Theorem}
+	\subsection{The Classical Black Hole Area theorem}
 	\begin{frame}
-		\frametitle{The Classical Black Hole Area Theorem}
+		\frametitle{The Classical Black Hole Area theorem}
 		\begin{columns}
 			\column{0.33\textwidth}
+			\centering
+			``\emph{The area of the Black Hole Horizon cannot decrease in time.}''
+			\vskip 15pt
 			\begin{tikzpicture}
-			% \node[graduate, hat=turquoise!80!black, shirt=turquoise!80!black, stripes=goldenyellow, minimum size = 2.5cm] (A) at (0,0){};
-			% \node[ellipse callout, draw, yshift= 1.4cm,
-			% 		callout absolute pointer={(A.mouth)},
-			% 		font=\tiny] {The area of the Black Hole Horizon cannot decrease.};
+				\node[graduate, stripes=turquoise!80!black, minimum size = 2cm] (A) at (0,0){};
 			\end{tikzpicture}
 			\column{0.33\textwidth}
+			\includegraphics[scale=0.5]{Immagini/confused-person.png}
 			\column{0.33\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\node[graduate, mirrored, stripes=turquoise!80!black, minimum size = 2cm] (A) at (0,0){};
+			\end{tikzpicture}
+			``\emph{Black Holes evaporate!}''
 		\end{columns}
 		
 	\end{frame}
@@ -67,7 +73,7 @@
 		\begin{defblock}{What is an energy condition?}
 			It is a condition on a contraction of the stress energy tensor.
 
-			E.g. the Null Energy condition (NEC) is written as \(T_{\mu\nu}k^{\mu}k^{\nu} \ge 0\) for any null vector \(k\).
+			E.g. NEC: \(T_{\mu\nu}U^{\mu}U^{\nu} \ge 0\)  \(\forall U\) null vectors.
 		\end{defblock}
 		\begin{itemize}
 			\item Via Einstein equations thay can be translated into a condition on the Ricci tensor.
@@ -85,7 +91,7 @@
 
 	\begin{frame}
 		\frametitle{Averaged Energy Conditions}
-		\begin{ideablock}{Quantum intrest}
+		\begin{ideablock}{Quantum interest}
 			\centering
 			Local violations are often compensated for, or even overcompensated for, in other regions of spacetime.
 		\end{ideablock}
@@ -118,12 +124,12 @@
 			A focal point is an \emph{almost}-meeting point of nearby \(P\)-normal geodesics \underline{of the same causal character} of \(\gamma\).
 			\column{0.4\textwidth}
 			\centering
-			\includegraphics[scale=0.5]{example-image-duck}
+			\includegraphics[scale=0.15]{Immagini/escher.jpg}
 		\end{columns}
 
 		\begin{ideablock}{Why are they important?}
 			\centering
-			Past a focal point a geodesic is not ``lenght''-extremizing anymore!
+			Past a focal point a geodesic is not ``length''-extremizing anymore!
 		\end{ideablock}
 	\end{frame}
 
@@ -133,12 +139,12 @@
 		\[
 			E[\gamma] \coloneqq \frac{1}{2}\int_{0}^{l} g(\gamma'(\lambda), \gamma'(\lambda))d\lambda	
 		\]
-		\begin{ideablock}{``Lenght'' Extremization}
+		\begin{ideablock}{``Length'' Extremization}
 			\centering
 			No focal points \(\implies \textbf{H}(V) \equiv\frac{d^2E[\gamma_s]}{ds^2}\Big\vert_{s = 0} < 0\)
 		\end{ideablock}
 	
-		\begin{theoblock}{Existence criteria for focal points}
+		\begin{theoblock}{Existence criterion for focal points}
 			If there exists \(f(\lambda)\) such that \(f(0) = 1\), \(f(\ell) = 0\) and
 			\[
 				\int_{0}^{\ell} \big((n -2)(\nabla_Uf)^2 - f^2R_{\mu\nu}U^{\mu}U^{\nu} \big)(\lambda) d\lambda\le -(n-2)U_{\mu}\mathrm{H}^{\mu}\Big\vert_{\lambda = 0}	
@@ -160,7 +166,7 @@
 		\begin{columns}
 			\column{0.2\textwidth}
 			\centering
-				\includegraphics[scale=0.3]{example-image-duck}
+				\includegraphics[scale=0.1]{Immagini/escher.jpg}
 			\column{0.8\textwidth}
 			\begin{align*}
 				\frac{D}{D\lambda}\theta &= -\frac{\theta^2}{d - 2} - \sigma_{\mu\nu}\sigma^{\mu\nu} + \omega_{\mu\nu}\omega^{\mu\nu}  - R_{\mu\nu}U^{\mu}U^{\nu} \\
@@ -168,7 +174,7 @@
 			\end{align*}
 		\end{columns}
 		\vskip 10pt
-		\begin{ideablock}{Existence criteria for focal points}
+		\begin{ideablock}{Existence criterion for focal points}
 			\centering
 			\(\vert\theta\vert \rightarrow +\infty \implies \) 
 			a focal point is developed.
@@ -188,10 +194,10 @@
 			\end{itemize}
 		
 			\column{0.4\textwidth}
-			\includegraphics[scale=0.4]{example-image-duck}
+			\includegraphics[scale=0.15]{Immagini/escher.jpg}
 		\end{columns}
 		\begin{theoblock}{Hawking's Area Theorem}
-			Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}k^{\mu}k^{\nu} \ge 0\) for all null vectors \(k^{\mu}\). 
+			Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) for all null vectors \(U^{\mu}\). 
 			
 			Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
 			\[
@@ -204,9 +210,9 @@
 	\begin{frame}{A new proof of the Black Hole Area Theorem}
 		\begin{columns}
 			\column{0.3\textwidth}
-			\includegraphics[scale=0.4]{example-image-duck}
+			\includegraphics[scale=0.15]{Immagini/escher.jpg}
 			\column{0.7\textwidth}
-			The proof is made of \(2\) main steps
+			The proof has of \(2\) main steps
 			\begin{enumerate}
 				\item Observe that on any Cauchy hypersurface for the null generators of the horizion it holds that \(\mathrm{H}^{\mu}U_{\mu} \ge 0\).
 				\item Prove that the above implies the thesis.
@@ -221,7 +227,7 @@
 
 			From NEC and picking \(f(\lambda) = 1 - \frac{\lambda}{\ell}\)
 			\column{0.4\textwidth}
-			\includegraphics[scale=0.4]{example-image-duck}
+			\includegraphics[scale=0.15]{Immagini/escher.jpg}
 		\end{columns}
 		\vskip 7pt
 		\[
@@ -265,7 +271,7 @@
 			\end{itemize}
 			\column{0.5\textwidth}
 			\centering
-			\includegraphics[scale=0.5]{example-image-duck}
+			\includegraphics[scale=0.15]{Immagini/escher.jpg}
 		\end{columns}
 		
 	\end{frame}
@@ -293,7 +299,7 @@
 	\begin{frame}
 		\frametitle{The Sobolev condition}
 		\begin{defblock}{Sobolev condition}
-		The Sobolev condition is satisfied on \(\gamma\), for a lenght \(\ell\) if there exist \(m\in\N\) and \(2\) constants \(Q_0\) and \(Q_m\) such that:
+		The Sobolev condition is satisfied on \(\gamma\), for a length \(\ell\) if there exist \(m\in\N\) and \(2\) constants \(Q_0\) and \(Q_m\) such that:
 		\[
 		\forall f \quad
 		\int_0^{\ell} f(\lambda)^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2;

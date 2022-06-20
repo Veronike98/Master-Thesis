@@ -109,9 +109,11 @@ This assumption is motivated by the work in section \(4\) of \cite{fewster2020ne
 
 \begin{definition}
 	We say that the \emph{Sobolev condition} is satisfied on a curve \(\gamma\), from a Cauchy surface \(\Sigma\) for a ``time'' \(\ell\), if there exixst some \(m\in \N\) and \(2\) non negative constants \(Q_0\) and \(Q_m\) such that, for any \(\frac{1}{2}-\)density \(f\) on \(\gamma\):
-	\[
-		\int_0^{\ell} f(\lambda)^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2;
-	\]
+    \begin{equation}
+        \label{eq:Sobolev-condition}
+        \int_0^{\ell} f(\lambda)^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2;
+    \end{equation}
+
 	the affine parametrization is chosen so that \(\gamma(\lambda = 0) \in \Sigma\) and \(\hat{H}_{\mu}\frac{d\gamma^{\mu}}{d\lambda}\Big\vert_{\lambda = 0} \equiv 1\) (\(\hat{H}_{\mu}\) is the versor of the mean normal curvature of \(\Sigma\)) - we will refer to this as the \emph{standard} affine parametrization. Finally, \(\vert\vert \star \vert\vert\) denotes the standard norm in \(L^2(I)\).
 \end{definition}
 
@@ -236,10 +238,13 @@ As extensively argued above, \(\mathcal{V}\) represents the bound on the instant
 
 With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:J-sobolev-condition}\) into a function of some physical quantities; we will let us be inspired by the work in section \(5.2\) of \cite*{fewster2020new}, where Fewster and Kontou computed \(\mathcal{V}\) in the specific case of a non-minimally coupled classical Einstein-Klein Gordon theory.
 
-They needed such a computation to compare the hypothesis of some weakened singularity theorems to physical scenarios, while here we would like to analyze the evaporation of black holes, and will need indeed to be make some different approximations.
+They needed such a computation to compare the hypothesis of some weakened singularity theorems to physical scenarios, while here we would like to analyze the evaporation of black holes, and will need indeed to make some different approximations.
 
 \subsection{The non-minimally coupled Einstein Klein Gordon Theory}
-Non minimally coupled scalar fields is the typical classical example that violates NEC, and thus the original black hole area theorem doesn't apply. 
+\label{subsec:non-min-EKG-theory}
+First of all let's try to compute some reasonable physical estimates of the coefficient \(Q_0\) and \(Q_m\). In order to do so we need to pick a specific field theory, and we will adopt a semiclassical gravity point of view, so quantum fields in a classical background geometry, where backreaction corrections are assumed small and thus neglected.
+
+Our choice happens to land on non-minimally coupled scalar fields is the typical classical example that violates NEC, and thus the original black hole area theorem doesn't apply. 
 
 They are scalar fields described by the Lagrangian density
 \[
@@ -282,22 +287,102 @@ From here onwards we will assume that non-minimally coupled scalar fields will a
 Moreover we shall only consider \emph{massless} scalar fields; given that, it was shown in \cite{fewster2011singularity} and \cite{brown2018singularity} for ``reasonable'' functions the Ricci tensor contraction is bounded in a form tha can be recasted in the one of the Sobolev condition.
 
 \begin{prop}
-    In the context of a massless non-minimally coupled Einsten-Klein Gordon field theory, the integral of the contraction of the Ricci tensor along any causal geodesic, wighted any compactly supported real valued \(-\frac{1}{2}\)-density \(f\), is bounded by:
+    In the context of a massless non-minimally coupled Einsten-Klein Gordon field theory, the integral of the contraction of the Ricci tensor along any causal geodesic, weighted with any compactly supported real valued \(-\frac{1}{2}\)-density \(f\), is bounded by:
 
     \begin{equation}
-        \int_{\gamma}f^2 R_{\mu\nu}U^{\mu}U^{\nu} \le Q\left(\vert\vert\nabla_U f \vert\vert^2 + \tilde{Q}^2 \vert\vert f\vert\vert^2\right).
+        \int_{\gamma}f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -Q\left(\vert\vert\nabla_U f \vert\vert^2 + \tilde{Q}^2 \vert\vert f\vert\vert^2\right).
     \end{equation}
+    where 
+    \[
+    Q = \frac{32\pi\xi\phi_{max^2}}{1 - 8\pi\xi\phi_{max}
+    ^2}
+    \quad\quad
+    \tilde{Q} = \frac{8\pi\xi\phi_{max}}{1 - 8\pi\xi\phi_{max}
+    ^2}\sup_{\gamma}\vert \nabla_U\phi\vert.
+    \]
 \end{prop}
 
 \begin{proof}
     We start from a bound given as equation \((67)\) in \cite{brown2018singularity}.
+
+    Then we can proceed as in corollary \(1\) of the same paper \cite{brown2018singularity}, but reducing to the case of a massless field, and integratig along null geodesics.
 \end{proof}
 
+We can then see we have a condition of the form \(\eqref{eq:Sobolev-condition}\) with 
+\[
+m = 1 \quad\quad Q_0 = Q\cdot\tilde{Q}^2 \quad\quad Q_1 = Q 
+\]
+we then want to compute \(Q\) and \(\tilde{Q}\) in terms of some physical quantities: for this reason we pick a quantized scalar field in a thermal state of temperature \(T\); we find the value for the Wick square of the massless scalar field in a Kubo-Martin-Schwinger (KMS) state with temperature \(T\) in section \(5.2\) of \cite{fewster2020new}, and we can compute it in a way analogous to what has been done in the final appendix of \cite{brown2018singularity}.
+
+\begin{definition}
+    The KMS state is defined as \dots
+    %todo: studiare
+\end{definition}
+
+\begin{prop}
+    The Wick square of the massless field in a KMS thermal state of temperature \(T\) within a \(n\)-dimensional spacetime is given by:
+    \begin{align}
+        \phi_{max}^2 \sim \langle \colon \phi^2 \colon\rangle_T &= \frac{T^{n - 2}}{2^{n - 2}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n - 2)}{\Gamma\left(\frac{n - 2}{2}\right)}\zeta(n) \\
+        \sup_{\gamma}\vert \nabla_U\phi\vert ^2 \sim \langle \colon (\nabla_U\phi)^2 \colon\rangle_T &= \frac{T^{n}}{3\cdot2^{n - 4}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n)}{\Gamma\left(\frac{n - 1}{2}\right)}\zeta(n)
+    \end{align}
+
+\end{prop}
+    
+\begin{proof}
+    \VS{AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA there is a sort of Bose-Einstein condensation.}
+        %todo: trova e scrivi la dimostrazione
+\end{proof}
+Restoring the units and reducing to \(n = 4\) spacetime dimension we get:
+\begin{align}
+    Q_1 &= \underbrace{\frac{4\pi\sqrt{\pi}\xi}{3}}_{\alpha} \left(\frac{T}{T_{Pl}}\right)^2 \\
+    Q_0 &= \underbrace{\frac{32\pi^6\xi^3}{405}}_{\gamma}\left(\frac{k_B}{\hbar}\right)^2 \frac{T^8}{T_{Pl}^6}.
+\end{align}
+
+For the puropose of the following analysis we will identify \(T\) with the Hawking temperature of the black hole \(\eqref{eq:hawking-temperature}\):
+\[
+T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}    
+\]
+    
+
+\subsection[V-optimization]{\(\mathcal{V}\) optimization}
+So far we have derived a class of bounds \(\mathcal{V}(\ell, \ell_0)\) that depend on \(\ell\) and \(\ell_0\). Among them, as all of them need to be obeyed, the most interesting is the most restrictive, because it's the one that gives as the most information.
+
+From this we get the idea of picking \(\ell, \ell_0\) so that they minimize \(\mathcal{V}(\ell, \ell_0)\) (and \(\ell \ge \ell_0\)).
+The first optimization has been already performed in \cite{fewster2020new}, even if in their computation they neglect some terms that are instead relevant for us, for the different regime of approximation that we set. Let's then do that first:
+
+\begin{prop}
+    The bound optimized on \(\ell \ge \ell_0\) is
+    \[
+      (n-2)\mathcal{V}(\ell_0) = (A_m - 1)\rho_0\ell_0 + \frac{Q_mC_m}{\ell_0} + 2 \sqrt{(n - 2)A_mB_mQ_0}   
+    \]
+    and is obtained for:
+    \[
+    \ell = \ell_0(1 + \sqrt{\frac{(n - 2) B_m}{A_m Q_0\ell_0^2}})    
+    \]
+\end{prop}
+
+\begin{proof}
+    The proof is very similar to the one given in \cite{fewster2020new}, but we have to pay attention to keep all the terms.
+
+    Set \(\ell = \ell_0(1 + B_m\mu)\), so that the constraint \(\ell\ge\ell_0\) becomes simply \(\mu \ge 0\).
+
+    For what argued in the previous subsection \ref{subsec:non-min-EKG-theory} we can reduce to \(m = 1\) and the expression in \(\eqref{eq:J-sobolev-condition}\) reduces to:
+    \begin{align*}
+        \mathcal{V}(\ell, \ell_0) &= E + F\mu + \frac{G}{\mu} \\
+        E &= (A_m - 1)\rho_0\ell_0 + Q_0A_m\ell_0 + \frac{Q_mC_m}{\ell_0}\\
+        F &= Q_0A_mB_m\ell_0 \\
+        G &= \frac{n- 2}{\ell_0} + \frac{Q_mC_m}{B_m\ell_0}
+    \end{align*}
+    Imposing the first derivative of \(\mathcal{V}\) to be zero, it is easy to obtain:
+    \[
+    \tilde{\mu} = \sqrt{\frac{G}{F}} =  \sqrt{\frac{n - 2}{A_mB_mQ_0\ell_0^2}}.
+    \]
+\end{proof}
 
 
 \section{A more general point of view}
 
-The all problem is about maximizing J. %todo: chiarisciti se e' max o min per favore.
+The all problem is about maximizing J.
 
 A new definition of ``classical'' energy condition: a condition is classical if \(\sup J[f] = 0\)
 	

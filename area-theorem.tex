@@ -1,5 +1,3 @@
-%!TEX root = 00_main.tex
-
 \section{The classical Black Hole Area Theorem}
 \label{sec:classical-bh-area}
 
@@ -233,7 +231,7 @@ As in the previous section we are now able to infer some conditions on the area 
 	
 \end{remark}
 
-\section{Physical interpretation of \(\mathcal{V}\)}
+\section[physical-interpretation-V]{Physical interpretation of \(\mathcal{V}\)}
 As extensively argued above, \(\mathcal{V}\) represents the bound on the instantaneous rate of change of the area of the black hole horizon. In order to understand the physical impact of the hypothesis we have assumed, we would like to compare it to some relevant physical quantity; in this scenario we are lucky enough to have a particular appealing one: the rate of black hole evaporation.
 
 With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:J-sobolev-condition}\) into a function of some physical quantities; we will let us be inspired by the work in section \(5.2\) of \cite*{fewster2020new}, where Fewster and Kontou computed \(\mathcal{V}\) in the specific case of a non-minimally coupled classical Einstein-Klein Gordon theory.
@@ -312,31 +310,78 @@ We can then see we have a condition of the form \(\eqref{eq:Sobolev-condition}\)
 \[
 m = 1 \quad\quad Q_0 = Q\cdot\tilde{Q}^2 \quad\quad Q_1 = Q 
 \]
-we then want to compute \(Q\) and \(\tilde{Q}\) in terms of some physical quantities: for this reason we pick a quantized scalar field in a thermal state of temperature \(T\); we find the value for the Wick square of the massless scalar field in a Kubo-Martin-Schwinger (KMS) state with temperature \(T\) in section \(5.2\) of \cite{fewster2020new}, and we can compute it in a way analogous to what has been done in the final appendix of \cite{brown2018singularity}.
+
+\subsection{The Kubo-Martin-Schwinger state}
+
+We would like to compute \(\phi_{max}\) and \(\sup_{\gamma}\vert \nabla_U\phi\vert\) in terms of some physical quantities; in principle the field values may be not bounded, but here we only aim at estimating what a reasonable value of \(\mathcal{V}\) would be.
+Physically, it makes sense that the value of \(\phi_{max}\) is connected to some sort of background temperature, and we expect the higher \(T\), the higher values the field might reach.
+
+In order to establish this connection we now change setting, and consider a quantum field theory with a minimally coupled massless scalar field in a Minkowski background metric; we aim at computing the Wick square of our field averaged in a thermal state of temperature \(T\). As choice of thermal state, we pick the Kubo-Martin-Schwinger (KMS) state with temperature \(T\), as in section \(5.2\) of \cite{fewster2020new}, and we can compute the desired quantity in a way analogous to what has been done in the final appendix of \cite{brown2018singularity}.
 
 \begin{definition}
     The KMS state is defined as \dots
     %todo: studiare
 \end{definition}
 
+\begin{remark}
+	The KMS state is a \emph{thermal equilibrium} state.
+\end{remark}
+
 \begin{prop}
-    The Wick square of the massless field in a KMS thermal state of temperature \(T\) within a \(n\)-dimensional spacetime is given by:
+    The Wick square of the massless field in a KMS thermal state of temperature \(T\) within a \(n\)-dimensional Minkowski spacetime is given by:
     \begin{align}
-        \phi_{max}^2 \sim \langle \colon \phi^2 \colon\rangle_T &= \frac{T^{n - 2}}{2^{n - 2}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n - 2)}{\Gamma\left(\frac{n - 2}{2}\right)}\zeta(n) \\
-        \sup_{\gamma}\vert \nabla_U\phi\vert ^2 \sim \langle \colon (\nabla_U\phi)^2 \colon\rangle_T &= \frac{T^{n}}{3\cdot2^{n - 4}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n)}{\Gamma\left(\frac{n - 1}{2}\right)}\zeta(n)
+         \langle \colon \phi^2 \colon\rangle_T &= \frac{T^{n - 2}}{2^{n - 2}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n - 2)}{\Gamma\left(\frac{n - 1}{2}\right)}\zeta(n - 2) \\
+        \langle \colon (\nabla_U\phi)^2 \colon\rangle_T &= \frac{nT^n}{2^{n - 1}\pi^{\frac{n - 1}{2}}} \frac{\Gamma(n)}{\Gamma\left(\frac{n + 1}{2}\right)} \zeta(n)
     \end{align}
 
 \end{prop}
     
 \begin{proof}
-    \VS{AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA there is a sort of Bose-Einstein condensation.}
-        %todo: trova e scrivi la dimostrazione
+    Given \(\beta = \frac{1}{k_BT}\) the \(2\)-point function of the state is:
+	\[
+	W^{(2)}_T(x, x') = \int \frac{d^{n - 1}\mathbf{k}}{(2\pi)^{n - 1}}\frac{1}{2k^0(\mathbf{k})} \left(\frac{e^{-ik^{\mu}(x_{\mu} - x'_{\mu})}}{1 - e^{-\beta k^0(\mathbf{k})}} + \frac{e^{ik^{\mu}(x_{\mu} - x'_{\mu})}}{e^{\beta k^0(\mathbf{k})} - 1}\right). 
+	\]
+
+	As we are treating a massless scalar field the dispersion relation (the field is on-shell) is \(k^0(\mathbf{k}) = \vert \mathbf{k}\vert\).
+
+	For the ground state \(2\)-point function we need to take the limit \(T\rightarrow 0\), or \(\beta\rightarrow +\infty\), and obtain
+	\[
+	W^{(2)}_0(x, x') = \int \frac{d^{n - 1}\mathbf{k}}{(2\pi)^{n - 1}}\frac{1}{2k^0(\mathbf{k})} e^{-ik^{\mu}(x_{\mu} - x'_{\mu})}. 
+	\]
+	The Wick square is defined to be:
+	\[
+		\langle \colon \phi^2 \colon\rangle_T = \lim_{x'\rightarrow x} \left[W^{(2)}_T(x, x') - W^{(2)}_0(x, x')\right]
+	\]
+	The above expression can be simply worked out to be:
+	\begin{align*}
+		\langle \colon \phi^2 \colon\rangle_T &= \underbrace{\frac{2\pi^{\frac{n-1}{2}}}{\Gamma(\frac{n - 1}{2})}}_{\Omega_{n - 2}}\frac{1}{(2\pi)^{n - 1}}\frac{1}{\beta^{n - 2}}\int_0^{+\infty}dx \frac{x^{n - 3}}{e^x - 1} =\\
+		&= \frac{T^{n - 2}}{2^{n - 2}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n - 2)}{\Gamma\left(\frac{n - 1}{2}\right)}\zeta(n - 2)
+	\end{align*}
+	The second inequality can be worked out in a similar way, being careful that this time there is an angolar dependance because of the factor \((k_{\mu}U^{\mu})^2\) originated by the derivatives. This factor adds a \(k^2\) power to the radial part of the integral, and a factor:
+	\[
+	\int_0^{\pi} \sin\theta^{n - 3} (1 - \cos\theta)^2 d\theta = \frac{n\sqrt{\pi}}{2}\frac{\Gamma\left(\frac{n - 2}{2}\right)}{\Gamma\left(\frac{n + 1}{2}\right)}.
+	\]
+	So the final result becomes:
+	\begin{align*}
+		\langle \colon (\nabla_U\phi)^2 \colon\rangle_T &= 
+		\underbrace{\frac{2\pi^{\frac{n-2}{2}}}{\Gamma(\frac{n - 2}{2})}}_{\Omega_{n - 3}} \cdot \frac{n\sqrt{\pi}}{2}\frac{\Gamma\left(\frac{n - 2}{2}\right)}{\Gamma\left(\frac{n + 1}{2}\right)} \cdot \frac{1}{(2\pi)^{n - 1}}\frac{1}{\beta^{n}}\int_0^{+\infty}dx \frac{x^{n - 1}}{e^x - 1} = \\
+		&= \frac{nT^n}{2^{n - 1}\pi^{\frac{n - 1}{2}}} \frac{\Gamma(n)}{\Gamma\left(\frac{n + 1}{2}\right)} \zeta(n)
+	\end{align*}
 \end{proof}
+
+At this point we estimate the maximum values of the field and its derivative by assuming 
+\begin{align*}
+	\phi_{\max}^2 &\simeq \langle \colon \phi^2 \colon\rangle_T\\
+	\sup_{\gamma}\vert \nabla_U\phi\vert &\simeq \langle \colon (\nabla_U\phi)^2 \colon\rangle_T
+\end{align*}
 Restoring the units and reducing to \(n = 4\) spacetime dimension we get:
 \begin{align}
-    Q_1 &= \underbrace{\frac{4\pi\sqrt{\pi}\xi}{3}}_{\alpha} \left(\frac{T}{T_{Pl}}\right)^2 \\
+	\label{eq:KMS_Q_1}
+    Q_1 &= \underbrace{\frac{16\pi\xi}{3}}_{\alpha} \left(\frac{T}{T_{Pl}}\right)^2 \\
     Q_0 &= \underbrace{\frac{32\pi^6\xi^3}{405}}_{\gamma}\left(\frac{k_B}{\hbar}\right)^2 \frac{T^8}{T_{Pl}^6}.
 \end{align}
+
+Again, this is of course not a rigorous computation of the coefficients, but it's a meaningful approximation pursued in an instructive toy-model, that can give us some encouraging insights on the underlying complicated physics.
 
 For the puropose of the following analysis we will identify \(T\) with the Hawking temperature of the black hole \(\eqref{eq:hawking-temperature}\):
 \[
@@ -345,7 +390,7 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
     
 
 \subsection[V-optimization]{\(\mathcal{V}\) optimization}
-So far we have derived a class of bounds \(\mathcal{V}(\ell, \ell_0)\) that depend on \(\ell\) and \(\ell_0\). Among them, as all of them need to be obeyed, the most interesting is the most restrictive, because it's the one that gives as the most information.
+So far we have derived a class of bounds \(\mathcal{V}(\ell, \ell_0)\) that depend on \(\ell\) and \(\ell_0\). Among them, as all of them need to be obeyed, the most interesting is the most restrictive, because it's the one that gives us the most information.
 
 From this we get the idea of picking \(\ell, \ell_0\) so that they minimize \(\mathcal{V}(\ell, \ell_0)\) (and \(\ell \ge \ell_0\)).
 The first optimization has been already performed in \cite{fewster2020new}, even if in their computation they neglect some terms that are instead relevant for us, for the different regime of approximation that we set. Let's then do that first:
@@ -357,34 +402,175 @@ The first optimization has been already performed in \cite{fewster2020new}, even
     \]
     and is obtained for:
     \[
-    \ell = \ell_0(1 + \sqrt{\frac{(n - 2) B_m}{A_m Q_0\ell_0^2}})    
+    \ell = \ell_0\left(1 + \sqrt{\frac{(n - 2) B_m}{A_m Q_0\ell_0^2}}\right)    
     \]
 \end{prop}
 
 \begin{proof}
-    The proof is very similar to the one given in \cite{fewster2020new}, but we have to pay attention to keep all the terms.
+    The proof is very similar to the one given in \cite{fewster2020new}, but we have to pay attention to keep all the terms relevant for us.
 
-    Set \(\ell = \ell_0(1 + B_m\mu)\), so that the constraint \(\ell\ge\ell_0\) becomes simply \(\mu \ge 0\).
+    Set \(\ell = \ell_0\left(1 + B_m\mu\right)\), so that the constraint \(\ell\ge\ell_0\) becomes simply \(\mu \ge 0\).
 
     For what argued in the previous subsection \ref{subsec:non-min-EKG-theory} we can reduce to \(m = 1\) and the expression in \(\eqref{eq:J-sobolev-condition}\) reduces to:
     \begin{align*}
         \mathcal{V}(\ell, \ell_0) &= E + F\mu + \frac{G}{\mu} \\
-        E &= (A_m - 1)\rho_0\ell_0 + Q_0A_m\ell_0 + \frac{Q_mC_m}{\ell_0}\\
-        F &= Q_0A_mB_m\ell_0 \\
-        G &= \frac{n- 2}{\ell_0} + \frac{Q_mC_m}{B_m\ell_0}
+        E &= (A_1 - 1)\rho_0\ell_0 + Q_0A_1\ell_0 + \frac{Q_1C_1}{\ell_0}\\
+        F &= Q_0A_1B_1\ell_0 \\
+        G &= \frac{n- 2}{\ell_0} + \frac{Q_1C_1}{B_1\ell_0}
     \end{align*}
     Imposing the first derivative of \(\mathcal{V}\) to be zero, it is easy to obtain:
     \[
-    \tilde{\mu} = \sqrt{\frac{G}{F}} =  \sqrt{\frac{n - 2}{A_mB_mQ_0\ell_0^2}}.
+    \tilde{\mu} = \sqrt{\frac{G}{F}} =  \sqrt{\frac{n - 2}{A_1B_1Q_0\ell_0^2}}.
     \]
+	where we neglected the second term of \(G\) under the assumption \(Q_1 \ll 1\); as in the previous section we have seen \(Q_1 \sim \left(\frac{T}{T_{Pl}}\right)^2\) we can neglect the second term of \(G\) if we assune to be in the temperature regime where \(\left(\frac{T}{T_{Pl}}\right)^2 \ll 1\), which is not particularly restrictive as also the analysis of black hole evaporation is performed under the same assumption.
 \end{proof}
+
+Now we reduced to a bound that only depends on temperature and \(\ell_0\); there are several strategies we can think about in order to provide an estimate for \(\ell_0\). The first idea is to pick some constant \(\ell_0\) (which is what has been done in \cite{fewster2020new}), fixed to be some relevant quantity, but we haven't been able to formulate one particularly convincing, and besides requiring \(\ell_0\) to be constant in a background that will be dynamic doesn't seem particularly reasonable after all.
+
+As anticipated in the introduction of this subsection, a better idea seems to pick \(\ell_0\) in order to recover the best bound possible. We then proceed to minimize \(\mathcal{V}(\ell_0)\):
+\begin{prop}
+	The bound minimized along \(\ell_0\) is (it has also been assumed \(\rho_0 < 0\)):
+
+	\begin{equation}
+		\label{eq:minimized-V}
+		\mathcal{V} = \frac{5}{6}\sqrt{\frac{3}{2}Q_1 \vert\rho_0\vert} + 2 \sqrt{(n - 2)A_mB_mQ_0}
+	\end{equation}
+
+	obtained for \(\tilde{\ell}_0^2 = - \frac{3Q_1}{2\rho_0}\)
+\end{prop}
+\begin{proof}
+	The computation is very similar to the preceeding one, as in particular the shape of the function is exactly the same.
+\end{proof}
+
+\subsection{Limited violations}
+In the remark following the area theorem generalized for the Sobolev condition we already expressed some concerns about the pointwise condition we ask for; however the hypothesis doesn't seem totally unreasonable as there are some numerical examples that seem to support our argument.
+
+Here we will take for \(\rho_0\) the value computed in \cite{levi2016versatile}, even if this computation is performed for \emph{minimally-coupled} scalar fields; they get to a violation of NEC, and even ANEC, by taking into account the background Schwarzschild metric, so we are again beyond the classical regime, but for a different reason than the one for the Einstein-Klein Gordon field theory.
+
+At the end they state the computed value to be:
+\[
+\rho_0 = - \si{2.7\times10^{-7}} \frac{1}{M^4}
+\]
+where \(M\) is the mass of the Schwarzschild black hole.
+
+By substituiting that into \(\eqref{eq:minimized-V}\), and recovering the temperature dependace, we finally get:
+\begin{equation}
+	\label{eq:KMS-minimized-V}
+	\mathcal{V}_{min} = 5\cdot10^{-3} \cdot (8\pi)^2\sqrt{\alpha} \frac{Gk_B^3}{\hbar^2} \cdot T^3 + \mathcal{O}\left(\left(\frac{T}{T_{Pl}}\right)^4\right),
+\end{equation}
+
+where \(\alpha \sim \frac{16\pi\xi}{3}\) is the dimensionless constant that relates \(Q_1\) to its temperature dependance as computed in \(\eqref{eq:KMS_Q_1}\).
+
+This result is extremely interesting: despite all the approximations and arguable assumptions, we recovered the same temperature dependance of the evaporation rate, computed by a totally different method! 
+
+\begin{remark}
+	Notice that a priori it was not at all clear that we would have found a \(T^3\) dependance: when \(Q_1\) is connected to the temperature, as for dimensional argument \(\left[Q_1\right] = 0\), we know there must be a combination of constants with the dimension of a temperature (which happens to be the Planck temperature), so, in principle, there could have been factors \(\left(\frac{T}{T_{Pl}}\right)^a\) in \(\tilde{\ell}_0\) that would have changed the power law.
+\end{remark}
+
+In particular, a direct comparison with the formula in \(\eqref{eq:evaporation rate}\) - recalling that  \(\beta \sim \mathcal{O}(10^{-5})\) - tells us that \(\mathcal{V}_{min}\) is allowing that rate of evaporation for 
+\[
+\alpha \gtrsim \frac{1}{400} \iff \xi \gtrsim 1.49 \times 10^{-4}	
+\]
+so in principle the field might be very weakly coupled. This coefficient comparison is way less meaningul though, as the coefficients are very model dependent, and therefore it is not clear how reflective of the underlying physics they are.
 
 
 \section{A more general point of view}
 
-The all problem is about maximizing J.
+In this section we want to go back on our steps a little bit, in order to recover a more general point of view on the problem. 
+The proof of theorem \ref{th:sobolev-bh-area} can be readily used to observe the folloiwing
+\begin{lemma}
+	In any strongly asymptotically predictable spacetime, let \(H\) be the black hole horizion, \(U^{\mu}\) the tangent field of its null generators, and \(\mathrm{H}^{\mu}\) the mean normal curvature of \(\mathscr{H} = \Sigma \cap H\), where \(\Sigma\) is any Cauchy surface. Then it must always hold:
+	\[
+	U_{\mu}\mathrm{H}^{\mu} \ge -\frac{1}{n - 2} \inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell > 0}J_{\ell}[f]
+	\]
+	where we indicated \(C^{\infty}_{1,0}[0, \ell]\) the set of smooth functions such that \(f(0) = 1\) and \(f(\ell) = 0\).
+\end{lemma}
 
-A new definition of ``classical'' energy condition: a condition is classical if \(\sup J[f] = 0\)
+\begin{proof}
+	The proof proceeds in a very similar way to what has been done for the generalized area theorem \ref{th:sobolev-bh-area}. By contradiction, suppose there exists a point of the horizion where:
+	\[
+		U_{\mu}\mathrm{H}^{\mu} < -\frac{1}{n - 2} \inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell > 0}J_{\ell}[f]	
+	\]
+	Then there exists a deformation of \(\mathscr{H}\) on the Cauchy surface \(\Sigma\) where this inequality keeps holding, or in other words:
+	\[
+	\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f] < - (n - 2)U_{\mu}\mathrm{H}^{\mu};
+	\]
+	this implies that there exist \(\ell > 0\) and \(f\in C^{\infty}_{1,0}[0, \ell]\) so that the condition \(\eqref{eq:fp-criteria}\) is satisfied. But this leads to a contradiction in the same way as in theorems \ref{th:classical-bh-area} and \ref{th:sobolev-bh-area}, because we are again in a globally hyperbolic spacetime, and null generators are not allowed to contain any focal point.
+\end{proof}
+
+In some sense this infimum is really the minimal constraint we can put on \(U_{\mu}\mathrm{H}^{\mu}\)
+\VS{Could it be equal to that by any chance? Maybe for null generators of the horizon we could say a focal point is formed at infinity, or sth like that}.
+
+Then we have rephrased our problem to look for the infimum of \(J\).
+This is of course a very difficult problem in general (as it is exactly equivalent to the original question), but there are a bunch of known tecniques for variational problem that can become useful.
+
+\subsection{The first idea - a variational estimation}
+One possible idea - that we have already been exploiting in the specific case of the Sobolev condition - is really that of a variational estimation. This works as follows:
+\begin{lemma}
+	As soon as we can place an upper bound on \(J[f]\), holding in some class of functions \(\mathcal{A} \subset C^{\infty}_{1,0}\left([0,+\infty)\right)\), then we have an upper bound on \(\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f]\), and hence a lower bound on \(U_{\mu}\mathrm{H}^{\mu}\).
+\end{lemma}
+	\begin{proof}
+		Say that we know, from some mysterious oraculus, that
+		\[
+		\exists f \in \mathcal{A} \quad J[f] \le (n-2) \cdot A.
+		\]
+		Then clearly
+		\[
+			\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f] \le (n-2) \cdot A,
+		\]
+		and hence
+		\[
+			U_{\mu}\mathrm{H}^{\mu} \ge -\frac{1}{n - 2} \inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell > 0}J_{\ell}[f] > - A.
+		\]
+	\end{proof}
+	As for any variational estimation, the aim is to get a better and better approximation of the infimum by taking larger and larger sets of functions.
+
+	In \(J\) though, there is still hidden some metric dependance by the presence of the Ricci tensor, dependance that we would like to wash away. Here is where energy conditions shall enter and help us out again: in fact, an energy condition of the form 
+	\[
+	\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B	
+	\]
+	is actually helping us in placing an upper bound on \(J\) - that doesn't depend on the metric of course, but can depend on \(f\) - and hence is going exactly in the direction we are driving towards.
+
+	The strategy to pursue this idea will then be to pick
+	\begin{itemize}
+		\item An energy condition of the form \(\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B[f]\);
+		\item A class of functions \(\mathcal{A}\) onto which \(J\) is ``minimized''.
+	\end{itemize}
+
+	\subsection{Classical conditions}
+	An immediate observation is that, from the phenomenon of black hole evaporation, we expect the infimum of \(J[f]\) to be strictly positive.
+
+	Instead, if we were in presence of some function \(f\) that gives:
+	\[
+	J[f] \le 0	\iff \int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge \int_0^{\ell} \vert \nabla_U f\vert^2
+	\]
+	then we would know that the infimum of \(J\) would have to be non positive, and so black hole evaporation would be prohibited, as it was for NEC and dANEC.
+
+	The idea is that we would like to define an energy condition to be classical if it prohibits black hole evaporation, or in other words:
+	\begin{definition}
+		We say that an energy condition is \emph{classical} if there exists a function in the closure of \(C^{\infty}\left([0, +\infty)\right)\) such that
+		\[
+			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge \int_0^{+\infty} \vert \nabla_U f\vert^2.	
+		\]
+	\end{definition}
+
+	With this definition both NEC and dANEC are \emph{classical}.
+
+	\textbf{Example 1}: NEC\dots
+
+	\textbf{Example 2}: dANEC\dots
+
+	\subsection{The second idea - a differential equation}
+	Here we suppose to start from an energy condition
+	\[
+		\int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]
+	\]
+	and we wrtie a differential equation that doesn't depend on the metric, to minimize 
+	\[
+	\vert\vert \nabla_U f\vert\vert^2 + B[f].	
+	\]
+
+	A new definition of ``classical'' energy condition: a condition is classical if \(\sup J[f] = 0\)
 	
 	
 	

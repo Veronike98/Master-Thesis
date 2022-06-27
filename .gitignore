@@ -15,5 +15,7 @@
 *run.xml
 *.spell.txt
 *-blx.bib
+*.xdv
+*.synctex
 
 venv*

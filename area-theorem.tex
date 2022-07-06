@@ -390,8 +390,8 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
 \]
     
 
-\subsection[V-optimization]{\(\mathcal{V}\) optimization}
-
+\subsection[V optimization]{\(\mathcal{V}\) optimization}
+\label{subsec:V-optimization}
 So far we have derived a class of bounds \(\mathcal{V}(\ell, \ell_0)\) that depend on \(\ell\) and \(\ell_0\). Among them, as all of them need to be obeyed, the most interesting is the most restrictive, because it's the one that gives us the most information.
 
 From this we get the idea of picking \(\ell, \ell_0\) so that they minimize \(\mathcal{V}(\ell, \ell_0)\) (and \(\ell \ge \ell_0\)).
@@ -650,6 +650,64 @@ One possible idea - that we have already been exploiting in the specific case of
 		\]
 		\(\eqref{eq:definition-classical-condition}\) is indeed satisfied.
 	\end{proof}
+
+	\subsection{State independent bounds}
+	It is reasonable to expect, from a semi-classical energy condition at least, that slow black hole evaporation is allowed, at low Hawking temperatures, and eventually we encounter a breakdown at some high temperature, possibly close to the Planck temperature, where in fact we expect any semi classical approximation to break down.
+
+	The translation of this intuition onto our work is that we expect the bound on the evaporation rate \(R_{Ev} \le \mathcal{V}\), to pick up temperature corrections - again in a sort of perturbative framework - of at most degree \(3\).
+	In other words, if we expect to be able to expand \(\mathcal{V}\) in terms of the Hawking temperature
+	\[
+	\mathcal{V} = v_0 + v_1T + v_2T^2 + v_3T^3 + \ldots	
+	\]
+	we expect that at least one among \(\{v_0, v_1, v_2, v_3\}\) to be non-zero, otherwise the evaporation rate in \(\eqref{eq:evaporation-rate}\) would be prohibited for low temperatures but (potentially) allowed in more extreme regimes.
+
+	This puts some restrictions onto the energy conditions we start from, in case they are state-independent. We are going to prove the following:
+	\begin{prop}
+		State independent energy conditions in the form of a Sobolev condition must have \(m \le 2\) in order to match with the expected black hole evaporation rate.
+	\end{prop}
+	\begin{proof}
+		The reason why we need to ask for state-independence is that this way we make sure we don't have any non trivial contribution of the temperature to the coefficients \(Q_0\) and \(Q_m\). If they were to depend on \(T\) in principle it is not easy to restrict what dependence they should bear, as the presence of \(T_{Pl}\) invalids the power of dimensional analysis.
+
+		Again, it is enough to look at the set of modified Bessel functions, and study the bound:
+		\[
+		(n - 2)\mathcal{V}(\ell, \ell_0) \coloneqq \frac{(n - 2) B_m}{\ell - \ell_0} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + \frac{Q_mC_m}{(\ell - \ell_0)^{2m - 1}}	+ Q_0A_m\ell - \rho_0\ell_0(1 - A_m)
+		\]
+		As in subsection \ref{subsec:V-optimization} we set out to minimize \(\mathcal{V}\) with respect to \(\ell \ge \ell_0\). Again we choose to parametrize \(\ell = (1 + B_m\mu)\ell_0\); however, this time we need to deal with a \(2m\)-degree equation, which in general is not explicitely solvable. 
+		\[
+			(n - 2)\frac{d\mathcal{V}}{d\mu} = -\frac{n - 2}{\ell_0} \frac{1}{\mu^2} + \frac{Q_mC_m}{(B_m \ell_0)^{2m - 1}} \cdot \frac{1 - 2m}{\mu^{2m}} + Q_0A_mB_m\ell_0 = 0.
+		\]
+		This is not a big deal though: for our goal we are only interested to the temperature dependance of the minimum point \(\tilde{\mu}\), and that can only come from \(\ell_0\). The equation we have to solve is of the form:
+		\[
+		\alpha \ell_0 \mu^{2m} - \frac{\beta}{\ell_0}\mu^{2m - 2} - \frac{\gamma}{\ell_0^{2m - 1}} = 0,
+		\]
+		so, for the equaton to be homogeneous in \(\ell_0\) it must be:
+		\[
+		\tilde{\mu} \propto \frac{1}{\ell_0}.
+		\]
+		Inserting back \(\mu = \frac{L}{\mu_0}\) into \(\mathcal{V}\) we obtain:
+		\[
+			(n - 2)\mathcal{V}(\ell_0) =\underbrace{\frac{(n - 2)}{L} + \frac{Q_mC_m}{L^{2m - 1}} + Q_0A_mB_mL}_{\text{constant}} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + Q_0A_m\ell_0 + \rho_0\ell_0(1 - A_m)	
+		\]
+		and minimizing along \(\ell_0\) we have:
+		\[
+		\tilde{\ell}_0	= \left(\frac{Q_0 A_m + \vert\rho_0\vert (1 - A_m)}{(2m - 1)Q_mC_m}\right)^{-\frac{1}{2m}}.
+		\]
+		We can then take again the work in \cite{levi2016versatile} as a source of inspiration to state \(\rho_0 \propto T^4\), so that
+		\[
+		\mathcal{V} \propto const + \vert \rho_0\vert^{1 - \frac{1}{2m}}	
+		\]
+		and the minimal power of the temperature dependence is given by \(T^{4 - \frac{2}{m}}\). Hence, 
+		\[
+		4 - \frac{2}{m} \le 3 \iff m \le 2,	
+		\]
+		which is indeed the aim of the proof.
+	\end{proof}
+	\begin{remark}
+		Notice that the temperature dependence given by state independent bounds appears to be \(T^{4 - \frac{2}{m}}\), so it will asymptotically reach \(4\), but can never overcome it. 
+	\end{remark}
+	This proof sounds like an elegant result, but unfortunately we cannot claim too much generality yet: we are strongly relying on the assumption that \(\rho_0 \propto T^4\), which is the only of the temperature dependence.
+
+	\VS{It would be nice if there was any interpretation of energy conditions that don't allow m > 2}
 	
 	\subsection{The second idea -- a differential equation}
 	Here we suppose to start from an energy condition

@@ -232,6 +232,7 @@ As in the previous section we are now able to infer some conditions on the area 
 \end{remark}
 
 \section[physical-interpretation-V]{Physical interpretation of \(\mathcal{V}\)}
+\label{sec:physical-interpretation-V}
 As extensively argued above, \(\mathcal{V}\) represents the bound on the instantaneous rate of change of the area of the black hole horizon. In order to understand the physical impact of the hypothesis we have assumed, we would like to compare it to some relevant physical quantity; in this scenario we are lucky enough to have a particular appealing one: the rate of black hole evaporation.
 
 With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:J-sobolev-condition}\) into a function of some physical quantities; we will let us be inspired by the work in section \(5.2\) of \cite*{fewster2020new}, where Fewster and Kontou computed \(\mathcal{V}\) in the specific case of a non-minimally coupled classical Einstein-Klein Gordon theory.
@@ -390,6 +391,7 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
     
 
 \subsection[V-optimization]{\(\mathcal{V}\) optimization}
+
 So far we have derived a class of bounds \(\mathcal{V}(\ell, \ell_0)\) that depend on \(\ell\) and \(\ell_0\). Among them, as all of them need to be obeyed, the most interesting is the most restrictive, because it's the one that gives us the most information.
 
 From this we get the idea of picking \(\ell, \ell_0\) so that they minimize \(\mathcal{V}(\ell, \ell_0)\) (and \(\ell \ge \ell_0\)).
@@ -443,13 +445,14 @@ As anticipated in the introduction of this subsection, a better idea seems to pi
 \end{proof}
 
 \subsection{Limited violations}
+\label{subsec:rho-0-estimation}
 In the remark following the area theorem generalized for the Sobolev condition we already expressed some concerns about the pointwise condition we ask for; however the hypothesis doesn't seem totally unreasonable as there are some numerical examples that seem to support our argument.
 
 Here we will take for \(\rho_0\) the value computed in \cite{levi2016versatile}, even if this computation is performed for \emph{minimally-coupled} scalar fields; they get to a violation of NEC, and even ANEC, by taking into account the background Schwarzschild metric, so we are again beyond the classical regime, but for a different reason than the one for the Einstein-Klein Gordon field theory.
 
 At the end they state the computed value to be:
 \[
-\rho_0 = - \si{2.7\times10^{-7}} \frac{1}{M^4}
+\rho_0 = - \underbrace{\si{2.7\times10^{-7}}}_{\epsilon} \frac{1}{M^4}
 \]
 where \(M\) is the mass of the Schwarzschild black hole.
 
@@ -467,12 +470,55 @@ This result is extremely interesting: despite all the approximations and arguabl
 	Notice that a priori it was not at all clear that we would have found a \(T^3\) dependence: when \(Q_1\) is connected to the temperature, as for dimensional argument \(\left[Q_1\right] = 0\), we know there must be a combination of constants with the dimension of a temperature (which happens to be the Planck temperature), so, in principle, there could have been factors \(\left(\frac{T}{T_{Pl}}\right)^a\) in \(\tilde{\ell}_0\) that would have changed the power law.
 \end{remark}
 
-In particular, a direct comparison with the formula in \(\eqref{eq:evaporation rate}\) - recalling that  \(\beta \sim \mathcal{O}(10^{-5})\) - tells us that \(\mathcal{V}_{min}\) is allowing that rate of evaporation for 
+In particular, a direct comparison with the formula in \(\eqref{eq:evaporation-rate}\) - recalling that  \(\beta \sim \mathcal{O}(10^{-5})\) - tells us that \(\mathcal{V}_{min}\) is allowing that rate of evaporation for 
 \[
 \alpha \gtrsim \frac{1}{400} \iff \xi \gtrsim 1.49 \times 10^{-4}	
 \]
 so in principle the field might be very weakly coupled. This coefficient comparison is way less meaningful though, as the coefficients are very model dependent, and therefore it is not clear how reflective of the underlying physics they are.
 
+\section{The Smeared Null Energy Condition}
+The Smeared Null Energy condition is a bound on a contraction of the stress energy tensor, and it has been been first proposed in \cite{freivogel2018smeared}; it is of particular interest to us because a Penrose-like singularity theorem has been proved from it \cite{freivogel2020return} and because all the work done in section \ref{sec:physical-interpretation-V} is nearly directly applicable, as SNEC is a particular Sobolev condition.
+
+\begin{definition}
+	The Smeared Null Energy Condition asks that, on any achronal portion of a null geodesic it holds:
+	\begin{equation}
+		\label{eq:SNEC}
+		\forall f \in C_0^2[(-\infty, +\infty)] \int f^2(\lambda)\langle T_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \rangle d\lambda \ge -\frac{4B}{G_N}\vert\vert \nabla_U f\vert\vert^2
+	\end{equation}
+\end{definition}
+
+It stands out immediately that \(\eqref{eq:SNEC}\) is of the form of \(\eqref{eq:Sobolev-condition}\), with 
+\[
+m = 1 \quad \quad Q_0 = 0 \quad \quad Q_1 = 4B.	
+\]
+But, there is a ``but''. Here \(B\), and hence \(Q_1\) is asked to be a \emph{state independent} constant, namely it can only depend on the field theory we choose to populate our universe. 
+
+Indeed we will see shortly that this requirement will have some dramatic consequences on the estimation for \(\mathcal{V}\).
+
+\subsection{Variational estimation}
+It is immediate to re-apply all the process of the bound optimization we have been through for generic sobolev conditions to this one.
+
+We can again insert the \(m = 1\) incomplete Beta function to obtain a first upper bound on \(J\), that will have the same form as \ref{eq:J-sobolev-condition}; however, now the linear term in \(\ell\) will be missing, so the minimal bound is obtained for \(\ell\rightarrow +\infty\):
+\[
+	(n-2)\mathcal{V} = -\frac{2}{3}\rho_0\ell_0 + \frac{Q_1}{\ell_0}
+\]
+By optimizing this with respect to \(\ell_0\) we find again:
+\[
+	\tilde{\ell}_0 = \sqrt{\frac{3Q_1}{2\vert\rho_0\vert}} \implies \mathcal{V} = \sqrt{\frac{2}{3}Q_1\rho_0}
+\]
+However, this time \(Q_1 = \frac{4B}{G_N}\) is state independent, so adopting the same estimation for \(\rho_0\) as justified in \ref{subsec:rho-0-estimation}:
+\[
+\ell_0 \propto \frac{1}{T^2} \quad \mathcal{V} = \sqrt{\frac{8}{3}B \frac{\epsilon}{(8\pi)^4}} \sqrt{\frac{G}{\hbar^3}}k_B^2T^2.	
+\] 
+
+We have found again that black hole evaporation is allowed, but the bound depends on \(T\) with a \(2\)-power law; this means that the evaporation rate lies in the allowed region for \(T \le \tilde{T}\), where
+\[
+\frac{\tilde{T}}{T_{Pl}} = \frac{1}{8\pi\beta}\sqrt{\frac{8B\epsilon}{3}} \simeq 4\sqrt{B}.
+\]
+SNEC was proven in \cite{leichenauer2019upper} in the context of gravity induced on a brane, and in that specific case \(B\) was fixed to the value of \(\frac{1}{32\pi}\). However, as remarked in \ref{sec:SNEC}, it is often reasonable to consider \(B\ll 1\), condition that would reduce dramatically the regime of validity of the bound we have found. 
+
+If we believe SNEC to be valid though, we would expect that at \(\tilde{T}\), other terms of \(\mathcal{V}\) become relevant, and push it above the rate of evaporation.
+An attempt to find such terms would be to modify SNEC so to include terms depending on the curvature, as it has been attempted in \cite{kontou2015quantum}.
 
 \section{A more general point of view}
 

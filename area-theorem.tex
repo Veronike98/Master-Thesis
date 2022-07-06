@@ -190,7 +190,7 @@ As in the previous section we are now able to infer some conditions on the area 
 	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying the Sobolev condition for all normal future-pointing null geodesics leaving from a Cauchy surface \(\Sigma\), and for a ``time'' \(\ell\). Moreover, assume that the quantity \(\rho(\lambda) \coloneqq R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \) on \(\gamma\) be lower controlled by \(\rho_0\) in \([0, \ell_0] \subseteq [0, \ell]\). 
 	
 	% Let \(\Sigma_2\) be the image of \(\Sigma_1\) along the flux of normal null geodesics after a standard affine parameter \(\ell\), \(\Sigma_2 = F_{\ell}(\Sigma_1)\); 
-	Moreover, if \(H\) is the event horizon, and
+	If \(H\) is the event horizon, and
 	\[
 	\mathscr{H} = H \cap \Sigma ;
 	% \quad \quad \mathscr{H}_2 = H \cap \Sigma_2
@@ -204,7 +204,7 @@ As in the previous section we are now able to infer some conditions on the area 
 	\begin{itemize}
 		\item[\ding{99}] By contradiction, assume there exists a \(p\in \mathscr{H}\) so that \(U_{\mu}\mathrm{H}^{\mu}(p) < -\mathcal{V}\).
   		\item[\ding{99}] There exists an outward deformation on \(\Sigma\) of \(\mathscr{H}\), in a neighborhood of \(p\), on which \(U_{\mu}\mathrm{H}^{\mu}(p') < -\mathcal{V}\) holds everywhere. This point can be motivated exactly as it has been done for the proof of \ref{th:classical-bh-area}. In particular this implies that \(-(n -2) U_{\mu}\mathrm{H}^{\mu} > (n-2)\mathcal{V}\) for the null generators leaving of \(\partial J^+(K)\).
-    	\item[\ding{99}] By means of lemma \ref{lemma:J-sobolev-condition} we have that \(J[f] \le (n - 2)\mathcal{V}\), at least for the specific choice of \(f\) made in such lemma. This leads to a contradiction because - once again - proposition \ref{prop:fp-criteria} comes into play, and the null generator of \(\partial J^+(K)\) through \(p'\in \mathscr{H}'\) is doomed to contain a focal point, in contradiction with the global hyperbolicity of the region outside the black hole.
+    	\item[\ding{99}] By means of lemma \ref{lemma:J-sobolev-condition} we have that \(J[f] \le (n - 2)\mathcal{V}\), at least for the specific choice of \(f\) made in such lemma. This leads to a contradiction because - once again - proposition \ref{prop:fp-criteria} comes into play, and the null generator of \(\partial J^+(K)\) through \(p'\in \mathscr{H}'\) is doomed to contain a focal point, in contradiction with the global hyperbolicity of the region outside the black hole.\footnote{as argued in subsections \ref{subsec:past-reflectivity} and \ref{subsec:causaliy-bh-evaporation}, the global hyperbolicity hypothesis can be relaxed to past reflectivity, and this property of the spacetime will still hold.}
 	\end{itemize}
 	We have then proved that 
 	\[
@@ -476,6 +476,8 @@ In particular, a direct comparison with the formula in \(\eqref{eq:evaporation-r
 \]
 so in principle the field might be very weakly coupled. This coefficient comparison is way less meaningful though, as the coefficients are very model dependent, and therefore it is not clear how reflective of the underlying physics they are.
 
+The question we would like to ask ourselves now is: how robust is this result, and in particular the \(T^3\) dependance? Is it just an artifact of the specific examples and approximations we have been using, or is it the signal of a more general behaviour? 
+
 \section{The Smeared Null Energy Condition}
 The Smeared Null Energy condition is a bound on a contraction of the stress energy tensor, and it has been been first proposed in \cite{freivogel2018smeared}; it is of particular interest to us because a Penrose-like singularity theorem has been proved from it \cite{freivogel2020return} and because all the work done in section \ref{sec:physical-interpretation-V} is nearly directly applicable, as SNEC is a particular Sobolev condition.
 
@@ -515,10 +517,11 @@ We have found again that black hole evaporation is allowed, but the bound depend
 \[
 \frac{\tilde{T}}{T_{Pl}} = \frac{1}{8\pi\beta}\sqrt{\frac{8B\epsilon}{3}} \simeq 4\sqrt{B}.
 \]
-SNEC was proven in \cite{leichenauer2019upper} in the context of gravity induced on a brane, and in that specific case \(B\) was fixed to the value of \(\frac{1}{32\pi}\). However, as remarked in \ref{sec:SNEC}, it is often reasonable to consider \(B\ll 1\), condition that would reduce dramatically the regime of validity of the bound we have found. 
+SNEC was proven in \cite{leichenauer2019upper} in the context of gravity induced on a brane, and in that specific case \(B\) was fixed to the value of \(\frac{1}{32\pi}\). However, as remarked in \ref{sec:SNEC}, it is often reasonable to consider \(B\ll 1\), condition that would reduce dramatically the regime of validity of the bound we have found. This is consistent with the interpretation of \(B\) we have given: \(B \ll 1\) would mean that for the chosen field theory semiclassical gravity is well under control, and therefore black holes can only evaporate ``very slowly''. In other words, we expect rate of evaporation computed in \(\eqref{eq:evaporation-rate}\) to be allowed in the all region \(T\le T_{Pl}\) only by a field theory that induces proper non-classical effects (as large violations of \(T_{\mu\nu}U^{\mu}U^{\nu}\) for example), in which case \(B\) will be of order \(1\) and \(\tilde{T} \simeq T_{Pl}\).
 
 If we believe SNEC to be valid though, we would expect that at \(\tilde{T}\), other terms of \(\mathcal{V}\) become relevant, and push it above the rate of evaporation.
 An attempt to find such terms would be to modify SNEC so to include terms depending on the curvature, as it has been attempted in \cite{kontou2015quantum}.
+\VS{Cerca di aggiungere termini di curvatura!}
 
 \section{A more general point of view}
 

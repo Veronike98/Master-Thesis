@@ -187,3 +187,24 @@ Let us make a couple of remarks of why it is important to make some assumptions 
 \end{equation}
 
 
+\subsection{Causality violation}
+\label{subsec:causaliy-bh-evaporation}
+It has been pointed out (first of all by Kodama \cite{Kodama:1979vm}) that Black Hole evaporation is in tension with global hyperbolicity: in fact the region formed after the complete evaporation of the black hole would cause a ``chronology violation'', in the sense that the initial data collected on a Cauchy surface might not be enough to predict the evoloution after the disappearance of the singularity.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.7]{example-image-duck}
+	% todo: metti penrose diagram come in figura 1 dell'articolo di Minguzzi
+	\caption{Chronology violation after black hole evaporation}
+\end{figure}
+
+Such an hypothesis was assumed also for the original Black Hole Area theorem: in that context it wasn't incoherent, as the classical black hole area theorem is forbidding evaporation; however, we will see that this won't be the case for us, and therefore it is necessary to briefly discuss the consistenciy of our hypothesis.
+
+The problem might be easily worked around by observing that we only need to require global hyperbolicty for the region the horizon lies into. This wouldn't bring to any contradiction, as the chronology violation region only begins \emph{after} the complete evaporation of the black hole, where no horizon exists anymore. For the readers concearned about the existence of multiple black holes evaporating at different times however, we have good news: it is possible to do even better than that!
+
+In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework within which singularity formation can be derived. He argues that the hypothesis of globabl hyperbolicity can be relaxed to \emph{past reflectivity}, because what really is needed is a topological condition that prevents the horizon from ``swallowing up'' the all universe. We believe that the same framework can be adapted to our work as well, as the following key-proposition holds:
+\begin{prop}
+	Let \((M,g)\) be past reflecting. If \(S\) is a compact future null araying set that does not intersect the chronology violation region \(\mathcal{C}\) then \(\partial I^+(S) = H^+(S) \neq \emptyset\), and hence \(edge(H^+(S)) = \emptyset\).
+\end{prop}
+
+In order to understand what this means we need to dig a little bit more into causal properties of spacetimes.

@@ -659,20 +659,20 @@ One possible idea - that we have already been exploiting in the specific case of
 	\[
 	\mathcal{V} = v_0 + v_1T + v_2T^2 + v_3T^3 + \ldots	
 	\]
-	we expect that at least one among \(\{v_0, v_1, v_2, v_3\}\) to be non-zero, otherwise the evaporation rate in \(\eqref{eq:evaporation-rate}\) would be prohibited for low temperatures but (potentially) allowed in more extreme regimes.
+	we expect that at least one among \(\{v_0, v_1, v_2, v_3\}\) to be non-zero, otherwise the evaporation rate in \(\eqref{eq:evaporation-rate}\) would be prohibited for low temperatures but (potentially) allowed in more extreme regimes. \EAK{not necessarily extreme, depends. Maybe rephrase that part?}
 
 	This puts some restrictions onto the energy conditions we start from, in case they are state-independent. We are going to prove the following:
 	\begin{prop}
-		State independent energy conditions in the form of a Sobolev condition must have \(m \le 2\) in order to match with the expected black hole evaporation rate.
+		State independent energy conditions in the form of a Sobolev condition must have \(m \le 2\) in order to match with the expected black hole evaporation rate. \EAK{Maybe: to be the same or lower order in temperature compared to the predicted black hole evaporation rate}
 	\end{prop}
 	\begin{proof}
 		The reason why we need to ask for state-independence is that this way we make sure we don't have any non trivial contribution of the temperature to the coefficients \(Q_0\) and \(Q_m\). If they were to depend on \(T\) in principle it is not easy to restrict what dependence they should bear, as the presence of \(T_{Pl}\) invalids the power of dimensional analysis.
 
-		Again, it is enough to look at the set of modified Bessel functions, and study the bound:
+		Again, it is enough to look at the set of modified Bessel functions \EAK{do you mean incomplete $\beta$ functions?}, and study the bound:
 		\[
 		(n - 2)\mathcal{V}(\ell, \ell_0) \coloneqq \frac{(n - 2) B_m}{\ell - \ell_0} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + \frac{Q_mC_m}{(\ell - \ell_0)^{2m - 1}}	+ Q_0A_m\ell - \rho_0\ell_0(1 - A_m)
 		\]
-		As in subsection \ref{subsec:V-optimization} we set out to minimize \(\mathcal{V}\) with respect to \(\ell \ge \ell_0\). Again we choose to parametrize \(\ell = (1 + B_m\mu)\ell_0\); however, this time we need to deal with a \(2m\)-degree equation, which in general is not explicitely solvable. 
+		As in subsection \ref{subsec:V-optimization} we set out to minimize \(\mathcal{V}\) with respect to \(\ell \ge \ell_0\). Again we choose to parametrize \(\ell = (1 + B_m\mu)\ell_0\); however, this time we need to deal with a \(2m\)-degree equation, which in general is not explicitely solvable. \EAK{where is the $\rho_0$ dependence here?}
 		\[
 			(n - 2)\frac{d\mathcal{V}}{d\mu} = -\frac{n - 2}{\ell_0} \frac{1}{\mu^2} + \frac{Q_mC_m}{(B_m \ell_0)^{2m - 1}} \cdot \frac{1 - 2m}{\mu^{2m}} + Q_0A_mB_m\ell_0 = 0.
 		\]
@@ -684,7 +684,7 @@ One possible idea - that we have already been exploiting in the specific case of
 		\[
 		\tilde{\mu} \propto \frac{1}{\ell_0}.
 		\]
-		Inserting back \(\mu = \frac{L}{\mu_0}\) into \(\mathcal{V}\) we obtain:
+		Inserting back \(\mu = \frac{L}{\mu_0}\) into \(\mathcal{V}\) we obtain: \EAK{is the $\rho_0$ term plus or minus?}
 		\[
 			(n - 2)\mathcal{V}(\ell_0) =\underbrace{\frac{(n - 2)}{L} + \frac{Q_mC_m}{L^{2m - 1}} + Q_0A_mB_mL}_{\text{constant}} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + Q_0A_m\ell_0 + \rho_0\ell_0(1 - A_m)	
 		\]

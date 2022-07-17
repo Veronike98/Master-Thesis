@@ -16,6 +16,7 @@ Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 % Bibliografia
 \usepackage[backend=bibtex,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{bibliografia.bib}
+\renewcommand*{\bibfont}{\fontsize{12}{14.48}\selectfont}
 
 \begin{document}
 
@@ -128,8 +129,12 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 \label{ch:singularity-theorems} 
 \input{singularity-theorems}
 
+\appendix
+\chapter[Energy density in Schwarzschild background]{Computation of energy density for non-minimally coupled scalar fields in Schwarzschild background}
+\label{app:visser}
+\input{visser-computation}
 
-\printbibliography
+\printbibliography[heading=bibintoc]
 
 
 \end{document}          

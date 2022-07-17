@@ -446,17 +446,22 @@ As anticipated in the introduction of this subsection, a better idea seems to pi
 
 \subsection{Limited violations}
 \label{subsec:rho-0-estimation}
-In the remark following the area theorem generalized for the Sobolev condition we already expressed some concerns about the pointwise condition we ask for; however the hypothesis doesn't seem totally unreasonable as there are some numerical examples that seem to support our argument.
+In the remark following the area theorem generalized for the Sobolev condition we already expressed some concerns about the pointwise condition we ask for; however the hypothesis doesn't seem totally unreasonable as there are some numerical and semi-analytical examples that seem to support our argument.
 
-Here we will take for \(\rho_0\) the value computed in \cite{levi2016versatile}, even if this computation is performed for \emph{minimally-coupled} scalar fields; they get to a violation of NEC, and even ANEC, by taking into account the background Schwarzschild metric, so we are again beyond the classical regime, but for a different reason than the one for the Einstein-Klein Gordon field theory.
+Here we will take for \(\rho_0\) the value computed in \cite{levi2016versatile}, even if this computation is purely numerical and performed for \emph{minimally-coupled} scalar fields; in that reference Levi and Ori get to a violation of NEC, and even ANEC, by taking into account the background Schwarzschild metric, so we are again beyond the classical regime, but for a different reason from what happens in the Einstein-Klein Gordon field theory.
 
-At the end they state the computed value to be:
+In the end they state the computed value to be:
 \[
 \rho_0 = - \underbrace{\si{2.7\times10^{-7}}}_{\epsilon} \frac{1}{M^4}
 \]
 where \(M\) is the mass of the Schwarzschild black hole.
 
-By substituting that into \(\eqref{eq:minimized-V}\), and recovering the temperature dependence, we finally get:
+The most important features of that result are the negative sign, and the \(M^{-4}\) dependance: we will see that ultimately this is determining the temperature dependance of our bound \(\mathcal{V}\), and hence any variation of this power law would have major impact on our conclusions.
+
+It is relieving that an independent analysis, conducted by Visser in \cite{visser1997gravitational} leads to a similar result, with exactly the same power law dependance. In \cite{visser1997gravitational} he sets up a semi-analytical model - this time for non minimally coupled scalar fields - within which he can compute explicitely some components of the stress energy tensor, and therefore its contractions. We are interested in a different contraction from the ones computed in \cite{visser1997gravitational} though, so we will carefully explain the model and perform the computation in \ref{app:visser}.
+
+
+By substituting \(\rho_0\) into \(\eqref{eq:minimized-V}\), and recovering the temperature dependence, we finally get:
 \begin{equation}
 	\label{eq:KMS-minimized-V}
 	\mathcal{V}_{min} = 5\cdot10^{-3} \cdot (8\pi)^2\sqrt{\alpha} \frac{Gk_B^3}{\hbar^2} \cdot T^3 + \mathcal{O}\left(\left(\frac{T}{T_{Pl}}\right)^4\right),

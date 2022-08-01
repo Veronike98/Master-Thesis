@@ -1,0 +1,42 @@
+\documentclass[border=0.5mm,11pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    \coordinate (a) at (0,0);
+    \coordinate (b) at (2,1.2);
+    \coordinate (c) at (7, 0.5);
+    \coordinate (d) at (6, -1.5);
+
+    \filldraw[color=turquoise, fill=turquoise!20, looseness=1.7] (a) to[out=-10, in=-120] (b) to[out=-37, in=205] (c) to[out=215, in=110] (d) to[out=200, in=-20] (a);
+
+    \draw[fuchsia, thick, looseness=1.2] (1.25,0) to[out=-17, in=215] (5.75,-0.5);
+
+    \draw[goldenyellow, thick, looseness=1.2] (3.3, -1.95) to[out=100, in=-160] (4.5,-0.45);
+
+    \draw[goldenyellow, densely dashed] (3.55, -0.95) -- (3.55, -2.02);
+    \draw[goldenyellow, ->] (3.55, -2.02) -- (3.55, -3);
+
+    \draw[fuchsia, ->] (4, -1.01) -- (4, 1);
+
+    \node[right, fuchsia] at (4, 0.6) {\small{\(\mathrm{I\!I}(V, V)\)}};
+
+    \node[left, goldenyellow] at (3.55, -2.6) {\small{\(\mathrm{I\!I}(W, W)\)}};
+
+    \node[below,turquoise] at (0.77, -0.35) {\(M\)};
+
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

@@ -1,4 +1,5 @@
-\section{Geodesics}\label{sec:geodesics}
+\section{Geodesics}
+\label{sec:geodesics}
 
 The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
 
@@ -6,7 +7,7 @@ Let's start off with some basic concepts derived from differential geometry. We 
 We will generally assume that a \emph{spacetime} is a smooth, time-oriented Lorentzian manifold; we will use the terms manifold and spacetime interchangeably, unless otherwise stated.
 The first fundamental definition we need is:
 \begin{definition}
-	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).\\
+	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).
 \end{definition}    
 
 %\EAK{Below you are talking about timelike geodesics, clarify it and mention that the parametrization is proper time}
@@ -32,17 +33,20 @@ V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s).
 	\left. \zeta(s, t) \right\vert_{s = 0} = \gamma(t).
 	\]
 \end{definition}
-
-%todo: metti un bel disegno di una famigla di curve
-
-%\EAK{Small comment: if the equation is at the end of a sentence we usually have a full stop at the end. }
+An example is provided in figure \ref{fig:family-curves}.
+\begin{figure}
+	\caption[]{a smooth variation of a curve \(\gamma\) is a smooth family of curves \(\zeta\), such that \(\zeta\vert_{s = 0} \equiv \gamma\).}
+	\label{fig:family-curves}
+	\centering
+	\includegraphics[scale=2.2]{Immagini/family-geodesics/family-geodesics.pdf}
+\end{figure}
 
 \begin{remark}
 	Commutation of partial derivatives immediately gives 
 	\[
-	[U, V] = 0 \implies \nabla_U V^{\mu} = \nabla_V U^{\mu}
+	[U, V] = 0 \implies \nabla_U V^{\mu} = \nabla_V U^{\mu};
 	\]
-	and, by definition of the Riemann tensor,
+	secondly, by definition of the Riemann tensor,
 	\[
 	[\nabla_U, \nabla_V]W^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}W^{\nu}U^{\alpha}V^{\beta}.
 	\]
@@ -72,7 +76,7 @@ Jacobi fields also have some nice properties we will find helpful in the prosecu
 	\label{lemma:Jacobi-fields-properties}
 	Let \(V\) be a Jacobi field on \(\gamma\); then
 	\[
-	V \perp \gamma \iff \exists a\neq b \quad\vert\quad V\perp \gamma(a),\gamma(b) \iff \exists a \quad\vert\quad Y, Y' \perp \gamma(a).
+	V \perp \gamma \iff \exists a\neq b \quad\vert\quad V\perp \gamma(a),\gamma(b) \iff \exists a \quad\vert\quad V, V' \perp \gamma(a).
 	\]
 \end{lemma}
 \begin{proof}
@@ -80,9 +84,9 @@ Jacobi fields also have some nice properties we will find helpful in the prosecu
 	\[
 	\frac{d^2}{dt^2} (U^{\mu}V_{\mu}) = R_{\mu\nu\alpha\beta}U^{\mu}U^{\nu}U^{\alpha}V^{\beta} = 0
 	\]
-	hence \(U^{\mu}V_{\mu} = As + B\), from which the result is immediate.
+	hence \(U^{\mu}V_{\mu} = At + B\), from which the result is immediate.
 \end{proof}
-%\EAK{The previous subsection seems the relevant one to also define focal points and index forms}
+
 
 \section{Submanifolds}
 \label{sec:submanifolds}
@@ -141,9 +145,16 @@ It is then easy to prove that:
 \ddot{\alpha} = \alpha'' + \mathrm{I\!I}(\alpha', \alpha')
 \]
 
-and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'' needed to keep a point moving on \(M \subset \bar{M}\), a sort of constraining force. An equivalent interpretation is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
+and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'' needed to prevent a point from leaving \(M \subset \bar{M}\), a sort of constraining force.
+This can be visualized witn the example in figure \ref{fig:shape-tensor}: any particle moving on the yellow curve would leave \(M\) unless an external force - such as the yellow vector - is applied.
+Finally, an equivalent interpretation of \(\mathrm{I\!I}\) is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
 
-%todo: inserisci disegno pag.103 O'Neill
+\begin{figure}
+	\caption[]{Vector fields \(V\) and \(W\) belong to \(\mathfrak{X}(M)\) and generate respectively the cyclamen and the yellow curve. The \(2\) vectors represent the shape tensor evaluated in these \(2\) vectors, and clearly bear the interpretation of constraing force introduced above.}
+	\label{fig:shape-tensor}
+	\centering
+	\includegraphics[scale=1.7]{Immagini/shape-tensor/shape-tensor.pdf}
+\end{figure}
 
 We now prove an identity which will be useful to remember in the future. First of all we need to define the analogous of Jacobi fields for variations of curves where one of the endpoints is a submanifold: the \(M\)-Jacobi fields.
 \begin{definition}
@@ -151,7 +162,7 @@ We now prove an identity which will be useful to remember in the future. First o
 \end{definition}
 \begin{lemma}
 	\label{lemma:shape-identity}
-	Let \(M\) be a submanifold of \(\bar{M}\), \(\gamma\) a curve leaving \(M\) orthogonally in \(p\), with tangent vector field \(U^{\mu}\), and \(e_1, \ldots, e_m\) a basis for the space of perpendicular \(M-\)Jacobi fields on \(\gamma\).
+	Let \(M\) be a submanifold of \(\bar{M}\), \(\gamma\) a curve leaving \(M\) orthogonally at \(p\), with tangent vector field \(U^{\mu}\), and \(e_1, \ldots, e_m\) a basis for the space of perpendicular \(M-\)Jacobi fields on \(\gamma\).
 	Then 
 	\begin{equation}
 		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
@@ -165,7 +176,7 @@ We now prove an identity which will be useful to remember in the future. First o
 		\]
 		Again, \(U_{\mu}\) is orthogonal to \(M\), then \(U_{\mu}  \left(\nabla_{e_i}e_j^{\mu}\right)= U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right)\), while \(e_i\) is a Jacobi field so \(\nabla_{e_i}U^{\mu} = \nabla_Ue_i^{\mu}\). Plugging this back into the previous equation we get exactly
 		\[
-		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_{e_i}U)_{\mu} e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}
+		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_{e_i}U)_{\mu} e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}.
 		\]
 	\end{proof}
 
@@ -174,7 +185,7 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 
 
 \begin{definition}
-		Let\(M \subset \bar{M}\) be an  \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathrm{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
+		Let \(M \subset \bar{M}\) be an \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathrm{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
 		\[
 		\mathrm{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathrm{I\!I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
 		\]
@@ -188,7 +199,7 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 		\]
 \end{definition}
 
-This definition will be particularly important for the proof of Null Singularity Theorems, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
+This definition will be particularly important for the proof of the Null Singularity theorem and the Black Hole Area theorem, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
 
 Finally, let us prove a quick lemma that will be useful here and there throughout the all analysis of the thesis.
 \begin{lemma}
@@ -201,7 +212,7 @@ Finally, let us prove a quick lemma that will be useful here and there throughou
 
 \begin{proof}
 	This is only a linear algebra exercise, which basically reduces to decompose the metric tensor on \(T_{\gamma_0}M = T_{\gamma(0)}P \oplus T_{\gamma(0)}P^{\perp}\). By definition \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\) is an orthonormal basis of \(T_{\gamma(0)}P\), so we are left with the decomposition on \(T_{\gamma(0)}P^{\perp}\), whose dimension is \(2\) by hypothesis.
-	We already know that a good vector in \(T_{\gamma(0)}P^{\perp}\) is \(U^{\mu}\) and that the signature is \((+, -)\), then there must be another null vector \(W^{\mu}\) such that \(W^{\mu}U_{\mu} = 1\) (we can think about \(\R^{1,1}\) as it's always possible to reduce to that for the tangent space of a single point). Now we have found a basis of \(T_{\gamma_0}M\), and it's easy to show that for any \(2\) vectors \(a\) and \(b\) we can decompose them in terms of this new basis, compute their inner product using both formulations of \(g\), and check they are equal.
+	We already know that a non degenerate vector in \(T_{\gamma(0)}P^{\perp}\) is \(U^{\mu}\) and as the signature is \((+, -)\), then there must be another null vector \(W^{\mu}\) such that \(W^{\mu}U_{\mu} = 1\) (we can think about \(\R^{1,1}\) as it's always possible to reduce to that for the tangent space of a single point). Now we have found a basis of \(T_{\gamma_0}M\), and it's easy to show that for any \(2\) vectors \(a\) and \(b\) we can decompose them in terms of this new basis, compute their inner product using both formulations of \(g\), and check they are equal.
 \end{proof}
 
 \section{Trapped surfaces}

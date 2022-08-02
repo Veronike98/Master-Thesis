@@ -1,4 +1,5 @@
 \section{Geodesics}
+
 \label{sec:geodesics}
 
 The main source of inspiration for this first chapter is the book by B. O'Neill \cite{o1983semi}. We shall refer mainly to chapters \(10\) and \(14\); when needed, more specific references will be made.
@@ -39,6 +40,7 @@ An example is provided in figure \ref{fig:family-curves}.
 	\label{fig:family-curves}
 	\centering
 	\includegraphics[scale=2.2]{Immagini/family-geodesics/family-geodesics.pdf}
+	% \import{Immagini/family-geodesics/family-geodesics.tex}
 \end{figure}
 
 \begin{remark}
@@ -176,7 +178,7 @@ We now prove an identity which will be useful to remember in the future. First o
 		\]
 		Again, \(U_{\mu}\) is orthogonal to \(M\), then \(U_{\mu}  \left(\nabla_{e_i}e_j^{\mu}\right)= U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right)\), while \(e_i\) is a Jacobi field so \(\nabla_{e_i}U^{\mu} = \nabla_Ue_i^{\mu}\). Plugging this back into the previous equation we get exactly
 		\[
-		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_{e_i}U)_{\mu} e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}.
+		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_{e_i}U_{\mu}) e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}.
 		\]
 	\end{proof}
 
@@ -185,7 +187,7 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 
 
 \begin{definition}
-		Let \(M \subset \bar{M}\) be an \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathrm{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
+		Let \(M \subset \bar{M}\) be an \(n\)-semi-Riemannian submanifold, with \emph{shape tensor} \(\mathrm{I\!I}\), and \(\{\textbf{e}_i\}_{i \in \{1, \ldots, n\}}\) any (local) frame on \(M\) at \(p\). Then we call \emph{mean curvature vector field} the field \(\mathrm{H} \in \mathfrak{X}(M)^{\perp} \) defined by:
 		\[
 		\mathrm{H}^{\mu}(p) = \frac{1}{n} \sum_{i=1}^{n} \epsilon_i \mathrm{I\!I}^{\mu}(\textbf{e}_i, \textbf{e}_i).
 		\]
@@ -199,27 +201,34 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 		\]
 \end{definition}
 
-This definition will be particularly important for the proof of the Null Singularity theorem and the Black Hole Area theorem, as they are instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
+This definition will be particularly important for the proof of the Null Singularity theorem and the Black Hole Area theorem, as it is instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
 
 Finally, let us prove a quick lemma that will be useful here and there throughout the all analysis of the thesis.
 \begin{lemma}
 	\label{lemma:metric-decomposition}
-	Let \(P\) be a spacelike hypersurface of codimension \(2\) and \(\gamma_s\) a congruence of null geodesics leaving normally from \(P\); call \(U^{\mu}\) the (null) tangent vector field and \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 1}\) an orthonormal basis of the tangent space to \(P\). Finally, parallel transport \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 2}\) along \(\gamma\) in order to gain \(n - 2\) vector fields \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\). Then there exists a null vector field \(W^{\mu}\) such that the metric can be decomposed as
+	Let \(P\) be a spacelike hypersurface of codimension \(2\) and \(\gamma_s\) a congruence of null geodesics leaving normally from \(P\); call \(U^{\mu}\) its (null) tangent vector field and \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 2}\) an orthonormal basis of the tangent space to \(P\). Finally, parallel transport \(\{e_i^{\mu}\}_{i = 1, \ldots, n - 2}\) along \(\gamma\) in order to gain \(n - 2\) vector fields \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\). Then there exists a null vector field \(W^{\mu}\) (normal to \(P\)) such that the metric can be decomposed as
 	\begin{equation}
-		g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
+		g^{\mu\alpha} = \frac{U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu}}{2} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
 	\end{equation}
 \end{lemma}
 
 \begin{proof}
-	This is only a linear algebra exercise, which basically reduces to decompose the metric tensor on \(T_{\gamma_0}M = T_{\gamma(0)}P \oplus T_{\gamma(0)}P^{\perp}\). By definition \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\) is an orthonormal basis of \(T_{\gamma(0)}P\), so we are left with the decomposition on \(T_{\gamma(0)}P^{\perp}\), whose dimension is \(2\) by hypothesis.
+	This is only a linear algebra exercise, which basically reduces to decompose the metric tensor on \(T_{\gamma(0)}M = T_{\gamma(0)}P \oplus T_{\gamma(0)}P^{\perp}\). By definition \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\) is an orthonormal basis of \(T_{\gamma(0)}P\), so we are left with the decomposition on \(T_{\gamma(0)}P^{\perp}\), whose dimension is \(2\) by hypothesis.
 	We already know that a non degenerate vector in \(T_{\gamma(0)}P^{\perp}\) is \(U^{\mu}\) and as the signature is \((+, -)\), then there must be another null vector \(W^{\mu}\) such that \(W^{\mu}U_{\mu} = 1\) (we can think about \(\R^{1,1}\) as it's always possible to reduce to that for the tangent space of a single point). Now we have found a basis of \(T_{\gamma_0}M\), and it's easy to show that for any \(2\) vectors \(a\) and \(b\) we can decompose them in terms of this new basis, compute their inner product using both formulations of \(g\), and check they are equal.
 \end{proof}
+
+\begin{figure}
+	\caption[]{construction of the null vectors \(U^{\mu}\) and \(W^{\mu}\) along which the metric tensor can be decomposed.}
+	\label{fig:metric-decomposition}
+	\centering
+	\includegraphics[scale=1.5]{Immagini/metric-decomposition/metric-decomposition.pdf}
+\end{figure}
 
 \section{Trapped surfaces}
 
 \begin{definition}
 	\label{def:trapped-surface}
-	We say that a spacelike submanifold \(P\) is \emph{future-converging} or \emph{future-trapped} provided its mean curvature vector field \(\mathrm{H}\) is past-pointing timelike.
+	A spacelike submanifold \(P\) is said \emph{future-converging} or \emph{future-trapped} provided its mean curvature vector field \(\mathrm{H}\) is past-pointing timelike everywhere.
 \end{definition}
 
 
@@ -227,8 +236,8 @@ It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\per
 \begin{lemma} \label{lemma:charact-trapped}
 	assuming \(P\) is a \emph{spacelike} submanifold, the following statements are equivalent:
 	\begin{enumerate}
-		\item  \(k(v) =\mathrm{H}^{\mu} v_{\nu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to P.
-		\item  \(k(w) =\mathrm{H}^{\mu} w_{\nu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to P.
+		\item  \(k(v) =\mathrm{H}^{\mu} v_{\mu} < 0 \) for all future pointing \emph{null} vectors \(v\) normal to P.
+		\item  \(k(w) =\mathrm{H}^{\mu} w_{\mu} < 0 \) for all future pointing \emph{causal} vectors \(w\) normal to P.
 		\item \(\mathrm{H}\) is past-pointing timelike.
 	\end{enumerate}
 \end{lemma}
@@ -236,7 +245,7 @@ It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\per
 \begin{proof}
 	We will prove a chain of implications to gain the equivalence.
 	
-	\(\mathbf{2) \implies 1)]}\) this is trivial because any null vector is a causal vector.
+	\(\mathbf{2) \implies 1)]}\) This is trivial because any null vector is a causal vector.
 	
 	\(\mathbf{1) \implies 3)]}\) Let's write \(\mathrm{H}^{\mu} = (\mathrm{H}^0, \vec{\mathrm{H}})\). It is possible to choose a spacelike \(3-\)vector \(\vec{v}\) such that \(\vert\vec{v}\cdot\vec{\mathrm{H}}\vert = - \vert\vec{v}\vert\cdot\vert\vec{\mathrm{H}}\vert\) and  then complete it to the future-pointing null vector \(v^{\mu} = (v^0, \vec{v})\) (where \(v^0 = \vert \vec{v}\vert > 0\)).
 	Now:
@@ -256,11 +265,12 @@ It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\per
 	\]
 \end{proof}
 
-However, the one stated above \ref{def:trapped-surface} is not the definition that has been in use from the beginning of the analysis of these objects. The most widely used definition is by far the one that passes through the definition of expansion: we will now state this definition for codimension \(2\) spacelike submanifolds, and making use of the \emph{null} expansion, but the same idea can be generalized to a much larger class of submanifolds. Consider the spacelike codimension \(2\) submanifold \(P\subset M\), and the congruence of \emph{null} geodesics leaving normally from \(P\); call \(U^{\mu}\) the tangent field.
+However, definition \ref{def:trapped-surface} stated above is not the one that historically has been in use from the beginning of the analysis of these objects. The most widely used definition is by far the one that passes through the construction of expansion: we will now state this definition for codimension \(2\) spacelike submanifolds, making use of the \emph{null} expansion, but the same idea can be generalized to a much larger class of submanifolds. 
 
-Of course there are \(2\) such congruences: we will call \emph{positive} congruence one of them, and \emph{negative} the other one, whose tangent field - except for riparametrization - will be \(W^{\mu}\). By lemma \ref{lemma:metric-decomposition} we can decompose the metric as 
+Consider the spacelike codimension \(2\) submanifold \(P\subset M\), and the congruence of \emph{null} geodesics leaving normally from \(P\); call \(U^{\mu}\) the tangent field. 
+Of course there are \(2\) such congruences: we will call \emph{positive} congruence one of them, and \emph{negative} the other one, whose tangent field - save for riparametrization - will be \(W^{\mu}\). By lemma \ref{lemma:metric-decomposition} we can decompose the metric as 
 \[
-g^{\mu\alpha} = U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
+g^{\mu\alpha} = \frac{U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu}}{2} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
 \]
 Moreover,
 \begin{definition}
@@ -272,7 +282,7 @@ Moreover,
 	\[
 	\theta^{+} = \texttt{tr}\left[B\right] = g^{\mu\nu}B_{\mu\nu}.
 	\]
-	Similarly, if we chose the negative congruence we would have had
+	Similarly, if we had chosen the negative congruence we would have had
 	\[
 	\tilde{B}_{\mu\nu} = \nabla_{\nu}W_{\mu}.
 	\]
@@ -282,9 +292,9 @@ Moreover,
 	\]
 \end{definition}
 
-It's clear that for any point of the submanifold we are able to compute the positive and the negative expansion; this finally leads to the definition of trapped surface
+It's clear that for any point of the submanifold it is possible to compute the positive and the negative expansion; this finally leads to the definition of trapped surface
 \begin{definition}
-	A codimension \(2\) spacelike hypersurface is called \emph{trapped} if both its positive and negative expansions are negative
+	A codimension \(2\) spacelike hypersurface is called \emph{trapped} if both its positive and negative expansions are negative:
 	\[
 	\theta^+ , \theta^- < 0.
 	\]
@@ -296,9 +306,9 @@ We finally want to prove that the \(2\) definitions are indeed equivalent.
 	The \(2\) definitions of trapped surface are equivalent.
 \end{lemma}
 \begin{proof}
-	Let us use the same notation introduced above, for which \(P\) is the hypersurface under consideration, \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\) is an orthonormal basis of its tangent space, \(U^{\mu}\) and \(W^{\mu}\) \(2\) orthogonal null vectors such that \(U^{\mu}W_{\mu} = 1\) tangent to the respective orthogonal null congruences. As \(U^{\mu}\) is null and parallel transported we have
+	Let us use the same notation introduced above, for which \(P\) is the hypersurface under consideration, \(\{E_i^{\mu}\}_{i = 1, \ldots, n - 2}\) is an orthonormal basis of its tangent space, \(U^{\mu}\) and \(W^{\mu}\) are two orthogonal null vectors such that \(U^{\mu}W_{\mu} = 1\), and they are tangent to the respective orthogonal null congruences. As \(U^{\mu}\) is null and parallel transported we have
 	\begin{align*}
-		\theta^+ &= g^{\mu\nu}B_{\mu\nu} = \left(g^{\mu\nu} - U^{\mu}W^{\nu} - U^{\nu}W^{\mu}\right)B_{\mu\nu} =\\
+		\theta^+ &= g^{\mu\nu}B_{\mu\nu} = \left(g^{\mu\nu} - \frac{U^{\mu}W^{\nu} + U^{\nu}W^{\mu}}{2}\right)B_{\mu\nu} =\\
 		&= - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}B_{\mu\nu} = - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}\nabla_{\nu}U_{\mu} = \\
 		& = -  \sum_{i=1}^{n - 2}E_i^{\nu}\nabla_{\nu}\underbrace{\left(E_i^{\mu}U_{\mu}\right)}_{0} +  \sum_{i=1}^{n - 2}U_{\mu}E_i^{\nu}\nabla_{\nu}E_i^{\mu} = \sum_{i=1}^{n - 2}U_{\mu}\nabla_{E_i}E_i^{\mu} = \\
 		& = (n - 2) U_{\mu} \cdot \frac{1}{n - 2}\sum_{i=1}^{n - 2}\mathrm{I\!I}^{\mu} \left(E_i, E_i\right) = (n - 2) U_{\mu}\mathrm{H}^{\mu}.
@@ -314,31 +324,41 @@ We finally want to prove that the \(2\) definitions are indeed equivalent.
 	establishing the equivalence between the \(2\) definitions.
 \end{proof}
 
+% \begin{wrapfigure}{L}{0.6\textwidth}
+\begin{SCfigure}
+	\caption[]{the congruence of null geodesics parallel to \(\gamma\) generates the yellow plane, which coincides with the plane of vectors orthogonal to \(\gamma\). It is of no surprise then, that any of the turquoise lines \(P_1, \ldots, P_7\) is a spacelike submanifold orthogonal to the chosen congruence, as any spacelike straight line contained in the plane. Accordingly, each choice of such a submanifold would induce a different decomposition of the metric tensor, and hence a different way for computing \(\theta\).}
+	\label{fig:expansion-computation}
+	\centering
+	\includegraphics[scale=0.55]{Immagini/expansion-computation/expansion-computation.pdf}
+\end{SCfigure}
+
 \begin{remark}
-	It's worth pointing out that, as Wald states in section \(9.2\) of \cite{wald2010general} about the expansion of a null congruence of geodesics, there is no natural way to directly compute \(\theta\), as we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence is orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(R^{2,1}\).
-	%todo: fai disegno sulle note del 17/04
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[scale=1.7]{example-image-duck}
-	\end{figure}
+	It's worth pointing out that, as Wald states in section \(9.2\) of \cite{wald2010general} about the expansion of a null congruence of geodesics, there is no natural way to directly compute \(\theta\), which seems clashing with what we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence is orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(\R^{2,1}\) as in figure \ref{fig:expansion-computation}.
 \end{remark}
 
 
-Even if we already have \(2\) good definitions of \emph{trapped} surface, they are both rather mathematical, while we would like to develop a better intuition of the features of these objects. The most outstanding property is described by the following lemma; we report the statement given in \cite{senovilla2022critical}. A proof for hypersurfaces of codimension \(1\) can be found in \cite{kriele1999spacetime} as Lemma \(4.4.8\), and can be generalized to submanifolds of any dimension, but we don't report the proof here.
-\VS{Should I write the proof of this fact here?}
+Even if we already have \(2\) good definitions of \emph{trapped} surface, they are both rather mathematical, while we would like to develop a better intuition of the features of these objects. The most outstanding property is described by the following lemma; we report the statement given in \cite{senovilla2022critical}. A proof for hypersurfaces of codimension \(1\) can be found in \cite{kriele1999spacetime} under Lemma \(4.4.8\), and can be generalized to submanifolds of any dimension, but we don't report the proof here.
+\VS{Should I write the proof of this fact in some appendix?}
 \begin{lemma}
 	\label{lemma:variation-area}
 	Let \(P\) be any spacelike submanifold of any dimension, and denote as \(\mathcal{A}_P\) its area. Then choose an arbitrary vector field \(\xi^{\mu}\): this will induce a flow \(F_t\), and \(P\) can be deformed along this flow. The initial variation of the area due to this deformation is
 	\[
-	\delta_{\xi}\mathcal{A}_P = \int_{P} \texttt{div}_P (\Pi^{\parallel}\xi) + \mathrm{H}^{\mu}\xi_{\mu}.
+	\delta_{\xi}\mathcal{A}_P = \int_{P} \left(\texttt{div}_P (\Pi^{\parallel}\xi) + \mathrm{H}^{\mu}\xi_{\mu}\right).
 	\]
 \end{lemma}
- Clearly, if \(P\) is without boundary the first term integrates out for Stokes theorem (\(\texttt{div}_P\) is the divergence of \(P\)), and we are left with
+ Clearly, if \(P\) is without boundary the first term integrates out for Stokes theorem (\(\texttt{div}_P\) is the divergence on \(P\)), and we are left with
  \begin{equation}
  	\label{eq:variation-area}
  	\delta_{\xi}\mathcal{A}_P = \int_{P} \mathrm{H}^{\mu}\xi_{\mu}.
  \end{equation}
-	This equation is telling us that \(P\) is trapped if and only if its area is doomed to decrease, no matter how they evolve (as long as they keep causality). In this sense they are trapped, or rather, \emph{trapping}, because everything they contain will be surrounded by a submanifold of less and less area... Until some catastrophe might occur!
+	This equation is telling us that \(P\) is trapped if and only if its area is doomed to decrease, no matter how it evolves (as long as it doesn't violate causality, or, in other words, evolves along flows of causal curves). In this sense they are trapped, or rather, \emph{trapping}, because everything they contain will be surrounded by a submanifolds of less and less area... Until some catastrophe might occur!
+
+	\begin{SCfigure}
+		\caption[]{The vector field \(\vec{\xi}\) on \(P_1\) generates the flow of yellow curves, that has images \(P_2\) and \(P_3\), among others. The tangential part of \(\vec{\xi}\) makes the flow twist without changing the area of the sections, while if \(P_1\) is future trapped, its neighbouring images along the flow will have to have smaller area. Notice though that it is not clear at all that if \(P_1\) is future trapped, then all its images need to be trapped as well: this requires additional hypothesis and is precisely the content of Penrose's singularity theorem.}
+		\label{fig:area-and-curvature}
+		\centering
+		\includegraphics[scale=1]{Immagini/area-and-curvature/area-and-curvature.pdf}
+	\end{SCfigure}
 
 \section{Causal structure}
 
@@ -598,7 +618,3 @@ It therefore makes sense to introduce the following definition:
 	H(S) = 	H^+(S) \cup H^-(S)
 	\]
 	It is possible to prove that this is equivalent to saying \(H(S) \coloneqq \partial D(S)\). Relativistically \(H(S)\) marks the limit of the spacetime region controlled by \(S\), and can be used to formulate useful criteria for global hyperbolicity; it has some interesting topological properties as well, but as we won't make particular use of this object we adivise the reader to refer to chapter \(14\) of \cite{o1983semi} or chapter \(10\) of \cite{wald2010general} for more details.
-
-	\subsection{Past reflectivity}
-	\label{subsec:past-reflectivity}
-	\VS{Scrivi un riassunto dell'articolo di Minguzzi. Non so se tenere la sezione qui o spostarla alla fine della sezione di BH evaporation.}

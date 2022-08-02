@@ -1,0 +1,54 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+
+    % \filldraw[thick, goldenyellow, fill=goldenyellow!25] (0, 0, 0) -- (10, 0, 5) -- (10, 7, -2) -- (0, 7, -7) -- cycle;
+    % \filldraw[thick, goldenyellow, fill=goldenyellow!25] (0, 0, 0) -- (10, 0, 10) -- (10, 7, 3) -- (0, 7, -7) -- cycle;
+
+    \filldraw[thick, goldenyellow, fill=goldenyellow!25] (0, -6, 6) -- (8, -6, 6) -- (8, 7, -7) -- (0, 7, -7) -- cycle;
+    
+    \draw[black, dotted] (0,0,0) -- (0,0,-7);
+    \draw[black, dotted] (0,0,-7) -- (0,7,-7);
+    \draw[black, dotted] (8,0,0) -- (8,0,-7);
+    \draw[black, dotted] (8,0,-7) -- (8,7,-7);
+    
+    \draw[black, ->] (0,0,0) -- (0,0,10) node[above] {\(\hat{y}\)};
+    \draw[black, ->] (0,0,0) -- (0,10,0) node[left] {\(\hat{t}\)};
+    \draw[black, ->] (0,0,0) -- (10,0,0) node[below] {\(\hat{x}\)};
+    
+    \draw[fuchsia, thick, ->] (4, -6, 6) -- (4, 7, -7);
+    \node[fuchsia, left] at (4, -5, 5) {\Large{\gamma}};
+
+    \draw[turquoise, thick] (-1, 3, -3) node[above] {\Large\(P_4\)} -- (9, 3, -3); 
+    \draw[turquoise, thick, densely dashed] (-2, 3, -3) -- (-1, 3, -3); 
+    \draw[turquoise, thick, densely dashed] (9, 3, -3) -- (10, 3, -3); 
+
+    \draw[turquoise, thick] (-1, 4, -4) node[above] {\Large\(P_3\)} -- (9, 2, -2);
+
+    \draw[turquoise, thick] (-1, 2, -2) node[left] {\Large\(P_5\)} -- (9, 4, -4);
+
+    \draw[turquoise, thick] (-1, 5, -5) node[above] {\Large\(P_2\)} -- (9, 1, -1);
+
+    \draw[turquoise, thick] (-1, 1, -1) node[left] {\Large\(P_6\)} -- (9, 5, -5);
+
+    \draw[turquoise, thick] (-1, 6, -6) node[above] {\Large\(P_1\)} -- (9, 0, 0);
+
+    \draw[turquoise, thick] (-1, 0, 0) node[left] {\Large\(P_7\)} -- (9, 6, -6);
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

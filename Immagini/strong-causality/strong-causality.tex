@@ -1,0 +1,46 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+    \draw[black] (0,0) ellipse (2 and 0.5);
+    \fill[white] (-2,0) rectangle (2,10);
+    \draw[fuchsia, very thick] (0,5) ellipse (2 and 0.5);
+    \fill[white] (-2,5) rectangle (2,10);
+    \draw[black, dashed] (0,0) ellipse (2 and 0.5);
+    \draw[fuchsia, very thick, dashed] (0,5) ellipse (2 and 0.5);
+    \draw[black] (2, 0) -- (2, 10);
+    \draw[black] (-2, 0) -- (-2, 10);
+    \draw[black] (0, 10) ellipse (2 and 0.5);
+    \filldraw[black, fill=white] (1, 5.43) circle (2.5pt);
+    \filldraw[black] (-0.5, 5.47) circle (1.5pt) node[below] {\(p\)};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Coni
+    \foreach \i in {-1, 0, 1}
+    \foreach \j in {-2, -1, 0, 1, 2}{
+
+        \begin{scope}[shift={(1.4*\i, 4.7 + 2*\j + 0.2*(\i*\i - 1))},rotate=45*(\j * \j - 4)/4]
+            \filldraw[turquoise, thick, fill=turquoise!30] (-0.4, -0.35) -- (0, 0) -- (0.4, -0.35);
+            \filldraw[turquoise, thick, dashed, fill=turquoise!30] (0,-0.35) ellipse (0.4 and 0.1);
+            \filldraw[goldenyellow, thick, fill=goldenyellow!30] (-0.4, 0.35) -- (0, 0) -- (0.4, 0.35);
+            \filldraw[goldenyellow, thick, fill=white] (0,0.35) ellipse (0.4 and 0.1);
+        \end{scope}
+    }
+
+    
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

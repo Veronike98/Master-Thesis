@@ -1,0 +1,35 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+     \filldraw[goldenyellow, thick, fill=goldenyellow!30] (-7, 7) -- (0, 0) -- (7, 7);
+
+    \draw[dotted] (-2,2) -- (0,2) node[right] {\(1\)};
+    \draw[dotted] (-2,2) -- (-2,0) node[below] {\(-1\)};
+
+    \draw[turquoise, very thick, ->] (-2,2) -- (-5,5);
+    \draw[turquoise, very thick] (-5,5) -- (-7,7);
+    \draw[turquoise, very thick, ->] (0,0) -- (5,5);
+    \draw[turquoise, very thick] (5,5) -- (7,7);
+    
+    \draw[black, ->] (0,0) -- (0, 8) node[left] {\(\hat{t}\)};
+    \draw[black, ->] (-7,0) -- (7, 0) node[below] {\(\hat{x}\)};
+    \filldraw[fuchsia, thick, fill=white] (-2, 2) circle (4pt);
+    \node[below] at (0,0) {\(0\)};
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

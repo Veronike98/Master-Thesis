@@ -1,0 +1,41 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+    \draw[fuchsia, very thick] (0,0) ellipse (1 and 7);
+    \draw[goldenyellow, very thick] (0,0) ellipse (3 and 7);
+    \draw[fuchsia, very thick] (0,0) ellipse (5 and 7);
+    \draw[goldenyellow, very thick] (0,0) ellipse (6.5 and 7);
+    \fill[white] (0,-7) arc (-90:90:7);
+    \draw[turquoise, very thick] (0,0) circle (7);
+    \draw[turquoise, very thick, dashdotted] (0,0) ellipse (7 and 1);
+    \draw[fuchsia, very thick, dotted] (0,0) ellipse (1 and 7);
+    \draw[goldenyellow, very thick, dotted] (0,0) ellipse (3 and 7);
+    \draw[fuchsia, very thick, dotted] (0,0) ellipse (5 and 7);
+    \draw[goldenyellow, very thick, dotted] (0,0) ellipse (6.5 and 7);
+
+    \node[above] at (0, 7) {\(N\)};
+    \node[below] at (0, -7) {\(S\)};
+    \node[turquoise, above] at (0, -1) {\(P\)};
+
+    \filldraw[black] (-2.1, 5) circle (1.4pt) node[right] {\(q_1\)};
+
+    \filldraw[black] (2.83, 2.3) circle (1.4pt) node[right] {\(q_2\)};
+    
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

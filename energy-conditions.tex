@@ -1,5 +1,58 @@
+Einstein equations very famously link the matter content of our spacetime with its geometric structure; however, Einstein equations themselves don't exclude particularly exoctic phenomena, such as causality violation or superluminal travel. In other words, if we were able to reproduce any stress-energy tensor, we could induce any space topology we were to imagine.
+
+This statement vividly clashed with our physical intuition: here it comes then that we would like to require an additional hypothesis, one that was able to select all and only ``reasonable'' forms of matter. We would like it to be general enough so that it can include all types of known fields, but strong enough to rule out unphysical contents and have useful geometrical implications.
+
+Unfortunately such a hypothesis doesn't exist yet; or, well, it would be better to say that there exist too many, but it is not clear wether we have already found a satisfying one or not. In this chapter we are going to quickly review the intricated set of conditions proposed, focusing on the ones that will be useful for us. 
+
+The generalization of the area theorem proposed later on in this thesis is exactly weakening the energy condition required in Hawking's area theorem; we will focus then on motivating why such a generalization was much needed, and what brought us to the choice of the class of energy condition we will be employing.
 
 \section{Pointwise Energy Conditions}
+
+In the following we will use the ``variational'' definition of the stress tensor:
+\[
+   T_{\mu\nu} = \frac{2}{\sqrt{-g}} \frac{\delta S_{mat}}{\delta g^{\mu\nu}}. 
+\]
+
+Hystorically energy conditions were introduced to deduce relativity theorems within a general framework. They have provided with a major step forward, as the regime of validity of important statements such as singularity theorems could be much widened by means of their employment. 
+In particular, they were all in the form of pointwise restrictions on some contraction of the stress energy tensor, a condition general enough to be satisfied by many forms of matter.
+
+The weakest among the energy conditions typically appearing in those classical relativity theorems is the famous Null Energy Condition. That is indeed the one assumed for Penrose's Singularity theorem and Hawking's Area theorem, so that shall also be the one we analyze with most care.
+
+\begin{definition}
+    \label{def:NEC}
+    The Null Energy Condition (NEC) requires that at any point of spacetime and for any null vector \(U^{\mu}\) it holds
+    \[
+    T_{\mu\nu}U^{\mu}U^{\nu} \ge 0.
+    \]
+\end{definition}
+
+But what does that physically mean? To assign an interpretation to this condition we need to ask for some help to Einstein's equation, and turn it into the \emph{null convergence condition}:
+\[
+    R_{\mu\nu}U^{\mu}U^{\nu} \ge 0. 
+\]
+Now, recalling Riccati inequality \eqref{eq:Riccati-ineq}, we can see that NEC would imply that a non rotating null geodesic congruence locally converges, or equivalently that gravity is attractive for particles that move along null geodesics.
+
+This condition is the weakest in the sense that is implied by all others pointwise energy conditions, as shown by proposition \(2.2\) of \cite{kontou2020energy}; it is satisfied by the most common forms of matter in the universe, such as dust, radiation and saturated by the cosmological constant, but in the same reference \cite{kontou2020energy} it is shown that a very simple scalar field non minimally coupled to gravity can already provide a violation of NEC.
+
+If that wasn't convinvig enough, Kontou and Sanders report also an argument (originally by Epstein, Glaser and Jaffe \cite{epstein1965nonpositivity}) to show that \emph{any} pointiwise energy condition must be violated by quantum fields. To show such result Reeh-Schlieder theorem for local observables is needed:
+\begin{theorem}[Reeh-Schlieder]
+    \label{th:reeh-schlieder}
+    Let \(\mathcal{A}(O)\) the set of all operators of a QFT localized in a fixed region \(O\) in Minkowski space, and \(\vert \Omega \rangle\) the vacuum state. Then the set of vectors \(\mathcal{A}(O)\vert \Omega \rangle\) is dense in the Hilbert space \(\mathcal{H}\).
+\end{theorem}
+
+Hence it immediately follows that (\cite{epstein1965nonpositivity})
+\begin{theorem}
+    Let \(A\in \mathcal{A}(O)\) a self-adjoint local operator of a QFT so that \(\langle \psi\vert A\vert\psi\rangle\ge 0\) for all \(\vert\psi\rangle\) in the domain of \(A\). If \(\langle \Omega\vert A\vert\Omega\rangle = 0\) then \(A \equiv 0\).
+\end{theorem}
+\begin{proof}
+    Since \(A\ge 0\), 
+    \[
+        \langle \Omega\vert A\vert\Omega\rangle = \langle \Omega\vert \sqrt{A}\sqrt{A}\vert\Omega\rangle = \vert\vert \sqrt{A}\vert\Omega\rangle\vert\vert^2 = 0.
+    \] 
+    This implies that \(\sqrt{A}\vert\Omega\rangle = 0\) itself; but then also \(A\vert\Omega\rangle = \sqrt{A}\sqrt{A}\vert\Omega\rangle = 0\). Finally, by means of Reeh-Schlieder theorem \ref{th:reeh-schlieder} and local commutativity, we gain that \(A\) must vanish on a set of state dense in \(\mathcal{H}\), and so on all \(\mathcal{H}\).
+\end{proof}
+
+This result shouldn't come as a big surprise. It has been noticed long ago how black hole evaporation is in tension with Hawking's Area theorem, statement that asks for the null energy conditions as a hypothesis. Black hole evaporation is a quantum effect, so we should indeed expect that whenever quantum fields are included, at least one of the hypothesis of the black hole area theorem should be violated: NEC, being a statement about the stress energy tensor, is the natural candidate - even if we will see that causality itself is not immune either to the transition towards a quantum regime.
 
 \section{The Smeared Null Energy Condition}
 \label{sec:SNEC}

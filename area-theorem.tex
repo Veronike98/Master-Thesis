@@ -6,7 +6,7 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 %todo: restate the tehorem only using \mathscr{H}, non serve distinguere tra 1 e 2 secondo me.
 \begin{theorem}[Black Hole Area Theorem]
 	\label{th:classical-bh-area}
-	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}k^{\mu}k^{\nu} \ge 0\) for all null vectors \(k^{\mu}\) (\emph{null convergence condition}). Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
+	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) for all null vectors \(U^{\mu}\) (\emph{null convergence condition}). Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
 	\[
 	\mathscr{H}_1 = H \cap \Sigma_1 \quad \quad \mathscr{H}_2 = H \cap \Sigma_2
 	\]
@@ -14,7 +14,7 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 \end{theorem}
 
 \begin{proof}
-	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators is everywhere non-negative. Here we wish to follow a slightly different path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
+	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators of \(H\) is everywhere non-negative. Here we wish to follow a slightly different path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
 	
 	Let \(\Sigma_1\) be any Cauchy hypersurface for \(\tilde{V}\) through a generic point \(p\in H\), and call \(\mathscr{H}_1 = H \cap \Sigma_1\), as above. Finally refer to \(\mathrm{H}^{\mu}\) as the mean normal curvature of \(\mathscr{H}_1\).
 	The core of the proof is showing that, for the tangent field \(U^{\mu}\) of the null generators of the horizon \(H\), it holds everywhere that:
@@ -24,14 +24,21 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 	\end{equation}
 	By contradiction, suppose instead that \(\mathrm{H}^{\mu}U_{\mu} < 0\) at \(p\in \mathscr{H}_1\). We then want to extend the function \(\mathrm{H}^{\mu}U_{\mu}\) in a continuous way on \(\Sigma_1\) (at least in a neighborhood of \(\mathscr{H}_1\)). 
 	
-	In order to do that, take any deformation of \(\mathscr{H}_1\) outward on \(\Sigma_1\), say \(\mathscr{H}_1'\) and call \(K\) the closed region in \(\Sigma_1\) between \(\mathscr{H}_1\) and \(\mathscr{H}_1'\); the boundary of its future \(\partial J^+(K)\) is a null hypersurface of codimension \(1\), and hence comes with its own null generators, with tangent field \(U'^{\mu}\). This allows us to define the function in \(p' \in\mathscr{H}_1'\) as simply the contraction 
+	In order to do that, take any deformation of \(\mathscr{H}_1\) outward on \(\Sigma_1\), say \(\mathscr{H}_1'\) and call \(K\) the closed region in \(\Sigma_1\) between \(\mathscr{H}_1\) and \(\mathscr{H}_1'\); the boundary of its future \(\partial J^+(K)\) is a null hypersurface of codimension \(1\), and hence comes with its own null generators, with tangent field \(U'^{\mu}\) (see figure \ref{fig:extension-area-theorem}). This allows us to define the function in \(p' \in\mathscr{H}_1'\) as simply the contraction 
 	\(\mathrm{H}'^{\mu}U'_{\mu}\) (with \(\mathrm{H}'^{\mu}\) mean normal curvature of \(\mathscr{H}_1'\)). Different deformations of \(\mathscr{H}_1\) may give different extensions, but that's not important, since we only need that there exists one so that the extension is smooth.
 	
 	\begin{figure}
 		\centering
-%		todo: fai figura per capire estensione, vedi iPad.
-		\includegraphics[scale=1.7]{example-image-duck}
+		\includegraphics[scale=0.8]{Immagini/extension-area-theorem/extension-area-theorem.pdf}
+		\caption[]{schematic representation about how to construct the extension of the function \(\mathrm{H}^{\mu}U_{\mu}\).}
+		\label{fig:extension-area-theorem}
 	\end{figure}
+	\begin{SCfigure}
+		\centering
+		\includegraphics[scale=0.4]{Immagini/flow-generators/flow-generators.pdf}
+		\caption[]{the flow along the null generators of the horizon maps \(\mathscr{H}_1\) into (a part of) \(\mathscr{H}_2\).}
+		\label{fig:flow-generators}
+	\end{SCfigure}
 	Given that extension, it exists a neighborhood of \(p\) in which \(\mathrm{H}^{\mu}U_{\mu}(p) < 0\), we can pick a deformation \(\mathscr{H}_1\) outward on \(\Sigma_1\), to \(\mathscr{H}_1'\), such that
 	\[
 	\begin{cases}
@@ -50,11 +57,12 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 	\end{cases}
 	\]
 	and 
+	{\small
 	\[
 	\int_{0}^{\ell} \big((n -2)(\nabla_Uf)^2 - f^2R_{\mu\nu}U^{\mu}U^{\nu} \big)d\lambda\le 
 	\frac{n -2}{\ell} \le -(n -2) U_{\mu} \mathrm{H}^{\mu} =
 	-(n -2) g(f^2 U, \mathrm{H})\Big\vert_{p},
-	\]
+	\]}
 	This is impossible, because the null generator cannot contain any focal point, and hence 
 	\[
 	\forall p \in H \quad \mathrm{H}^{\mu}U_{\mu}(p) \ge 0.

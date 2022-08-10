@@ -1,0 +1,56 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+    \draw[fuchsia, thick] (-4, 1.4) to[out=30, in=200] (9, 1.6) to [out=80, in=260] (11, 5) to[out=190, in=20] (-2.5, 5) to[out=-90, in=100] (-4, 1.4);
+
+
+    \fill[white, looseness=1.4]  (-0.2,0) to[out=80, in = -80] (-3, 14) to[out=0, in=180] (6, 14) to[out=-95, in = 110] (5,0) to[out=180, in=0] (0,0);
+    \draw[fuchsia, thick] (-4, 1.4) to[out=30, in=200] (9, 1.6);
+    \draw[fuchsia, thick, dashed] (11, 5) to[out=190, in=20] (-2.5, 5);
+
+    \draw[goldenyellow, very thick, looseness=6] (2.5, 2.63) to [out=3, in=-17] (3.3, 4.57);
+    \fill[goldenyellow!17, looseness=6] (2.5, 2.63) to [out=3, in=-17] (3.3, 4.57);
+
+    \draw[turquoise, thick, looseness=1.4] (-0.2,0) to[out=80, in = -80] (-3, 14);
+    \draw[turquoise, thick, looseness=1.4] (5,0) to[out=110, in = -95] (6, 14);
+
+    \filldraw[very thick, turquoise, fill=white] (0.17, 3.7) to[out=-88, in=-70] (4, 3.7);
+    \filldraw[very thick, dashed, turquoise, fill=white] (0.17, 3.7) to[out=77, in=98] (4, 3.7);
+
+    \draw[goldenyellow, thick, shorten >=0.53cm] (6.53, 3.18) to[out=95, in=240] (11,12.7);
+    \draw[goldenyellow, very thick, looseness = 8.17] (3, 11.5) to[out=-1, in =-7] (4.7, 13.8);
+
+    \draw[very thick, turquoise, looseness=0.54] (-2.75, 12.7) to[out=-65, in=250] (5.86,12.7);
+
+    \draw[very thick, turquoise, dashed, looseness=0.623] (-2.75, 12.7) to[out=100, in=80] (5.86,12.7);
+
+    \draw[goldenyellow, dashdotted] (2.5, 2.63) to[out=75, in=220] (3, 11.5);
+    \draw[goldenyellow, dashdotted] (3.3, 4.57) to[out=105, in=280] (4.7, 13.8);
+
+    \node[goldenyellow] at (5, 3.4) {\LARGE \(K\)};
+    \node[fuchsia] at (-2.8, 2.8) {\Large \(\Sigma_1\)};
+    \filldraw[black] (3.6,2.9) circle (0.5pt) node[above] {\Large\(p\)};
+    \filldraw[black] (6.27,3) circle (0.5pt) node[below] {\Large\(p'\)};
+    \node[turquoise] at (-1.4, 10.2) {\LARGE \(H\)};
+    \node[turquoise] at (1.1, 4.2) {\Large \(\mathscr{H}_1\)};
+    \node[goldenyellow] at (8.7, 11) {\Large \(\partial J^+(K)\)};
+
+
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

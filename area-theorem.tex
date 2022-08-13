@@ -1,9 +1,7 @@
 \section{The classical Black Hole Area Theorem}
 \label{sec:classical-bh-area}
 
-%todo; scrivere che BH non possono separarsi
-Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
-%todo: restate the tehorem only using \mathscr{H}, non serve distinguere tra 1 e 2 secondo me.
+Our statement of the orignal Black Hole area theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
 \begin{theorem}[Black Hole Area Theorem]
 	\label{th:classical-bh-area}
 	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) for all null vectors \(U^{\mu}\) (\emph{null convergence condition}). Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
@@ -35,7 +33,7 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 	\end{figure}
 	\begin{SCfigure}
 		\centering
-		\includegraphics[scale=0.4]{Immagini/flow-generators/flow-generators.pdf}
+		\includegraphics[scale=0.37]{Immagini/flow-generators/flow-generators.pdf}
 		\caption[]{the flow along the null generators of the horizon maps \(\mathscr{H}_1\) into (a part of) \(\mathscr{H}_2\).}
 		\label{fig:flow-generators}
 	\end{SCfigure}
@@ -43,117 +41,319 @@ Our statement of the Black Hole Area Theorem comes from \cite{wald2010general} (
 	\[
 	\begin{cases}
 	J^-(\mathscr{I}^+) \cap \mathscr{H}_1' \neq \emptyset; \\
-	\mathrm{H}^{\mu}U'_{\mu} < 0 \text{ everywhere on } 	J^-(\mathscr{I}^+) \cap \mathscr{H}_1'
+	\mathrm{H}'^{\mu}U'_{\mu} < 0 \text{ everywhere on } 	J^-(\mathscr{I}^+) \cap \mathscr{H}_1'
 	\end{cases}
 	\]
 	
-	Pick now a point \(q \in \mathscr{I}^+ \cap \partial J^+(K)\):  (\VS{This exists for sth similar to 12.2.6 of Wald})
-	the null geodesic generator through \(q\) will meet \(\mathscr{H}_1'\) orthogonally because of \ref{prop:global-existence} and \ref{prop:perp-critical-gamma}; however in \(p' = \gamma \cap \mathscr{H}_1'\) \(U_{\mu}\mathrm{H}^{\mu} < 0\), so by proposition \ref{prop:fp-criteria} we know that a focal point to \(\mathscr{H}_1'\) must develop on \(\gamma\) before reaching \(q\). In fact, it is enough to choose \(f = 1 - \frac{\lambda}{\ell}\), with \(\lambda\) affine parameter such that:
+	Pick now a point \(q \in \mathscr{I}^+ \cap \partial J^+(K)\):  
+	% (\VS{This exists for sth similar to 12.2.6 of Wald})
+	the null geodesic generator through \(q\) will meet \(\mathscr{H}_1'\) orthogonally because of \ref{prop:global-existence} and \ref{prop:perp-critical-gamma}; however, in \(p' = \gamma \cap \mathscr{H}_1'\), \(U'_{\mu}\mathrm{H}'^{\mu} < 0\), so by proposition \ref{prop:fp-criteria} we know that a focal point to \(\mathscr{H}_1'\) must develop on \(\gamma\) before reaching \(q\). In fact, it is enough to choose \(f = 1 - \frac{\lambda}{\ell}\), with \(\lambda\) affine parameter such that:
 	\[
 	\begin{cases}
-	\hat{\mathrm{H}}^{\mu}U_{\mu} = 1 \\
+	\hat{\mathrm{H}}'^{\mu}U'_{\mu} = 1 \\
 	\gamma(\lambda = 0) = p' \\
-	\ell \ge  \frac{1}{\vert U_{\mu}\mathrm{H}^{\mu} \vert}
+	\ell \ge  \frac{1}{\vert U'_{\mu}\mathrm{H}'^{\mu} \vert}
 	\end{cases}
 	\]
 	and 
 	{\small
 	\[
-	\int_{0}^{\ell} \big((n -2)(\nabla_Uf)^2 - f^2R_{\mu\nu}U^{\mu}U^{\nu} \big)d\lambda\le 
-	\frac{n -2}{\ell} \le -(n -2) U_{\mu} \mathrm{H}^{\mu} =
-	-(n -2) g(f^2 U, \mathrm{H})\Big\vert_{p},
+	\int_{0}^{\ell} \big((n -2)(\nabla_{U'}f)^2 - f^2R_{\mu\nu}U'^{\mu}U'^{\nu} \big)d\lambda\le 
+	\frac{n -2}{\ell} \le -(n -2) U'_{\mu} \mathrm{H}'^{\mu} =
+	-(n -2) g(f^2 U', \mathrm{H}')\Big\vert_{p},
 	\]}
-	This is impossible, because the null generator cannot contain any focal point, and hence 
+	This is impossible, because orthogonal null generators are prompt curves, and so cannot contain any focal point (see section \ref{sec:promptness}), hence 
 	\[
 	\forall p \in H \quad \mathrm{H}^{\mu}U_{\mu}(p) \ge 0.
 	\]
 		
-	To conclude, it is enough to observe that each \(p\in \mathscr{H}_1\) lies on a null generator \(\gamma\) contained in \(H\). As \(\Sigma_2\) is a Cauchy hypersurface as well, \(\gamma\) must intersect \(\Sigma_2\) in a point \(q \in \mathscr{H}_2\). Then, the flow along null generators maps \(\mathscr{H}_1\) into a portion of \(\mathscr{H}_2\).
+	To conclude, it is enough to observe that each \(p\in \mathscr{H}_1\) lies on a null generator \(\gamma\) contained in \(H\). As \(\Sigma_2\) is a Cauchy hypersurface as well, \(\gamma\) must intersect \(\Sigma_2\) in a point \(q \in \mathscr{H}_2\). Then, the flow along null generators maps \(\mathscr{H}_1\) into a portion of \(\mathscr{H}_2\) (look at figure 
+	\ref{fig:flow-generators} for a pictorial representation).
 	
-	But we know that under deformation along the flow of a vector field, the area of a submanifold evolves as \ref{eq:variation-area}, so:
+	But we know that under deformation along the flow of a vector field, the area of a submanifold evolves as \eqref{eq:variation-area}, so:
 	\begin{equation*}
 		\delta_U\mathcal{A}_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)U_{\mu} \ge 0
 	\end{equation*}
 	which is telling us that when we modify \(\mathscr{H}_1\) along the flow of the null generators the area of \(\mathscr{H}_1\) can never decrease.
 \end{proof}
 
-\section{The damped Averaged Null Energy Condition -- dANEC}
-In section \ref{sec:classical-bh-area} we proved the black holes area theorem under classical hypothesis. As discussed in %todo: scrivi intro a energy conditions e metti una ref
-the Null Energy Conditions is violated by any sort of quantum fields, while we wonder in what cases - if any - the theorem can be extended in a semiclassical regime.
+\begin{remark}
+	As it has already been noticed in \cite[]{chrusciel2001regularity}, this statement of the area theorem is terribly vague about the proper definition of \emph{area}. The same flaw is found also in our main references \cite[]{wald2010general, hawking1973large} and in the original work on this theorem \cite[]{hawking1972black}, where it seems that picewise \(C^2\) differentiability of the horizion has been assumed. However, in \cite[]{chrusciel1998horizons} Chru\'sciel and Galloway point out that such surfaces can be pretty rough, potentially even \emph{nowhere} \(C^2\). In such cases it is not at all clear whether the notion of area or of mean normal curvature of cross-sections of the horizion would even be defined, not to mention the existence of a smooth extension of \(\mathrm{H}^{\mu}U_{\mu}\). 
 
-One first attempt is obtained replacing the null energy conditions with its damped version; this result was already obtained by Lesourd in \cite{lesourd2018remark}, where it was used the Raychaudhuri's equation once again, while here we would like to propose an alternative proof, in the same spirit of theorem \ref{th:classical-bh-area}.
+	The authors in \cite[]{chrusciel2001regularity} have been able to prove a refined version of the area theorem under some slightly more restrictve assumptions, such as a notion of regularity of \(\mathscr{I}^+\) that they refer to as \(H\)-regularity. This is a very technical mathematical requirement though, which doesn't add much physical insight, and it can be extended to all our area theorems almost straightforwardly, so for streamlining we shall not mention it anymore in the coming discussion.
+\end{remark}
+
+\subsection{The damped Averaged Null Energy Condition}
+\label{subsec:dANEC-area-theorem}
+In theorem \ref{th:classical-bh-area} we proved the black hole area theorem under the usual assumption of NEC. As discussed in section \ref{sec:pointwise-energy-conditions} the Null Energy Condition is violated by any sort of quantum fields (theorem \ref{th:quantum-violation-pointwise-conditions}), hence we wonder in what cases - if any - the theorem can be extended to a semiclassical regime.
+
+One first attempt is obtained replacing the Null Energy Condition with its damped version; this result was already obtained by Lesourd in \cite{lesourd2018remark}, once again by means of the Raychaudhuri's equation, while here we would like to propose an alternative proof, in the same spirit of the one given for theorem \ref{th:classical-bh-area}.
 \begin{definition}
-	A spacetime satisfies the \emph{damped averaged null energy condition} if along each future complete null geodesic \(\gamma\), affinely parametrized by \(\lambda\), there exists a non-negative constant \(c\ge 0\) such that:
+	A spacetime satisfies the \emph{damped averaged null energy condition} (dANEC) if along each future complete null geodesic \(\gamma\), affinely parametrized by \(\lambda\), there exists a non-negative constant \(c\ge 0\) such that:
 	\[
-	\liminf\limits_{\Lambda\rightarrow \infty} \int_{0}^{\Lambda} e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda - \frac{c}{2} > 0
+	\liminf\limits_{\Lambda\rightarrow \infty} \int_{0}^{\Lambda} e^{-c\lambda}T_{\mu\nu}U^{\mu}U^{\nu}d\lambda - \frac{c}{2} > 0
 	\]
-	where \(U^{\mu}\) is \(\gamma\)'s tangent field.
+	where \(U^{\mu}\) is \(\gamma\)'s tangent field. The corresponding \emph{convergence condition} is obtained substituting \(T_{\mu\nu}U^{\mu}U^{\nu}\) with \(R_{\mu\nu}U^{\mu}U^{\nu}\), as guaranteed by Einstein equations.
 \end{definition}
 
-The statement of the theorem is the same as \ref{th:classical-bh-area}, but replacing the Null convergence condition with dANEC; the proof is pretty similar as well but this time we will need to choose a different trial function when using proposition \ref{prop:fp-criteria}.
+The statement of the theorem is the same as \ref{th:classical-bh-area}, but replacing the Null convergence condition with the dANEC equivalent; the proof is pretty similar as well but this time we will need to choose a different trial function when applying proposition \ref{prop:fp-criteria}.
 \begin{proof}
-	Define \(\mathscr{H}_1\), and consider \(U_{\mu}\mathrm{H}^{\mu}\) exactly as in \ref{th:classical-bh-area}. Again we want to show that it needs to be \(U_{\mu}\mathrm{H}^{\mu} > 0\) everywhere on the horizon. In order to do it, by contradiction, assume there exists \(p\in \mathscr{H}_1\) for which this doesn't hold, and construct the extension \(U'_{\mu}\mathrm{H}'^{\mu}\) in a neighborhood of \(p\) in the same way as before.
-	Now, pick \(f = e^{-c\frac{\lambda}{2}}\): the left hand side of \ref{eq:fp-criteria} in \(n = 4\) dimensions becomes:
+	Define \(\mathscr{H}_1\), and consider \(U_{\mu}\mathrm{H}^{\mu}\) exactly as in \ref{th:classical-bh-area}. Again we want to show that it needs to be \(U_{\mu}\mathrm{H}^{\mu} > 0\) everywhere on the horizon. In order to do so, by contradiction assume there exists \(p\in \mathscr{H}_1\) for which this doesn't hold, and construct the extension \(U'_{\mu}\mathrm{H}'^{\mu}\) in a neighborhood of \(p\) in the same way as before.
+	Now, pick \(f = e^{-c\frac{\lambda}{2}}\); the left hand side of \ref{eq:fp-criteria} in \(n = 4\) dimensions becomes:
 	\[
-	\int_{0}^{+\infty} (n-2)\frac{c^2}{4} e^{-c\lambda} - e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda = \frac{c}{2} - \int_{0}^{+\infty} e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda 
+	\int_{0}^{+\infty} \left((n-2)\frac{c^2}{4} e^{-c\lambda} - e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}\right)d\lambda = \frac{c}{2} - \int_{0}^{+\infty} e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda 
 	\]
-	which is negative, for the assumption of dANEC.
+	which is guaranteed to be negative by dANEC.
 	Instead, \(U'_{\mu}\mathrm{H}'^{\mu} < 0 \) implies
 	\[
 	-(n - 2)U'_{\mu}\mathrm{H}'^{\mu} > 0.
 	\]
-	From this it follows that \ref{eq:fp-criteria} holds, and hence  a focal point is formed along \(\gamma\), which is, again, absurd. 
+	Hence equation \eqref{eq:fp-criteria} holds, and so a focal point must form along \(\gamma\), which is - again - absurd. 
 	
-	By this contradiction we have that along the null generators \(U_{\mu}\mathrm{H}^{\mu} > 0\), and the conclusion is reached exactly ad in \ref{th:classical-bh-area}.
+	By this contradiction we have that along the null generators \(U_{\mu}\mathrm{H}^{\mu} > 0\), and the conclusion is reached exactly as in \ref{th:classical-bh-area}.
 \end{proof}
 
-Assuming the dANEC we are still able to prove that the area cannot decrease: this is a signal that we are still working with a classical condition; we will now move forward to conditions that reach weaker conclusions and hopefully are derived from weaker conditions.
+From the assumption of dANEC we are still able to prove that the area cannot decrease: this is a signal that we are still working with a ``classical'' condition, in the sense that it generates a tension with the - quantum - phenomenon of black hole evaporation. We will now try to generalise the discussion, with the aim of including weaker energy conditions that could hopefully solve the tension above mentioned.
+
+
+\section{A more general point of view}
+
+The proofs of theorem \ref{th:classical-bh-area} and its dANEC version might inspire us to observe the following
+\begin{lemma}
+	\label{lemma:generalized-area-theorem}
+	In any strongly asymptotically predictable spacetime, let \(H\) be the black hole horizon, \(U^{\mu}\) the tangent field of its null generators, and \(\mathrm{H}^{\mu}\) the mean normal curvature of \(\mathscr{H} = \Sigma \cap H\), where \(\Sigma\) is any Cauchy surface. Then it must always hold:
+	\[
+	U_{\mu}\mathrm{H}^{\mu} \ge -\frac{1}{n - 2} \inf_{\substack{f\in C^{\infty}_{1,0}[0, \ell]\\ \ell > 0}}J_{\ell}[f]
+	\]
+	where we indicated \(C^{\infty}_{1,0}[0, \ell]\) the set of smooth functions such that \(f(0) = 1\) and \(f(\ell) = 0\).
+\end{lemma}
+
+\begin{proof}
+	For this proof we proceed in a similar way as in the previous section. By contradiction, suppose there exists a point \(p\) on the horizon \(H\) where:
+	\[
+		U_{\mu}\mathrm{H}^{\mu} < -\frac{1}{n - 2} \inf_{\substack{f\in C^{\infty}_{1,0}[0, \ell]\\ \ell > 0}}J_{\ell}[f].
+	\]
+	Then there exists a deformation of \(\mathscr{H}\) on the Cauchy surface \(\Sigma\) in a neighborhood of \(p\) where this inequality keeps holding everywhere, or in other words:
+	\begin{equation}
+		\label{eq:contradiction-generalized-area}
+		\inf_{\substack{f\in C^{\infty}_{1,0}[0, \ell]\\ \ell > 0}}J_{\ell}[f] < - (n - 2)U_{\mu}\mathrm{H}^{\mu}.
+	\end{equation}
+	Refer again as \(K\) to the closed region between \(\mathscr{H}\) and the extension \(\mathscr{H}'\) (remember figure \ref{fig:extension-area-theorem} for a graphical explanation).
+	For the null generators leaving on \(\partial J^+(K)\) equation \eqref{eq:contradiction-generalized-area} implies that there exist \(\ell > 0\) and \(f\in C^{\infty}_{1,0}[0, \ell]\) so that the condition \(\eqref{eq:fp-criteria}\) is satisfied. But this leads to a contradiction in the same way as in theorem \ref{th:classical-bh-area} because we are again in a globally hyperbolic spacetime, and null generators are not allowed to contain any focal point.
+
+\end{proof}
+
+Then, as before, we have that the change of the area of \(\mathscr{H}\) along the flow of null generators is controlled by
+	\begin{equation*}
+		\delta_U\mathcal{A}_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)U_{\mu} \ge - \frac{1}{n - 2}\left(\inf_{\substack{f\in C^{\infty}_{1,0}[0, \ell]\\ \ell > 0}}J_{\ell}[f]\right)\cdot\mathcal{A}_{\mathscr{H}_1}.
+	\end{equation*}
+	So far we have proved that the rate of change of the area of the horizon near the reference ``time instance'' given by \(\Sigma\) cannot be lower than a certain (potentially negative) rate. 
+	
+\begin{remark}
+	As we shall discuss in the following, the right hand side of the inequality in the thesis of lemma \ref{lemma:generalized-area-theorem} might be negative! That means that such a black hole might be able to evaporate... but we know from section \ref{sec:black-holes-evaporation} that spacetimes containing evaporating black holes are not globally hyperbolic.
+
+	This is not a problem however: the region before the complete evaporation of the black hole remains non vicious, and Minguzzi has shown in \cite[]{minguzzi2020gravitational} that past reflectivity and this non-viciousness requirement are enough to prove Penrose's singularity theorem; in the same way our area theorem can be generalized to settings where evaporation is allowed.
+\end{remark}
+
+% In some sense this infimum is really the minimal constraint we can put on \(U_{\mu}\mathrm{H}^{\mu}\)
+% \VS{Could it be equal to that by any chance? Maybe for null generators of the horizon we could say a focal point is formed at infinity, or sth like that}.
+\VS{If true, I'd like to make a comment here about this bound being the strictest possible one on the rate of change of the area.}
+
+Now, the big question we are left with is: what is the value of such infimum of \(J\)? Could it really be negative?
+\noindent
+This is of course a very difficult problem in general (indeed it is exactly equivalent to the original question), but there are quite a few known techniques for variational problems that can become useful.
+
+\subsection{The first idea - a variational estimation}
+\label{subsec:variational-estimation}
+One possible idea - that we have already been exploiting in the specific cases of the Null energy condition and the dANEC - is really that of a variational estimation. This works as follows:
+\begin{lemma}
+	As soon as we can place an upper bound on \(J[f]\), holding for some class of functions \(\mathcal{A} \subset C^{\infty}_{1,0}\left([0,+\infty)\right)\), then we have an upper bound on \(\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f]\), and hence a lower bound on \(U_{\mu}\mathrm{H}^{\mu}\).
+\end{lemma}
+	\begin{proof}
+		Say that we know, from some mysterious oracle, that
+		\[
+		\exists f \in \mathcal{A} \quad\vert\quad J[f] \le (n-2) \cdot A.
+		\]
+		Then clearly
+		\[
+			\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f] \le (n-2) \cdot A,
+		\]
+		and hence
+		\[
+			U_{\mu}\mathrm{H}^{\mu} \ge -\frac{1}{n - 2} \inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell > 0}J_{\ell}[f] > - A.
+		\]
+	\end{proof}
+	As for any variational estimation, the aim is to get a better and better approximation of the infimum by taking larger and larger sets of functions. Of course, as soon as we find any set \(\mathcal{A}\) for which the corresponding \(A\) is lower or equal than zero, we would recover the original (classical) formulation of the area theorem, and loose any interest in trying to expand further our set of functions.
+
+	In \(J\) though, there is still hidden some metric dependence by the presence of the Ricci tensor, dependance that we would like to wash away. Here is where energy conditions shall enter and help us out again: in fact, an energy condition of the form 
+	\[
+	\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B[f]	
+	\]
+	is exactly helping us in placing an upper bound on \(J\) - that doesn't depend on the metric of course, but can depend on \(f\).
+
+	To summarise, the strategy to pursue a variational estimation of \(\inf J\) will be to pick each time:
+	\begin{itemize}
+		\item[\ding{99}] an energy condition of the form \(\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B[f]\);
+		\item[\ding{99}] a subclass of functions \(\mathcal{A}\) onto which \(J\) is easier to be ``minimized''.
+	\end{itemize}
+	By following this receipe we will be able to recover upper bounds on \(J\), that immediately translates to lower bounds on \(U_{\mu}\mathrm{H}^{\mu}\).
+
+	\subsection{Classical conditions}
+	An immediate observation is that, from the phenomenon of black hole evaporation, we expect the infimum of \(J[f]\) to be strictly positive.
+
+	Instead, if we were in presence of some function \(f\) giving:
+	\[
+	J[f] \le 0	\iff \int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge (n - 2)\int_0^{\ell} \vert \nabla_U f\vert^2
+	\]
+	then we would know that the infimum of \(J\) would have to be non positive, and so black hole evaporation would be prohibited, as it was for NEC and dANEC.
+
+	The idea is that we would like to define an energy condition to be ``classical'' if it prohibits black hole evaporation, or in other words:
+	\begin{definition}
+		\label{def:classical-energy-condition}
+		We say that an energy condition is \emph{classical} for a spacetime of dimension \(n\), if there exists a function in the closure of \(C_{1,0}^{\infty}\left([0, \ell]\right)\) such that
+		\[
+			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} d\lambda\ge (n - 2) \int_0^{+\infty} \vert \nabla_U f\vert^2 d\lambda.	
+		\]
+		If the energy condition is of the form
+		\[
+			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]	
+		\]
+		then the above becomes
+		\begin{equation}
+			\label{eq:definition-classical-condition}
+			B[f] + (n - 2) \cdot \vert\vert \nabla_U f \vert\vert^2 \le 0.
+		\end{equation}
+	\end{definition}
+
+	Accordingly, with this definition both NEC and dANEC are \emph{classical}. We explicit the examples in these two simple cases to facilitate the transition from the old proof of the area theorem to the new ideas we are exploiting.
+
+	\textbf{Example 1 -- NEC}: As one can see from the proof of the classical black hole area theorem \ref{th:classical-bh-area}, a class of functions that works fine enough for this condition is just:
+	\[
+	\mathcal{A}_{NEC} = \left\{ f_{\ell}(\lambda) \coloneqq \left(1 - \frac{\lambda}{\ell}\right) \cdot \chi_{[0, \ell]}(\lambda) \vert \ell > 0 \right\},
+	\]
+	where with \(\chi_{[0, \ell]}\) we refer to the characterstic function of the interval \([0,\ell]\).
+
+	Now, as for NEC \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) everywhere, and \(f^2 \ge 0\) as well, \(B[f] \equiv 0\). So NEC is classical according to definition \ref{def:classical-energy-condition} if we could find \(f \in \mathcal{A}_{NEC}\) such that \(\vert\vert \nabla_U f \vert\vert^2 \le 0\). But it is easy to compute that:
+	\[
+		\vert\vert \nabla_U f_{\ell} \vert\vert^2 = \frac{1}{\ell} \longrightarrow 0 \text{ when } \ell \rightarrow +\infty.
+	\]
+	\begin{remark}
+		From the above procedure it is clear that whenever we choose a class of funtcions \(\mathcal{A}\) we can always refer to its closure \(\bar{\mathcal{A}}\) and the all procedure remains unaffected. Consequentially, limit functions can be always considered included in the sets \(\mathcal{A}\) that we pick.
+	\end{remark}
+
+	\textbf{Example 2 -- dANEC}: Similarly, looking at the proof in section \ref{subsec:dANEC-area-theorem} we can pick the set:
+	\[
+	\mathcal{A}_{dANEC} \coloneqq \{ f_c(\lambda) = e^{-c\frac{\lambda}{2}} \vert c >0\}.	
+	\]
+	Then, from the definition of dANEC we immediately recover that on \(\mathcal{A}_{dANEC}\) it holds \(B[f_c] = -\frac{c}{2}\); finally 
+	\[
+		\vert\vert \nabla_U f_{c} \vert\vert^2 = \frac{c^2}{4} \cdot \frac{1}{c} \implies B[f] + (n - 2) \cdot \vert\vert \nabla_U f \vert\vert^2 \equiv 0.
+	\]
+
+
+	\begin{corollary}
+		From definition \ref{def:classical-energy-condition} it is pretty clear that any energy condition of the form
+		\[
+			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]	
+		\]
+		where \(B[f] \le 0\) for all \(f\), then the condition needs to be classical, and therefore forbidding black hole evaporation.
+	\end{corollary}
+	\begin{proof}
+		It is enough to use one of the sets of functions chosen in the above examples. Let's use the first one:
+		\[
+		\mathcal{A} \coloneqq \{f_{\ell} \quad\vert\quad \ell >0\},
+		\]
+		where
+		\[
+			f_{\ell}(\lambda) \coloneqq
+			\begin{cases}
+				 1 - \frac{\lambda}{\ell} \text{ for } 0 \le \lambda \le \ell, \\	
+				0 \text{ for } \lambda \ge \ell.
+			\end{cases}
+		\]
+
+		The norm of the first derivative has already been computed many times:
+		\[
+			\vert \vert \nabla_U f_{\ell} \vert\vert^2 	= \frac{1}{\ell};
+		\]
+		by sending \(\ell \rightarrow +\infty\), and using the hypothesis:
+		\[
+			B[f_{\ell}] \le 0	
+		\]
+		\(\eqref{eq:definition-classical-condition}\) is indeed satisfied.
+	\end{proof}
 
 \section{The Sobolev condition}
+Let us finally start from an energy condition which - to the present analysis at least - leads to some more interesting consequences.
 In this section we will assume the validity of a different energy condition, that uses Sobolev norms, and that's why we call it \emph{Sobolev condition}.
 This assumption is motivated by the work in section \(4\) of \cite{fewster2020new}, where an analogous condition is assumed in order to derive singularity theorems.
 
 \begin{definition}
-	We say that the \emph{Sobolev condition} is satisfied on a curve \(\gamma\), from a Cauchy surface \(\Sigma\) for a ``time'' \(\ell\), if there exixst some \(m\in \N\) and \(2\) non negative constants \(Q_0\) and \(Q_m\) such that, for any \(\frac{1}{2}-\)density \(f\) on \(\gamma\):
+	We say that the \emph{Sobolev energy condition} is satisfied on a curve \(\gamma\) and for a ``time'' \(\ell\), if there exist some \(m\in \N\) and two non negative constants \(Q_0\) and \(Q_m\) such that, for any \(f\) in the Sobolev space \(W_0^m([0,\ell])\):
     \begin{equation}
         \label{eq:Sobolev-condition}
-        \int_0^{\ell} f(\lambda)^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2;
+        \int_0^{\ell} f(\lambda)^2 R_{\mu\nu}U^{\mu}U^{\nu} d\lambda \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2.
     \end{equation}
-
-	the affine parametrization is chosen so that \(\gamma(\lambda = 0) \in \Sigma\) and \(\hat{H}_{\mu}\frac{d\gamma^{\mu}}{d\lambda}\Big\vert_{\lambda = 0} \equiv 1\) (\(\hat{H}_{\mu}\) is the versor of the mean normal curvature of \(\Sigma\)) - we will refer to this as the \emph{standard} affine parametrization. Finally, \(\vert\vert \star \vert\vert\) denotes the standard norm in \(L^2(I)\).
+	\noindent
+	We will apply this conditions to null geodesics \(\gamma\) orthogonal to some surface \(\Sigma\), where we will assume \(\lambda\) is the affine parametrization such that \(\gamma(\lambda = 0) \in \Sigma\) and \(\hat{H}_{\mu}\frac{d\gamma^{\mu}}{d\lambda}\Big\vert_{\lambda = 0} \equiv 1\) (\(\hat{H}_{\mu}\) is the versor of the mean normal curvature of \(\Sigma\)); finally, \(\vert\vert \star \vert\vert\) denotes the standard norm in \(L^2(I)\).
 \end{definition}
 
-Such a condition has some useful consequences on the functional \(J_{\ell}[f] = \int_0^{\ell} (n - 2)(\nabla_Uf)^2 - f^2R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) d\lambda \).
+\subsection[]{Variational estimation}
+\label{subsec:V-optimization}
+
+First of all we would like to exploit this condition to obtain an estimation of \(\inf J\), using the variational procedure outlined in subsection \ref{subsec:variational-estimation}. However some care is required by the fact that the set of functions over which we need to minimize \(J\) and the one where the Sobolev condition is valid are quite different: the first one requires \(f(0) = 1\), while the second needs \(f(0) = 0\).
+
+Closely following the analysis present in \cite[]{fewster2020new}, let us choose the set parametrized by the two real parameters \(\ell_0\) and \(\ell\):
+
+\[
+\mathcal{A}_{\beta} \coloneqq \left\{f_{\ell_0, \ell} \vert \ell > \ell_0 >0\right\} \quad\quad f_{\ell_0, \ell}(\lambda) = 
+\begin{cases}
+	1 \hfill \lambda\in [0, \ell_0) \\
+	I(m, m; \frac{\ell - \lambda}{\ell - \ell_0}) \quad \hfill \lambda\in [\ell_0, \ell]
+\end{cases}
+\]
+where \(I(m,m;x)\) is the regularized incomplete Beta function. This function is the unique polynomial \(p_m\) of degree \(2m - 1\) such that:
+\[
+p_m(0) = 0 \quad p_m(1) = 1 \quad\text{and}\quad p^{(k)}_m(0) = 0 = p^{(k)}_m(1)	\text{ for all } 1 \le k \le m - 1;
+\]
+it is explicitely given by \(p_m(x) = \frac{1}{B(m, m)} \int_0^x y^{m - 1}(1 - y)^{m -1} dy\), where \(B(m,m)\) is the Beta function.
+
+In order to give an idea of what they look like, we have represented a few different such functions in figure \ref{fig:beta-functions}; finally, the values of the sobolev norms \(A_m\) of the regularized incomplete \(m-\)Beta function, of its first derivative \(B_m\) and \(m-\)th derivative \(C_m\) are known analytically. For the sake of completeness their values are:
+\[
+A_m = \frac{1}{2} - \frac{(2m)!^4}{4(4m)!m!^4} \quad 
+B_m= \frac{(2m-2)!^2(2m-1)!^2}{(4m-3)!(m - 1)!} \quad 
+C_m = \frac{(2m-2)!(2m-1)!}{(m-1)!^2}. 
+\]
+
+\begin{figure}
+	\centering
+	\begin{minipage}{.45\textwidth}
+	  \centering
+	  \includegraphics[width=1.1\linewidth]{Immagini/beta-functions.png}
+	  \captionof{figure}{graphs of different functions in \(\mathcal{A}_{\beta}\) with \(\ell_0 = 1\), \(\ell = 10\) and \(3\) different values for \(m\). The incomplete beta function for \(m = 1\) coincides with the straight line, and becomes smoother and smoother with increasing \(m\).}
+	  \label{fig:beta-functions}
+	\end{minipage}
+	\begin{minipage}{.45\textwidth}
+	  \centering
+	  \includegraphics[width=1.1\linewidth]{Immagini/beta-functions-proof-bound.png}
+	  \captionof{figure}{graphs of \(f\) and \(\varphi\) with \(\ell_0 = 1\), \(\ell=10\) and \(m = 14\), used in lemma \ref{lemma:J-sobolev-condition} to place a bound on \(J\). By taking the product of the two functions we obtain one that starts and ends at \(0\), and so can be used to apply the Sobolev energy condition.}
+	  \label{fig:beta-functions-proof-bound}
+	\end{minipage}
+	\end{figure}
+
+Now, assuming an additional condition on the stress energy tensor (or equivalently on the Ricci tensor), we are able to prove the following
+
 \begin{lemma}
 	\label{lemma:J-sobolev-condition}
-	Let 
-	\begin{itemize}
-		\item[\ding{99}] the Sobolev condition be satisfied on \(\gamma\), from \(\Sigma\) for a ``time'' \(\ell\);
- 		 \item[\ding{99}] the quantity \(\rho(\lambda) \coloneqq R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \) on \(\gamma\) be lower controlled by \(\rho_0\) in \([0, \ell_0] \subseteq [0, \ell]\), or in other words
-    	 \[
-			R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \ge \rho_0 \quad\quad \forall\lambda\in [0, \ell_0].
-		\]
-	\end{itemize}
-	Now define \(f\) as:
-	\begin{equation}
-		f(\lambda) = 
-		\begin{cases}
-			1 \hfill \lambda\in [0, \ell_0) \\
-			I(m, m; \frac{\ell - \lambda}{\ell - \ell_0}) \quad \hfill \lambda\in [\ell_0, \ell].
-		\end{cases}
-	\end{equation}
-	where \(I(m,m;x)\) is the regularized incomplete Beta function.
-	Then for this specific choice of \(f\) it holds:
+	Assume the Sobolev condition holds, and the quantity \(\rho(\lambda) \coloneqq R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \) is lower controlled by \(\rho_0\) in \([0, \ell_0] \subseteq [0, \ell]\), or in other words
+	\[
+	   R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \ge \rho_0 \quad\quad \forall\lambda\in [0, \ell_0].
+   \]
+	Then for any \(f\in \mathcal{A}_{\beta}\) it holds:
 	\begin{equation}
 		\label{eq:J-sobolev-condition}
-		J[f] \le (n - 2)\mathcal{V} \coloneqq -(1-A_m)\rho_0\ell_0 + \frac{Q_mC_m}{\ell_0^{2m-1}} + Q_0A_m\ell + \frac{(n - 2)B_m}{\ell - \ell_0} + \frac{Q_mC_m}{(\ell-\ell_0)^{2m-1}},
+		J[f] \le (n - 2)\mathcal{V}_{\beta} \coloneqq -(1-A_m)\rho_0\ell_0 + \frac{Q_mC_m}{\ell_0^{2m-1}} + Q_0A_m\ell + \frac{(n - 2)B_m}{\ell - \ell_0} + \frac{Q_mC_m}{(\ell-\ell_0)^{2m-1}}.
 	\end{equation}
-	where \(Q_m\), \(Q_0\) have been defined with the Sobolev condition, while \(A_m\), \(B_m\) and \(C_m\) are the sobolev norms of the regularized incomplete \(m-\)Beta function, its first and \(m-\)th derivative. For the sake of completeness their values are:
-	\[
-	A_m = \frac{1}{2} - \frac{(2m)!^4}{4(4m)!m!^4} \quad 
-	B_m= \frac{(2m-2)!^2(2m-1)!^2}{(4m-3)!(m - 1)!} \quad 
-	C_m = \frac{(2m-2)!(2m-1)!}{(m-1)!^2}. 
-	\]
 \end{lemma}
 
 \begin{proof}
@@ -165,12 +365,6 @@ Such a condition has some useful consequences on the functional \(J_{\ell}[f] = 
 		1 \hfill \lambda \in [\ell_0, \ell]
 	\end{cases}	
 	\]
-
-	\begin{figure}
-		\centering
-		\includegraphics[scale=1.7]{example-image-duck}
-		%todo: inserisci plot di f e phi
-	\end{figure}
 	
 	It's possible to see that \(\varphi f \in W_0^m([0,\ell])\), so writing \(f^2 = (\varphi f)^2 + (1 - \varphi^2)\) we have:
 	\begin{align*}
@@ -180,53 +374,88 @@ Such a condition has some useful consequences on the functional \(J_{\ell}[f] = 
 
 	Moreover, the norms of the functions can be analytically computed for the specific choices that we made:
 	\[
-		\vert\vert \varphi f\vert\vert^2 = A_m\ell_0 + A_m(\ell - \ell_0)\quad\quad
+		\vert\vert \varphi f\vert\vert^2 = A_m\ell_0 + A_m(\ell - \ell_0)\quad
 		\vert\vert (\varphi f)^{(m)}\vert\vert^2 = \frac{C_m}{\ell_0^{2m - 1}} + \frac{C_m}{(\ell - \ell_0)^{2m - 1}}
-		\quad\quad 
+		\quad
 		\vert\vert f'\vert\vert^2 = \frac{B_m}{\ell - \ell_0}
 	\]
 	Thus,
 	\[
-		J[f] \le \frac{(n - 2)B_m}{\ell - \ell_0} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + \frac{Q_mC_m}{(\ell - \ell_0)^{2m - 1}} + Q_0A_m\ell - \rho_0\ell_0(1 - A_m) \coloneqq (n-2)\mathcal{V},
+		J[f] \le \frac{(n - 2)B_m}{\ell - \ell_0} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + \frac{Q_mC_m}{(\ell - \ell_0)^{2m - 1}} + Q_0A_m\ell - \rho_0\ell_0(1 - A_m) \coloneqq (n-2)\mathcal{V}_{\beta},
 	\]
 	and the estimate is complete.
 \end{proof}
 
-As in the previous section we are now able to infer some conditions on the area of black holes. However, in this case we don't reach exactly the same conclusion as before:
-\begin{theorem}
-	\label{th:sobolev-bh-area}
-	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying the Sobolev condition for all normal future-pointing null geodesics leaving from a Cauchy surface \(\Sigma\), and for a ``time'' \(\ell\). Moreover, assume that the quantity \(\rho(\lambda) \coloneqq R_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \) on \(\gamma\) be lower controlled by \(\rho_0\) in \([0, \ell_0] \subseteq [0, \ell]\). 
-	
-	% Let \(\Sigma_2\) be the image of \(\Sigma_1\) along the flux of normal null geodesics after a standard affine parameter \(\ell\), \(\Sigma_2 = F_{\ell}(\Sigma_1)\); 
-	If \(H\) is the event horizon, and
-	\[
-	\mathscr{H} = H \cap \Sigma ;
-	% \quad \quad \mathscr{H}_2 = H \cap \Sigma_2
-	\]
-	then the area of \(\mathscr{H}\) istantaneously cannot decrease at a faster rate than \(\mathcal{V}\), 
-	where \(\mathcal{V}\) is some positive constant that depends on \(Q_0\) and \(Q_m\), among others, and is defined in \eqref{eq:J-sobolev-condition}.
-\end{theorem}
+Now that for each function \(f_{\ell_0, \ell} \in \mathcal{A}_{\beta}\) we have an estimate for \(J\left[f_{\ell_0, \ell}\right] \le (n-2)\mathcal{V}_{\beta}(\ell_0, \ell)\), we can finally pursue the variational strategy: we need to minimize \(\mathcal{V}_{\beta}(\ell_0, \ell)\) on \(\ell \ge \ell_0\). In order to do so we will first minimize along \(\ell\), keeping \(\ell_0\) fixed, and then proceed to a second minimization over this last parameter.
+
+The first optimization has been already performed in \cite{fewster2020new}, even if in their computation they neglect some terms that instead will be relevant for us, because of the different regime of approximation that we will need to set. Let us do that first:
+
+\begin{prop}
+    The bound optimized on \(\ell \ge \ell_0\) is
+    \[
+      (n-2)\mathcal{V}_{\beta}(\ell_0) = (A_m - 1)\rho_0\ell_0 + \frac{Q_mC_m}{\ell_0} + 2 \sqrt{(n - 2)A_mB_mQ_0}   
+    \]
+    and is obtained for:
+    \[
+    \tilde{\ell} = \ell_0\left(1 + \sqrt{\frac{(n - 2) B_m}{A_m Q_0\ell_0^2}}\right)    
+    \]
+\end{prop}
 
 \begin{proof}
-	For this proof we proceed in a similar way as in the previous sections; we want to prove that \(\forall p \in \mathscr{H}\) \(U_{\mu}\mathrm{H}^{\mu}(p) \ge -\mathcal{V}\), where \(U^{\mu}\) is the tangent field of the null generator of \(H\) through \(p\), and \(\mathrm{H}^{\mu}(p)\) is the mean normal curvature of \(\Sigma\) in \(p\). We proceed as follows
-	\begin{itemize}
-		\item[\ding{99}] By contradiction, assume there exists a \(p\in \mathscr{H}\) so that \(U_{\mu}\mathrm{H}^{\mu}(p) < -\mathcal{V}\).
-  		\item[\ding{99}] There exists an outward deformation on \(\Sigma\) of \(\mathscr{H}\), in a neighborhood of \(p\), on which \(U_{\mu}\mathrm{H}^{\mu}(p') < -\mathcal{V}\) holds everywhere. This point can be motivated exactly as it has been done for the proof of \ref{th:classical-bh-area}. In particular this implies that \(-(n -2) U_{\mu}\mathrm{H}^{\mu} > (n-2)\mathcal{V}\) for the null generators leaving of \(\partial J^+(K)\).
-    	\item[\ding{99}] By means of lemma \ref{lemma:J-sobolev-condition} we have that \(J[f] \le (n - 2)\mathcal{V}\), at least for the specific choice of \(f\) made in such lemma. This leads to a contradiction because - once again - proposition \ref{prop:fp-criteria} comes into play, and the null generator of \(\partial J^+(K)\) through \(p'\in \mathscr{H}'\) is doomed to contain a focal point, in contradiction with the global hyperbolicity of the region outside the black hole.\footnote{as argued in subsections \ref{subsec:past-reflectivity} and \ref{subsec:causaliy-bh-evaporation}, the global hyperbolicity hypothesis can be relaxed to past reflectivity, and this property of the spacetime will still hold.}
-	\end{itemize}
-	We have then proved that 
-	\[
-		U_{\mu}\mathrm{H}^{\mu}(p) \ge -\mathcal{V}	\quad\quad \forall p \in \mathscr{H}_1
-	\]
-	Then, as before, we have that the change of the area of \(\mathscr{H}_1\) along the flow of null generators is controlled by
-	\begin{equation*}
-		\delta_U\mathcal{A}_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)U_{\mu} \ge - \mathcal{V}\cdot\mathcal{A}_{\mathscr{H}_1}.
-	\end{equation*}
-	So far we have proved that the rate of change of the area of the horizon near the reference ``time instance'' given by \(\Sigma_1\) cannot be lower than a certain (negative) rate. 
-	
-	It is not possible to constrain the average rate of evolution between \(2\) Cauchy surfaces \(\Sigma_1\) and \(\Sigma_2\) directly though, because we would need to assume the Sobolev condition, and the pointwise restriction \(\rho \ge \rho_0\) in the all region in between \(\Sigma_1\) and \(Sigma_2\), which would mean a significant weakening of our result.
+    The proof is very similar to the one given in \cite{fewster2020new}, but we have to pay attention to keep all the terms relevant for us.
 
+    Set \(\ell = \ell_0\left(1 + B_m\mu\right)\), so that the constraint \(\ell\ge\ell_0\) becomes simply \(\mu \ge 0\).
+
+    The interesting case presents when \(\mu \ge 1\), for which \(\frac{1}{\mu^{2m - 1}} \le \frac{1}{\mu} \) (in particular in subsection \ref{subsec:non-min-EKG-theory} we will focus on the \(m = 1\) case, where the equality holds). The expression in \(\eqref{eq:J-sobolev-condition}\) reduces to:
+    \begin{align*}
+        \mathcal{V}(\ell, \ell_0) &= E + F\mu + \frac{G}{\mu} \\
+        E &= (A_m - 1)\rho_0\ell_0 + Q_0A_m\ell_0 + \frac{Q_mC_m}{\ell_0}\\
+        F &= Q_0A_mB_m\ell_0 \\
+        G &= \frac{n- 2}{\ell_0} + \frac{Q_mC_m}{B_m\ell_0}
+    \end{align*}
+    Imposing the first derivative w.r.t \(\ell\) of \(\mathcal{V}_{\beta}\) to be zero, it is easy to obtain:
+    \[
+    \tilde{\mu} = \sqrt{\frac{G}{F}} =  \sqrt{\frac{n - 2}{A_mB_mQ_0\ell_0^2}}.
+    \]
+	where we neglected the second term of \(G\) under the assumption \(Q_m \ll 1\); in the following we will specialize to the case \(m = 1\), and we will see that \(Q_1 \sim \left(\frac{T}{T_{Pl}}\right)^2\), so assuming \(Q_m \ll 1\) corresponds to be in the temperature regime where \(\left(\frac{T}{T_{Pl}}\right)^2 \ll 1\), which is not particularly restrictive as also the analysis of black hole evaporation is performed under the same assumption.
 \end{proof}
+
+Now we reduced to a bound that only depends on \(\ell_0\) (and some other global feature of the system, summarized within \(Q_0\) and \(Q_m\)); in light of the variational strategy, let us finally proceed to the last minimization and find the optimal value for \(\ell_0\)\footnote{Actually, there were several possiblities that could have been explored with the aim of providing an estimate for \(\ell_0\). The first idea was to pick some constant \(\ell_0\) (which is what has been done in \cite{fewster2020new}), fixed to be some relevant physical quantity, but we haven't been able to formulate one particularly convincing. Besides, requiring \(\ell_0\) to be constant in a background that will be dynamic didn't seem particularly reasonable after all, so we decided to minimize \(\mathcal{V}_{\beta}\) - and finally outlined the variational procedure.}. 
+
+\begin{prop}
+	Assuming \(\rho_0 < 0\) the optimal bound, minimized along \(\ell_0\) is:
+
+	\begin{equation}
+		\label{eq:minimized-V-beta}
+		\mathcal{V}_{\beta} = \frac{5}{6}\sqrt{\frac{3}{2}Q_m \vert\rho_0\vert} + 2 \sqrt{(n - 2)A_mB_mQ_0}
+	\end{equation}
+
+	corresponding to \(\tilde{\ell}_0^2 = - \frac{3Q_m}{2\rho_0}\)
+\end{prop}
+\begin{proof}
+	The computation is very similar to the preceeding one, as in particular the shape of the function to be minimized is exactly the same.
+\end{proof}
+
+Lemma \ref{lemma:generalized-area-theorem} can now immediately tell us that, in an asymptotically flat spacetime, wherever on the null generators of the black horizion the Sobolev energy condition holds and \(R_{\mu\nu}U^{\mu}U^{\nu} \ge \rho_0\), then the istantaneous rate of expansion of the cross-sectional area is constrained by
+\begin{equation}
+	\label{eq:area-sobolev-condition}
+	U_{\mu}\mathrm{H}^{\mu} \ge - \mathcal{V}_{\beta} \implies \delta_U\mathcal{A}_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)U_{\mu} \ge - \mathcal{V}_{\beta}\cdot\mathcal{A}_{\mathscr{H}_1},
+\end{equation}
+where, again, the implication is possible thanks to lemma \ref{lemma:variation-area}. We will argue later that the assumption \(\rho(\lambda) \ge \rho_0\) in a small interval of the affine parameter is well motivated, and we will find \(\rho_0 < 0\), so \eqref{eq:minimized-V-beta} is well defined, and \(\mathcal{V}_{\beta} >0\). This means we have proved that the rate of change of the area of the horizon near the reference ``time instance'' given by \(\Sigma_1\) cannot be lower than a certain - negative - rate!
+
+Equation \eqref{eq:area-sobolev-condition} can then truly claim to be a first non trivial generalization of Hawking's area theorem: it is still placing a lower bound on the rate of evolution of the area, but, as the bound is negative this time, it can - in principle - resolve the tension with the quantum phenomenon of evaporation, now potentially allowed.
+	
+Notice however that, converesely to the original theorem, we have only constrained the \emph{istantaneous} rate of change. Here it is not possible to directly set bounds on the average rate of evolution between \(2\) arbitrarly far Cauchy surfaces \(\Sigma_1\) and \(\Sigma_2\), because we would need to assume the Sobolev condition and the pointwise restriction \(\rho \ge \rho_0\) in the all region in between \(\Sigma_1\) and \(\Sigma_2\), which would mean a significant weakening of our result.
+
+\subsection{The second idea -- a differential equation}
+	Here we suppose to start from an energy condition
+	\[
+		\int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]
+	\]
+	and we write a differential equation that doesn't depend on the metric, to minimize 
+	\[
+	\vert\vert \nabla_U f\vert\vert^2 + B[f].	
+	\]
 
 \begin{remark}
 	At this point, a couple of remarks are needed. 
@@ -238,6 +467,7 @@ As in the previous section we are now able to infer some conditions on the area 
 	\end{itemize}
 	
 \end{remark}
+
 
 \section[physical-interpretation-V]{Physical interpretation of \(\mathcal{V}\)}
 \label{sec:physical-interpretation-V}
@@ -398,59 +628,6 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
 \]
     
 
-\subsection[V optimization]{\(\mathcal{V}\) optimization}
-\label{subsec:V-optimization}
-So far we have derived a class of bounds \(\mathcal{V}(\ell, \ell_0)\) that depend on \(\ell\) and \(\ell_0\). Among them, as all of them need to be obeyed, the most interesting is the most restrictive, because it's the one that gives us the most information.
-
-From this we get the idea of picking \(\ell, \ell_0\) so that they minimize \(\mathcal{V}(\ell, \ell_0)\) (and \(\ell \ge \ell_0\)).
-The first optimization has been already performed in \cite{fewster2020new}, even if in their computation they neglect some terms that are instead relevant for us, for the different regime of approximation that we set. Let's then do that first:
-
-\begin{prop}
-    The bound optimized on \(\ell \ge \ell_0\) is
-    \[
-      (n-2)\mathcal{V}(\ell_0) = (A_m - 1)\rho_0\ell_0 + \frac{Q_mC_m}{\ell_0} + 2 \sqrt{(n - 2)A_mB_mQ_0}   
-    \]
-    and is obtained for:
-    \[
-    \ell = \ell_0\left(1 + \sqrt{\frac{(n - 2) B_m}{A_m Q_0\ell_0^2}}\right)    
-    \]
-\end{prop}
-
-\begin{proof}
-    The proof is very similar to the one given in \cite{fewster2020new}, but we have to pay attention to keep all the terms relevant for us.
-
-    Set \(\ell = \ell_0\left(1 + B_m\mu\right)\), so that the constraint \(\ell\ge\ell_0\) becomes simply \(\mu \ge 0\).
-
-    For what argued in the previous subsection \ref{subsec:non-min-EKG-theory} we can reduce to \(m = 1\) and the expression in \(\eqref{eq:J-sobolev-condition}\) reduces to:
-    \begin{align*}
-        \mathcal{V}(\ell, \ell_0) &= E + F\mu + \frac{G}{\mu} \\
-        E &= (A_1 - 1)\rho_0\ell_0 + Q_0A_1\ell_0 + \frac{Q_1C_1}{\ell_0}\\
-        F &= Q_0A_1B_1\ell_0 \\
-        G &= \frac{n- 2}{\ell_0} + \frac{Q_1C_1}{B_1\ell_0}
-    \end{align*}
-    Imposing the first derivative of \(\mathcal{V}\) to be zero, it is easy to obtain:
-    \[
-    \tilde{\mu} = \sqrt{\frac{G}{F}} =  \sqrt{\frac{n - 2}{A_1B_1Q_0\ell_0^2}}.
-    \]
-	where we neglected the second term of \(G\) under the assumption \(Q_1 \ll 1\); as in the previous section we have seen \(Q_1 \sim \left(\frac{T}{T_{Pl}}\right)^2\) we can neglect the second term of \(G\) if we assune to be in the temperature regime where \(\left(\frac{T}{T_{Pl}}\right)^2 \ll 1\), which is not particularly restrictive as also the analysis of black hole evaporation is performed under the same assumption.
-\end{proof}
-
-Now we reduced to a bound that only depends on temperature and \(\ell_0\); there are several strategies we can think about in order to provide an estimate for \(\ell_0\). The first idea is to pick some constant \(\ell_0\) (which is what has been done in \cite{fewster2020new}), fixed to be some relevant quantity, but we haven't been able to formulate one particularly convincing, and besides requiring \(\ell_0\) to be constant in a background that will be dynamic doesn't seem particularly reasonable after all.
-
-As anticipated in the introduction of this subsection, a better idea seems to pick \(\ell_0\) in order to recover the best bound possible. We then proceed to minimize \(\mathcal{V}(\ell_0)\):
-\begin{prop}
-	The bound minimized along \(\ell_0\) is (it has also been assumed \(\rho_0 < 0\)):
-
-	\begin{equation}
-		\label{eq:minimized-V}
-		\mathcal{V} = \frac{5}{6}\sqrt{\frac{3}{2}Q_1 \vert\rho_0\vert} + 2 \sqrt{(n - 2)A_mB_mQ_0}
-	\end{equation}
-
-	obtained for \(\tilde{\ell}_0^2 = - \frac{3Q_1}{2\rho_0}\)
-\end{prop}
-\begin{proof}
-	The computation is very similar to the preceeding one, as in particular the shape of the function is exactly the same.
-\end{proof}
 
 \subsection{Limited violations}
 \label{subsec:rho-0-estimation}
@@ -469,9 +646,9 @@ The most important features of that result are the negative sign, and the \(M^{-
 It is relieving that an independent analysis, conducted by Visser in \cite{visser1997gravitational} leads to a similar result, with exactly the same power law dependance. In \cite{visser1997gravitational} he sets up a semi-analytical model - this time for non minimally coupled scalar fields - within which he can compute explicitely some components of the stress energy tensor, and therefore its contractions. We are interested in a different contraction from the ones computed in \cite{visser1997gravitational} though, so we will carefully explain the model and perform the computation in \ref{app:visser}.
 
 
-By substituting \(\rho_0\) into \(\eqref{eq:minimized-V}\), and recovering the temperature dependence, we finally get:
+By substituting \(\rho_0\) into \(\eqref{eq:minimized-V-beta}\), and recovering the temperature dependence, we finally get:
 \begin{equation}
-	\label{eq:KMS-minimized-V}
+	\label{eq:KMS-minimized-V-beta}
 	\mathcal{V}_{min} = 5\cdot10^{-3} \cdot (8\pi)^2\sqrt{\alpha} \frac{Gk_B^3}{\hbar^2} \cdot T^3 + \mathcal{O}\left(\left(\frac{T}{T_{Pl}}\right)^4\right),
 \end{equation}
 
@@ -536,135 +713,9 @@ If we believe SNEC to be valid though, we would expect that at \(\tilde{T}\), ot
 An attempt to find such terms would be to modify SNEC so to include terms depending on the curvature, as it has been attempted in \cite{kontou2015quantum}.
 \VS{Cerca di aggiungere termini di curvatura!}
 
-\section{A more general point of view}
 
-In this section we want to go back on our steps a little bit, in order to recover a more general point of view on the problem. 
-The proof of theorem \ref{th:sobolev-bh-area} can be readily used to observe the following
-\begin{lemma}
-	In any strongly asymptotically predictable spacetime, let \(H\) be the black hole horizon, \(U^{\mu}\) the tangent field of its null generators, and \(\mathrm{H}^{\mu}\) the mean normal curvature of \(\mathscr{H} = \Sigma \cap H\), where \(\Sigma\) is any Cauchy surface. Then it must always hold:
-	\[
-	U_{\mu}\mathrm{H}^{\mu} \ge -\frac{1}{n - 2} \inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell > 0}J_{\ell}[f]
-	\]
-	where we indicated \(C^{\infty}_{1,0}[0, \ell]\) the set of smooth functions such that \(f(0) = 1\) and \(f(\ell) = 0\).
-\end{lemma}
 
-\begin{proof}
-	The proof proceeds in a very similar way to what has been done for the generalized area theorem \ref{th:sobolev-bh-area}. By contradiction, suppose there exists a point of the horizon where:
-	\[
-		U_{\mu}\mathrm{H}^{\mu} < -\frac{1}{n - 2} \inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell > 0}J_{\ell}[f]	
-	\]
-	Then there exists a deformation of \(\mathscr{H}\) on the Cauchy surface \(\Sigma\) where this inequality keeps holding, or in other words:
-	\[
-	\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f] < - (n - 2)U_{\mu}\mathrm{H}^{\mu};
-	\]
-	this implies that there exist \(\ell > 0\) and \(f\in C^{\infty}_{1,0}[0, \ell]\) so that the condition \(\eqref{eq:fp-criteria}\) is satisfied. But this leads to a contradiction in the same way as in theorems \ref{th:classical-bh-area} and \ref{th:sobolev-bh-area}, because we are again in a globally hyperbolic spacetime, and null generators are not allowed to contain any focal point.
-\end{proof}
-
-In some sense this infimum is really the minimal constraint we can put on \(U_{\mu}\mathrm{H}^{\mu}\)
-\VS{Could it be equal to that by any chance? Maybe for null generators of the horizon we could say a focal point is formed at infinity, or sth like that}.
-
-Then we have rephrased our problem to look for the infimum of \(J\).
-This is of course a very difficult problem in general (as it is exactly equivalent to the original question), but there are a bunch of known techniques for variational problem that can become useful.
-
-\subsection{The first idea - a variational estimation}
-One possible idea - that we have already been exploiting in the specific case of the Sobolev condition - is really that of a variational estimation. This works as follows:
-\begin{lemma}
-	As soon as we can place an upper bound on \(J[f]\), holding in some class of functions \(\mathcal{A} \subset C^{\infty}_{1,0}\left([0,+\infty)\right)\), then we have an upper bound on \(\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f]\), and hence a lower bound on \(U_{\mu}\mathrm{H}^{\mu}\).
-\end{lemma}
-	\begin{proof}
-		Say that we know, from some mysterious oracle, that
-		\[
-		\exists f \in \mathcal{A} \quad J[f] \le (n-2) \cdot A.
-		\]
-		Then clearly
-		\[
-			\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J_{\ell}[f] \le (n-2) \cdot A,
-		\]
-		and hence
-		\[
-			U_{\mu}\mathrm{H}^{\mu} \ge -\frac{1}{n - 2} \inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell > 0}J_{\ell}[f] > - A.
-		\]
-	\end{proof}
-	As for any variational estimation, the aim is to get a better and better approximation of the infimum by taking larger and larger sets of functions.
-
-	In \(J\) though, there is still hidden some metric dependence by the presence of the Ricci tensor, dependance that we would like to wash away. Here is where energy conditions shall enter and help us out again: in fact, an energy condition of the form 
-	\[
-	\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B	
-	\]
-	is actually helping us in placing an upper bound on \(J\) - that doesn't depend on the metric of course, but can depend on \(f\) - and hence is going exactly in the direction we are driving towards.
-
-	The strategy to pursue this idea will then be to pick
-	\begin{itemize}
-		\item An energy condition of the form \(\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B[f]\);
-		\item A class of functions \(\mathcal{A}\) onto which \(J\) is ``minimized''.
-	\end{itemize}
-
-	\subsection{Classical conditions}
-	An immediate observation is that, from the phenomenon of black hole evaporation, we expect the infimum of \(J[f]\) to be strictly positive.
-
-	Instead, if we were in presence of some function \(f\) that gives:
-	\[
-	J[f] \le 0	\iff \int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge \int_0^{\ell} \vert \nabla_U f\vert^2
-	\]
-	then we would know that the infimum of \(J\) would have to be non positive, and so black hole evaporation would be prohibited, as it was for NEC and dANEC.
-
-	The idea is that we would like to define an energy condition to be classical if it prohibits black hole evaporation, or in other words:
-	\begin{definition}
-		\label{def:classical-energy-condition}
-		We say that an energy condition is \emph{classical} if there exists a function in the closure of \(C^{\infty}\left([0, +\infty)\right)\) such that
-		\[
-			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} d\lambda\ge \int_0^{+\infty} \vert \nabla_U f\vert^2 d\lambda.	
-		\]
-		If the energy condition is of the form
-		\[
-			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]	
-		\]
-		then the above becomes
-		\begin{equation}
-			\label{eq:definition-classical-condition}
-			B[f] + \vert\vert \nabla_U f \vert\vert^2 \le 0.
-		\end{equation}
-	\end{definition}
-
-	With this definition both NEC and dANEC are \emph{classical}.
-
-	\textbf{Example 1}: NEC\dots
-
-	\textbf{Example 2}: dANEC\dots
-
-	\begin{corollary}
-		From definition \ref{def:classical-energy-condition} it is pretty clear that any energy condition of the form
-		\[
-			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]	
-		\]
-		where \(B[f] \le 0\) for all \(f\), then the condition needs to be classical, and therefore forbidding black hole evaporation.
-	\end{corollary}
-	\begin{proof}
-		It is enough to use one of sets of functions that was used to prove that NEC and dANEC are classical conditions. Let's use the first one for example:
-		\[
-		\mathcal{A} \coloneqq \{f_{\ell} \quad\vert\quad \ell >0\},
-		\]
-		where
-		\[
-			f_{\ell}(\lambda) \coloneqq
-			\begin{cases}
-				 1 - \frac{\lambda}{\ell} \text{ for } 0 \le \lambda \le \ell, \\	
-				0 \text{ for } \lambda \ge \ell.
-			\end{cases}
-		\]
-
-		The norm of the first derivative can be easily computed:
-		\[
-			\vert \vert \nabla_U f_{\ell} \vert\vert^2 	= \frac{1}{\ell};
-		\]
-		by sending \(\ell \rightarrow +\infty\), and using the hypothesis:
-		\[
-			B[f_{\ell}] \le 0	
-		\]
-		\(\eqref{eq:definition-classical-condition}\) is indeed satisfied.
-	\end{proof}
-
-	\subsection{State independent bounds}
+	\section{State independent bounds}
 	It is reasonable to expect, from a semi-classical energy condition at least, that slow black hole evaporation is allowed, at low Hawking temperatures, and eventually we encounter a breakdown at some high temperature, possibly close to the Planck temperature, where in fact we expect any semi classical approximation to break down.
 
 	The translation of this intuition onto our work is that we expect the bound on the evaporation rate \(R_{Ev} \le \mathcal{V}\), to pick up temperature corrections - again in a sort of perturbative framework - of at most degree \(3\).
@@ -722,15 +773,7 @@ One possible idea - that we have already been exploiting in the specific case of
 
 	\VS{It would be nice if there was any interpretation of energy conditions that don't allow m > 2}
 	
-	\subsection{The second idea -- a differential equation}
-	Here we suppose to start from an energy condition
-	\[
-		\int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]
-	\]
-	and we write a differential equation that doesn't depend on the metric, to minimize 
-	\[
-	\vert\vert \nabla_U f\vert\vert^2 + B[f].	
-	\]
+	
 	
 	
 

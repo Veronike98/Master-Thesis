@@ -298,7 +298,7 @@ This assumption is motivated by the work in section \(4\) of \cite{fewster2020ne
 	We will apply this conditions to null geodesics \(\gamma\) orthogonal to some surface \(\Sigma\), where we will assume \(\lambda\) is the affine parametrization such that \(\gamma(\lambda = 0) \in \Sigma\) and \(\hat{H}_{\mu}\frac{d\gamma^{\mu}}{d\lambda}\Big\vert_{\lambda = 0} \equiv 1\) (\(\hat{H}_{\mu}\) is the versor of the mean normal curvature of \(\Sigma\)); finally, \(\vert\vert \star \vert\vert\) denotes the standard norm in \(L^2(I)\).
 \end{definition}
 
-\subsection[]{Variational estimation}
+\subsection{Variational estimation}
 \label{subsec:V-optimization}
 
 First of all we would like to exploit this condition to obtain an estimation of \(\inf J\), using the variational procedure outlined in subsection \ref{subsec:variational-estimation}. However some care is required by the fact that the set of functions over which we need to minimize \(J\) and the one where the Sobolev condition is valid are quite different: the first one requires \(f(0) = 1\), while the second needs \(f(0) = 0\).
@@ -386,6 +386,12 @@ Now, assuming an additional condition on the stress energy tensor (or equivalent
 	and the estimate is complete.
 \end{proof}
 
+\begin{SCfigure}
+	\includegraphics[scale=0.28]{Immagini/V-beta.png}
+	\caption[]{plot of \(\mathcal{V}_{\beta}(\ell_0, \ell)\) (\(\hat{z}\) axis). On the left it appears part of the \(\ell\) axis, while the hidden one corresponds to \(\ell_0\). The colorscale should help to spot out the minimum of the visualized sheet.}
+	\label{fig:V-beta}
+\end{SCfigure}
+
 Now that for each function \(f_{\ell_0, \ell} \in \mathcal{A}_{\beta}\) we have an estimate for \(J\left[f_{\ell_0, \ell}\right] \le (n-2)\mathcal{V}_{\beta}(\ell_0, \ell)\), we can finally pursue the variational strategy: we need to minimize \(\mathcal{V}_{\beta}(\ell_0, \ell)\) on \(\ell \ge \ell_0\). In order to do so we will first minimize along \(\ell\), keeping \(\ell_0\) fixed, and then proceed to a second minimization over this last parameter.
 
 The first optimization has been already performed in \cite{fewster2020new}, even if in their computation they neglect some terms that instead will be relevant for us, because of the different regime of approximation that we will need to set. Let us do that first:
@@ -445,55 +451,90 @@ where, again, the implication is possible thanks to lemma \ref{lemma:variation-a
 
 Equation \eqref{eq:area-sobolev-condition} can then truly claim to be a first non trivial generalization of Hawking's area theorem: it is still placing a lower bound on the rate of evolution of the area, but, as the bound is negative this time, it can - in principle - resolve the tension with the quantum phenomenon of evaporation, now potentially allowed.
 	
-Notice however that, converesely to the original theorem, we have only constrained the \emph{istantaneous} rate of change. Here it is not possible to directly set bounds on the average rate of evolution between \(2\) arbitrarly far Cauchy surfaces \(\Sigma_1\) and \(\Sigma_2\), because we would need to assume the Sobolev condition and the pointwise restriction \(\rho \ge \rho_0\) in the all region in between \(\Sigma_1\) and \(\Sigma_2\), which would mean a significant weakening of our result.
+Notice however that, converesely to the original theorem, we have only constrained the \emph{istantaneous} rate of change. Here it is not possible to directly set bounds on the average rate of evolution between \(2\) arbitrarly far Cauchy surfaces \(\Sigma_1\) and \(\Sigma_2\), as for that we would need to assume the Sobolev condition and the pointwise restriction \(\rho \ge \rho_0\) in the all region in between \(\Sigma_1\) and \(\Sigma_2\), which would mean a significant weakening of our result.
 
 \subsection{The second idea -- a differential equation}
-	Here we suppose to start from an energy condition
+\label{subsec:E-L-optimization}
+A potential weakness of the variational method is that, if the set \(\mathcal{A}\) onto which the optimization is performed is not chosen with enough care, its extremum may still lay very far from \(\inf J\). Referring to the above subsection \ref{subsec:V-optimization}, it might happen that even if \(\mathcal{V}_{\beta} > 0\), the actual \(\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J\) is negative, and hence evaporation is not allowed.
+
+Such question can only be completely resolved by finding the true infimum, or a set \(\mathcal{A}\) where the minimum is negative. We are not able to do that unfortunately, but we can look at our results and see if anything stands out. 
+
+It may attract our attention the curious feature that the minimum of \(\mathcal{V}_{\beta}\) lays at finite \(\ell\): a simple heuristic argument instead suggests that a prioiri we should expect it to be at \(\ell \rightarrow +\infty\).
+
+\(\ell\) is nothing but the maximum lenght of the support of the function \(f\). Ideally, in order to minimize \(J[f]\), we should expect \(f\) to be non zero wherever \(R_{\mu\nu}U^{\mu}U^{\nu}\) is positive, and null (or almost null) wherever \(R_{\mu\nu}U^{\mu}U^{\nu} < 0\). By cutting out the possibility of exploring for \(\lambda \ge \ell\) we might just miss out some regions where \(\rho(\lambda)\) is positive again. 
+
+\noindent
+Analogously, when energy conditions of the form above mentioned come into force, instead of optimizing \(J\) we try to minimize \(\vert\vert \nabla_U f\vert\vert^2 + B[f]\), and again - as \(f\) is required to go from \(1\) at \(\lambda = 0\) to \(0\) at \(\lambda = \ell\) - by pushing \(\ell\) as far away as possible we would suppress the norms of all the derivative of \(f\).
+
+We may then wonder how reasonable is the result we have obtained in \eqref{eq:area-sobolev-condition}; to test it we developed an alternative method, that is a combination of an Euler-Lagrange approach and the variational method. Suppose again to start from an energy condition of the form
 	\[
-		\int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]
+		\int_0^{\ell} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f] \implies J[f] \le \vert\vert \nabla_U f\vert\vert^2 + B[f]
 	\]
-	and we write a differential equation that doesn't depend on the metric, to minimize 
+and then, instead of choosing any set \(\mathcal{A}\), we write an Euler-Lagrange equation - that doesn't depend on the metric - to minimize 
 	\[
-	\vert\vert \nabla_U f\vert\vert^2 + B[f].	
+	\vert\vert \nabla_U f\vert\vert^2 + B[f] \quad\text{ with }\quad f(0) = 1 \quad \quad f(\ell) = 0.	
 	\]
 
-\begin{remark}
-	At this point, a couple of remarks are needed. 
+Even if this is the main idea, we can only apply the Sobolev energy condition to functions that have Dirichlet boundary conditions; with some work it is possible to get to a differential equation also in the general case, but one that is too hard to be solved - at least for us.
+By reducing to the set of functions (here's why we say that this method is partially a variational estimation again)
+\[
+\mathcal{A}_{E.L.} \coloneqq \{f \quad \vert \quad \exists \ell_0 > 0 \text{ s.t. } f(\lambda \le \ell_0) \equiv 1\} \supset \mathcal{A}_{\beta}
+\]
+the problem becomes duable, and we obtain:
+\begin{equation}
+	\label{eq:V-euler-lagrange}
+	\mathcal{V}_{E.L.}(\ell_0, \ell) = \sqrt{Q_0(n - 2 + Q_1)}\coth\left[\Omega_1(\ell- \ell_0)\right] + \sqrt{Q_0Q_1}\coth\left[\Omega_2\ell_0\right] + \vert \rho_0\vert\ell_0
+\end{equation}
+where
+\[
+\Omega_1^2 = \frac{Q_0}{n - 2 + Q_1} \quad \quad  \Omega_2^2 = \frac{Q_0}{Q_1}.
+\]
 
-	\begin{itemize}
-		\item[\ding{99}] Coherently with the weakening on the energy condition hypothesis, we reach a weaker result: in fact we are still able to place a lower bound on the rate of change or the area, but the bound is not as strong as it is in the classical case; this is interesting though, because we expect the classical bound to be violated in a semiclassical context: in order to make sure we have reached a meaningful result ideally we need to shown an example where NEC is violated but our new hypothesis hold, and the area of the horizon shrinks, even for a very short time.
-  		\item[\ding{99}] Notice that \(1-A_m \ge 0\), so the lower is \(\rho_0\), the weaker is the hypothesis we ask for, but the weaker is our result as well. In fact \(\mathcal{V}\) increases when \(\rho_0\) diminishes, and so we gain a weaker and weaker bound; at the same time, if \(\rho_0\) was positive and very large, \(\mathcal{V}\) would be negative, and so we would have that the area of the black hole not only cannot decrease, but it has to steadily increase.
-    	\item[\ding{99}] In order to estimate the value of the functional \(J[f]\) we required \(\rho (\lambda)\ge\rho_0\) for \(\lambda\in [0, \ell_0]\); this is again a pointwise requirement, so it is not particularly satisfying according to the analysis given in section \ref{ch:energy-conditions}. However, in \cite{levi2016versatile} Levi and Ori have been running some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, in a background Schwarzschild metric, and found \(\rho \simeq -2.7\cdot 10^{-7} \hbar M^{-4}\) (where \(M\) is the mass of the black hole). This supports the legitimacy of our additional assumption, at least for large enough black holes, and suggests that such a condition might be commonly satisfied even with a rather small value for \(\vert\rho_0\vert\).
-	\end{itemize}
-	
-\end{remark}
+All the main ideas behind this procedure have already been explained with enough detail in the present section or in \ref{subsec:V-optimization}, so we defer the computation that proves equation \eqref{eq:V-euler-lagrange} to appendix \ref{app:V-E-L-optimization}.
 
+\begin{SCfigure}
+	\includegraphics[scale=0.3]{Immagini/V-E-L.png}
+	\caption[]{Plot of \(\mathcal{V}_{E.L.}(\ell_0, \ell)\); this plot can be directly compared to the one in figure \ref{fig:V-beta} and again it stands out that this time the minimum will lay at large \(\ell\).}
+	\label{fig:V-E-L}
+\end{SCfigure}
 
-\section[physical-interpretation-V]{Physical interpretation of \(\mathcal{V}\)}
+Once more, we minimize \(\mathcal{V}_{E.L.}(\ell_0, \ell)\) on \(\ell \ge \ell_0\) in order to recover the best possible bound on \(\inf J\). We immediately see that this time the minimum is found for \(\ell \rightarrow +\infty\): the only \(\ell-\)dependance is in \(\coth\left[\Omega_1(\ell- \ell_0)\right]\), which is monotonically descending towards \(1^+\).
+
+For \(\ell_0\) instead, the minimum is found at \(\tilde{\ell}_0 = \sqrt{\frac{Q_1}{Q_0}}\sinh^{-1}\left(\sqrt{\frac{Q_0}{\vert\rho_0\vert}}\right)\), so that in the end we have
+{\small
+\begin{equation}
+	\label{eq:minimized-V-E-L}
+	U_{\mu}\mathrm{H}^{\mu} \ge - \frac{1}{n - 2}\mathcal{V}_{E.L.} =  \frac{1}{n - 2} \left\{ \sqrt{Q_0(n - 2 + Q_1)} + \sqrt{Q_1(Q_0 + \vert\rho_0\vert)} + \frac{3}{2}\sqrt{Q_1\vert\rho_0\vert} \right\}.
+\end{equation}}
+
+Notice that, even if \(\mathcal{A}_{E.L.}\) is a much larger set than \(\mathcal{A}_{\beta}\), the result in \eqref{eq:minimized-V-E-L} is very similar to the one in \eqref{eq:minimized-V-beta}; indeed only some coefficients are changed, but the qualitative behaviour is always the same, and in particular \(\mathcal{A}_{E.L.}\) stays negative.
+
+\section{Comparison with the evaporation rate}
 \label{sec:physical-interpretation-V}
-As extensively argued above, \(\mathcal{V}\) represents the bound on the instantaneous rate of change of the area of the black hole horizon. In order to understand the physical impact of the hypothesis we have assumed, we would like to compare it to some relevant physical quantity; in this scenario we are lucky enough to have a particular appealing one: the rate of black hole evaporation.
 
-With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:J-sobolev-condition}\) into a function of some physical quantities; we will let us be inspired by the work in section \(5.2\) of \cite*{fewster2020new}, where Fewster and Kontou computed \(\mathcal{V}\) in the specific case of a non-minimally coupled classical Einstein-Klein Gordon theory.
+Coherently, with the weakening of the energy condition we have obtained a weaker constraint: but what is the real physical impact of the new hypothesis we have taken?
 
-They needed such a computation to compare the hypothesis of some weakened singularity theorems to physical scenarios, while here we would like to analyze the evaporation of black holes, and will need indeed to make some different approximations.
+As extensively argued above, \(\mathcal{V}\) represents the bound on the instantaneous rate of change of the area of the black hole horizon. In order to understand how reasonable it is the expression we have obtained, we would need to compare it to some relevant physical quantity; in this scenario we are lucky enough to have a particular appealing one: the rate of black hole evaporation.
+
+With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:minimized-V-E-L}\) into a function of physical quantities only; once again we will let us be inspired by the work in section \(5.2\) of \cite{fewster2020new}, where Fewster and Kontou computed their bound in the specific example of a non-minimally coupled classical Einstein-Klein Gordon theory.
+
+They needed such a computation to test the hypothesis of some weakened singularity theorems within astrophysical scenarios; here instead we would like to analyze the evaporation of black holes, hence we will need a different regime of approximations.
 
 \subsection{The non-minimally coupled Einstein Klein Gordon Theory}
 \label{subsec:non-min-EKG-theory}
-First of all let's try to compute some reasonable physical estimates of the coefficient \(Q_0\) and \(Q_m\). In order to do so we need to pick a specific field theory, and we will adopt a semiclassical gravity point of view, so quantum fields in a classical background geometry, where backreaction corrections are assumed small and thus neglected.
+First of all let's try to compute some reasonable physical estimates of the coefficient \(Q_0\) and \(Q_m\). In order to do so we need to pick a specific field theory, and we will adopt a semiclassical gravity point of view, so quantum fields within a classical background geometry, where backreaction corrections are assumed small and thus neglected.
 
-Our choice happens to land on non-minimally coupled scalar fields is the typical classical example that violates NEC, and thus the original black hole area theorem doesn't apply. 
-
-They are scalar fields described by the Lagrangian density
+Our choice happens to land on non-minimally coupled scalar fields: this is the typical classical field theory violating NEC, and thus the original black hole area theorem doesn't apply. They are scalar fields described by the Lagrangian density
 \[
 \mathcal{L}[\phi] = \frac{1}{2}\left[\nabla_{\mu}\phi\nabla^{\mu}\phi   - (m^2 - \xi R)\phi^2\right]
 \]
 The corresponding stress-energy tensor is:
 \begin{equation}
-    T_{\mu\nu} = \nabla_{\mu}\phi\nabla_{\nu}\phi - \frac{1}{2}g_{\mu\nu}\left[\nabla_{\rho}\phi\nabla^{\rho}\phi - m^2\phi^2\right] - \xi\left(g_{\mu\nu}\square_g - \nabla_{\mu}\phi\nabla_{\nu} + G_{\mu\nu}\right)\phi^2
+    T_{\mu\nu} = \nabla_{\mu}\phi\nabla_{\nu}\phi - \frac{1}{2}g_{\mu\nu}\left[\nabla_{\rho}\phi\nabla^{\rho}\phi - m^2\phi^2\right] - \xi\left(g_{\mu\nu}\square_g - \nabla_{\mu}\nabla_{\nu} + G_{\mu\nu}\right)\phi^2
 \end{equation}
 \VS{Controlla che sia corretto con le nostre convenzioni! Ho messo i segni un po' a caso}
 
-The conformal coupling is \(\xi_c = \frac{1}{4}\frac{n - 2}{n - 1}\), and we will only consider \(\xi\in [0,\xi_c]\); \VS{Why?}
+The conformal coupling is \(\xi_c = \frac{1}{4}\frac{n - 2}{n - 1}\), and we will only consider \(\xi\in [0,\xi_c]\);
 now the following observation comes along.
 
 \begin{prop}
@@ -505,7 +546,7 @@ now the following observation comes along.
     \[
       \frac{1 - 8\pi\xi\phi^2}{8\pi}G_{\mu\nu} =  \underbrace{\nabla_{\mu}\phi\nabla_{\nu}\phi - \frac{1}{2}g_{\mu\nu}\left[\nabla_{\rho}\phi\nabla^{\rho}\phi - m^2\phi^2\right] - \xi\left(g_{\mu\nu}\square_g - \nabla_{\mu}\phi\nabla_{\nu}\right)\phi^2}_{T^{eff}_{\mu\nu}}.
     \]
-    Notice that for \(\xi > 0\) the coefficient in front of \(G_{\mu\nu}\) vanishes for \(8\pi\xi\phi^2 = 1\); for such values of the field \(\phi\) the order of Einstein equations reduces, and so the initial value problem becomes ill-defined.
+    Notice that - for \(\xi > 0\) - the coefficient in front of \(G_{\mu\nu}\) vanishes for \(8\pi\xi\phi^2 = 1\); for such values of the field \(\phi\) the order of Einstein equations reduces, and so the initial value problem becomes ill-defined.
 
     When \(8\pi\xi\phi^2 \neq 1\) instead, Einstein equations become:
 
@@ -521,7 +562,7 @@ From here onward we will assume that non-minimally coupled scalar fields will al
 \[
 \phi^2 < \frac{1}{8\pi\xi}.    
 \]
-Moreover we shall only consider \emph{massless} scalar fields; given that, it was shown in \cite{fewster2011singularity} and \cite{brown2018singularity} for ``reasonable'' functions the Ricci tensor contraction is bounded in a form that can be recasted in the one of the Sobolev condition.
+Moreover we shall only consider \emph{massless} scalar fields; given that, it was shown in \cite{fewster2011singularity} and \cite{brown2018singularity} that the Ricci tensor contraction is bounded by a Sobolev-like energy condition.
 
 \begin{prop}
     In the context of a massless non-minimally coupled Einsten-Klein Gordon field theory, the integral of the contraction of the Ricci tensor along any causal geodesic, weighted with any compactly supported real valued \(-\frac{1}{2}\)-density \(f\), is bounded by:
@@ -596,7 +637,7 @@ In order to establish this connection we now change setting, and consider a quan
 		\langle \colon \phi^2 \colon\rangle_T &= \underbrace{\frac{2\pi^{\frac{n-1}{2}}}{\Gamma(\frac{n - 1}{2})}}_{\Omega_{n - 2}}\frac{1}{(2\pi)^{n - 1}}\frac{1}{\beta^{n - 2}}\int_0^{+\infty}dx \frac{x^{n - 3}}{e^x - 1} =\\
 		&= \frac{T^{n - 2}}{2^{n - 2}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n - 2)}{\Gamma\left(\frac{n - 1}{2}\right)}\zeta(n - 2)
 	\end{align*}
-	The second inequality can be worked out in a similar way, being careful that this time there is an angolar dependence because of the factor \((k_{\mu}U^{\mu})^2\) originated by the derivatives. This factor adds a \(k^2\) power to the radial part of the integral, and a factor:
+	The second inequality can be worked out in a similar way, being careful that this time there is an angular dependance because of the factor \((k_{\mu}U^{\mu})^2\) originated by the derivatives. This factor adds a \(k^2\) power to the radial part of the integral, and a factor:
 	\[
 	\int_0^{\pi} \sin\theta^{n - 3} (1 - \cos\theta)^2 d\theta = \frac{n\sqrt{\pi}}{2}\frac{\Gamma\left(\frac{n - 2}{2}\right)}{\Gamma\left(\frac{n + 1}{2}\right)}.
 	\]
@@ -631,6 +672,10 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
 
 \subsection{Limited violations}
 \label{subsec:rho-0-estimation}
+
+In order to estimate the value of the functional \(J[f]\) we required \(\rho (\lambda)\ge\rho_0\) for \(\lambda\in [0, \ell_0]\); this is again a pointwise requirement, so it is not particularly satisfying according to the analysis given in section \ref{ch:energy-conditions}. However, in \cite{levi2016versatile} Levi and Ori have been running some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, in a background Schwarzschild metric, and found \(\rho \simeq -2.7\cdot 10^{-7} \hbar M^{-4}\) (where \(M\) is the mass of the black hole). This supports the legitimacy of our additional assumption, at least for large enough black holes, and suggests that such a condition might be commonly satisfied even with a rather small value for \(\vert\rho_0\vert\).
+
+
 In the remark following the area theorem generalized for the Sobolev condition we already expressed some concerns about the pointwise condition we ask for; however the hypothesis doesn't seem totally unreasonable as there are some numerical and semi-analytical examples that seem to support our argument.
 
 Here we will take for \(\rho_0\) the value computed in \cite{levi2016versatile}, even if this computation is purely numerical and performed for \emph{minimally-coupled} scalar fields; in that reference Levi and Ori get to a violation of NEC, and even ANEC, by taking into account the background Schwarzschild metric, so we are again beyond the classical regime, but for a different reason from what happens in the Einstein-Klein Gordon field theory.

@@ -1,0 +1,36 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+
+    \draw[black, ->] (0,0) -- (14,0) node[below] {\(\lambda\)};
+    \draw[black, ->] (0,0) -- (0, 6);
+    \filldraw[black] (0, 5) circle (1.5pt) node[left] {\(1\)};
+    
+    \draw[fuchsia, thick, looseness=1.1] (0,0) to[out=70, in=115] (1.2, 0) to[out=-65, in=200] (3, 5) to[out=0, in=180] (13,5);
+    \draw[turquoise, thick, looseness=2] (0, 5) to[out=0, in=180] (3,5) to[out=80, in=230] (6, 4.7) to[out=50, in=255] (11, -0.8) to[out=75, in=120] (13,0);
+
+    \draw[goldenyellow, very thick, dashed] (3, 5) -- (3, 0);
+    \draw[goldenyellow, very thick, dashed] (13, 5) -- (13, 0);
+    \node[below] at (3, 0) {\(\ell_0\)};
+    \node[below] at (13, 0) {\(\ell\)};
+
+    \node[fuchsia, left] at (1.8,2.9) {\(\varphi\)};
+    \node[turquoise, right] at (9.7,2.2) {\(f\)};
+    
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

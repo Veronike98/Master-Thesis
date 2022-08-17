@@ -1,0 +1,48 @@
+\documentclass[12pt, a4paper]{article}
+
+% !TeX program = lualatex
+% !BIB program = bibtex 
+
+\usepackage{pacchetti}
+\usepackage{enumitem} % resume in enumerate environment
+
+\input{newcommands}
+
+\title{A generalisation of the Black Hole Area theorem with Index form methods}
+
+\author{\textbf{Candidate}: Veronica Sacchi\thanks{v.sacchi1@studenti.unipi.it}\\
+\textbf{Supervisor}: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
+
+% Bibliografia
+\usepackage[backend=bibtex,doi=false,isbn=false,url=false]{biblatex}
+\addbibresource{bibliografia.bib}
+\renewcommand*{\bibfont}{\fontsize{12}{14.48}\selectfont}
+
+\begin{document}
+
+\maketitle
+In \(1971\) Hawking proposed his celebrated Black Hole Area theorem, which establishes that, in an asymptotically flat spacetime and under the null energy condition, the area of the black hole horizion can never decrease. A few years later, in \(1974\) the same Hawking put forward what is probably his most famous results: black holes do evaporate through Hawking radiation~\cite[]{hawking1975particle}. 
+
+These two results however terribly clash one against each other. It had been longly suspected that the flaw of the area theorem should be found in the null energy condition. This is a \emph{pointwise} restriction on a contraction of the stress energy tensor, and indeed, already in \(1965\) Epstein, Glaser and Jaffe had proved that \emph{any} pointwise restriction of that sort shall be violated by quantum fields. As black hole evaporation is an intrinsically quantum effect then, it seems natural that an answer to such tension should be sought in the domain of energy conditions.
+
+A potential struggle comes from the fact that, although very widely employed, energy conditions were firstly introduced as a powerful tool to expand the regime of validity of relativity theorems (such as singularity theorems and the area theorem), but were lacking a clear physical interpretation. They were later understood embodying the ``attractiveness'' of gravity, but as it was not possible to prove them from quantum field theory, it was not clear how to generalize them. 
+
+It was later realized how negative fluctuations of the energy density seemed to be compensated for - or even overcompensated for - in other regions of spacetime, both for classical and quantum fields - an intuition that bears the name \emph{quantum interest}~\cite[]{ford1999quantum}. From this it came the idea of formulating \emph{averaged} energy conditions, restrictions on contractions of the stress energy tensor integrated over a region of spacetime (usually, and in all the cases of interest for us, a geodesic). 
+
+However, applying such hypothesis to the Raychaudhuri's equation is not immediate, exactly because of the integral nature of these energy conditions. Very recently instead, Fewster and Kontou derived an alternative proof for singularity theorems~\cite[]{fewster2020new} which is much easier to generalize to averaged quantum energy inequality.
+
+That article~\cite[]{fewster2020new} will be the red thread of this thesis. We will review some basic geometrical concepts, and then we will dive into the analysis of the existence of focal points with the aim of learning how to detect their existence through the index form method.
+Then we will apply this method to generalise Hawking's area theorem. We will first prove the classical result via this method, and then move to a more general statement. Our new formulation of the theorem states that the \emph{instantaneous} rate of change of the area of the black hole horizon is bounded from below by some quantity \(-\mathcal{V}\). We will comment on how this quantity can be strictly negative, and therefore resolving the tension we started from by potentially allowing black hole evaporation.
+
+Quite naturally, the precise form of the bound is determined by the underlying geometry; energy conditions can be used again to generalise the result to arbitrary geometries, but some difficulties need to be faced in their application because of their domain of validity. Such issues will be solved at the price of introducing another hypothesis, namely that the contraction of the stress energy tensor is still pointwise bounded by a negative quantity \(-\rho_0\).
+
+We will then work on the bound on the contraction of the horizon's area in some specific toy models, testing different energy conditions. In particular, we are interested in the comparison with the expected evaporation rate -- independently computed from the process of black hole evaporation. We will find that such process seems compatible with both the averaged energy conditions we will test, at least in the semiclassical and quasi-static regime of approximation.
+
+Lastly we will see how the present analysis immediately generalises a small result relevant for singularity theorems. Such theorems always need three different hypotheses: a causality condition, an energy condition, and an ``initial'' condition~\cite[]{senovilla1998singularity}. In the classical version of the theorem such initial condition is the existence of a trapped surface, and it is a well-known result that wherever the null energy condition holds, such surfaces need to be hidden beyond the black hole horizon. 
+
+Generalized singularity theorems instead require the presence of ``sufficiently trapped'' surfaces~\cite[]{fewster2020new}; with a potentially shrinking horizion one could wonder if it was possible to find such surfaces in the outside region, but it will be evident from our analysis that the initial condition for singularity theorem shall always be contained within the black hole horizon.
+
+\printbibliography[heading=bibintoc]
+
+
+\end{document}          

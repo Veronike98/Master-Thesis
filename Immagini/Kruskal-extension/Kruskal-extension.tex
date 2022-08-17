@@ -1,0 +1,42 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+
+    \foreach \i in {0,1,2,3,4}{
+        \draw[turquoise, ultra thick, ->] (\i+0.2, \i+0.2) -- (\i+0.7, \i+0.7);
+    }
+    \draw[gray, ->] (-5,-5) -- (5,5) node[above] {\(V\)};
+    \draw[gray, ->] (5,-5) -- (-5,5) node[above] {\(U\)};
+
+    \draw[fuchsia, dashed, looseness=1.4, thick] (-4.8, 5) to[out=-43, in=-137] (4.8, 5);
+
+    \draw[fuchsia, dashed, looseness=1.4, thick] (-4.8, -5) to[out=43, in=137] (4.8, -5);
+
+    \node[above, turquoise] at (1.1, 1.2) {\(U^{\mu}\)};
+
+    \foreach \i in {0.2,0.5,1,1.7,2.5}{
+        \draw[thick, goldenyellow] (\i, -\i) -- (4.2+\i, 4.2-\i);
+        \draw[thick, goldenyellow, dashed] (4.2+\i, 4.2-\i) -- (4.8+\i, 4.8-\i);
+    }
+
+    \node[goldenyellow] at (6.4, 4.1) {\(U \equiv U_i\)};
+    \draw[fuchsia, ultra thick, ->] (5.1, -0.1) -- (2.8, 2.2);
+
+    
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

@@ -516,24 +516,23 @@ Coherently, with the weakening of the energy condition we have obtained a weaker
 
 As extensively argued above, \(\mathcal{V}\) represents the bound on the instantaneous rate of change of the area of the black hole horizon. In order to understand how reasonable it is the expression we have obtained, we would need to compare it to some relevant physical quantity; in this scenario we are lucky enough to have a particular appealing one: the rate of black hole evaporation.
 
-With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:minimized-V-E-L}\) into a function of physical quantities only; once again we will let us be inspired by the work in section \(5.2\) of \cite{fewster2020new}, where Fewster and Kontou computed their bound in the specific example of a non-minimally coupled classical Einstein-Klein Gordon theory.
+With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:minimized-V-E-L}\) into a function of physical quantities only; once again we will let us be inspired by the work in section \(5.2\) of \cite{fewster2020new}, where Fewster and Kontou computed their bound in the specific framework of a non-minimally coupled classical Einstein-Klein Gordon theory.
 
 They needed such a computation to test the hypothesis of some weakened singularity theorems within astrophysical scenarios; here instead we would like to analyze the evaporation of black holes, hence we will need a different regime of approximations.
 
 \subsection{The non-minimally coupled Einstein Klein Gordon Theory}
 \label{subsec:non-min-EKG-theory}
-First of all let's try to compute some reasonable physical estimates of the coefficient \(Q_0\) and \(Q_m\). In order to do so we need to pick a specific field theory, and we will adopt a semiclassical gravity point of view, so quantum fields within a classical background geometry, where backreaction corrections are assumed small and thus neglected.
+First of all let's try to compute some reasonable physical estimates of the coefficient \(Q_0\) and \(Q_m\). In order to do so we need to pick a specific field theory, and we will adopt a semiclassical gravity point of view, so quantum fields within a classical background geometry, where backreaction corrections are assumed small - and thus neglected.
 
 Our choice happens to land on non-minimally coupled scalar fields: this is the typical classical field theory violating NEC, and thus the original black hole area theorem doesn't apply. They are scalar fields described by the Lagrangian density
 \[
-\mathcal{L}[\phi] = \frac{1}{2}\left[\nabla_{\mu}\phi\nabla^{\mu}\phi   - (m^2 - \xi R)\phi^2\right]
+\mathcal{L}[\phi] = -\frac{1}{2}\left[\nabla_{\mu}\phi\nabla^{\mu}\phi   - (m^2 - \xi R)\phi^2\right]
 \]
 The corresponding stress-energy tensor is:
 \begin{equation}
-    T_{\mu\nu} = \nabla_{\mu}\phi\nabla_{\nu}\phi - \frac{1}{2}g_{\mu\nu}\left[\nabla_{\rho}\phi\nabla^{\rho}\phi - m^2\phi^2\right] - \xi\left(g_{\mu\nu}\square_g - \nabla_{\mu}\nabla_{\nu} + G_{\mu\nu}\right)\phi^2
+    T_{\mu\nu} = \nabla_{\mu}\phi\nabla_{\nu}\phi - \frac{1}{2}g_{\mu\nu}\left[\nabla_{\rho}\phi\nabla^{\rho}\phi - m^2\phi^2\right] + \xi\left(g_{\mu\nu}\square_g - \nabla_{\mu}\nabla_{\nu} + G_{\mu\nu}\right)\phi^2
 \end{equation}
-\VS{Controlla che sia corretto con le nostre convenzioni! Ho messo i segni un po' a caso}
-
+% La derivazione di https://alves-nickolas.github.io/pdf/Stress_Energy_Momentum_Tensor_for_a_Scalar_Field.pdf mi e' piaciuta
 The conformal coupling is \(\xi_c = \frac{1}{4}\frac{n - 2}{n - 1}\), and we will only consider \(\xi\in [0,\xi_c]\);
 now the following observation comes along.
 
@@ -580,23 +579,19 @@ Moreover we shall only consider \emph{massless} scalar fields; given that, it wa
     \]
 \end{prop}
 
-\begin{proof}
-    We start from a bound given as equation \((67)\) in \cite{brown2018singularity}.
+The proof of is lenghty and not particularly interesting for the scope of this thesis, so we defer it to appendix \ref{app:proof-EKG-bound}.
 
-    Then we can proceed as in corollary \(1\) of the same paper \cite{brown2018singularity}, but reducing to the case of a massless field, and integrating along null geodesics.
-\end{proof}
-
-We can then see we have a condition of the form \(\eqref{eq:Sobolev-condition}\) with 
+We have indeed found an energy condition of the form \(\eqref{eq:Sobolev-condition}\) with 
 \[
 m = 1 \quad\quad Q_0 = Q\cdot\tilde{Q}^2 \quad\quad Q_1 = Q 
 \]
 
 \subsection{The Kubo-Martin-Schwinger state}
 
-We would like to compute \(\phi_{max}\) and \(\sup_{\gamma}\vert \nabla_U\phi\vert\) in terms of some physical quantities; in principle the field values may be not bounded, but here we only aim at estimating what a reasonable value of \(\mathcal{V}\) would be.
-Physically, it makes sense that the value of \(\phi_{max}\) is connected to some sort of background temperature, and we expect the higher \(T\), the higher values the field might reach.
+In order to finally convert \(Q_0\) and \(Q_1\), we need to compute \(\phi_{max}\) and \(\sup_{\gamma}\vert \nabla_U\phi\vert\) in terms of some physical quantities; in principle the field values may be not bounded, but here we only aim at estimating what a reasonable value for \(\mathcal{V}\) would be.
+Physically, it makes sense that the value of \(\phi_{max}\) is connected to some sort of background temperature, and we expect the higher \(T\) is, the higher values \(\phi\) might reach.
 
-In order to establish this connection we now change setting, and consider a quantum field theory with a minimally coupled massless scalar field in a Minkowski background metric; we aim at computing the Wick square of our field averaged in a thermal state of temperature \(T\). As choice of thermal state, we pick the Kubo-Martin-Schwinger (KMS) state with temperature \(T\), as in section \(5.2\) of \cite{fewster2020new}, and we can compute the desired quantity in a way analogous to what has been done in the final appendix of \cite{brown2018singularity}.
+In order to establish this connection we now change setting, and consider a \emph{quantum} field theory with a minimally coupled massless scalar field in a Minkowski background metric; we aim at computing the Wick square of our field averaged in a thermal state of temperature \(T\). As choice of thermal state, we pick the Kubo-Martin-Schwinger (KMS) state with temperature \(T\), as in section \(5.2\) of \cite{fewster2020new}, where we can compute the desired quantity in a way analogous to what has been done in the final appendix of \cite{brown2018singularity}.
 
 \begin{definition}
     The KMS state is defined as \dots
@@ -604,15 +599,16 @@ In order to establish this connection we now change setting, and consider a quan
 \end{definition}
 
 \begin{remark}
-	The KMS state is a \emph{thermal equilibrium} state.
+	The KMS state is a \emph{thermal equilibrium} state. This means we must be working with quasi-static black holes, which are evaporationg so slowly that can be thought always in nearly thermal equilibrium with the background. This approximation should be well verified because, once again, it coincides with the temperature regime \(\frac{T}{T_{Pl}}\ll 1\).
 \end{remark}
 
 \begin{prop}
-    The Wick square of the massless field in a KMS thermal state of temperature \(T\) within a \(n\)-dimensional Minkowski spacetime is given by:
-    \begin{align}
+	\label{prop:wick-squares-KMS}
+    The Wick square of the massless field, in a KMS thermal state of temperature \(T\), within a \(n\)-dimensional Minkowski spacetime, is given by:
+    \begin{align*}
          \langle \colon \phi^2 \colon\rangle_T &= \frac{T^{n - 2}}{2^{n - 2}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n - 2)}{\Gamma\left(\frac{n - 1}{2}\right)}\zeta(n - 2) \\
         \langle \colon (\nabla_U\phi)^2 \colon\rangle_T &= \frac{nT^n}{2^{n - 1}\pi^{\frac{n - 1}{2}}} \frac{\Gamma(n)}{\Gamma\left(\frac{n + 1}{2}\right)} \zeta(n)
-    \end{align}
+    \end{align*}
 
 \end{prop}
     
@@ -622,7 +618,7 @@ In order to establish this connection we now change setting, and consider a quan
 	W^{(2)}_T(x, x') = \int \frac{d^{n - 1}\mathbf{k}}{(2\pi)^{n - 1}}\frac{1}{2k^0(\mathbf{k})} \left(\frac{e^{-ik^{\mu}(x_{\mu} - x'_{\mu})}}{1 - e^{-\beta k^0(\mathbf{k})}} + \frac{e^{ik^{\mu}(x_{\mu} - x'_{\mu})}}{e^{\beta k^0(\mathbf{k})} - 1}\right). 
 	\]
 
-	As we are treating a massless scalar field the dispersion relation (the field is on-shell) is \(k^0(\mathbf{k}) = \vert \mathbf{k}\vert\).
+	As we are dealing with a massless scalar field, the dispersion relation is \(k^0(\mathbf{k}) = \vert \mathbf{k}\vert\) (the field is on-shell).
 
 	For the ground state \(2\)-point function we need to take the limit \(T\rightarrow 0\), or \(\beta\rightarrow +\infty\), and obtain
 	\[
@@ -637,7 +633,7 @@ In order to establish this connection we now change setting, and consider a quan
 		\langle \colon \phi^2 \colon\rangle_T &= \underbrace{\frac{2\pi^{\frac{n-1}{2}}}{\Gamma(\frac{n - 1}{2})}}_{\Omega_{n - 2}}\frac{1}{(2\pi)^{n - 1}}\frac{1}{\beta^{n - 2}}\int_0^{+\infty}dx \frac{x^{n - 3}}{e^x - 1} =\\
 		&= \frac{T^{n - 2}}{2^{n - 2}\pi^{\frac{n - 1}{2}}}\frac{\Gamma(n - 2)}{\Gamma\left(\frac{n - 1}{2}\right)}\zeta(n - 2)
 	\end{align*}
-	The second inequality can be worked out in a similar way, being careful that this time there is an angular dependance because of the factor \((k_{\mu}U^{\mu})^2\) originated by the derivatives. This factor adds a \(k^2\) power to the radial part of the integral, and a factor:
+	The second inequality can be worked out in a similar way, being careful that this time there is an angular dependance because of the additional factor \((k_{\mu}U^{\mu})^2\), originated by the \(U\)-derivatives. This factor adds a \(k^2\) power to the radial part of the integral, and an angular factor:
 	\[
 	\int_0^{\pi} \sin\theta^{n - 3} (1 - \cos\theta)^2 d\theta = \frac{n\sqrt{\pi}}{2}\frac{\Gamma\left(\frac{n - 2}{2}\right)}{\Gamma\left(\frac{n + 1}{2}\right)}.
 	\]
@@ -645,19 +641,19 @@ In order to establish this connection we now change setting, and consider a quan
 	\begin{align*}
 		\langle \colon (\nabla_U\phi)^2 \colon\rangle_T &= 
 		\underbrace{\frac{2\pi^{\frac{n-2}{2}}}{\Gamma(\frac{n - 2}{2})}}_{\Omega_{n - 3}} \cdot \frac{n\sqrt{\pi}}{2}\frac{\Gamma\left(\frac{n - 2}{2}\right)}{\Gamma\left(\frac{n + 1}{2}\right)} \cdot \frac{1}{(2\pi)^{n - 1}}\frac{1}{\beta^{n}}\int_0^{+\infty}dx \frac{x^{n - 1}}{e^x - 1} = \\
-		&= \frac{nT^n}{2^{n - 1}\pi^{\frac{n - 1}{2}}} \frac{\Gamma(n)}{\Gamma\left(\frac{n + 1}{2}\right)} \zeta(n)
+		&= \frac{nT^n}{2^{n - 1}\pi^{\frac{n - 1}{2}}} \frac{\Gamma(n)}{\Gamma\left(\frac{n + 1}{2}\right)} \zeta(n).
 	\end{align*}
 \end{proof}
 
-At this point we estimate the maximum values of the field and its derivative by assuming 
+At last we estimate the maximum values of the \emph{classical} E-KG field and its derivative by the ansatz 
 \begin{align*}
-	\phi_{\max}^2 &\simeq \langle \colon \phi^2 \colon\rangle_T\\
-	\sup_{\gamma}\vert \nabla_U\phi\vert &\simeq \langle \colon (\nabla_U\phi)^2 \colon\rangle_T
+	\phi_{\max}^2 &\simeq \langle \colon \phi^2 \colon\rangle_T,\\
+	\sup_{\gamma}\vert \nabla_U\phi\vert &\simeq \langle \colon (\nabla_U\phi)^2 \colon\rangle_T.
 \end{align*}
-Restoring the units and reducing to \(n = 4\) spacetime dimension we get:
+Restoring units and reducing to \(n = 4\) spacetime dimensions, we eventually obtain:
 \begin{align}
 	\label{eq:KMS_Q_1}
-    Q_1 &= \underbrace{\frac{16\pi\xi}{3}}_{\alpha} \left(\frac{T}{T_{Pl}}\right)^2 \\
+    Q_1 &= \underbrace{\frac{16\pi\xi}{3}}_{\alpha} \left(\frac{T}{T_{Pl}}\right)^2,\\
     Q_0 &= \underbrace{\frac{32\pi^6\xi^3}{405}}_{\gamma}\left(\frac{k_B}{\hbar}\right)^2 \frac{T^8}{T_{Pl}^6}.
 \end{align}
 
@@ -668,29 +664,48 @@ For the puropose of the following analysis we will identify \(T\) with the Hawki
 T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}    
 \]
     
-
+\begin{remark}
+	The toy model we relied on in this section has, of course, many limitations. One we have tried to resolve is due to the definition of the \(2\)-point function of KMS states - used to prove proposition \ref{prop:wick-squares-KMS} - only in Minkowski spacetime. The proper state to describe a black hole in thermal equilibrium within an underlying Schwarzschild geometry is the Hartle-Hawking state \cite[]{hartle1993path}. This state has been proved to be equivalent to the double KMS state with temperature equal to Hawking temperature, first in \cite[]{jacobson1994note, sanders2015construction} (with the path integral formulation), and lately in \cite[]{higuchi2022hartle} by means of the Schwinger-Keldysh operator formalism. Unfortunately the \(2\) point function is a little more complicated than the one in the flat space case:
+	\[
+	W_{HH}(x, x') = \int_{0}^{+\infty} \frac{d\omega}{2\omega} \sum_{\sigma}\phi_{\omega\sigma}(x)\phi_{\omega\sigma}(x')\left(\frac{e^{-i\omega(t - t')}}{1 - e^{-\beta \omega}} + \frac{e^{i\omega(t - t')}}{e^{\beta \omega} - 1}\right),
+	\]
+	where \(\{\phi_{\omega\sigma}(x)\}\) are a basis of the set solutions to the equations of motion. In flat spacetime the factor \(\sum_{\sigma}\phi_{\omega\sigma}(x)\phi_{\omega\sigma}(x')\) simply reduces to 
+	\[
+		\int_{\vert k \vert = \omega}	\frac{dk^{n - 1}}{(2\pi)^{n - 1}} e^{-i\vec{k}\cdot \vec{x}},
+	\]
+	but as for now we didn't manage to work it out in the Schwarzschild case. Working out the additional temperature dependance - if any - given by such factor would be enough to properly generalize our method to Schwarzschild.
+\end{remark}
 
 \subsection{Limited violations}
 \label{subsec:rho-0-estimation}
 
-In order to estimate the value of the functional \(J[f]\) we required \(\rho (\lambda)\ge\rho_0\) for \(\lambda\in [0, \ell_0]\); this is again a pointwise requirement, so it is not particularly satisfying according to the analysis given in section \ref{ch:energy-conditions}. However, in \cite{levi2016versatile} Levi and Ori have been running some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, in a background Schwarzschild metric, and found \(\rho \simeq -2.7\cdot 10^{-7} \hbar M^{-4}\) (where \(M\) is the mass of the black hole). This supports the legitimacy of our additional assumption, at least for large enough black holes, and suggests that such a condition might be commonly satisfied even with a rather small value for \(\vert\rho_0\vert\).
-
-
-In the remark following the area theorem generalized for the Sobolev condition we already expressed some concerns about the pointwise condition we ask for; however the hypothesis doesn't seem totally unreasonable as there are some numerical and semi-analytical examples that seem to support our argument.
-
-Here we will take for \(\rho_0\) the value computed in \cite{levi2016versatile}, even if this computation is purely numerical and performed for \emph{minimally-coupled} scalar fields; in that reference Levi and Ori get to a violation of NEC, and even ANEC, by taking into account the background Schwarzschild metric, so we are again beyond the classical regime, but for a different reason from what happens in the Einstein-Klein Gordon field theory.
-
-In the end they state the computed value to be:
+In order to estimate the value of the functional \(J[f]\) we required 
 \[
-\rho_0 = - \underbrace{\si{2.7\times10^{-7}}}_{\epsilon} \frac{1}{M^4}
-\]
-where \(M\) is the mass of the Schwarzschild black hole.
+	\rho (\lambda)\coloneqq R_{\mu\nu}U^{\mu}U^{\nu}\ge -\vert\rho_0\vert
+\] 
+for \(\lambda\in [0, \ell_0]\); this is again a pointwise requirement, but notice that, as the lower bound is negative, it is not ruled out by the argument in \ref{th:quantum-violation-pointwise-conditions}.
 
-The most important features of that result are the negative sign, and the \(M^{-4}\) dependance: we will see that ultimately this is determining the temperature dependance of our bound \(\mathcal{V}\), and hence any variation of this power law would have major impact on our conclusions.
+It has been longly debated whether such contractions of the stress energy tensor should be finite or not; in literature there can be found arguments for both sides, and indeed a lot of attention must be payed to what contraction exactly is going to be computed. The presence of a coordinate singularity, and the lack of an analytical espression for the \(4\)-dimensional stress-tensor in the Unruh or Hartle-Hawking state complicate the matter, but we will try to argue that - as the one on the horizion is \emph{just} a coordinate singularity - the contraction of \(T_{\mu\nu}\) with the tanget field of the null generators shall be always finite.
 
-It is relieving that an independent analysis, conducted by Visser in \cite{visser1997gravitational} leads to a similar result, with exactly the same power law dependance. In \cite{visser1997gravitational} he sets up a semi-analytical model - this time for non minimally coupled scalar fields - within which he can compute explicitely some components of the stress energy tensor, and therefore its contractions. We are interested in a different contraction from the ones computed in \cite{visser1997gravitational} though, so we will carefully explain the model and perform the computation in \ref{app:visser}.
+Let us again work within the framework of non-minimally coupled scalar fields, with \(\xi\in[0,\xi_c]\); developing a general treatment is very difficult because of the features mentioned above, but at the two extremities of this interval  a few observation can be inferred.
 
+For \(\xi = 0\) the field becomes minimally coupled; the classical minimally coupled Klein-Gordon field actually obeys the Null Energy condition, but this doesn't mean that the quantized field shouldn't bear any surprise.
+Ineed, in \cite{levi2016versatile} Levi and Ori have been able to overcome many of the complications for the computation of a renormalized stress tensor in the Unruh vacuum, and managed to run some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, within a background Schwarzschild metric. 
+Recasted with our convention (for us their \(a\) needs to be \(1\)), their result is 
+\begin{equation}
+	\label{eq:rho-Levi-Ori}
+	\rho \simeq -2.7\cdot 10^{-7} \frac{\hbar}{M^{4}} 
+\end{equation}
+(where \(M\) is the mass of the black hole). This supports the legitimacy of our additional assumption, at least for large enough black holes, and suggests that such a condition might be commonly satisfied even with a rather small value of \(\vert\rho_0\vert\). The most important features of Levi and Ori's result~\eqref{eq:rho-Levi-Ori} are the negative sign and the \(M^{-4}\) dependance: we will see this is ultimately determining the temperature dependance of our bound \(\mathcal{V}\), and hence any variation of this power law would have major impact on our conclusions.
 
+The field we considered in~\ref{subsec:non-min-EKG-theory} however, is not minimally-coupled. Anyways, for conformally coupled fields a very similar result should hold. 
+In~\cite{visser1997gravitational} Visser develops a semi-analytical computation for the renormalized stress energy tensor (RSET) of a massless scalar field conformally coupled to the background Schwarzschild metric, averaged on the Unruh vacuum state. At first glance it seems that he proves that such contractions cannot be bounded, and actually has a pole divergence on the black hole horizion; at a closer look however, it is possible to realize that none of the contractions computed in~\cite{visser1997gravitational} is the one we need, because of the particular coordinate system he works with. In fact, it is necessary to rewrite the components of the stress tensor derived by Visser within the Kruskal-Szekeres coordinate system, and in such system we really are able to derive \(R_{\mu\nu}U^{\mu}U^{\nu}\). The computation is not particularly difficult, but is somewhat long and thorny, and shouldn't distract us from the main discussion: we will carefully explain the model and derive the result in appendix~\ref{app:visser}. At last, we find again that \(\rho\) is bounded by a negative quantity, that scales with \(M^{-4}\)! Precisely, th result in \eqref{eq:contraction-stress-tensor} traduces to:
+\[
+	\rho \simeq \frac{9}{10(16\pi)^2} \cdot \frac{e}{V_0^2} \cdot \frac{\hbar}{(2M)^4}.
+\] 
+The advantage of a semi-analytical model is that it allows us to extrapolate how minimal are the requirements from which those two main features arise; in particular the same features should be valid also for all the fields with coupling \(\xi\) within the all interval \([0,\xi_c]\), even if we can't compute the exact coeffiecient because of our ignorance of the trace of the stress tensor in the geneal case.
+
+\subsection{Comparison with the evaporation rate}
 By substituting \(\rho_0\) into \(\eqref{eq:minimized-V-beta}\), and recovering the temperature dependence, we finally get:
 \begin{equation}
 	\label{eq:KMS-minimized-V-beta}
@@ -710,6 +725,8 @@ In particular, a direct comparison with the formula in \(\eqref{eq:evaporation-r
 \alpha \gtrsim \frac{1}{400} \iff \xi \gtrsim 1.49 \times 10^{-4}	
 \]
 so in principle the field might be very weakly coupled. This coefficient comparison is way less meaningful though, as the coefficients are very model dependent, and therefore it is not clear how reflective of the underlying physics they are.
+
+Finally, it should also be noticed how the pointwise restriction on \(\rho\) cannot be simply get rid of. The key point is that the test function of the variational method needs to start from \(1\) at \(\lambda = 0\), while the averaged conditions can only use functions with Dirichlet boundary conditions. It looks very interesting then the fact that such term gives one of the most relevant contributions to \(\mathcal{V}\), and indeed how the trace anomaly seems to be connected to Hawking radiation. 
 
 The question we would like to ask ourselves now is: how robust is this result, and in particular the \(T^3\) dependance? Is it just an artifact of the specific examples and approximations we have been using, or is it the signal of a more general behaviour? 
 

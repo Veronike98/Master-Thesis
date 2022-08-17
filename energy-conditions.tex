@@ -56,10 +56,29 @@ Hence it immediately follows that (\cite{epstein1965nonpositivity})
 
 This result shouldn't come as a big surprise. It has been noticed long ago how black hole evaporation is in tension with Hawking's Area theorem, statement that asks for the null energy conditions as a hypothesis. Black hole evaporation is a quantum effect, so we should indeed expect that whenever quantum fields are included, at least one of the hypothesis of the black hole area theorem should be violated: NEC, being a statement about the stress energy tensor, is the natural candidate - even if we will see that causality itself is not immune either to the transition towards a quantum regime.
 
-\section{Averaged Conditions and Quantum Inequalities}
-Now that we know NEC won't be valid for any universe containing quantum fields, what should we replace it with?
+\section{Quantum Inequalities and Averaged Conditions}
+Now that we know NEC won't be valid for any universe containing quantum fields, what should we replace it with? The answer to this question remained very unclear for quite a long time, until in \(1978\) Ford \cite[]{ford1978quantum} realized that in order to prevent such negative energy fluxes from violating the second law of thermodynamics, the magnitude and duration of the effect must be constrained by an inequality of the form
+\begin{equation}
+    \label{eq:constraint-flux}
+    \vert F \vert \lesssim t_0^{-2},    
+\end{equation}
+where \(F\) is the flux, and \(t_0\) the time it lasts. This way, the magnitude of energy absorbed cannot exceed \(t_0\vert F\vert \lesssim t_0^{-1}\), and by the time-energy uncertainty relation no macroscopic violation occurs. Equation \eqref{eq:constraint-flux} was the first \emph{quantum energy inequality}. 
 
+Denote as \(\rho\) the energy density, or any similar quantity that it is necessary to bound; then the most general form of a quantum energy inequality is 
+\[
+\langle \rho(f) \rangle_{\omega} \ge - \langle \mathcal{Q}(f) \rangle_{\omega}   
+\]
+where \(f\) is a suitable test function and \(\omega\) is some quantum state belonging to a class of reference states (most commonly Hadamard states for free fields).
 
+Whenever the operator \(\mathcal{Q}(f) \) is a multiple of the identity 
+\[
+    \mathcal{Q}(f) = Q(f)    
+\]
+the QEI is said to be \emph{state independent}. This is the most amiable class of quantum energy inequalities naturally, as the absence of a specific reference state leaves the relation the most possibly general.
+
+\section{The Achronal Averaged Null Energy Condition}
+
+\section{Sobolev Conditions}
 
 \section{The Smeared Null Energy Condition}
 \label{sec:SNEC}

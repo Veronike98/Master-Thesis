@@ -458,7 +458,7 @@ A potential weakness of the variational method is that, if the set \(\mathcal{A}
 
 Such question can only be completely resolved by finding the true infimum, or a set \(\mathcal{A}\) where the minimum is negative. We are not able to do that unfortunately, but we can look at our results and see if anything stands out. 
 
-It may attract our attention the curious feature that the minimum of \(\mathcal{V}_{\beta}\) lays at finite \(\ell\): a simple heuristic argument instead suggests that a prioiri we should expect it to be at \(\ell \rightarrow +\infty\).
+It may attract our attention the curious feature that the minimum of \(\mathcal{V}_{\beta}\) lays at finite \(\ell\): a simple heuristic argument instead suggests that a priori we should expect it to be at \(\ell \rightarrow +\infty\).
 
 \(\ell\) is nothing but the maximum lenght of the support of the function \(f\). Ideally, in order to minimize \(J[f]\), we should expect \(f\) to be non zero wherever \(R_{\mu\nu}U^{\mu}U^{\nu}\) is positive, and null (or almost null) wherever \(R_{\mu\nu}U^{\mu}U^{\nu} < 0\). By cutting out the possibility of exploring for \(\lambda \ge \ell\) we might just miss out some regions where \(\rho(\lambda)\) is positive again. 
 
@@ -506,7 +506,7 @@ For \(\ell_0\) instead, the minimum is found at \(\tilde{\ell}_0 = \sqrt{\frac{Q
 	U_{\mu}\mathrm{H}^{\mu} \ge - \frac{1}{n - 2}\mathcal{V}_{E.L.} =  \frac{1}{n - 2} \left\{ \sqrt{Q_0(n - 2 + Q_1)} + \sqrt{Q_1(Q_0 + \vert\rho_0\vert)} + \frac{3}{2}\sqrt{Q_1\vert\rho_0\vert} \right\}.
 \end{equation}}
 
-Notice that, even if \(\mathcal{A}_{E.L.}\) is a much larger set than \(\mathcal{A}_{\beta}\), the result in \eqref{eq:minimized-V-E-L} is very similar to the one in \eqref{eq:minimized-V-beta}; indeed only some coefficients are changed, but the qualitative behaviour is always the same, and in particular \(\mathcal{A}_{E.L.}\) stays negative.
+Notice that, even if \(\mathcal{A}_{E.L.}\) is a much larger set than \(\mathcal{A}_{\beta}\), the result in \eqref{eq:minimized-V-E-L} is very similar to the one in \eqref{eq:minimized-V-beta}; indeed only some coefficients are changed, but the qualitative behaviour is always the same, and in particular \(\mathcal{V}_{E.L.}\) stays negative.
 
 \section{Comparison with the evaporation rate}
 \label{sec:physical-interpretation-V}
@@ -517,7 +517,7 @@ As extensively argued above, \(\mathcal{V}\) represents the bound on the instant
 
 With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:minimized-V-E-L}\) into a function of physical quantities only; once again we will let us be inspired by the work in section \(5.2\) of \cite{fewster2020new}, where Fewster and Kontou computed their bound in the specific framework of a non-minimally coupled classical Einstein-Klein Gordon theory.
 
-They needed such a computation to test the hypothesis of some weakened singularity theorems within astrophysical scenarios; here instead we would like to analyze the evaporation of black holes, hence we will need a different regime of approximations.
+They needed such a computation to test the hypothesis of some weakened singularity theorems within astrophysical scenarios; here instead we would like to analyze the evaporation of black holes, and so we will need a different regime of approximations.
 
 \subsection{The non-minimally coupled Einstein Klein Gordon Theory}
 \label{subsec:non-min-EKG-theory}
@@ -592,10 +592,10 @@ Physically, it makes sense that the value of \(\phi_{max}\) is connected to some
 
 In order to establish this connection we now change setting, and consider a \emph{quantum} field theory with a minimally coupled massless scalar field in a Minkowski background metric; we aim at computing the Wick square of our field averaged in a thermal state of temperature \(T\). As choice of thermal state, we pick the Kubo-Martin-Schwinger (KMS) state with temperature \(T\), as in section \(5.2\) of \cite{fewster2020new}, where we can compute the desired quantity in a way analogous to what has been done in the final appendix of \cite{brown2018singularity}.
 
-\begin{definition}
-    The KMS state is defined as \dots
-    %todo: studiare
-\end{definition}
+% \begin{definition}
+%     The KMS state is defined as \dots
+%     %todo: studiare
+% \end{definition}
 
 \begin{remark}
 	The KMS state is a \emph{thermal equilibrium} state. This means we must be working with quasi-static black holes, which are evaporationg so slowly that can be thought always in nearly thermal equilibrium with the background. This approximation should be well verified because, once again, it coincides with the temperature regime \(\frac{T}{T_{Pl}}\ll 1\).
@@ -656,7 +656,7 @@ Restoring units and reducing to \(n = 4\) spacetime dimensions, we eventually ob
     Q_0 &= \underbrace{\frac{32\pi^6\xi^3}{405}}_{\gamma}\left(\frac{k_B}{\hbar}\right)^2 \frac{T^8}{T_{Pl}^6}.
 \end{align}
 
-Again, this is of course not a rigorous computation of the coefficients, but it's a meaningful approximation pursued in an instructive toy-model, that can give us some encouraging insights on the underlying complicated physics.
+Again, this is of course not a rigorous computation of the coefficients, but it is a meaningful approximation pursued in an instructive toy-model, that can give us some encouraging insights on the underlying complicated physics.
 
 For the puropose of the following analysis we will identify \(T\) with the Hawking temperature of the black hole \(\eqref{eq:hawking-temperature}\):
 \[
@@ -668,7 +668,7 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
 	\[
 	W_{HH}(x, x') = \int_{0}^{+\infty} \frac{d\omega}{2\omega} \sum_{\sigma}\phi_{\omega\sigma}(x)\phi_{\omega\sigma}(x')\left(\frac{e^{-i\omega(t - t')}}{1 - e^{-\beta \omega}} + \frac{e^{i\omega(t - t')}}{e^{\beta \omega} - 1}\right),
 	\]
-	where \(\{\phi_{\omega\sigma}(x)\}\) are a basis of the set solutions to the equations of motion. In flat spacetime the factor \(\sum_{\sigma}\phi_{\omega\sigma}(x)\phi_{\omega\sigma}(x')\) simply reduces to 
+	where \(\{\phi_{\omega\sigma}(x)\}\) are a basis of the set of solutions to the equations of motion. In flat spacetime the factor \(\sum_{\sigma}\phi_{\omega\sigma}(x)\phi_{\omega\sigma}(x')\) simply reduces to 
 	\[
 		\int_{\vert k \vert = \omega}	\frac{dk^{n - 1}}{(2\pi)^{n - 1}} e^{-i\vec{k}\cdot \vec{x}},
 	\]
@@ -702,7 +702,7 @@ In~\cite{visser1997gravitational} Visser develops a semi-analytical computation 
 \[
 	\rho \simeq \frac{9}{10(16\pi)^2} \cdot \frac{e}{V_0^2} \cdot \frac{\hbar}{(2M)^4}.
 \] 
-The advantage of a semi-analytical model is that it allows us to extrapolate how minimal are the requirements from which those two main features arise; in particular the same features should be valid also for all the fields with coupling \(\xi\) within the all interval \([0,\xi_c]\), even if we can't compute the exact coeffiecient because of our ignorance of the trace of the stress tensor in the geneal case.
+The advantage of a semi-analytical model is that it allows us to extrapolate how minimal are the requirements from which those two main features arise; in particular the same features should be valid also for all the fields with coupling \(\xi\) within the all interval \([0,\xi_c]\), even if we can't compute the exact coeffiecient because of our ignorance of the trace of the stress tensor in the general case.
 
 \subsection{Comparison with the evaporation rate}
 By substituting \(\rho_0\) into~\eqref{eq:minimized-V-beta} or~\eqref{eq:minimized-V-E-L} we finally get:
@@ -744,7 +744,7 @@ It stands out immediately that \(\eqref{eq:SNEC}\) is of the form of \(\eqref{eq
 \[
 m = 1 \quad \quad Q_0 = 0 \quad \quad Q_1 = 4B.	
 \]
-But, there is a ``but''. Here \(B\), and hence \(Q_1\) is asked to be a \emph{state independent} constant, namely it can only depend on the field theory we choose to populate our universe, but not the state we average the stress tensor in. 
+But, there is a ``but''. Here \(B\), and hence \(Q_1\) is asked to be a \emph{state independent} constant, namely it can only depend on the field theory we choose to populate our universe with, but not the state we average the stress tensor in. 
 Indeed we will see shortly that this requirement will have some dramatic consequences on the connection of \(\mathcal{V}\) to temperature.
 
 \subsection{Variational estimation}
@@ -765,9 +765,9 @@ We have found again that black hole evaporation is allowed, but the bound depend
 \]
 SNEC was proven in \cite{leichenauer2019upper} in the context of gravity induced on a brane, and in that specific case \(B\) was fixed to the value of \(\frac{1}{32\pi}\). However, as remarked in \ref{sec:SNEC}, it is often reasonable to consider \(B\ll 1\), condition that potentially could reduce dramatically the regime of validity of the bound we have found. This is consistent with the interpretation we have given of \(B\): \(B \ll 1\) would mean that, for the chosen field theory, semiclassical gravity is well under control, and therefore black holes can only evaporate ``very slowly''. 
 \noindent
-In other words, we expect rate of evaporation computed in \(\eqref{eq:evaporation-rate}\) to be allowed throughout the all region \(T\le T_{Pl}\) only with a field theory that induces proper non-classical effects (as large ``enough'' violations of \(T_{\mu\nu}U^{\mu}U^{\nu}\) for example), in which case \(B\) will be aat least of order \(10^{-6}\) and \(\tilde{T} \gtrsim T_{Pl}\).
+In other words, we expect rate of evaporation computed in \(\eqref{eq:evaporation-rate}\) to be allowed throughout the all region \(T\le T_{Pl}\) only with a field theory that induces proper non-classical effects (as large ``enough'' violations of \(T_{\mu\nu}U^{\mu}U^{\nu}\) for example), in which case \(B\) will be at least of order \(10^{-6}\) and \(\tilde{T} \gtrsim T_{Pl}\).
 
-Finally, if we were to believe SNEC to hold also with values of \(B\) small enough for having \(\tilde{T} < T_{Pl}\), we might expect that at \(\tilde{T}\), other terms of \(\mathcal{V}\) become relevant, and push the bound above the rate of evaporation again.
+Finally, if we were to believe SNEC to hold also with values of \(B\) small enough as for having \(\tilde{T} < T_{Pl}\), we might expect that at \(\tilde{T}\), other terms of \(\mathcal{V}\) become relevant, and push the bound above the rate of evaporation again.
 A possible attempt to find such terms would be to modify SNEC so to include terms depending on the curvature, as it has been attempted in \cite{kontou2015quantum}.
 % \VS{Cerca di aggiungere termini di curvatura!}
 

@@ -1,7 +1,7 @@
 \section{The classical Black Hole Area Theorem}
 \label{sec:classical-bh-area}
 
-Our statement of the orignal Black Hole area theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
+Our statement of the original Black Hole area theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
 \begin{theorem}[Black Hole Area Theorem]
 	\label{th:classical-bh-area}
 	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) for all null vectors \(U^{\mu}\) (\emph{null convergence condition}). Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
@@ -77,9 +77,9 @@ Our statement of the orignal Black Hole area theorem comes from \cite{wald2010ge
 \end{proof}
 
 \begin{remark}
-	As it has already been noticed in \cite[]{chrusciel2001regularity}, this statement of the area theorem is terribly vague about the proper definition of \emph{area}. The same flaw is found also in our main references \cite[]{wald2010general, hawking1973large} and in the original work on this theorem \cite[]{hawking1972black}, where it seems that picewise \(C^2\) differentiability of the horizion has been assumed. However, in \cite[]{chrusciel1998horizons} Chru\'sciel and Galloway point out that such surfaces can be pretty rough, potentially even \emph{nowhere} \(C^2\). In such cases it is not at all clear whether the notion of area or of mean normal curvature of cross-sections of the horizion would even be defined, not to mention the existence of a smooth extension of \(\mathrm{H}^{\mu}U_{\mu}\). 
+	As it has already been noticed in \cite[]{chrusciel2001regularity}, this statement of the area theorem is terribly vague about the proper definition of \emph{area}. The same flaw is found also in our main references \cite[]{wald2010general, hawking1973large} and in the original work on this theorem \cite[]{hawking1972black}, where it seems that picewise \(C^2\) differentiability of the horizon has been assumed. However, in \cite[]{chrusciel1998horizons} Chru\'sciel and Galloway point out that such surfaces can be pretty rough, potentially even \emph{nowhere} \(C^2\). In such cases it is not at all clear whether the notion of area or of mean normal curvature of cross-sections of the horizon would even be defined, not to mention the existence of a smooth extension of \(\mathrm{H}^{\mu}U_{\mu}\). 
 
-	The authors in \cite[]{chrusciel2001regularity} have been able to prove a refined version of the area theorem under some slightly more restrictve assumptions, such as a notion of regularity of \(\mathscr{I}^+\), that they refer to as \(H\)-regularity. This is a very technical mathematical requirement though, which doesn't add much physical insight to our disucussion, and it can be extended to all the area theorems we will prove almost straightforwardly, so for streamlining we shall not mention it anymore in the coming discussion.
+	The authors in \cite[]{chrusciel2001regularity} have been able to prove a refined version of the area theorem under some slightly more restrictive assumptions, such as a notion of regularity of \(\mathscr{I}^+\), that they refer to as \(H\)-regularity. This is a very technical mathematical requirement though, which doesn't add much physical insight to our discussion, and it can be extended to all the area theorems we will prove almost straightforwardly, so for streamlining we shall not mention it anymore in the coming discussion.
 \end{remark}
 
 \subsection{The damped Averaged Null Energy Condition}
@@ -88,7 +88,7 @@ In theorem \ref{th:classical-bh-area} we proved the black hole area theorem unde
 
 One first attempt is obtained replacing the Null Energy Condition with its damped version; this result was already obtained by Lesourd in \cite{lesourd2018remark}, once again by means of the Raychaudhuri's equation, while here we would like to propose an alternative proof, in the same spirit of the one given for theorem \ref{th:classical-bh-area}.
 \begin{definition}
-	A spacetime satisfies the \emph{damped averaged null energy condition} (dANEC) if along each future complete null geodesic \(\gamma\), affinely parametrized by \(\lambda\), there exists a non-negative constant \(c\ge 0\) such that:
+	A spacetime satisfies the \emph{damped averaged null energy condition} (dANEC) if along each future complete null geodesic \(\gamma\), affinely parameterized by \(\lambda\), there exists a non-negative constant \(c\ge 0\) such that:
 	\[
 	\liminf\limits_{\Lambda\rightarrow \infty} \int_{0}^{\Lambda} e^{-c\lambda}T_{\mu\nu}U^{\mu}U^{\nu}d\lambda - \frac{c}{2} > 0
 	\]
@@ -184,7 +184,7 @@ One possible idea - that we have already been exploiting in the specific cases o
 	\end{proof}
 	As for any variational estimation, the aim is to get a better and better approximation of the infimum by taking larger and larger sets of functions. Of course, as soon as we find any set \(\mathcal{A}\) for which the corresponding \(A\) is lower or equal than zero, we would recover the original (classical) formulation of the area theorem, and loose any interest in trying to expand further our set of functions.
 
-	In \(J\) though, there is still hidden some metric dependence by the presence of the Ricci tensor, dependance that we would like to wash away. Here is where energy conditions shall enter and help us out again: in fact, an energy condition of the form 
+	In \(J\) though, there is still hidden some metric dependence by the presence of the Ricci tensor, dependence that we would like to wash away. Here is where energy conditions shall enter and help us out again: in fact, an energy condition of the form 
 	\[
 	\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B[f]	
 	\]
@@ -195,7 +195,7 @@ One possible idea - that we have already been exploiting in the specific cases o
 		\item[\ding{99}] an energy condition of the form \(\int f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge B[f]\);
 		\item[\ding{99}] a subclass of functions \(\mathcal{A}\) onto which \(J\) is easier to be ``minimized''.
 	\end{itemize}
-	By following this receipe we will be able to recover upper bounds on \(J\), that immediately translates to lower bounds on \(U_{\mu}\mathrm{H}^{\mu}\).
+	By following this recipe we will be able to recover upper bounds on \(J\), that immediately translates to lower bounds on \(U_{\mu}\mathrm{H}^{\mu}\).
 
 	\subsection{Classical conditions}
 	An immediate observation is that, from the phenomenon of black hole evaporation, we expect the infimum of \(J[f]\) to be strictly positive.
@@ -230,7 +230,7 @@ One possible idea - that we have already been exploiting in the specific cases o
 	\[
 	\mathcal{A}_{NEC} = \left\{ f_{\ell}(\lambda) \coloneqq \left(1 - \frac{\lambda}{\ell}\right) \cdot \chi_{[0, \ell]}(\lambda) \vert \ell > 0 \right\},
 	\]
-	where with \(\chi_{[0, \ell]}\) we refer to the characterstic function of the interval \([0,\ell]\).
+	where with \(\chi_{[0, \ell]}\) we refer to the characteristic function of the interval \([0,\ell]\).
 
 	Now, as for NEC \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) everywhere, and \(f^2 \ge 0\) as well, \(B[f] \equiv 0\). So NEC is classical according to definition \ref{def:classical-energy-condition} if we could find \(f \in \mathcal{A}_{NEC}\) such that \(\vert\vert \nabla_U f \vert\vert^2 \le 0\). But it is easy to compute that:
 	\[
@@ -285,24 +285,14 @@ One possible idea - that we have already been exploiting in the specific cases o
 \section{The Sobolev condition}
 Let us finally start from an energy condition which - to the present analysis at least - leads to some more interesting consequences.
 In this section we will assume the validity of a different energy condition, that uses Sobolev norms, and that's why we call it \emph{Sobolev condition}.
-This assumption is motivated by the work in section \(4\) of \cite{fewster2020new}, where an analogous condition is assumed in order to derive singularity theorems.
-
-\begin{definition}
-	We say that the \emph{Sobolev energy condition} is satisfied on a curve \(\gamma\) and for a ``time'' \(\ell\), if there exist some \(m\in \N\) and two non negative constants \(Q_0\) and \(Q_m\) such that, for any \(f\) in the Sobolev space \(W_0^m([0,\ell])\):
-    \begin{equation}
-        \label{eq:Sobolev-condition}
-        \int_0^{\ell} f(\lambda)^2 R_{\mu\nu}U^{\mu}U^{\nu} d\lambda \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2.
-    \end{equation}
-	\noindent
-	We will apply this conditions to null geodesics \(\gamma\) orthogonal to some surface \(\Sigma\), where we will assume \(\lambda\) is the affine parametrization such that \(\gamma(\lambda = 0) \in \Sigma\) and \(\hat{H}_{\mu}\frac{d\gamma^{\mu}}{d\lambda}\Big\vert_{\lambda = 0} \equiv 1\) (\(\hat{H}_{\mu}\) is the versor of the mean normal curvature of \(\Sigma\)); finally, \(\vert\vert \star \vert\vert\) denotes the standard norm in \(L^2(I)\).
-\end{definition}
+We have already made some comments about how we came to the choice of this conditions in section \ref{sec:sobolev-conditions}, where its definition can also found.
 
 \subsection{Variational estimation}
 \label{subsec:V-optimization}
 
 First of all we would like to exploit this condition to obtain an estimation of \(\inf J\), using the variational procedure outlined in subsection \ref{subsec:variational-estimation}. However some care is required by the fact that the set of functions over which we need to minimize \(J\) and the one where the Sobolev condition is valid are quite different: the first one requires \(f(0) = 1\), while the second needs \(f(0) = 0\).
 
-Closely following the analysis present in \cite[]{fewster2020new}, let us choose the set parametrized by the two real parameters \(\ell_0\) and \(\ell\):
+Closely following the analysis present in \cite[]{fewster2020new}, let us choose the set parameterized by the two real parameters \(\ell_0\) and \(\ell\):
 
 \[
 \mathcal{A}_{\beta} \coloneqq \left\{f_{\ell_0, \ell} \vert \ell > \ell_0 >0\right\} \quad\quad f_{\ell_0, \ell}(\lambda) = 
@@ -315,9 +305,9 @@ where \(I(m,m;x)\) is the regularized incomplete Beta function. This function is
 \[
 p_m(0) = 0 \quad p_m(1) = 1 \quad\text{and}\quad p^{(k)}_m(0) = 0 = p^{(k)}_m(1)	\text{ for all } 1 \le k \le m - 1;
 \]
-it is explicitely given by \(p_m(x) = \frac{1}{B(m, m)} \int_0^x y^{m - 1}(1 - y)^{m -1} dy\), where \(B(m,m)\) is the Beta function.
+it is explicitly given by \(p_m(x) = \frac{1}{B(m, m)} \int_0^x y^{m - 1}(1 - y)^{m -1} dy\), where \(B(m,m)\) is the Beta function.
 
-In order to give an idea of what they look like, we have represented a few different such functions in figure \ref{fig:beta-functions}; finally, the values of the sobolev norms \(A_m\) of the regularized incomplete \(m-\)Beta function, of its first derivative \(B_m\) and \(m-\)th derivative \(C_m\) are known analytically. For the sake of completeness their values are:
+In order to give an idea of what they look like, we have represented a few different such functions in figure \ref{fig:beta-functions}; finally, the values of the Sobolev norms \(A_m\) of the regularized incomplete \(m-\)Beta function, of its first derivative \(B_m\) and \(m-\)th derivative \(C_m\) are known analytically. For the sake of completeness their values are:
 \[
 A_m = \frac{1}{2} - \frac{(2m)!^4}{4(4m)!m!^4} \quad 
 B_m= \frac{(2m-2)!^2(2m-1)!^2}{(4m-3)!(m - 1)!} \quad 
@@ -387,7 +377,7 @@ Now, assuming an additional condition on the stress energy tensor (or equivalent
 
 \begin{SCfigure}
 	\includegraphics[scale=0.28]{Immagini/V-beta.png}
-	\caption[]{plot of \(\mathcal{V}_{\beta}(\ell_0, \ell)\) (\(\hat{z}\) axis). On the right it appears part of the \(\ell\) axis, while the hidden one corresponds to \(\ell_0\). The colorscale should help to spot out the minimum of the visualized sheet.}
+	\caption[]{plot of \(\mathcal{V}_{\beta}(\ell_0, \ell)\) (\(\hat{z}\) axis). On the right it appears part of the \(\ell\) axis, while the hidden one corresponds to \(\ell_0\). The color-scale should help to spot out the minimum of the visualized sheet.}
 	\label{fig:V-beta}
 \end{SCfigure}
 
@@ -425,7 +415,7 @@ The first optimization has been already performed in \cite{fewster2020new}, even
 	where we neglected the second term of \(G\) under the assumption \(Q_1 \ll 1\); in the following we will see that \(Q_1 \sim \left(\frac{T}{T_{Pl}}\right)^2\), so assuming \(Q_1 \ll 1\) corresponds to be in the temperature regime where \(\left(\frac{T}{T_{Pl}}\right)^2 \ll 1\), which is not particularly restrictive as also the analysis of black hole evaporation is performed under the same assumption.
 \end{proof}
 
-Now we reduced to a bound that only depends on \(\ell_0\) (and some other global feature of the system, summarized within \(Q_0\) and \(Q_m\)); in light of the variational strategy, let us finally proceed to the last minimization and find the optimal value for \(\ell_0\)\footnote{Actually, there were several possiblities that could have been explored with the aim of providing an estimate for \(\ell_0\). The first idea was to pick some constant \(\ell_0\) (which is what has been done in \cite{fewster2020new}), fixed to be some relevant physical quantity, but we haven't been able to formulate one particularly convincing. Besides, requiring \(\ell_0\) to be constant in a background that will be dynamic didn't seem particularly reasonable after all, so we decided to minimize \(\mathcal{V}_{\beta}\) - and finally outlined the variational procedure.}. 
+Now we reduced to a bound that only depends on \(\ell_0\) (and some other global feature of the system, summarized within \(Q_0\) and \(Q_m\)); in light of the variational strategy, let us finally proceed to the last minimization and find the optimal value for \(\ell_0\)\footnote{Actually, there were several possibilities that could have been explored with the aim of providing an estimate for \(\ell_0\). The first idea was to pick some constant \(\ell_0\) (which is what has been done in \cite{fewster2020new}), fixed to be some relevant physical quantity, but we haven't been able to formulate one particularly convincing. Besides, requiring \(\ell_0\) to be constant in a background that will be dynamic didn't seem particularly reasonable after all, so we decided to minimize \(\mathcal{V}_{\beta}\) - and finally outlined the variational procedure.}. 
 
 \begin{prop}
 	Assuming \(\rho_0 < 0\) the optimal bound, minimized along \(\ell_0\), is:
@@ -438,10 +428,10 @@ Now we reduced to a bound that only depends on \(\ell_0\) (and some other global
 	corresponding to \(\tilde{\ell}_0^2 = - \frac{3Q_1}{2\rho_0}\)
 \end{prop}
 \begin{proof}
-	The computation is very similar to the preceeding one, as in particular the shape of the function to be minimized is exactly the same.
+	The computation is very similar to the preceding one, as in particular the shape of the function to be minimized is exactly the same.
 \end{proof}
 
-Lemma \ref{lemma:generalized-area-theorem} can now immediately tell us that, in an asymptotically flat spacetime, wherever on the null generators of the black horizion the Sobolev energy condition holds and \(R_{\mu\nu}U^{\mu}U^{\nu} \ge \rho_0\), then the istantaneous rate of expansion of the cross-sectional area is constrained by
+Lemma \ref{lemma:generalized-area-theorem} can now immediately tell us that, in an asymptotically flat spacetime, wherever on the null generators of the black horizon the Sobolev energy condition holds and \(R_{\mu\nu}U^{\mu}U^{\nu} \ge \rho_0\), then the instantaneous rate of expansion of the cross-sectional area is constrained by
 \begin{equation}
 	\label{eq:area-sobolev-condition}
 	U_{\mu}\mathrm{H}^{\mu} \ge - \mathcal{V}_{\beta} \implies \delta_U\mathcal{A}_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)U_{\mu} \ge - \mathcal{V}_{\beta}\cdot\mathcal{A}_{\mathscr{H}_1},
@@ -450,7 +440,7 @@ where, again, the implication is possible thanks to lemma \ref{lemma:variation-a
 
 Equation \eqref{eq:area-sobolev-condition} can then truly claim to be a first non trivial generalization of Hawking's area theorem: it is still placing a lower bound on the rate of evolution of the area, but, as the bound is negative this time, it can - in principle - resolve the tension with the quantum phenomenon of evaporation, now potentially allowed.
 	
-Notice however that, converesely to the original theorem, we have only constrained the \emph{istantaneous} rate of change. Here it is not possible to directly set bounds on the average rate of evolution between \(2\) arbitrarly far Cauchy surfaces \(\Sigma_1\) and \(\Sigma_2\), as for that we would need to assume the Sobolev condition and the pointwise restriction \(\rho \ge \rho_0\) in the all region in between \(\Sigma_1\) and \(\Sigma_2\), which would mean a significant weakening of our result.
+Notice however that, conversely to the original theorem, we have only constrained the \emph{instantaneous} rate of change. Here it is not possible to directly set bounds on the average rate of evolution between \(2\) arbitrarily far Cauchy surfaces \(\Sigma_1\) and \(\Sigma_2\), as for that we would need to assume the Sobolev condition and the pointwise restriction \(\rho \ge \rho_0\) in the all region in between \(\Sigma_1\) and \(\Sigma_2\), which would mean a significant weakening of our result.
 
 \subsection{The second idea -- a differential equation}
 \label{subsec:E-L-optimization}
@@ -460,7 +450,7 @@ Such question can only be completely resolved by finding the true infimum, or a 
 
 It may attract our attention the curious feature that the minimum of \(\mathcal{V}_{\beta}\) lays at finite \(\ell\): a simple heuristic argument instead suggests that a priori we should expect it to be at \(\ell \rightarrow +\infty\).
 
-\(\ell\) is nothing but the maximum lenght of the support of the function \(f\). Ideally, in order to minimize \(J[f]\), we should expect \(f\) to be non zero wherever \(R_{\mu\nu}U^{\mu}U^{\nu}\) is positive, and null (or almost null) wherever \(R_{\mu\nu}U^{\mu}U^{\nu} < 0\). By cutting out the possibility of exploring for \(\lambda \ge \ell\) we might just miss out some regions where \(\rho(\lambda)\) is positive again. 
+\(\ell\) is nothing but the maximum length of the support of the function \(f\). Ideally, in order to minimize \(J[f]\), we should expect \(f\) to be non zero wherever \(R_{\mu\nu}U^{\mu}U^{\nu}\) is positive, and null (or almost null) wherever \(R_{\mu\nu}U^{\mu}U^{\nu} < 0\). By cutting out the possibility of exploring for \(\lambda \ge \ell\) we might just miss out some regions where \(\rho(\lambda)\) is positive again. 
 
 \noindent
 Analogously, when energy conditions of the form above mentioned come into force, instead of optimizing \(J\) we try to minimize \(\vert\vert \nabla_U f\vert\vert^2 + B[f]\), and again - as \(f\) is required to go from \(1\) at \(\lambda = 0\) to \(0\) at \(\lambda = \ell\) - by pushing \(\ell\) as far away as possible we would suppress the norms of all the derivative of \(f\).
@@ -479,7 +469,7 @@ By reducing to the set of functions (here's why we say that this method is parti
 \[
 \mathcal{A}_{E.L.} \coloneqq \{f \quad \vert \quad \exists \ell_0 > 0 \text{ s.t. } f(\lambda \le \ell_0) \equiv 1\} \supset \mathcal{A}_{\beta}
 \]
-the problem becomes duable, and we obtain:
+the problem becomes doable, and we obtain:
 \begin{equation}
 	\label{eq:V-euler-lagrange}
 	\mathcal{V}_{E.L.}(\ell_0, \ell) = \sqrt{Q_0(n - 2 + Q_1)}\coth\left[\Omega_1(\ell- \ell_0)\right] + \sqrt{Q_0Q_1}\coth\left[\Omega_2\ell_0\right] + \vert \rho_0\vert\ell_0
@@ -497,7 +487,7 @@ All the main ideas behind this procedure have already been explained with enough
 	\label{fig:V-E-L}
 \end{SCfigure}
 
-Once more, we minimize \(\mathcal{V}_{E.L.}(\ell_0, \ell)\) on \(\ell \ge \ell_0\) in order to recover the best possible bound on \(\inf J\). We immediately see that this time the minimum is found for \(\ell \rightarrow +\infty\): the only \(\ell-\)dependance is in \(\coth\left[\Omega_1(\ell- \ell_0)\right]\), which is monotonically descending towards \(1^+\).
+Once more, we minimize \(\mathcal{V}_{E.L.}(\ell_0, \ell)\) on \(\ell \ge \ell_0\) in order to recover the best possible bound on \(\inf J\). We immediately see that this time the minimum is found for \(\ell \rightarrow +\infty\): the only \(\ell-\)dependence is in \(\coth\left[\Omega_1(\ell- \ell_0)\right]\), which is monotonically descending towards \(1^+\).
 
 For \(\ell_0\) instead, the minimum is found at \(\tilde{\ell}_0 = \sqrt{\frac{Q_1}{Q_0}}\sinh^{-1}\left(\sqrt{\frac{Q_0}{\vert\rho_0\vert}}\right)\), so that in the end we have
 {\small
@@ -540,7 +530,7 @@ now the following observation comes along.
 \end{prop}
 
 \begin{proof}
-    The argument can be found in \cite*{kontou2020energy} and starts by rearranging Einstein equations in the following form:
+    The argument can be found in \cite{kontou2020energy} and starts by rearranging Einstein equations in the following form:
     \[
       \frac{1 - 8\pi\xi\phi^2}{8\pi}G_{\mu\nu} =  \underbrace{\nabla_{\mu}\phi\nabla_{\nu}\phi - \frac{1}{2}g_{\mu\nu}\left[\nabla_{\rho}\phi\nabla^{\rho}\phi - m^2\phi^2\right] - \xi\left(g_{\mu\nu}\square_g - \nabla_{\mu}\phi\nabla_{\nu}\right)\phi^2}_{T^{eff}_{\mu\nu}}.
     \]
@@ -563,7 +553,7 @@ From here onward we will assume that non-minimally coupled scalar fields will al
 Moreover we shall only consider \emph{massless} scalar fields; given that, it was shown in \cite{fewster2011singularity} and \cite{brown2018singularity} that the Ricci tensor contraction is bounded by a Sobolev-like energy condition.
 
 \begin{prop}
-    In the context of a massless non-minimally coupled Einsten-Klein Gordon field theory, the integral of the contraction of the Ricci tensor along any causal geodesic, weighted with any compactly supported real valued \(-\frac{1}{2}\)-density \(f\), is bounded by:
+    In the context of a massless non-minimally coupled Einstein-Klein Gordon field theory, the integral of the contraction of the Ricci tensor along any causal geodesic, weighted with any compactly supported real valued \(-\frac{1}{2}\)-density \(f\), is bounded by:
 
     \begin{equation}
         \int_{\gamma}f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -Q\left(\vert\vert\nabla_U f \vert\vert^2 + \tilde{Q}^2 \vert\vert f\vert\vert^2\right).
@@ -578,7 +568,7 @@ Moreover we shall only consider \emph{massless} scalar fields; given that, it wa
     \]
 \end{prop}
 
-The proof of is lenghty and not particularly interesting for the scope of this thesis, so we defer it to appendix \ref{app:proof-EKG-bound}.
+The proof of is lengthy and not particularly interesting for the scope of this thesis, so we defer it to appendix \ref{app:proof-EKG-bound}.
 
 We have indeed found an energy condition of the form \(\eqref{eq:Sobolev-condition}\) with 
 \[
@@ -598,7 +588,7 @@ In order to establish this connection we now change setting, and consider a \emp
 % \end{definition}
 
 \begin{remark}
-	The KMS state is a \emph{thermal equilibrium} state. This means we must be working with quasi-static black holes, which are evaporationg so slowly that can be thought always in nearly thermal equilibrium with the background. This approximation should be well verified because, once again, it coincides with the temperature regime \(\frac{T}{T_{Pl}}\ll 1\).
+	The KMS state is a \emph{thermal equilibrium} state. This means we must be working with quasi-static black holes, which are evaporating so slowly that can be thought always in nearly thermal equilibrium with the background. This approximation should be well verified because, once again, it coincides with the temperature regime \(\frac{T}{T_{Pl}}\ll 1\).
 \end{remark}
 
 \begin{prop}
@@ -658,7 +648,7 @@ Restoring units and reducing to \(n = 4\) spacetime dimensions, we eventually ob
 
 Again, this is of course not a rigorous computation of the coefficients, but it is a meaningful approximation pursued in an instructive toy-model, that can give us some encouraging insights on the underlying complicated physics.
 
-For the puropose of the following analysis we will identify \(T\) with the Hawking temperature of the black hole \(\eqref{eq:hawking-temperature}\):
+For the purpose of the following analysis we will identify \(T\) with the Hawking temperature of the black hole \(\eqref{eq:hawking-temperature}\):
 \[
 T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}    
 \]
@@ -672,7 +662,7 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
 	\[
 		\int_{\vert k \vert = \omega}	\frac{dk^{n - 1}}{(2\pi)^{n - 1}} e^{-i\vec{k}\cdot \vec{x}},
 	\]
-	but as for now we didn't manage to work it out in the Schwarzschild case. Working out the additional temperature dependance - if any - given by such factor would be enough to properly generalize our method to Schwarzschild.
+	but as for now we didn't manage to work it out in the Schwarzschild case. Working out the additional temperature dependence - if any - given by such factor would be enough to properly generalize our method to Schwarzschild.
 \end{remark}
 
 \subsection{Limited violations}
@@ -684,25 +674,25 @@ In order to estimate the value of the functional \(J[f]\) we required
 \] 
 for \(\lambda\in [0, \ell_0]\); this is again a pointwise requirement, but notice that, as the lower bound is negative, it is not ruled out by the argument in \ref{th:quantum-violation-pointwise-conditions}.
 
-It has been longly debated whether such contractions of the stress energy tensor should be finite or not; in literature there can be found arguments for both sides, and indeed a lot of attention must be payed to what contraction exactly is going to be computed. The presence of a coordinate singularity, and the lack of an analytical espression for the \(4\)-dimensional stress-tensor in the Unruh or Hartle-Hawking state complicate the matter, but we will try to argue that - as the one on the horizion is \emph{just} a coordinate singularity - the contraction of \(T_{\mu\nu}\) with the tanget field of the null generators shall be always finite.
+It has been for long debated whether such contractions of the stress energy tensor should be finite or not; in literature there can be found arguments for both sides, and indeed a lot of attention must be payed to what contraction exactly is going to be computed. The presence of a coordinate singularity, and the lack of an analytical expression for the \(4\)-dimensional stress-tensor in the Unruh or Hartle-Hawking state complicate the matter, but we will try to argue that - as the one on the horizon is \emph{just} a coordinate singularity - the contraction of \(T_{\mu\nu}\) with the tangent field of the null generators shall be always finite.
 
 Let us again work within the framework of non-minimally coupled scalar fields, with \(\xi\in[0,\xi_c]\); developing a general treatment is very difficult because of the features mentioned above, but at the two extremities of this interval  a few observation can be inferred.
 
 For \(\xi = 0\) the field becomes minimally coupled; the classical minimally coupled Klein-Gordon field actually obeys the Null Energy condition, but this doesn't mean that the quantized field shouldn't bear any surprise.
-Ineed, in \cite{levi2016versatile} Levi and Ori have been able to overcome many of the complications for the computation of a renormalized stress tensor in the Unruh vacuum, and managed to run some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, within a background Schwarzschild metric. 
+Indeed, in \cite{levi2016versatile} Levi and Ori have been able to overcome many of the complications for the computation of a renormalized stress tensor in the Unruh vacuum, and managed to run some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, within a background Schwarzschild metric. 
 Recasted with our convention (for us their \(a\) needs to be \(1\)), their result is 
 \begin{equation}
 	\label{eq:rho-Levi-Ori}
 	\rho \simeq -2.7\cdot 10^{-7} \frac{\hbar}{M^{4}} 
 \end{equation}
-(where \(M\) is the mass of the black hole). This supports the legitimacy of our additional assumption, at least for large enough black holes, and suggests that such a condition might be commonly satisfied even with a rather small value of \(\vert\rho_0\vert\). The most important features of Levi and Ori's result~\eqref{eq:rho-Levi-Ori} are the negative sign and the \(M^{-4}\) dependance: we will see this is ultimately determining the temperature dependance of our bound \(\mathcal{V}\), and hence any variation of this power law would have major impact on our conclusions.
+(where \(M\) is the mass of the black hole). This supports the legitimacy of our additional assumption, at least for large enough black holes, and suggests that such a condition might be commonly satisfied even with a rather small value of \(\vert\rho_0\vert\). The most important features of Levi and Ori's result~\eqref{eq:rho-Levi-Ori} are the negative sign and the \(M^{-4}\) dependence: we will see this is ultimately determining the temperature dependence of our bound \(\mathcal{V}\), and hence any variation of this power law would have major impact on our conclusions.
 
 The field we considered in~\ref{subsec:non-min-EKG-theory} however, is not minimally-coupled. Anyways, for conformally coupled fields a very similar result should hold. 
-In~\cite{visser1997gravitational} Visser develops a semi-analytical computation for the renormalized stress energy tensor (RSET) of a massless scalar field conformally coupled to the background Schwarzschild metric, averaged on the Unruh vacuum state. At first glance it seems that he proves that such contractions cannot be bounded, and actually has a pole divergence on the black hole horizion; at a closer look however, it is possible to realize that none of the contractions computed in~\cite{visser1997gravitational} is the one we need, because of the particular coordinate system he works with. In fact, it is necessary to rewrite the components of the stress tensor derived by Visser within the Kruskal-Szekeres coordinate system, and in such system we really are able to derive \(R_{\mu\nu}U^{\mu}U^{\nu}\). The computation is not particularly difficult, but is somewhat long and thorny, and shouldn't distract us from the main discussion: we will carefully explain the model and derive the result in appendix~\ref{app:visser}. At last, we find again that \(\rho\) is bounded by a negative quantity, that scales with \(M^{-4}\)! Precisely, th result in \eqref{eq:contraction-stress-tensor} traduces to:
+In~\cite{visser1997gravitational} Visser develops a semi-analytical computation for the renormalized stress energy tensor (RSET) of a massless scalar field conformally coupled to the background Schwarzschild metric, averaged on the Unruh vacuum state. At first glance it seems that he proves that such contractions cannot be bounded, and actually has a pole divergence on the black hole horizon; at a closer look however, it is possible to realize that none of the contractions computed in~\cite{visser1997gravitational} is the one we need, because of the particular coordinate system he works with. In fact, it is necessary to rewrite the components of the stress tensor derived by Visser within the Kruskal-Szekeres coordinate system, and in such system we really are able to derive \(R_{\mu\nu}U^{\mu}U^{\nu}\). The computation is not particularly difficult, but is somewhat long and thorny, and shouldn't distract us from the main discussion: we will carefully explain the model and derive the result in appendix~\ref{app:visser}. At last, we find again that \(\rho\) is bounded by a negative quantity, that scales with \(M^{-4}\)! Precisely, the result in \eqref{eq:contraction-stress-tensor} traduces to:
 \[
 	\rho \simeq \frac{9}{10(16\pi)^2} \cdot \frac{e}{V_0^2} \cdot \frac{\hbar}{(2M)^4}.
 \] 
-The advantage of a semi-analytical model is that it allows us to extrapolate how minimal are the requirements from which those two main features arise; in particular the same features should be valid also for all the fields with coupling \(\xi\) within the all interval \([0,\xi_c]\), even if we can't compute the exact coeffiecient because of our ignorance of the trace of the stress tensor in the general case.
+The advantage of a semi-analytical model is that it allows us to extrapolate how minimal are the requirements from which those two main features arise; in particular the same features should be valid also for all the fields with coupling \(\xi\) within the all interval \([0,\xi_c]\), even if we can't compute the exact coefficient because of our ignorance of the trace of the stress tensor in the general case.
 
 \subsection{Comparison with the evaporation rate}
 By substituting \(\rho_0\) into~\eqref{eq:minimized-V-beta} or~\eqref{eq:minimized-V-E-L} we finally get:
@@ -727,7 +717,7 @@ so in principle the field might be very weakly coupled (for the comparison we us
 
 Finally, it should also be noticed how the pointwise restriction on \(\rho\) cannot be simply get rid of. The key point is that the test function of the variational method needs to start from \(1\) at \(\lambda = 0\), while the averaged conditions can only use functions with Dirichlet boundary conditions. It looks very interesting then the fact that such term gives one of the most relevant contributions to \(\mathcal{V}\), and indeed how the trace anomaly seems to be intimately connected to Hawking radiation. 
 
-The question we would like to ask ourselves now is: how robust is this result, and in particular the \(T^3\) dependance? Is it just an artifact of the specific examples and approximations we have been using, or is it the signal of a more general behaviour? 
+The question we would like to ask ourselves now is: how robust is this result, and in particular the \(T^3\) dependence? Is it just an artifact of the specific examples and approximations we have been using, or is it the signal of a more general behaviour? 
 
 \section{The Smeared Null Energy Condition}
 The Smeared Null Energy condition is a bound on a contraction of the stress energy tensor, and it has been been first proposed in~\cite{freivogel2018smeared}; it is of particular interest to us because a Penrose-like singularity theorem has been proved from it~\cite{freivogel2020return} and because all the work done in section~\ref{sec:physical-interpretation-V} is nearly directly applicable, as SNEC belongs to the class of Sobolev energy conditions.
@@ -789,11 +779,11 @@ This sets some restrictions onto the energy conditions we start from, in case th
 \begin{proof}
 	The reason why we need to ask for state-independence is that this way we make sure we don't have any non trivial contribution of the temperature to the coefficients \(Q_0\) and \(Q_m\). If they were to depend on \(T\) in principle it is not easy to restrict what dependence they should bear, as the presence of \(T_{Pl}\) invalids the power of dimensional analysis.
 
-	Again, it is enough to look at the set \(\mathcal{V}_{\beta}\) of incomplete beta functions, and study the bound retrived in lemma \ref{lemma:J-sobolev-condition}:
+	Again, it is enough to look at the set \(\mathcal{V}_{\beta}\) of incomplete beta functions, and study the bound retrieved in lemma \ref{lemma:J-sobolev-condition}:
 	\[
 	(n - 2)\mathcal{V}_{\beta}(\ell, \ell_0) \coloneqq \frac{(n - 2) B_m}{\ell - \ell_0} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + \frac{Q_mC_m}{(\ell - \ell_0)^{2m - 1}}	+ Q_0A_m\ell + \vert\rho_0\vert\ell_0(1 - A_m)
 	\]
-	As in subsection \ref{subsec:V-optimization} we set out to minimize \(\mathcal{V}\) with respect to \(\ell \ge \ell_0\). Again we choose to parametrize \(\ell = (1 + B_m\mu)\ell_0\); however, this time we need to deal with a \(2m\)-degree equation, which in general is not explicitely solvable.
+	As in subsection \ref{subsec:V-optimization} we set out to minimize \(\mathcal{V}\) with respect to \(\ell \ge \ell_0\). Again we choose to parameterize \(\ell = (1 + B_m\mu)\ell_0\); however, this time we need to deal with a \(2m\)-degree equation, which in general is not explicitly solvable.
 	\[
 		(n - 2)\frac{d\mathcal{V}}{d\mu} = -\frac{n - 2}{\ell_0} \frac{1}{\mu^2} + \frac{Q_mC_m}{(B_m \ell_0)^{2m - 1}} \cdot \frac{1 - 2m}{\mu^{2m}} + Q_0A_mB_m\ell_0 = 0.
 	\]
@@ -801,7 +791,7 @@ This sets some restrictions onto the energy conditions we start from, in case th
 	\[
 	\alpha \ell_0 \mu^{2m} - \frac{\beta}{\ell_0}\mu^{2m - 2} - \frac{\gamma}{\ell_0^{2m - 1}} = 0,
 	\]
-	so, for the equation to be homogeneous in \(\ell_0\) it must be\footnote{explicitely, multiplying by \(\ell_0^{2m - 1}\) the equation becomes \(\alpha(\mu\ell_0)^{2m} - \beta(\mu\ell_0)^{2m -2} - \gamma = 0\)}:
+	so, for the equation to be homogeneous in \(\ell_0\) it must be\footnote{explicitly, multiplying by \(\ell_0^{2m - 1}\) the equation becomes \(\alpha(\mu\ell_0)^{2m} - \beta(\mu\ell_0)^{2m -2} - \gamma = 0\)}:
 	\[
 	\tilde{\mu} \propto \frac{1}{\ell_0}.
 	\]

@@ -1,0 +1,36 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+    \draw[black] (0,0) ellipse (3 and 1);
+    \fill[white] (-3, 0) rectangle (3, 1);
+    \draw[black, dashed] (0,0) ellipse (3 and 1);
+    
+
+    \draw[fuchsia, thick, looseness=1.1] (3, 0) to[out=30, in=205] (2.7, 6);
+    \draw[fuchsia, thick, looseness=1.1] (-3, 0) to[out=150, in=-25] (-2.7, 6);
+    \draw[black] (0,6) ellipse (2.7 and 0.7);
+
+    \draw[fuchsia, dashdotted, very thick] (1.7, -0.8) to[out=50, in=240] (1.7, 5.45);
+    \draw[turquoise, ultra thick, ->] (1.9, 2) -- (1.6, 3) node[left] {\(U^{\mu}\)};
+    \draw[goldenyellow, ultra thick, ->] (1.9,2) -- (-0.3, 2.4);
+    \node[goldenyellow, below] at (-0.2, 2.2) {\(T^{\mu\nu}U_{\nu}\)};
+    \node[fuchsia] at (-3, 0.8) {\Large\(\Sigma\)};
+
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

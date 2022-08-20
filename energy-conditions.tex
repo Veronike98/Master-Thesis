@@ -143,19 +143,35 @@ We need to formulate an average condition that is valid on limited geodesic segm
 	We say that the \emph{Sobolev energy condition} is satisfied on a curve \(\gamma\) and for a ``time'' \(\ell\), if there exist some \(m\in \N\) and two non negative constants \(Q_0\) and \(Q_m\) such that, for any \(f\) in the Sobolev space \(W_0^m([0,\ell])\):
     \begin{equation}
         \label{eq:Sobolev-condition}
-        \int_0^{\ell} f(\lambda)^2 R_{\mu\nu}U^{\mu}U^{\nu} d\lambda \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2.
+        \int_0^{\ell} f(\lambda)^2 R\langle T_{\mu\nu}\rangle_{\omega}U^{\mu}U^{\nu} d\lambda \ge -Q_m(\gamma) \vert\vert f^{(m)}\vert\vert^2 - Q_0(\gamma) \vert\vert f\vert\vert^2.
     \end{equation}
 	\noindent
-	We will apply this conditions to null geodesics \(\gamma\) orthogonal to some surface \(P\), where we will assume \(\lambda\) is the affine parametrization such that \(\gamma(\lambda = 0) \in P\) and \(\hat{H}_{\mu}\frac{d\gamma^{\mu}}{d\lambda}\Big\vert_{\lambda = 0} \equiv 1\) (\(\hat{H}_{\mu}\) is the versor of the mean normal curvature of \(P\)); finally, \(\vert\vert \star \vert\vert\) denotes the standard norm in \(L^2(I)\).
+	We will apply this conditions to null geodesics \(\gamma\) orthogonal to some surface \(P\), where we will assume \(\lambda\) is the affine parametrization such that \(\gamma(\lambda = 0) \in P\) and \(\hat{H}_{\mu}\frac{d\gamma^{\mu}}{d\lambda}\Big\vert_{\lambda = 0} \equiv 1\) (\(\hat{H}_{\mu}\) is the versor of the mean normal curvature of \(P\)); finally, \(\vert\vert \star \vert\vert\) denotes the standard norm in \(L^2(I)\), and \(\omega\)  asuitable quantum state.
 \end{definition}
 
 The name ``Sobolev condition'' is not in use in literature, but for shortness we denoted this condition with such name as in particular makes use of Sobolev norms.
 The first main reason for which we started analyzing this condition is that in section \(4\) of \cite{fewster2020new} Fewster and Kontour make use of an analogous condition to derive semi-classical singularity theorems.
+Furthermore, the form of this bound is inspired to Quantum Energy Inequalities that have been proved from QFTs (refer again to the review \cite[]{kontou2020energy} for more details). In particular, because of this similarity to QEIs we will have to insist on applying it only to functions with the Dirichlet boundary conditions \(f(0) = 0 = f(\ell) \). We will see that this will cause us quite a few problems, but it is important to restrict to compactly supported functions because otherwise - apart from the mathematical convergence properties coming along - counterexample might arise easily from the presence of singular negative energy densities, as motivated in \cite[]{ford1998quantum}.
 
-
+At last, even if it is true that bounds on half complete geodesics are yet to be proved, some arguments in favour of non divergence of such integrals have already been provided by many authors. To mention one that seems the most revelant for us, in \cite[]{ford1996averaged}, where Ford and Roman prove bounds of this sort for \(2\) dimensional Schwarzschild, and argue that similar results might hold in \(4\) dimensions as well.
 
 \section{The Smeared Null Energy Condition}
 \label{sec:SNEC}
+
+In section \ref{sec:pointwise-energy-conditions} we mentioned that non minimally coupled scalar fields violate all the main pointwise energy conditions; hence, by theorem \(4.1\) of \cite[]{kontou2020energy}, the corresponding quantized field doesn't admit any of the corresponding quantum energy inequality. Nevertheless it can admit state-dependent QEIs, but this means that if we look for a condition of the form of \eqref{eq:Sobolev-condition} we will have to make a non trivial choice of \(\omega\).
+
+Depending on the situation this might not be a big deal, nevertheless it is worth looking for state-independent results, when aiming at the highest level of generality.
+In \cite[]{fewster2003null} Fewster and Roman showed that QEIs along null geodesics cannot exist in \(4\) dimensional Minkowski spacetime for the massless minimally coupled scalar field. However very recently, in \cite[]{freivogel2018smeared} Freigovel and Krommydas argued that such example is not particularly physical because it needs to pass through the creation of states from the vacuum using excitiation of arbitrary momenta. Indeed, by restricting the momenta to be below the UV cut-off of the theory, they arrive to the proposal of a new energy condition, the Smeared Null Energy condition.
+
+\begin{definition}
+	The Smeared Null Energy Condition asks that, on any achronal portion of a null geodesic it holds:
+	\begin{equation}
+		\label{eq:SNEC}
+		\forall f \in C_0^2[(-\infty, +\infty)] \quad\quad \int f^2(\lambda)\langle T_{\mu\nu}U^{\mu}U^{\nu}(\lambda) \rangle d\lambda \ge -\frac{4B}{G_N}\vert\vert \nabla_U f\vert\vert^2
+	\end{equation}
+\end{definition}
+
+Freigovel and Krommydas conjecture that this bound should always hold as long as the cut-off rule is satisfied, and it has been proved for gravity induced on a brane, by means of AdS/CFT correspondence.
 	
 \section{Gravitationally induced vacuum polarization}
 \VS{Nell'intro di del suo paper Visser dice che \`e ``well-known'' che la gravita' da polarizzazioni del vuoto. Magari dai un'occhio se questo ha connessioni con l'effetto Casimir, e nel caso referenza questo paragrafo nell'appendice su Visser}.

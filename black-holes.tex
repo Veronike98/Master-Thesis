@@ -170,21 +170,56 @@ Let us make a couple of remarks of why it is important to make some assumptions 
 
 %todo: si potrebbe fare una pagina di disegnini, tipo pag. 300 del wald
 
-\section{General properties of Black Holes}
-%todo: bestiario di proprieta' carine, tipo che non possono splittarsi
+% \section{General properties of Black Holes}
+% %todo: bestiario di proprieta' carine, tipo che non possono splittarsi
 
 \section{Black Holes evaporation}
 \label{sec:black-holes-evaporation}
+Gravity - or equivalently, curvature - can have dramatic consequences on observers living at different locations, and in particular can surprisingly change even the basic notions a na\"ive physicist would take for granted; if Einstein revolutioned the world by showing how simultaneity is a luxury reserved to ``slow'' observers, even a common notion of time is ripped up for those who live in non-stationary spacetimes... such as ours.
+
+\noindent
+The absence of a common timelike killing vector field, arising from an eventual time translation-simmetry, leaves two distant observers - as the ones separated by some process of gravitational collapse - unable to agree on a common notion of time, with important consequences on the description of the physical phenomena they can see.
+Nevertheless, there is a situation where much of the treatment we are used to in Minkowski spacetime can be retrieved: if the spacetime possess asymptotically flat regions in the past and the future, one can naturally define and \emph{in} and \emph{out} region where a local notion of time can be defined, and all the quantum field theory machinery we are used to can work pretty much the same way.
+However, the two different notions of ``time'' in the \emph{in} and \emph{out} region will remain distinguishable.
+
+The most dramatic effect of this discrepancy is that two observers living in these separated regions will not agree on the notion of \emph{vacuum}: a state which contains no particles for observer \(A\) in \emph{in}, might not look empty to observer \(B\) in \emph{out}.
+Then of course, the all Fock space and the ladder operators will be different for \(A\) and \(B\), even if they can still be connected by a Bogoliubov transformation.
+
+The most astonishing consequence of this discrepancy is the so-called \emph{Hawking radiation}. With an incredibly modern approach, in \(1974\) Hawking predicted that indeed, an observer in the future region of a spacetime where gravitational collapse gives rise to a black hole, shall observe a thermal radiation with a Planck spectrum of Hawking temperature \(T_H\). Both the termal specturm of the radiation and the precise computation of the temperature arise from the analysis of the coefficient of the above mentioned Bogoliubov transformation. For additioanl details on this process, we shall refer to the original article \cite[]{hawking1975particle} or chapter \(3\) of the book by Fabbri and Navarro \cite[]{fabbri2005modeling}, where they introduce the topic in a very pleasantly didactic way.
+
+The temperature of the Planck spectrum of the radioation can also be retrieved through a very neat and famous argument due to Gibbons and Hawking \cite[]{gibbons1993action}; when carrying out a Wick rotation in a black hole solution, in order to avoid the surgence of a conical singularity, one must impose a periodicity of the euclidean time coordinate corrisponding to exactly the Hawking temperature:
 
 \begin{equation}
 	\label{eq:hawking-temperature}
-	T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
+	T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}.
 \end{equation}
 
+\begin{remark}
+	It stands out immediately how the temperature in \eqref{eq:hawking-temperature} is proportional to \(\hbar\). In particular then, in the semiclassical limit, as \(\hbar \rightarrow 0\) also \(T_H \rightarrow 0\), and no Hawking radiation is left. This is precisely what we refer to when we say that Haking radiation is a purely quantum mechanical effect.
+\end{remark}
+
+According to the classical study of any radiation with Planck spectrum, each angular momentum component of the fields gives a contribution to the luminosity
+\[
+L_{\ell} = \frac{2\ell + 1}{2\pi} \int_0^{+\infty} d\omega \frac{\hbar\omega}{e^{8\pi M\omega} - 1}	d\omega  = (2\ell + 1) \cdot\frac{\hbar}{768\pi M^2}.
+\]
+However, simply summing over all the contributions would lead to a divergent result; as motivated in \cite[]{fabbri2005modeling} - among others - this is because we are neglecting backscattering. This is basically equivalent to saying that we are neglecting backreaction, and so we would have a black hole radiating forever: if not in the luminosity here we would get a divergence in the total emitted energy, in clear contrast with the finite amount contined by the black hole.
+
+Backscattering effects are resumed by the \emph{gray-body factors} \(\Gamma_{\omega, \ell}\), that weight the energy distribution and decrease with \(\ell\). They could be estimated via the Page approximation~\cite[]{page1976particle}:
+\[
+	\Gamma_{\omega,\ell} \approx 16(\omega M)^{2\ell + 2}\left(\frac{\ell!^3}{(2\ell)!(2\ell + 1)!}\right)^2,
+\]
+from which it is evident that the most relevant contribution is given by the \(s-\)wave mode:
+\[
+\Gamma_{\omega, 0} \approx 16\omega^2M^2 \implies L_{\ell = 0} = \frac{\hbar}{7680\pi M^2}.
+\]
+This represent about \(90\%\) of the contribution to Hawking radiation, as it turns out by more careful compoutation of the luminosity, that involve contributions from higehr angular momenta, from higher spin species, or refinement of the Page approximation via numerical computation.
+Once the luminosity has been computed, via energy conservation it is possible to immediately infer what is the decreasing rate of the mass of the black hole; reintroducing the units:
 \begin{equation}
 	\label{eq:evaporation-rate}
-	R_{ev} = \frac{1}{M}\frac{dM}{dt} = (8\pi)^3\beta \frac{G}{\hbar^2c^5}\left(k_BT_H\right)^3
+	R_{ev} = -\frac{1}{M}\frac{dM}{dt} = (8\pi)^3\beta \frac{G}{\hbar^2c^5}\left(k_BT_H\right)^3
 \end{equation}
+
+where \(\beta \sim \mathcal{O}(10^{-5})\) hides the precise knowledge of backscattering. Apart from irrelevant coefficients of order \(1\), this shall also coincide with the expected rate of contraction of the area of the horizion, \(\frac{\delta\mathcal{A}}{\mathcal{A}}\).
 
 
 \subsection{Causality violation}

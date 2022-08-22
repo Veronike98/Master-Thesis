@@ -1,0 +1,63 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+    \draw[black] (0,0) ellipse (3 and 1);
+    \fill[white] (-3, 0) rectangle (3, 1);
+
+    \draw[fuchsia, thick] (0,0.53) ellipse (3 and 1);
+    \fill[white] (-3, 0.73) rectangle (3, 1.55); 
+
+    \draw[black, dashed] (0,0) ellipse (3 and 1);
+    \draw[fuchsia, thick, dashed] (0,0.53) ellipse (3 and 1);
+
+    \draw[black] (0,11) ellipse (3 and 1);
+    \draw[black] (-3,0) -- (-3,11);  
+    \draw[black] (3,0) -- (3,11);  
+    
+    \fill[turquoise!30] (-3, 4) to[out=60, in=-150] (-1.85,5.1) to[out=150, in=-70] (-3, 6.5);
+
+    \fill[turquoise!10] (-3, 4) to[out=-70, in= 140] (1.7, 1.4) to[out=60, in=-100] (3, 2.5) to[out=120, in=-30] (-1.85,5.1) to[out=-150, in=60] (-3, 4);
+
+    \fill[turquoise!30] (3, 2.5) to[out=120, in=-30] (-1.85,5.1) to[out=28, in=-100] (3, 8);
+
+    \fill[turquoise!10] (-3, 6.5) to[out=80, in= -160] (1.7, 9.2) to[out=-40, in=100] (3, 8) to[out=-100, in=28] (-1.85,5.1) to[out=150, in=-70] (-3, 6.5);
+
+    \draw[goldenyellow, thick] (-3, 4) to[out=60, in = -100] (3, 8);
+    \draw[goldenyellow, thick] (-3, 6.5) to[out=-70, in =120] (3, 2.5);
+    \draw[goldenyellow, very thick, dashdotted] (-3, 4) to[out=-70, in= 140] (1.7, 1.4) to[out=60, in=-100] (3, 2.5);
+    \draw[goldenyellow, very thick, dashdotted] (-3, 6.5) to[out=80, in= -160] (1.7, 9.2) to[out=-40, in=100] (3, 8);
+
+    \draw[fuchsia, thick] (0,8.4) ellipse (3 and 1);
+    \draw[fuchsia, thick, dashed] (0,5.88) ellipse (3 and 1);
+
+    \node[goldenyellow] at (2, 7) {\(\mathscr{I}^+\)};
+    \node[goldenyellow] at (-1, 3) {\(\mathscr{I}^-\)};
+
+    \filldraw[goldenyellow] (1.7, 9.2) circle (1.5pt) node[above] {\(i^+\)};
+    \filldraw[goldenyellow] (1.7, 1.4) circle (1.5pt) node[below] {\(i^-\)};
+
+    \filldraw[goldenyellow] (-1.85,5.1) circle (1.5pt) node[below] {\(i^0\)};
+
+    \node[fuchsia] at (-0.7, -0.1) {\(T = - \pi\)};
+    \node[fuchsia] at (-1.7,9.6) {\(T = \pi\)};
+    \node[fuchsia] at (2.2,4.8) {\(T = 0\)};
+
+
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

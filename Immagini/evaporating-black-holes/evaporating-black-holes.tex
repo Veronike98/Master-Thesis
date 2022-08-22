@@ -1,0 +1,50 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\usetikzlibrary{patterns.meta}
+
+\begin{document}
+	\begin{tikzpicture}
+    
+    \foreach \i in {0, 1,..., 10}{
+        \begin{scope}[shift={(\i, 0)}, rotate=0]
+        \draw[fuchsia] (0, -0.25) -- (0.5, 0.25) -- (1, -0.25);
+        \end{scope}
+    }
+    \draw[goldenyellow, very thick, dashed] (0, -11.25) -- (11, -0.25);
+    \filldraw[black] (8, -3.25) circle (2pt) node[right] {\Large\(p\)};
+    \filldraw[black] (11, 3) circle (2pt) node[left] {\Large\(q\)};
+    \draw[black] (0, -0.25) -- (0,-20.25) -- (20, -0.25) -- (11, 8.75) -- (11, -0.25);
+    \filldraw[black, fill=white] (11, -0.25) circle (1.5pt);
+    \filldraw[black, fill=white] (0, -0.25) circle (1.5pt);
+
+    \draw[turquoise, very thick] (0,-20.25) to[out= 70, in =-80] (4, -0.25);
+
+    \fill[
+        pattern={Lines[
+        distance=1cm,
+        angle=-45,
+        line width=1mm
+       ]}, 
+       pattern color=turquoise
+       ] (0,0) to[out=-90, in=-90] (0,-20.25) to[out= 70, in =-80] (4, -0.25) to[out=180, in=0] (0,-0.25);
+
+    \node[left] at (11, 6) {\Large\(r = 0\)};
+    \node[below] at (16, 5) {\Large\(\mathscr{I}^+\)};
+    \node[below] at (10, -11) {\Large\(\mathscr{I}^-\)};
+    
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

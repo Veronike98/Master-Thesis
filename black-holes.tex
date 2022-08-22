@@ -76,13 +76,7 @@ Remarkably, the line element in \eqref{eq:Einstein-static-metric} is exactly the
 \end{prop}
 
 This allows us to define what we mean by ``conformal infinity'' of Minkowski space, with which we refer to the boundary \(\partial O\) of the open region \(O\).
-%todo: add drawing  pag. 273 of Wald
-\begin{figure}
-	\centering
-	\includegraphics[scale=1.5]{example-image-duck}
-	\caption{A spacetime diagram of Einstein static universe, and Minkowski's immersion.}
-	\label{fig:Einstein-static-universe}
-\end{figure}
+
 
 As illustrated in figure \ref{fig:Einstein-static-universe}, this boundary \(\partial O\) can be naturally divided into \(5\) parts:
 \begin{enumerate}[label=(\arabic*)]
@@ -92,6 +86,13 @@ As illustrated in figure \ref{fig:Einstein-static-universe}, this boundary \(\pa
 	\item \emph{Future null infinity} \(\mathscr{I}^+\), the \(3\)-dimensional null hypersurface given by \((R, T = \pi - R)\), with \(R \in (0, \pi)\).
 	\item \emph{Future timelike infinity} \(i^{+}\), the ``top vertex point'' given by the coordinates \((R = 0, T = \pi)\).
 \end{enumerate}
+
+\begin{wrapfigure}{l}{0.3\textwidth}
+	\centering
+	\includegraphics[scale=0.7]{Immagini/Einstein-universe/Einstein-universe.pdf}
+	\caption{A spacetime diagram of Einstein static universe, and Minkowski's immersion.}
+	\label{fig:Einstein-static-universe}
+\end{wrapfigure}
 
 It can be noticed that all timelike geodesics of Minkowski spacetime begin at \(i^-\) and end at \(i^+\), null geodesics go from \(\mathscr{I}^-\) to \(\mathscr{I}^+\), while spacelike geodesics begin and end at \(i^0\).
 
@@ -143,12 +144,11 @@ The clever idea is that for asymptotically flat spacetimes, the impossibility of
 \begin{definition}
 	Let \((M, g_{\mu\nu})\) be an asymptotically flat spacetime with associated unphysical spacetime \((\tilde{M}, \tilde{g}_{\mu\nu})\). We say that \((M, g_{\mu\nu})\)  is \emph{strongly asymptotically predictable} if in the unphysical spacetime there is an open region \(\tilde{V} \subset \tilde{M}\), with the closure \(\overline{M \cap J^-(\mathscr{I}^+)}\subset \tilde{V}\) such that \((\tilde{V}, \tilde{g}_{\mu\nu})\) is globally hyperbolic.
 \end{definition}
-
 \begin{remark}
-	Here the closure is taken in \(\tilde{M}\), so in particular, \(i^0 \in \tilde{V}\). 
+	Here the closure is taken in \(\tilde{M}\), so in particular \(i^0 \in \tilde{V}\). 
 \end{remark}
-
-Now,
+\noindent
+Finally we are able to define what a black hole is from a topologically point of view.
 \begin{definition}
 	A strongly asymptotically predictable spacetime \((M, g_{\mu\nu})\) is said to contain a \emph{black hole} if \(M\) is not contained in \(J^-(\mathscr{I}^+)\). Consequently the \emph{black hole region} is defined as 
 	\[
@@ -157,9 +157,8 @@ Now,
 	and the boundary of \(B\) is called the \emph{event horizon} \(H\coloneqq \partial J^-(\mathscr{I}^+) \cap M \).
 \end{definition}
 
-Let us make a couple of remarks of why it is important to make some assumptions to give the definition of such objects.
-
 \begin{remark}
+	Let us make a couple of remarks of why it is important to make some assumptions to give the definition of such objects.
 	\begin{enumerate}[label=(\Roman*)]
 		\item The notion of asymptotic flatness is needed to specify a definition of the ``infinity'' that observers trapped in a black hole don't have any hope to reach anymore. The definition might be extended in some cases where a suitable notion of ``infinity'' is provided, but we are not able to say anything in general.
 		\item The requirement for strong asymptotic predictability is more an instrumental physical hypothesis, rather than a mathematical one, needed for well-posedness. It is really meant to ensure that physics is predictable on and outside \(H\).
@@ -169,9 +168,6 @@ Let us make a couple of remarks of why it is important to make some assumptions 
 \end{remark}
 
 %todo: si potrebbe fare una pagina di disegnini, tipo pag. 300 del wald
-
-% \section{General properties of Black Holes}
-% %todo: bestiario di proprieta' carine, tipo che non possono splittarsi
 
 \section{Black Holes evaporation}
 \label{sec:black-holes-evaporation}
@@ -219,33 +215,90 @@ Once the luminosity has been computed, via energy conservation it is possible to
 	R_{ev} = -\frac{1}{M}\frac{dM}{dt} = (8\pi)^3\beta \frac{G}{\hbar^2c^5}\left(k_BT_H\right)^3
 \end{equation}
 
-where \(\beta \sim \mathcal{O}(10^{-5})\) hides the precise knowledge of backscattering. Apart from irrelevant coefficients of order \(1\), this shall also coincide with the expected rate of contraction of the area of the horizion, \(\frac{\delta\mathcal{A}}{\mathcal{A}}\).
+where \(\beta \sim \mathcal{O}(10^{-5})\) hides the precise knowledge of backscattering. Apart from irrelevant coefficients of order \(1\), this shall also coincide with the expected rate of contraction of the area of the horizon, \(\frac{\delta\mathcal{A}}{\mathcal{A}}\).
 
 
 \subsection{Causality violation}
 \label{subsec:causaliy-bh-evaporation}
-It has been pointed out (first of all by Kodama \cite{Kodama:1979vm}) that Black Hole evaporation is in tension with global hyperbolicity: in fact the region formed after the complete evaporation of the black hole would cause a ``chronology violation'', in the sense that the initial data collected on a Cauchy surface might not be enough to predict the evoloution after the disappearance of the singularity.
+It has been pointed out (first of all by Kodama \cite{Kodama:1979vm}) that Black Hole evaporation is in tension with global hyperbolicity: in fact the region formed after the complete evaporation of the black hole would cause a ``chronology violation'', in the sense that the initial data collected on a Cauchy surface might not be enough to predict the evolution after the disappearance of the singularity.
 
-\begin{figure}
+\begin{wrapfigure}{r}{0.45\textwidth}
 	\centering
-	\includegraphics[scale=1.7]{example-image-duck}
-	% todo: metti penrose diagram come in figura 1 dell'articolo di Minguzzi
-	\caption{Chronology violation after black hole evaporation}
-\end{figure}
+	\includegraphics[scale=0.3]{Immagini/evaporating-black-holes/evaporating-black-holes.pdf}
+	\caption{chronology violation after black hole evaporation: the is information coming out from the singularity as well! The presence of that extra triangular in the Penrose diagram shows that there exist pair of points for which future reflectivity doesn't hold anymore.}
+\end{wrapfigure}
 
-Such an hypothesis was assumed also for the original Black Hole Area theorem: in that context it wasn't incoherent, as the classical black hole area theorem is forbidding evaporation; however, we will see that this won't be the case for us, and therefore it is necessary to briefly discuss the consistenciy of our hypothesis.
+Such an hypothesis was assumed also for the original Black Hole Area theorem: in that context it wasn't incoherent, as the classical black hole area theorem is forbidding evaporation; however, we will see that this won't be the case for us, and therefore it is necessary to briefly discuss the consistenciy of our hypotheses.
 
-The problem might be easily worked around by observing that we only need to require global hyperbolicty for the region the horizon lies into. This wouldn't bring to any contradiction, as the chronology violation region only begins \emph{after} the complete evaporation of the black hole, where no horizon exists anymore. For the readers concearned about the existence of multiple black holes evaporating at different times however, we have good news: it is possible to do even better than that!
+The problem might be easily worked around by observing that we only need to require global hyperbolicty for the region the horizon lies into. This wouldn't bring to any contradiction, as the chronology violation region only begins \emph{after} the complete evaporation of the black hole, where no horizon exists anymore. For the readers concearned about the scarce punctiliousness of the above statement, we have good news: it is possible to do even better than that! 
 
-In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework within which singularity formation can be derived. He argues that the hypothesis of globabl hyperbolicity can be relaxed to \emph{past reflectivity}, because what really is needed is a topological condition that prevents the horizon from ``swallowing up'' the all universe. We believe that the same framework can be adapted to our work as well, as the following key-proposition holds:
-\begin{prop}
-	Let \((M,g)\) be past reflecting. If \(S\) is a compact future null araying set that does not intersect the chronology violation region \(\mathcal{C}\) then \(\partial I^+(S) = H^+(S) \neq \emptyset\), and hence \(edge(H^+(S)) = \emptyset\).
-\end{prop}
-
-In order to understand what this means we need to dig a little bit more into causal properties of spacetimes.
+As already commented by Hawking and Ellis in \cite[]{hawking1973large} (for Penrose's theorem, but it will be the same for our generalized area theorem), the globaly hyperbolicity assumption is only used to ensure that \((M, g)\) is causaly simple, so that the generators a surface \(K\), \(\partial J^+(\mathscr{K})\) have past endpoints on \(K\) [i.e. \(\partial J^+(K) = H^+(K)\)].
+In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework within which singularity formation can be derived. He argues that the hypothesis of globabl hyperbolicity can be relaxed to \emph{past reflectivity} and \emph{openess}, because what really is needed is a topological condition that prevents the horizon from ``swallowing up'' the all universe. We believe that the same framework can be adapted to our work as well, but in order to show it, we need to dig a little bit more into causal properties of spacetimes.
 
 \subsection{Past reflectivity}
 	\label{subsec:past-reflectivity}
+	Let us start with the definition of future reflectivity.
+	\begin{definition}
+		The spacetime \((M,g)\) is \emph{future reflecting} if any of the following equivalent properties holds true. For each \(p, q\in M\):
+		\begin{enumerate}
+			\item \(p\in \overline{ J^-(q)} \implies q\in \overline{J^+(p)}\);
+			\item  \(p\in \partial J^-(q) \implies q\in \partial J^+(p)\);
+			\item \(I^-(p) \subset I^-(q) \implies I^+(q) \subset I^+(p)\);
+			\item \(\uparrow I^-(p) = I^+(p)\);
+			\item the volume function \(\iota^+(p) = - \mu(I^+(p))\) is continuous.
+		\end{enumerate}
+	\end{definition}
+	Here \(\uparrow I^-(p) \coloneqq Int\left[\cap_{r\in I^-(p)}I^+(p)\right]\) is the \emph{common future}, while \(\mu\) is any finite spacetime measure absolutely continuous with respect to the Lebesgue measure induced by the coordinate charts. Past reflectivity is defined similarly.
 
-	Past reflectivity is not a causality condition.
-	\VS{Scrivi un riassunto dell'articolo di Minguzzi. Non so se tenere la sezione qui o spostarla alla fine della sezione di BH evaporation.}
+	Future and past reflectivity are implied by \emph{causal continuity}, and hence by global hyperbolicity as well. We shall now show that an evaporating black hole spacetime is still \emph{past reflecting}, but not \emph{future reflecting}. Lesourd had already shown in \cite[]{lesourd2018causal} that past reflectivity cannot hold in presence of any evaporating null hypersurface, not just the specific case of the black hole horizon. 
+
+	But what is an evaporating null hypersurface then? Minguzzi observes that typically, what distinguishes an evaporating black hole is that, for an observer that escaped the fate of falling into it, he has the possibility to see the process of gravitational collapse to come to an end. This is in stark contrast with what happens in Schwarzschild, where an asymptotically far observer would see any object falling towards the horizon for an infinite time, without ever reaching it.
+
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{Immagini/evaporating-surfaces/evaporating-surfaces.pdf}
+		\caption{structure of evaporating null hypersurfaces.}
+		\label{fig:evaporating-surface}
+	\end{figure}
+
+	Let us refer to \ref{fig:evaporating-surface} to formalize that idea: two timelike curves leaves \(r\), \(\gamma\) falling into the black hole, while \(\sigma\) is future inextendible. Minguzzi is interested in those observers that can witness the whole falling history, \(\gamma ([0,a)) \subset J^-(\sigma([0,t]))\).
+
+	\begin{definition}
+		The horizon \(H\) at point \(p\) is evaporating from the point of view of observer \(\sigma\) if there exists \(t > 0\) such that
+		\[
+		\gamma \left([0, a]\right) \subset J^-\left(\sigma\left([0, t]\right)\right).	
+		\] 
+	\end{definition}
+	Now the following becomes more intuitive
+	\begin{theorem}
+		Past reflecting spacetimes which contain an evaporating \(C^0\) future null hypersurface \(H\) are not future reflecting.
+	\end{theorem}
+	Define \(\tau \coloneqq \inf t\) for which the inclusion \(gamma \left([0, a]\right) \subset J^-\left(\sigma\left([0, t]\right)\right)\), holds, and \(q = \sigma(\tau)\), as in figure \ref{fig:evaporating-surface}.
+	Past reflectivity is necessary to ensure that points to the future of \(q\) can see \(\gamma[0,a)\), and hence, \(p\) to their past, but future reflectivity fails because if any point to the future of \(q\) was in the future of \(p\), it would create a contradiction with the definition of horizon \(H\). 
+	\begin{remark}
+		It is interesting to notice that past reflectivity is not a causality condition (it does not belong to the ladder of causality definitions), but instead should be regarded as a restriction on \emph{how} information can propagate in the universe.
+	\end{remark}
+
+	Now he defines a couple of convenient definitions.
+	\begin{definition}
+		A \emph{future lightlike S-ray} is a future inextendible causal curve which starts from \(S\) and does not intersect \(I^+(S)\). A non-empty set \(S\) is a \emph{future null araying set} if there are no future lightlike S-rays. 
+	\end{definition}
+	It can be shown that compact null araying set lying in the non vicious region implies that the surface is trapped, and under very weak causality assumptions (like strong causality) the converse becomes true as well. Moreover
+	\begin{definition}
+		A compact non-empty set S that does not intresect the chronology violation region \(\mathcal{C}\) is said to have an \emph{unavoidable} or \emph{swallowing} horizon if there exists an open neighborhood U of \(H^+(S)\) such that its past in \(U\) is strictly contained in the past domain of dependence of \(H^+(S)\) 
+		\[
+			I^-_U(H^+(S)) \subset Int D^-(H^+(S)).	
+		\]
+	\end{definition}
+	Under this condition any observer that were to pass through a neighborhood of the horizon \(H^+(S)\) would be forced to intersec it, and hence fall under its causal influence. This is a topological feature that we wish to avoid for the horizons that we study. In particular it can be proved that null future araying sets in the non vicious region have unavoidable horizons.
+
+	What is more similar to an actual causality condition, and that seems to be the other minimal requirement is
+	\begin{definition}
+		A spacetime is \emph{(spatially) open} if it does not contain a compact spacelike hypersurface.
+	\end{definition}	
+	In particular spacetimes with non-compact Cauchy hypersurfaces are \emph{open}, so globaly hyperbolicity implies also this new feature. 
+	Finally, theorem \(2.10\) of \cite[]{minguzzi2020gravitational} states:
+	\begin{theorem}
+		Let \((M,g)\) be a past reflecting and open spacetime. Then it does not admit compact future null araying sets that do not intersect \(\mathcal{C}\).
+	\end{theorem}
+	This is really the result that we need: in fact this will guarantee us the existence of prompt curves that reach the conformal null infinity, lying on the boundary of the future of compact surfaces \(\partial J^+(K)\) in the non vicious region, that cannot be null araying.

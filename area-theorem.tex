@@ -1,3 +1,8 @@
+Now that we have covered all the background needed to understand our results and their proofs, let us finally introduce them. 
+All the material collected in this chapter should be understood as original; in order to introduce more didactically how the index form method unfolds, we are going to also review some previously known results (some of them very famously), but whenever this is going to happen, we are mentioning it explicitely, and in any case the proof that will be presented will be original. To the knowledge of the present authors in fact the index form methods has only been previously applied by Fewster, Kontou and Freivogel to prove some weakened singularity theorems, and by Chicone and Ehrlich in \cite[]{chicone1980line} to prove the existence of conjugate points along complete geodesics.
+
+The idea itself that the area theorem could be extended to a semiclassical regime, is, in fact, to be attributed to the present authors. In literature there are many statements, even from the very early days of those famous results, that singularity theorems could be extended to a semiclassical regime, but no mention of the area theorem is usually found. This was regarded as a purely classical result, and despite the proof of this theorem and Penrose's singularity theorem were very similar, not much attention seems to have ever been dedicated to its actual regime of validity.
+
 \section{The classical Black Hole Area Theorem}
 \label{sec:classical-bh-area}
 
@@ -825,3 +830,42 @@ and even if we can Taylor-expand the expression, the resulting additive constant
 	\label{fig:state-independent-bounds}
 \end{figure}
 
+\subsection{Singularity theorems}
+
+Let us finally present a small result, interesting for the application of singularity theorems. In order to explain it, it is necessary for us to venture on a quick journey to how a singularity theorem can be proved by means of index form methods. This is the central topic of the article we have mainly been referring to, namely \cite[]{fewster2020new}, so we will proceed to take a quick review of it.
+
+According to Senovilla \cite[]{senovilla1998singularity}, a singularity theorem needs three main ingredients:
+\begin{itemize}
+	\item[\ding{99}] A causality condition, typically global hyperbolicity, or, following Minguzzi, past reflectivity and openess.
+	\item[\ding{99}] An energy condition, of the like we have already been discussing enough about in chapter \ref{ch:energy-conditions}.
+	\item[\ding{99}] A boundary or initial condition.
+\end{itemize}
+It is precisely of this last ingredient that we are going to discuss in this section.
+The classical Penrose singularity theorem relies on global hyperbolicity, the null energy condition and the presence of a future trapped surface, as the ones defined in \ref{def:trapped-surface}. Precisely, it states
+\begin{theorem}
+	Any globally hyperbolic spacetime \((M,g)\), where the null energy condition holds everywhere and it contains a trapped surface cannot be future null geodesically complete, or, in other words, it contains at least one incomplete causal geodesic.
+\end{theorem}
+
+\begin{proof}
+	A sketch of the proof proceeds as follows: suppose that \(M\) is geodesically complete and consider its trapped surface \(P\). Take any congruence of null geodesics leaving normally from \(P\); by means of criteria \ref{prop:fp-criteria} (it is enought to choose the same set of functions \(\mathcal{A}_{NEC}\) used in \ref{th:classical-bh-area}) it is possible to show that any congruence must develop a focal point within distance \(L_{\hat{\mathrm{H}}} = \frac{1}{\vert \mathrm{H} \vert}\) from the manifold \(P\), which is in contradiction with the supposed geodesic completeness.
+\end{proof}
+ 
+It is immediate to spot out that here the \emph{initial condition} mentioned in Senovilla's structure is nothing but the presence of a trapped surface, or better, of a surface whose mean normal curvature is such that:
+\[
+\mathrm{H}^{\mu}U_{\mu} < 0,
+\]
+for all \(U^{\mu}\) future pointing null vectors.
+In Wald \cite[]{wald2010general} and Hawking and Ellis \cite[]{hawking1973large} it was already present a theorem stating that trapped surfaces, under the validity of the null energy condition, had to be hidden beyond the horizion, an observation which is clear here given that for theorem \ref{th:classical-bh-area} any surface outside the horizon must fulfill \(\mathrm{H}^{\mu}U_{\mu} \ge 0\).
+
+With the possibility of an evaporating horizion this is not true anymore, as surfaces outside the horizion are allowed to shrink too. However, under the weaker energy conditions that allow an horizion to evaporate, the intial condition to prove a singularity theorem must be strengthened, namely it is not enough anymore to start from a trapped surfaced, but a ``sufficiently trapped'' surface is needed (see \cite[]{fewster2020new}). Is it possible then to find such surfaces outside the horizion? Well, naturally the answer is no.
+\begin{prop}
+	Any surface giving the sufficient initial condition to prove the formation of a singularity must lay in the black hole region.
+\end{prop}
+
+\begin{proof}
+	Focal points form along every othogonal null geodesic leaving from a codimension \(2\) surface \(P\) if and only if equation \eqref{eq:fp-criteria} holds for any \(U^{\mu}\). However, outside the horizion the null generators of the boundary of the future of \(P\) must satisfy the opposite inequality because of the definition of horizion itself. Hence, any surface \(P\) satsifying such criteria must lay in the black hole region.
+\end{proof}
+
+This is a generalization of proposition \(12.2.3\) of \cite{wald2010general}, but notice that, where Wald needs to ask for the null energy condition to hold, here no enwegy condition is required: this is indeed only a statement of geometric properties of the spacetime, the energy condition is only needed to estimate ``how far'' the black hole region extends.
+
+Such a result is in accordance with the already mentioned proof of singularity theorems for evaporating black holes given in \cite[]{freivogel2020return}. In that article the authors also proceed to estimate how fare into the black hole they might need to go in order to find the required trapped surface. In some sense, that distance can be turned into a measure of ``how accurate'' is the energy condition that has been applied: the smaller the distance, the less information has been wahsed out and hence the strongest is the theorem.

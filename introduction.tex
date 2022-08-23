@@ -1,18 +1,61 @@
+Notwithstanding that the earliest formulation of General Relativity dates back to \(1916\), it had to come a long way before people could really start grasping the key concepts of his theory. Einstein himself knew that very well, when in November \(1919\) -- on the occasion of the famous eclipse that confirmed his theory -- he declared to the New York Times\footnote{Special thanks to Gimmy for the gift of a copy of the original article.} \cite{nyt:lights-all-askew}
+\begin{quote}
+    \emph{A book for \(12\) wise man. }
+    
+    \emph{No more in all the World could comprehend it.}
+\end{quote}
+And he was probably right. Everyday life gives us some intuition about Riemannian geometry, but it does not fully prepare us to Lorentz signature geometry. And, if that wasn't enough, the field equations of General Relativity are notoriously among the most difficult ones, from which it can be hard to extract any insight. Indeed it took no less than \(30\) years for the publication of the result that would open the way to an investigation of the theory without the need to rely on any very specific metric: the Raychaudhuri equation \cite[]{raychaudhuri1955relativistic}. Eventually, with its publication in \(1955\) the golden age of relativity theorems could begin.
 
-Some introduction ...
+Relativity theorems are among the most beautiful and elegant results mathematical physics has gifted us with. In spite of the extreme intricacy of the non linear equations that rule gravitational phenomena, a nice interplay of causality, positivity of energy and geometry, can provide us with a fairly good qualitative understanding of exotic features, such as gravitational collapse and black holes.
 
-	
-	
-	
-	
-	
-	
+Among others, some of the most celebrated results concerning these objects are Penrose's Singularity theorems of \(1965\) \cite[]{penrose1965gravitational}, and the black hole area theorem due to Hawking \cite[]{hawking1972black} in \(1971\). The proof of these theorems shares many points: they are both based on the study of a quantity, the \emph{expansion} \(\theta\), by means precisely of its Raychaudhuri's equation, and with the help of a \emph{pointwise} condition on the Ricci tensor of the spacetime, the Null Energy Condition. The need of a pointwise requirement is soon cleared out: Raychaudhuri equation can be turned into the differential inequality
+\begin{equation}
+    \label{eq:intro-theta}
+    \frac{D}{D\lambda}\theta \le -\frac{\theta^2}{2} - R_{\mu\nu}U^{\mu}U^{\nu}.
+\end{equation}
+This equation is still very difficult to be solved because of the presence of the Ricci tensor \(R_{\mu\nu}\). The key idea is then to wash away the metric dependence by introducing some energy condition of the form 
+\begin{equation}
+    \label{eq:intro-NEC}
+    R_{\mu\nu}U^{\mu}U^{\nu}\ge 0,
+\end{equation}
+and this condition needs to hold at any point of the spacetime if we want to have any hope of studying the solution of the differential inequality \eqref{eq:intro-theta}. Indeed \eqref{eq:intro-NEC} is precisely the \emph{null convergece condition}, the geometric counterpart of the null energy condition once Einstein equations are imposed.
 
-	
-	
-	
-	
-	
+This condition has found many critics from the very early days of its appearance. It is undoubtedly an hypothesis that should look into the physics living over the geometrical spacetime for its justification. However, it appears it has been introduced more for the technical reason explained above, and a derivation from first principles has been always lacking. Energy conditions are expected to embody features as the ``attractiveness'' of gravity, or -- even more abstractly -- the stability of the configuration under investigation, but their physical interpretation has always been their weakest point.
 
+Anyway, the null energy condition is satisfied by all the ordinary forms of matter -- dust and radiation -- and it is saturated by the cosmological constant, but it appears to be violated when quantum fields come into play.
+Already in \(1948\) it was postulated oneof its most famous counterexaples, the Casimir effect (even if for an experimental proof we had to wait until \(1997\)), and ironically it is of the same year of Penrose's singularity theorem, \(1965\), the argument showing that any pointwise energy condition is going to be violated by any sort of quantum field.
 
+Should we let singularity and the area theorem fall into forgetfulness then? Well, even if not intended, the golden age of these results came to its sunset already in the early \(1970s\), and developments in this area remained rather scarce for the following \(40\) years. A new spike of energy was injected in the field by the amazing experimental discovery of gravitational waves in \(2016\): this astonishing detection opens the way to an all new horizon of possibilities, finally giving us a chance to learn more about that shy force of gravity that still evades a full UV description.
 
+A particularly amazing result is due to a group of researchers from the Massachussets Institute of Technology in \(2021\): by measuring the mass of two black holes before the merger, and the mass of the resulting one afterwards, they claim to have observationally confirmed Hawking's Area theorem with at least \(95\%\) of confidence~\cite[]{PhysRevLett.127.011103}.
+
+With the beginning of a new age of glory for these studies, also new results came by: even if already postulated long before (in \(1995\)) by Ford and Roman in \cite[]{ford1996averaged}, it is of \(2011\) the first proof of singularity theorems from weakened energy conditions \cite[]{fewster2011singularity}. This proof still proceeds through the study of the Raychaudhuri's equation, but it is very techinical and quite hard to develop, not to mention the limited possibility of generalising it. A much more interesting one is from \(2019\) \cite[]{fewster2020new} and proceeds along a rather differnt path: through index forms.
+From that moment onward quite a few generalisations of singularity theorems came by, proving that indeed singularity theorems seem to be valid also in a semiclassical framework, where by ``semiclassical'' we intend a classical spacetime geometry with a quantum field theory living over it.
+
+But what about the black hole area theorem instead? No one ever expected this result to generalise to a semiclassical regime. The same Stephen Hawking indeed, in \(1974\) published what is probably his most famous article, ``Particle creation by black holes'' \cite[]{hawking1975particle}. In there he gets to the staggering prediction of Hawking radiation, an emission process through which black holes slowly loose energy, and eventually evaporate. But the area of the horizion of a black hole is in direct relationship with its mass, and hence this prediction immediately sets itself against the previous result of \(1971\).
+
+The key, of course, is the energy condition: black hole evaporation is an intrinsically quantum effect, that brings about a violation of the Null Energy Condition, and therefore the black hole area theorem in its classical form cannot be expected to generalise. Given the similarity of its proof with the one of Penrose's Singularity theorem however, it looked curious that one was expected to break and the other one to hold in a semi-classical scenario, so we set out to research if there was any tipping point where a separation of the two theorems would emerge.
+
+Let us then give a brief overview of the work presented in this thesis. Unfortunately the methods and the results we are going to need span a very wide spectrum, and therefore a rather long introductory part is unavoidable. The work shall be organised in three main parts: geometrical tools, results from quantum field theory, and finally our original results.
+
+\section{Geometrical tools}
+First of all we will need a rather advanced toolkit that can allow us to confidently work with submanifolds embedded in the spacetime. In particular, the notion of second fundamental form, or shape tensor, is needed, and from there trapped surfaces will be introduced. Those are surfaces first defined by Penrose for the proof of his singularity theorem in \(1965\) and have interesting geometrical and toplogical properties that have been studied throughout many years. We are only going to grasp the surface of their analysis, but in the course of our work we will need a definition different from the one first proposed by Penrose. This is why we are first going to define them by the \emph{mean normal curvature}, and then through the expansion (as orginally done by Penrose), thereafter proving their equivalence and then recovering their physical interpretation as ``trapping'' surfaces.
+The main references for this chapter will be the books by O'Neill \cite[]{o1983semi} and Wald \cite[]{wald2010general}, but many comments will be made on details of the computations that spot out the reason of any discrepancy with the treatment in the literature, or account for any original observation or interpretation of the results.
+At the end of the chapter we will dedicate a section to the ladder of causality conditions, introduced to avoid more and more precisely the risk of insurgence of closed causal curves. That will be mainly a section of definitions, but extensive comments will be made to account for their sensibleness.  
+
+As already mentioned, although the introduction of Raychaudhuri's equation played a major role in widening the spectra of validity of many relativity theorems, it soon found its applicability's limit, as geneally leading to rather complex differential inequalities, like in \cite[]{fewster2011singularity}.
+In particular, this method seemed not exceptionally fit for the aim of studying configurations where the energy condition was expressed in terms of restrictions on intergrals over a curve of contractions of the stress-energy tensor. This form of energy conditions was more and more convincingly motivated by the study of properties of several quantum field theories, but it often appears too weak to place strong enough constraints on Raychaudhuri-like equations.
+
+What the Raychaudhuri's equation is used for, is the detection of \emph{focal points}. These are almost meeting points of nearby geodesics, leaving normally from a reference suface \(P\). Geodesics are curves in the spacetime with the special property of minimizing the action (and the length functional), and hence are the curves along which an interial observer would move (or a light ray free to travel in space). However, we shall see in chapter \ref{ch:focal-points} that geodesics developing a focal point cease to bear that minimizing property beyond it. 
+That has much physical relevance because, in particular, any inertial observer that ``intended'' to reach a point on the geodesic \(\gamma\) beyond its eventual focal point \(q\) would venture on a different path, even if \(\gamma\) was a geodesic.
+The key-idea is that, in a non vicious spacetime region, not all the normal geodesics leaving some surface \(P\) can develop a focal point, otherwise points beyond the farthest focal point to \(P\) could not be reached from it. 
+
+We hope that this motivation has at least partially cleared why it is very important for the proof of many relativity theorems, to develop a criteria that can tell us if a geodesic is going to develop a focal point to the surface \(P\), and eventually can even tell us where it will form. The Raychaudhuri equation was doing exactly that by studying the quantity \(\theta\): wherever a divergence was developing, it was a signal of a formation of a focal point.
+
+Following the work of O'Neill instead, we will present an alternative method (the \emph{index form method}), that works directly with the minimization of the action functional, and develops a criteria which passes through an integral inequality, rather than a differential one. This difference will become crucial for the applicability of averaged enrgy conditions: it will be much easier in fact to apply them to a criteria which is already expressed in an integral form, instead of trying to place restrictions on a differential inequality!
+
+We are also going to briefly review the interplay between the two methods, and find that the Raychaudhuri equation is, in some sense, the Euler-Lagrange equation of the functional arising from the Index form method. Witten has been writing a very nice review on these topics as well \cite[]{witten2020light}, and we are going to briefly review his additional geometrical insights into the matter. Additionaly, even if working with Raychaudhuri's equation, he tries to ``integrate'' it as well, but unfortunately doesn't get to the final development of the functional of interest, as he doesn't manage to rewrite a surface term in a sufficiently expressive way.
+
+\section{Quantum Field Theory insights}
+
+\section{The Black Hole Area theorem}

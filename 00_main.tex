@@ -8,10 +8,12 @@
 
 \input{newcommands}
 
-\title{A Generalisation of the Black Hole Area Theorem with Index Form Methods}
+\input{frontispiece}
 
-\author{Veronica Sacchi\thanks{v.sacchi1@studenti.unipi.it}\\
-Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
+% \title{A Generalisation of the Black Hole Area Theorem with Index Form Methods}
+
+% \author{Veronica Sacchi\thanks{v.sacchi1@studenti.unipi.it}\\
+% Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 
 % Bibliografia
 \usepackage[backend=bibtex,doi=false,isbn=false,url=false]{biblatex}
@@ -25,18 +27,33 @@ Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 	\headrule
 	\setfoot{}{}{}
 }
-\pagestyle{ruled}
+\pagestyle{empty}
 % \pagestyle{fancy}
 
 \begin{document}
-
+\pagenumbering{Roman}
 \maketitle
 
-\pagenumbering{Roman}
-\tableofcontents
+
+\hspace{0pt}
+\vfill
+\begin{flushright}
+	\textit{To my grandfather, \\
+	for his untamed spirit\\
+	that still flares in the hearts \\
+	of those who have known him.}
+\end{flushright}
+\vfill
+\hspace{0pt}
 \clearpage
 
-\chapter*{Notation and Conventions}
+
+\tableofcontents
+\pagestyle{plain}
+\clearpage
+
+\chapter*{Notations and Conventions}
+\addcontentsline{toc}{chapter}{Notations and Conventions}
 \thispagestyle{empty}
 %nice frame
 \usetikzlibrary{math,calc,decorations.pathmorphing}
@@ -108,19 +125,19 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 	\item[\ding{99}]  Einstein equations are \(R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = 8\pi T_{\mu\nu}\).
 \end{itemize}
 
-\pagenumbering{arabic}
+
 \chapter{Introduction}
+\pagestyle{ruled}
+\pagenumbering{arabic}
 \label{ch:introduction}
 \input{introduction}
 
 \chapter{Fundamental Concepts}
 \input{fundamental-concepts}
-%\clearpage
 
 \chapter{Focal Points}
 \label{ch:focal-points}
 \input{focal-points}
-%\clearpage
 
 \chapter{Energy Conditions}
 \label{ch:energy-conditions}
@@ -129,12 +146,10 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 \chapter{Black Holes}
 \label{ch:black-holes}
 \input{black-holes}
-%\clearpage
 
 \chapter{The Black Hole Area theorem}
 \label{ch:area-theorem}
 \input{area-theorem}
-% \clearpage
 
 \chapter[Conclusions]{Conclusions and future perspectives}
 \input{Conclusions}
@@ -145,15 +160,17 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 \label{app:V-E-L-optimization}
 \input{V-E-L-optimization}
 
-\chapter[Proof of energy condition for EKG fields]{Proof of a Sobolev-like energy conditions for non minimally coupled Einstein-Klein Gordon Scalar fields}
-\label{app:proof-EKG-bound}
-\input{proof-EKG-bound}
 
-\chapter{Gravitational polarization of vacuum}
+\chapter{Vacuum polarization}{Gravitational polarization of vacuum}
 \label{app:visser}
 \input{visser-computation}
 
-\printbibliography[heading=bibintoc]
+% \chapter*{Acknoweledgements}
+% \addcontentsline{toc}{chapter}{Acknoweledgements}
+% \pagestyle{plain}
+% \input{acknowledgments.tex}
 
+\pagestyle{ruled}
+\printbibliography[heading=bibintoc]
 
 \end{document}          

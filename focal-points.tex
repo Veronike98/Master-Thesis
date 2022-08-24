@@ -236,15 +236,15 @@ We have used \(g^{\mu\alpha} = U^{(\mu}W^{\alpha)} - \sum_{i=1}^{n - 2}E_i^{\mu}
 
 	This is the first - basic - example of usage of proposition~\ref{prop:fp-criteria}. As we will see, this will allow to radically expand the range of validity of relativity theorems whose proof passes through the identification of focal points, and we are going to refer as \emph{index form method} precisely to the employment of criteria~\ref{prop:fp-criteria} for this purpose.
 	
-	\section{The Raychaudhuri's equation}
-	The method presented in section~\ref{sec:fp-index-forms} is an alternative way to prove the existence of focal points along geodesics: the much more common procedure - used in all the classical proofs of these relativity theorems (such as Singularity~\cite{penrose1965gravitational} or the area theorem) - goes through the Raychaudhuri's equation. We are going to present this other method in the present section, in order to compare it to the one in the previous section, indeed arguing that the former is strictly more powerful than the latter.
+	\section{Raychaudhuri's Equation}
+	The method presented in section~\ref{sec:fp-index-forms} is an alternative way to prove the existence of focal points along geodesics: the much more common procedure - used in all the classical proofs of these relativity theorems (such as Singularity~\cite{penrose1965gravitational} or the area theorem) - goes through Raychaudhuri's equation. We are going to present this other method in the present section, in order to compare it to the one in the previous section, indeed arguing that the former is strictly more powerful than the latter.
 	
 	A discussion similar to the following can be found in many articles and textbooks; for consistency of notation we will refer\footnote{We thank Chris Fewster for some clear insights provide about this analysis.} to chapter \(9\) of~\cite{wald2010general}.
 	Usually the discussion is conducted for the timelike case, and then generalized to the null case by claiming its analogy. Here instead we shall start directly from the null case and give the full details of the analysis.
 	
 	As usual, start from a codimension \(2\) spacelike submanifold \(P\) and consider \(P\)-Jacobi fields on a normal null curve \(\gamma \perp P\) (parameterized by the affine parameter \(\lambda\)), with transverse field \(V^{\mu}\) and tangent field \(U^{\mu}\).
 	\begin{remark}
-		In~\cite{wald2010general} Wald, when referring to the null case, specifies that if \(V^{\mu}\) is a Jacobi field, then also \(V^{\mu} + (a + b\lambda) U^{\mu}\) is a Jacobi field - where \(a\) and \(b\) are some real constants - and wants to consider the quotient of the space of Jacobi fields \(\Omega (P,q)\) by this equivalence relation. Notice that the space of \(P\)-Jacobi fields is already a set of good representatives, and then can be reconnected to the quotient above mentioned; by restricting to studying only \(P-\)Jacobi fields from the beginning, we can simply forget about the complications given by the equivalence relation and the discussion won't loose its general character.
+		In~\cite{wald2010general} Wald, when referring to the null case, specifies that if \(V^{\mu}\) is a Jacobi field, then also \(V^{\mu} + (a + b\lambda) U^{\mu}\) is a Jacobi field - where \(a\) and \(b\) are real constants - and wants to consider the quotient of the space of Jacobi fields \(\Omega (P,q)\) by this equivalence relation. Notice that the space of \(P\)-Jacobi fields is already a set of good representatives, and then can be reconnected to the quotient above mentioned; by restricting to studying only \(P-\)Jacobi fields from the beginning, we can simply forget about the complications given by the equivalence relation and the discussion won't lose its general character.
 	\end{remark}
 
 	Consider the velocity gradient (with the Levi-Civita connection): this gives rise to a tensor field
@@ -279,7 +279,7 @@ We have used \(g^{\mu\alpha} = U^{(\mu}W^{\alpha)} - \sum_{i=1}^{n - 2}E_i^{\mu}
 	\end{remark}
 	
 	At this point it is possible to compute the evolution equations for these \(3\) quantities; such equations are called Raychaudhuri's equation.
-	We are particularly interested in the ones for the expansion and the vorticity, so we will omit the one for the shear.
+	We are particularly interested in the ones concerning expansion and vorticity, so we will omit the one for the shear.
 	
 	\begin{align}
 		\label{eq:Raychaudhuri-theta}
@@ -354,7 +354,7 @@ We have used \(g^{\mu\alpha} = U^{(\mu}W^{\alpha)} - \sum_{i=1}^{n - 2}E_i^{\mu}
 		\[
 		g^{\mu\nu} = \frac{U^{\mu}W^{\nu} + U^{\nu}W^{\mu}}{2} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\nu}.
 		\]
-		This means that the transversal field of the congruence, that must be a \(P\)-Jacobi field, can be written as:
+		This means that the transversal field of the congruence, which must be a \(P\)-Jacobi field, can be written as:
 		\[
 		V^{\mu} = V^iE_i^{\mu} \quad \text{ where } \quad V^i = E^i_{\mu}V^{\mu};
 		\]
@@ -369,7 +369,7 @@ We have used \(g^{\mu\alpha} = U^{(\mu}W^{\alpha)} - \sum_{i=1}^{n - 2}E_i^{\mu}
 			\frac{D^2}{D\lambda^2}V^i = E^i_{\mu}\frac{D^2}{D\lambda^2}V^{\mu} = E^i_{\mu}R\indices{^{\mu}_{\alpha\beta\nu}}U^{\alpha}U^{\beta}E_j^{\nu}V^j.
 		\end{equation}
 		
-		Equation~\eqref{eq:Jacobi-E_i} implies that we have at most \(2(d - 2)\) degrees of freedom (the initial conditions we have to impose to solve the differential equation); however,~\eqref{eq:1st-order-V_i} shows that they are not all independent. This means that there must exist a \(\lambda\)-dependant linear map \(A\) so that:
+		Equation~\eqref{eq:Jacobi-E_i} implies that we have at most \(2(d - 2)\) degrees of freedom (the initial conditions we have to impose to solve the differential equation); however,~\eqref{eq:1st-order-V_i} shows that they are not all independent. This means that there must exist a \(\lambda\)-dependent linear map \(A\) so that:
 		\[
 		V^i(\lambda) = A\indices{^i_j}V^j(0)
 		\]
@@ -397,7 +397,7 @@ We have used \(g^{\mu\alpha} = U^{(\mu}W^{\alpha)} - \sum_{i=1}^{n - 2}E_i^{\mu}
 		\[
 		\vert\theta\vert = \vert\texttt{tr}B\vert \rightarrow \infty \text{ for } \lambda \rightarrow \lambda^{\star}\iff \texttt{det}A \rightarrow 0 \text{ for } \lambda \rightarrow \lambda^{\star}.
 		\]
-		But saying \(\texttt{det}A(\lambda^{\star}) = 0 \) is equivalent to stating that \(A(\lambda^{\star}) \) has non trivial kernel, and hence there exists a non trivial initial data \(V^{\mu}(0)\) for which \(V^{\mu}(\lambda^{\star}) = 0\). This is exactly the definition of \(\gamma(\lambda^{\star})\) being a focal point, so the proof is concluded.
+		But saying \(\texttt{det}A(\lambda^{\star}) = 0 \) is equivalent to stating that \(A(\lambda^{\star}) \) has non-trivial kernel, and hence there exists a non trivial initial data \(V^{\mu}(0)\) for which \(V^{\mu}(\lambda^{\star}) = 0\). This is exactly the definition of \(\gamma(\lambda^{\star})\) being a focal point, so the proof is concluded.
 	\end{proof}
 
 	Proposition~\ref{prop:fp-criteria-Raychaudhuri} is establishing another criterion for the existence of focal points, which in the proofs of any relativity theorem will play the same role as proposition~\ref{prop:fp-criteria}. In this context, studying~\ref{eq:Riccati-ineq} has the same effect as analyzing~\ref{eq:fp-criteria}, because they are the equations that constrain the quantities of interests for the existence criteria of focal points, and thus will provide us with quantitative information about what conditions we need for their formation.
@@ -406,7 +406,7 @@ We have used \(g^{\mu\alpha} = U^{(\mu}W^{\alpha)} - \sum_{i=1}^{n - 2}E_i^{\mu}
 	\label{sec:comparison-2-methods}
 	It is clear that the \(2\) criteria~\ref{prop:fp-criteria} and~\ref{prop:fp-criteria-Raychaudhuri} developed so far are equivalent, in the sense that if \(\vert\theta\vert \rightarrow \infty\) then~\eqref{eq:fp-criteria} must hold and vice-versa, but the \(2\) methods differ dramatically when it comes to the practical use we can make of them. The core point is that, if in the former method we have to study an integral problem, for the latter we have to work on a differential problem: it's already evident that it is much harder to state something about a quantity \emph{at each point} of the manifold, rather than working out some information about \emph{the average} over a suitable region of spacetime.
 	
-	Having said that, what stated above is only a broad intuition about why we should prefer one method to the other, but it's worthwhile understanding more deeply the interplay between them, in order to better realize the strengths and the weaknesses of both.
+	Having said that, what stated above is only a broad intuition about why we should prefer one method to the other, but it's worthwhile understanding more deeply the interplay between them, in order to better appreciate the strengths and the weaknesses of both.
 	
 	In order to do so, we will now recall the discussion that can be found at the end of section \(2.1\) in~\cite{fewster2020new}, but we will state it for the null case.
 	The idea is to treat the left hand side of~\ref{eq:fp-criteria} as a functional \(J[f]\), and to minimize it on the set of smooth functions obeying 

@@ -148,11 +148,11 @@ It is then easy to prove that:
 \]
 
 and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'' needed to prevent a point from leaving \(M \subset \bar{M}\), a sort of constraining force.
-This can be visualized witn the example in figure~\ref{fig:shape-tensor}: any particle moving on the yellow curve would leave \(M\) unless an external force - such as the yellow vector - is applied.
+This can be visualized within the example in figure~\ref{fig:shape-tensor}: any particle moving on the yellow curve would leave \(M\) unless an external force - such as the yellow vector - is applied.
 Finally, an equivalent interpretation of \(\mathrm{I\!I}\) is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
 
 \begin{figure}
-	\caption[]{Vector fields \(V\) and \(W\) belong to \(\mathfrak{X}(M)\) and generate respectively the cyclamen and the yellow curve. The \(2\) vectors represent the shape tensor evaluated in these \(2\) vectors, and clearly bear the interpretation of constraing force introduced above.}
+	\caption[]{Vector fields \(V\) and \(W\) belong to \(\mathfrak{X}(M)\) and generate respectively the cyclamen and the yellow curve. The \(2\) vectors represent the shape tensor evaluated in these \(2\) vectors, and clearly bear the interpretation of the constraing force introduced above.}
 	\label{fig:shape-tensor}
 	\centering
 	\includegraphics[scale=1.7]{Immagini/shape-tensor/shape-tensor.pdf}
@@ -228,7 +228,7 @@ Finally, let us prove a quick lemma that will be useful here and there throughou
 
 \begin{definition}
 	\label{def:trapped-surface}
-	A spacelike submanifold \(P\) is said \emph{future-converging} or \emph{future-trapped} provided its mean curvature vector field \(\mathrm{H}\) is past-pointing timelike everywhere.
+	A spacelike submanifold \(P\) is said to be \emph{future-converging} or \emph{future-trapped} provided its mean curvature vector field \(\mathrm{H}\) is past-pointing timelike everywhere.
 \end{definition}
 
 
@@ -268,7 +268,7 @@ It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\per
 However, definition~\ref{def:trapped-surface} stated above is not the one that historically has been in use from the beginning of the analysis of these objects. The most widely used definition is by far the one that passes through the construction of expansion: we will now state this definition for codimension \(2\) spacelike submanifolds, making use of the \emph{null} expansion, but the same idea can be generalized to a much larger class of submanifolds. 
 
 Consider the spacelike codimension \(2\) submanifold \(P\subset M\), and the congruence of \emph{null} geodesics leaving normally from \(P\); call \(U^{\mu}\) the tangent field. 
-Of course there are \(2\) such congruences: we will call \emph{positive} congruence one of them, and \emph{negative} the other one, whose tangent field - save for riparametrization - will be \(W^{\mu}\). By lemma~\ref{lemma:metric-decomposition} we can decompose the metric as 
+Of course there are \(2\) such congruences: we will call one of them \emph{positive} congruence, and the other one \emph{negative}, whose tangent field - save for riparametrization - will be \(W^{\mu}\). By lemma~\ref{lemma:metric-decomposition} we can decompose the metric as 
 \[
 g^{\mu\alpha} = \frac{U^{\mu}W^{\alpha} + U^{\alpha}W^{\mu}}{2} - \sum_{i=1}^{n - 2}E_i^{\mu}E_i^{\alpha}.
 \]
@@ -332,11 +332,11 @@ We finally want to prove that the \(2\) definitions are indeed equivalent.
 \end{SCfigure}
 
 \begin{remark}
-	It's worth pointing out that, as Wald states in section \(9.2\) of~\cite{wald2010general} about the expansion of a null congruence of geodesics, there is no natural way to directly compute \(\theta\), which seems clashing with what we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence is orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(\R^{2,1}\) as in figure~\ref{fig:expansion-computation}.
+	It's worth pointing out that, as Wald states in section \(9.2\) of~\cite{wald2010general} about the expansion of a null congruence of geodesics, there is no natural way to directly compute \(\theta\), which appears to clash with what we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence is orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(\R^{2,1}\) as in figure~\ref{fig:expansion-computation}.
 \end{remark}
 
 
-Even if we already have \(2\) good definitions of \emph{trapped} surface, they are both rather mathematical, while we would like to develop a better intuition of the features of these objects. The most outstanding property is described by the following lemma; we report the statement given in~\cite{senovilla2022critical}. A proof for hypersurfaces of codimension \(1\) can be found in~\cite{kriele1999spacetime} under Lemma \(4.4.8\), and can be generalized to submanifolds of any dimension, but for shortness we don't report the proof here.
+Even if we already have \(2\) good definitions of \emph{trapped} surface, they are both rather mathematical, while we would like to develop a better intuition of the features of these objects. The most outstanding property is described by the following lemma; we report the statement given in~\cite{senovilla2022critical}. A proof for hypersurfaces of codimension \(1\) can be found in~\cite{kriele1999spacetime} under Lemma \(4.4.8\), and can be generalized to submanifolds of any dimension, but due to the need for conciseness, we don't report the proof here.
 \begin{lemma}
 	\label{lemma:variation-area}
 	Let \(P\) be any spacelike submanifold of any dimension, and denote as \(\mathcal{A}_P\) its area. Then choose an arbitrary vector field \(\xi^{\mu}\): this will induce a flow \(F_t\), and \(P\) can be deformed along this flow. The initial variation of the area due to this deformation is
@@ -344,7 +344,7 @@ Even if we already have \(2\) good definitions of \emph{trapped} surface, they a
 	\delta_{\xi}\mathcal{A}_P = \int_{P} \left(\texttt{div}_P (\Pi^{\parallel}\xi) + \mathrm{H}^{\mu}\xi_{\mu}\right).
 	\]
 \end{lemma}
- Clearly, if \(P\) is without boundary the first term integrates out for Stokes theorem (\(\texttt{div}_P\) is the divergence on \(P\)), and we are left with
+ Clearly, if \(P\) is without any boundary the first term integrates out for Stokes theorem (\(\texttt{div}_P\) is the divergence on \(P\)), and we are left with
  \begin{equation}
  	\label{eq:variation-area}
  	\delta_{\xi}\mathcal{A}_P = \int_{P} \mathrm{H}^{\mu}\xi_{\mu}.
@@ -361,10 +361,10 @@ Even if we already have \(2\) good definitions of \emph{trapped} surface, they a
 
 \section{Causal structure}
 
-The notion of \emph{causality} arises from the fact that, in a Lorentzian manifold, starting from a  point \(p\) it is \emph{not} true that an observer or a light ray can travel to any other point \(q\), as they are only allowed to move along (future pointing) causal geodesics (i.e. whose tangent field is never spacelike).
+The notion of \emph{causality} arises from the fact that, in a Lorentzian manifold, starting from a  point \(p\) it is \emph{not} true that an observer or a light ray can travel to any other point \(q\), as they are only allowed to move along (future pointing) causal geodesics (i.e. those whose tangent field is never spacelike).
 
 First of all it is important to define what we mean by ``future'' and ''past''. For any given \(p\in M\) the tangent space \(V_p\) is isomporhic to Minkowski spacetime, and hence we are able to define the light cone contained in \(V_p\) through its origin. We will call that the \emph{light cone of} \(p\): note that this is a subset of \(V_p\), and not of \(M\) as for the \emph{null cone}.
-Now, for each \(p\) we can choose one half of the light cone to be the ``future'' and the other half to be the ``past''; we would also like to make a choice which is continuous and self-consistent, but this is not always possible! (For an example, refere to image~\ref{fig:time-orientable}).
+Now, for each \(p\) we can choose one half of the light cone to be the ``future'' and the other half to be the ``past''; we would also like to make a choice which is continuous and self-consistent, but this is not always possible! (For an example, refer to image~\ref{fig:time-orientable}).
 
 \begin{figure}
 	\caption[]{this is an example of a non-orientable spacetime; the two cyclamen lines are to be identified, to give the cylinder on the right hand side.}
@@ -393,11 +393,11 @@ Evidently \(p\pprec q\) implies \(p\prec q\) but not vice versa. For a subset \(
 	\[
 	J^+(A) =\{ q\in M : \quad\exists p \in A\text{ such that } p\preceq q\}.
 	\]
-	These are events that, in principle, can be influenced by any light-signal emitted in \(p\). In Minkowski spacetime \(J^+(p)\) is always closed, but conversely from before, this doesn't generalize to arbitary spacetimes (simple counterexamples are given by Minkowski without a point).
+	These are events that, in principle, can be influenced by any light-signal emitted in \(p\). In Minkowski spacetime \(J^+(p)\) is always closed, but conversely from before, this doesn't generalise to arbitrary spacetimes (simple counter-examples are given by Minkowski without a point).
 \end{enumerate}
 By reversing time orientation we get the corresponding \emph{past} definitions and from any proof for \emph{future} versions it's possible to infer the analogous for past ones.
 
-In Minkowski spacetime \(I^+(p)\) consists exactly of the points that can be reached by future directed timelike \emph{geodesics} starting from \(p\), and the boundary \(\partial I^+(p)\) is generated by future directed \emph{null} geodesics (starting from \(p\)). In general neither of this statement is true, but they hold \emph{locally}: a formal statement and proof of this result is due to Hawking and Ellis and can be found in~\cite{hawking1973large} as proposition \(4.5.1\).
+In Minkowski spacetime \(I^+(p)\) consists exactly of the points that can be reached by future directed timelike \emph{geodesics} starting from \(p\), and the boundary \(\partial I^+(p)\) is generated by future directed \emph{null} geodesics (starting from \(p\)). In general neither of this statement is true, but they do hold true \emph{locally}: a formal statement and proof of this result is due to Hawking and Ellis and can be found in~\cite{hawking1973large} as proposition \(4.5.1\).
 
 What we are really interested in though, is the following corollary, that follows immediately from the property above mentioned.
 \begin{corollary}
@@ -413,7 +413,7 @@ What we are really interested in though, is the following corollary, that follow
 With similar arguments we have that \(J^+(A) \subseteq \bar{I}^+(A)\), and since clearly \(I^+(A) \cup A \subseteq J^+(A)\) it's clear that \(\overline{J^+(A)} = \overline{I^+(A)}\) and \(\partial J^+(A) = \partial I^+(A)\).
 
 \subsection{The boundary of the future}
-Given a submanifold \(A\), \(\partial J^+(A)\) will be called the \emph{boundary of the future} of \(A\): this is again a \(3-\)sumbanifold and has some interesting properties. As we will often work with this object, it makes sense to stop for a moment and highlight some of its features.
+Given a submanifold \(A\), \(\partial J^+(A)\) will be called the \emph{boundary of the future} of \(A\): this is again a \(3-\)submanifold and has some interesting properties. As we will often work with this object, it makes sense to stop for a moment and highlight some of its features.
 
 \begin{definition}
 	A set \(S\in M\) is said to be \emph{achronal} if there do not exist \(p, q \in S\) such that \(q\in I^+(p)\), or, in other words, \(p\) and \(q\) must not be joinable via a timelike curve. 
@@ -421,7 +421,7 @@ Given a submanifold \(A\), \(\partial J^+(A)\) will be called the \emph{boundary
 
 \begin{remark}
 	There is no mutual implication between achronality and signature of the submanifold \(S\).
-	It is pretty clear that achronality doesn't imply that \(S\) needs to be spacelike (the following will provide an example), but a spacelike submanifold doesn't need to be achronal either. The most common example is given by the cilyndrical spacetime in~\ref{fig:achronality-spacelike}, whose vertical axis is the time direction.
+	It is pretty clear that achronality doesn't imply that \(S\) needs to be spacelike (the following will provide an example), but a spacelike submanifold doesn't need to be achronal either. The most common example is given by the cylindrical spacetime in~\ref{fig:achronality-spacelike}, whose vertical axis is the time direction.
 
 	\end{remark}
 
@@ -498,7 +498,7 @@ The proof can be found in many books and doesn't add a particular insight, so we
 decided not to include it, but the curious reader might look at chapter \(8\) 
 of~\cite{wald2010general}. 
 Notice that this theorem is \emph{not} saying that if we are lying on \(\partial I^+(C)\) 
-there exists a light ray that travels from \(C\) to us: a good example is provided by
+a light ray exists that travels from \(C\) to us: a good example is provided by
 \(\R^{1,1}\) with a point removed, and is shown in figure~\ref{fig:inextendible-but-incomplete}.
 \begin{SCfigure}
 	\centering
@@ -518,14 +518,14 @@ The first - minimal - requirement that we want to ask for is that \(M\) does not
 \begin{lemma}
 	If \(M\) is compact, it contains a closed timelike curve.
 \end{lemma}
-The previous lemma makes us restrict to the study only of non compact manifolds.
-Slightly strengthening the condition we have been talking about up to now we obtain the \emph{causality condition}, which asks \(M\) not to contain any closed \emph{causal} curve. This of course implies the chronology condition, but is not equivalent to it; however, even if a spacetime doesn not posses any closed causal curve it might still be ``on the verge'' of violating causality, since there might be some causal curves that go arbitrarly close to interesct themselves (see figure~\ref{fig:strong-causality} for an example).
+The previous lemma makes us restrict to the study only of non-compact manifolds.
+Slightly strengthening the condition we have been talking about up to now we obtain the \emph{causality condition}, which asks \(M\) not to contain any closed \emph{causal} curve. This of course implies the chronology condition, but is not equivalent to it; however, even if a spacetime does not posses any closed causal curve it might still be ``on the verge'' of violating causality, since there might be some causal curves that go arbitrarily close to intersect themselves (see figure~\ref{fig:strong-causality} for an example).
 
-Such spacetimes are not considered physically resonable either, because a small perturbation of the metric might actually break causality, so we want to rule out this possibility as well. One way to do so is asking for \emph{strong causality}.
+Such spacetimes are not considered physically reasonable either, because a small perturbation of the metric might actually break causality, so we want to rule out this possibility as well. One way to do so is asking for \emph{strong causality}.
 \begin{wrapfigure}{r}{0.37\textwidth}
 	\centering
 	\includegraphics[scale=1.1]{Immagini/strong-causality/strong-causality.pdf}
-	\caption[]{this spacetime violates strong causality. The cyclamen curve through \(p\) is a null geodesic, but it's not closed because of the removed point. Even if no causal curve is closed, there are timelike curves through \(p\) ``arbitrarly close'' to self-intersect.}
+	\caption[]{this spacetime violates strong causality. The cyclamen curve through \(p\) is a null geodesic, but it's not closed because of the removed point. Even if no causal curve is closed, there are timelike curves through \(p\) ``arbitrarily close'' to self-intersect.}
 	\label{fig:strong-causality}
 \end{wrapfigure}
 \begin{definition}
@@ -534,21 +534,21 @@ Such spacetimes are not considered physically resonable either, because a small 
 	\noindent A spacetime is \emph{strongly causal} if strong causality holds for any \(p\in M\).
 \end{definition}
 
-	It is clear that if strong causality is violated at \(p\), then near \(p\) there exist causal curves arbitrarly close to intersecting themselves; at the same time it can be easily proved that in a strongly causal spacetime, if a causal curve leaves a compact \(K\subset M\), it can never return to it, so no curve can ever return arbitrarly close to itself.
+	It is clear that if strong causality is violated at \(p\), then near \(p\) there exist causal curves arbitrarily close to intersecting themselves; at the same time it can be easily proved that in a strongly causal spacetime, if a causal curve leaves a compact \(K\subset M\), it can never return to it, so no curve can ever return arbitrarily close to itself.
 
-	Although strong causality implies causality, and suffices to rule out pathological cases as the ones mentioned before, it is still possible that modification of \(g_{\mu\nu}\) in arbitrarly small neighborhoods of one or more points produces closed causal curve. We need to refine further the conditon we ask for, to be sure we are never on the verge of producing causality violation. Such a condition is \emph{stable causality}:
+	Although strong causality implies causality, and suffices to rule out pathological cases as the ones mentioned before, it is still possible that modification of \(g_{\mu\nu}\) in arbitrarily small neighborhoods of one or more points produces closed causal curve. We need to refine further the condition we ask for, to be sure we are never on the verge of producing causality violation. Such a condition is \emph{stable causality}:
 	\begin{definition}
 		A spacetime \((M, g_{\mu\nu})\) is \emph{stably causal} if there exists a timelike non-vanishing vector field \(X^{\mu}\) such that \((M, \tilde{g}_{\mu\nu})\) possess no closed timelike curves, where
 		\[
 			\tilde{g}_{\mu\nu}= g_{\mu\nu} - X^{\mu}X^{\nu}.
 		\]
 	\end{definition}
-	The idea behind this definition is that, by defining \(\tilde{g}_{\mu\nu}\), we are ``opening up'' the light cone, so if we were ``on the verge'' of violating causality before, now we are definitely not able to avoid it. As a reference, this definiton is equivalent to the following condition:
+	The idea behind this definition is that, by defining \(\tilde{g}_{\mu\nu}\), we are ``opening up'' the light cone, so if we were ``on the verge'' of violating causality before, now we are definitely not able to avoid it. As a reference, this definition is equivalent to the following condition:
 	\begin{theorem}
 		\label{th:stable-causality}
 		A spacetime \((M, g_{\mu\nu})\) is \emph{stably causal} if and only if there exists a differentiable function \(f\) of \(M\) such that \(\nabla^{\mu}f\) is a past-directed timelike vector field.
 	\end{theorem}
-By theorem~\ref{th:stable-causality} it is possible to see that stable causality implies strong causality, and this finally appears to be the notion of not being close to break causality.
+By theorem~\ref{th:stable-causality} it is possible to see that stable causality implies strong causality, and this finally appears to be the notion of not being close to breaking causality.
 
 We concluded the previous subsection by saying that we will need causality because it is linked to some notion of ``completeness'' of sets of curves. In order to approach that, let us define the concept of \emph{time separation}.
 \begin{definition}
@@ -563,7 +563,7 @@ Similarly, time separation between sets of points is obtained by taking the supr
 	\label{prop:global-existence}
 	For \(p \prec q\), if the set \(J(p, q) = J^+(q) \cap J^-(q)\) is compact and strong causality holds on it, then there exists a causal geodesic from \(p\) to \(q\) of length \(\tau (p,q)\).
 \end{prop}
-When reduced to the timelike case, this theorem guarantees the existence of the actual path an inertial observer will follow from \(p\) to \(q\), and applying the analysis of chapter~\ref{ch:focal-points} to the lenght functional would lead us to conclude that such curves must have no focal or conjugate points. For causal curves in general the link is not as direct, and more care needs to be payed, but we will try to shed some light on this correspondence in section~\ref{sec:promptness}.
+When reduced to the timelike case, this theorem guarantees the existence of the actual path an inertial observer will follow from \(p\) to \(q\), and applying the analysis of chapter~\ref{ch:focal-points} to the length functional would lead us to conclude that such curves must have no focal or conjugate points. For causal curves in general the link is not as direct, and more care needs to be payed, but we will try to shed some light on this correspondence in section~\ref{sec:promptness}.
 
 Moreover, this is exactly what we need to extend theorem~\ref{th:null-generator}: now \(\forall p\in \partial I^+(C)\)  there exists a null generators through \(p\) that intersect \(C\) \emph{and} it doesn't contain any focal point (see lemma \(14.30\) of~\cite{o1983semi}).
 Indeed proposition~\ref{prop:global-existence} motivates the following fundamental definition:
@@ -598,7 +598,7 @@ namely the set of points whose conditions are fixed once inital data on \(S\) is
 It is easy to shown that \(S\) is a closed achronal topological hypersurface, and clearly \(D(S) = M\).
 \begin{definition}
 	\label{def:global-hyper-2}
-	A spacetime \(M\) which posseses a Cauchy hypersurface is \emph{globally hyperbolic}.
+	A spacetime \(M\) which possesses a Cauchy hypersurface is \emph{globally hyperbolic}.
 \end{definition}
 It can be proved that~\ref{def:global-hyper} and~\ref{def:global-hyper-2} are equivalent; more in general the interior of the domain of dependence of an achronal set is globally hyperbolic according to definition~\ref{def:global-hyper}. Finally, global hyperbolicity implies all the notions of causality we have introduced before, as proved by Wald in theorem \(8.3.14\) of~\cite{wald2010general} .
 \begin{theorem}

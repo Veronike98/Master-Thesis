@@ -1,10 +1,10 @@
-Einstein equations very famously link the matter content of our spacetime with its geometric structure; however, Einstein equations themselves don't exclude particularly exoctic phenomena, such as causality violation or superluminal travel. In other words, if we were able to reproduce any stress-energy tensor, we could induce any space topology we were to imagine.
+Einstein equations very famously link the matter content of our spacetime with its geometric structure; however, Einstein equations themselves don't exclude particularly exotic phenomena, such as causality violation or superluminal travel. In other words, if we were able to reproduce any stress-energy tensor, we could induce any space topology we were to imagine.
 
 This statement vividly clashed with our physical intuition: here it comes then that we would like to require an additional hypothesis, one that was able to select all and only ``reasonable'' forms of matter. We would like it to be general enough so that it can include all types of known fields, but strong enough to rule out unphysical contents and have useful geometrical implications.
 
 Unfortunately such a hypothesis doesn't exist yet; or, well, it would be better to say that there exist too many, but it is not clear whether we have already found a satisfying one or not. In this chapter we are going to quickly review the intricated set of conditions proposed, focusing on the ones that will be useful for us. 
 
-The generalization of the area theorem proposed later on in this thesis is exactly weakening the energy condition required in Hawking's area theorem; we will focus then on motivating why such a generalization was much needed, and what brought us to the choice of the class of energy condition we will be employing.
+The generalization of the area theorem proposed later on in this thesis is exactly weakening the energy condition required in Hawking's area theorem; we will focus then on enquiring why such a generalization was much needed, and what brought us to the choice of the class of energy condition we will be employing.
 
 \section{Pointwise Energy Conditions}
 \label{sec:pointwise-energy-conditions}
@@ -14,7 +14,7 @@ In the following we will use the ``variational'' definition of the stress tensor
    T_{\mu\nu} = \frac{2}{\sqrt{-g}} \frac{\delta S_{mat}}{\delta g^{\mu\nu}}. 
 \]
 
-Hystorically energy conditions were introduced to deduce relativity theorems within a general framework. They have provided with a major step forward, as the regime of validity of important statements such as singularity theorems could be much widened by means of their employment. 
+Historically energy conditions were introduced to deduce relativity theorems within a general framework. They have provided with a major step forward, as the regime of validity of important statements such as singularity theorems could be much widened by means of their employment. 
 In particular, they were all in the form of pointwise restrictions on some contraction of the stress energy tensor, a condition general enough to be satisfied by many forms of matter.
 
 The weakest among the energy conditions typically appearing in those classical relativity theorems is the famous Null Energy Condition. That is indeed the one assumed for Penrose's Singularity theorem and Hawking's Area theorem, so that shall also be the one we analyze with most care.
@@ -31,11 +31,11 @@ But what does that physically mean? To assign an interpretation to this conditio
 \[
     R_{\mu\nu}U^{\mu}U^{\nu} \ge 0. 
 \]
-Now, recalling Riccati inequality~\eqref{eq:Riccati-ineq}, we can see that NEC would imply that a non rotating null geodesic congruence locally converges, or equivalently that gravity is attractive for particles that move along null geodesics.
+Now, recalling Riccati inequality~\eqref{eq:Riccati-ineq}, we can see that NEC would imply that a non-rotating null geodesic congruence locally converges, or equivalently that gravity is attractive for particles that move along null geodesics.
 
 This condition is the weakest in the sense that is implied by all other pointwise energy conditions, as shown by proposition \(2.2\) of~\cite{kontou2020energy}; it is satisfied by the most common forms of matter in the universe, such as dust, radiation and saturated by the cosmological constant, but in the same reference~\cite{kontou2020energy} it is shown that a very simple scalar fields non minimally coupled to gravity can already provide a violation of NEC.
 
-If that wasn't convinvig enough, Kontou and Sanders report also an argument (originally by Epstein, Glaser and Jaffe~\cite{epstein1965nonpositivity}) to show that \emph{any} pointwise energy condition must be violated by quantum fields. To show such result Reeh-Schlieder theorem for local observables is needed:
+If that wasn't convincing enough, Kontou and Sanders report also an argument (originally by Epstein, Glaser and Jaffe~\cite{epstein1965nonpositivity}) to show that \emph{any} pointwise energy condition must be violated by quantum fields. To show such result Reeh-Schlieder theorem for local observables is needed:
 \begin{theorem}[Reeh-Schlieder]
     \label{th:reeh-schlieder}
     Let \(\mathcal{A}(O)\) the set of all operators of a QFT localized in a fixed region \(O\) in Minkowski space, and \(\vert \Omega \rangle\) the vacuum state. Then the set of vectors \(\mathcal{A}(O)\vert \Omega \rangle\) is dense in the Hilbert space \(\mathcal{H}\).
@@ -54,9 +54,9 @@ Hence it immediately follows that~(\cite{epstein1965nonpositivity})
     This implies that \(\sqrt{A}\vert\Omega\rangle = 0\) itself; but then also \(A\vert\Omega\rangle = \sqrt{A}\sqrt{A}\vert\Omega\rangle = 0\). Finally, by means of Reeh-Schlieder theorem~\ref{th:reeh-schlieder} and local commutativity, we gain that \(A\) must vanish on a set of state dense in \(\mathcal{H}\), and so on all \(\mathcal{H}\).
 \end{proof}
 
-This result shouldn't come as a big surprise. It has been noticed long ago how black hole evaporation is in tension with Hawking's Area theorem, statement that asks for the null energy conditions as a hypothesis. Black hole evaporation is a quantum effect, so we should indeed expect that whenever quantum fields are included, at least one of the hypothesis of the black hole area theorem should be violated: NEC, being a statement about the stress energy tensor, is the natural candidate - even if we will see that causality itself is not immune either to the transition towards a quantum regime.
+This result shouldn't come as a big surprise. It has been noticed long ago how black hole evaporation is at odds with Hawking's Area theorem, a statement that asks for the null energy conditions as a hypothesis. Black hole evaporation is a quantum effect, so we should indeed expect that whenever quantum fields are included, at least one of the hypotheses of the black hole area theorem should be violated: NEC, being a statement about the stress energy tensor, is the natural candidate - even if we will see that causality itself is not immune either to the transition towards a quantum regime.
 
-\section{Quantum Inequalities and Averaged Conditions}
+\section[Quantum Averaged Inequalities]{Quantum Inequalities and Averaged Conditions}
 Now that we know NEC won't be valid for any universe containing quantum fields, what should we replace it with? The answer to this question remained very unclear for quite a long time, until in \(1978\) Ford~\cite[]{ford1978quantum} realized that in order to prevent such negative energy fluxes from violating the second law of thermodynamics, the magnitude and duration of the effect must be constrained by an inequality of the form
 \begin{equation}
     \label{eq:constraint-flux}
@@ -77,14 +77,14 @@ Whenever the operator \(\mathcal{Q}(f) \) is a multiple of the identity
 the QEI is said to be \emph{state independent}. Naturally this is the most amiable class of quantum energy inequalities, as the absence of a specific reference state leaves the relation the most possibly general.
 
 Quantum energy inequalities have sometimes been described as uncertainty principle-like bounds~\cite[]{ford1998quantum}, or reminiscent of them~\cite[]{fewster1999bounds}, even if any of their proof doesn't assume or use any quantum mechanical time-energy uncertainty relation.
-In their review~\cite[]{kontou2020energy} Kontou and Sanders point out that a better suiting interpretation should be instead researched within the relationship between quantum energy inequalities and the stability of the system they restrain: they should be viewed as a generalisation of having quantum mechanical system with bounded hamiltonian spectrum, \(H \ge 0\). They point out this analogy by extending to \(n = 1\) dimension the argument in~\cite[]{fewster1998bounds} (where Fewster and Eveson derive a quantum energy inequality for free scalar fields in \((n = 2)\)--Minkowski spacetime), while a more elaborate analysis can be found in~\cite[]{fewster2003stability}. Very roughly, when moving into a gravitational context, absolute energies becomes relevant - and not just differences of energies - from which arises the possibility for negative bounds, instead of having the spectrum always bounded by a \(0\). Such negative energies might be due to many subtleties, such as non trivial metrics, compactification of spatial dimensions~\cite[]{banach1979vacuum, louko1998inextendible}, or boundary conditions - such as the Casimir effect. Quantum energy inequalities however, are very difficult to formulate for interacting fields or on curved spacetime, and only a limited number of them has been proved for more than free theories, or Minkowski background. 
+In their review~\cite[]{kontou2020energy} Kontou and Sanders point out that a better suiting interpretation should be instead researched within the relationship between quantum energy inequalities and the stability of the system they restrain: they should be viewed as a generalisation of having quantum mechanical system with a bounded hamiltonian spectrum, \(H \ge 0\). They point out this analogy by extending to \(n = 1\) dimension the argument in~\cite[]{fewster1998bounds} (where Fewster and Eveson derive a quantum energy inequality for free scalar fields in \((n = 2)\)--Minkowski spacetime), while a more elaborate analysis can be found in~\cite[]{fewster2003stability}. Very roughly, when moving into a gravitational context, absolute energies becomes relevant - and not just differences of energies - from which arises the possibility for negative bounds, instead of having the spectrum always bounded by a \(0\). Such negative energies might be due to many subtleties, such as non-trivial metrics, compactification of spatial dimensions~\cite[]{banach1979vacuum, louko1998inextendible}, or boundary conditions - such as the Casimir effect. Quantum energy inequalities however, are very difficult to formulate for interacting fields or on curved spacetime, and only a limited number of them has been proved for more than free theories, or Minkowski background. 
 
-On the edge of the new millennium, a new conjecture came around: it has been observed by Ford and Roman in~\cite[]{ford1999quantum} how local violations of pointwise energy conditions seemed to be compensated for, or even overcompensated for, in other regions of spacetime, as if some negative energy was ``borrowed'', and then payed back later in time with some ``interest''. From this analysis comes the name \emph{quantum interest} conjecture, and this lead to the formulation of \emph{averaged} energy condition.
+On the edge of the new millennium, a new conjecture emerged: it has been observed by Ford and Roman in~\cite[]{ford1999quantum} how local violations of pointwise energy conditions seemed to be compensated for, or even overcompensated for, in other regions of spacetime, as if some negative energy was ``borrowed'', and then paid back later in time with some ``interest''. From this analysis comes the name \emph{quantum interest} conjecture, and this lead to the formulation of \emph{averaged} energy condition.
 \begin{definition}
-    An \emph{averaged energy condition} is the requirement for a specific contraction of the stress energy tensor of a theory, averaged over a suitable region of spacetime, to be non negative.
+    An \emph{averaged energy condition} is the requirement for a specific contraction of the stress energy tensor of a theory, averaged over a suitable region of spacetime, to be non-negative.
 \end{definition}
 \begin{remark}
-    Converesely from quantum energy inequalities, averaged energy conditions insist on on the lower bound \(0\), simplifying many problems that do arise for QEIs in defining such negative bounds in the case of interacting fields or curved spacetimes. At the same time they are way weaker than pointwise energy conditions, so in this sense they try to combine the best of both.
+    Conversely from quantum energy inequalities, averaged energy conditions insist on the lower bound \(0\), simplifying many problems that do arise for QEIs in defining such negative bounds in the case of interacting fields or curved spacetimes. At the same time they are way weaker than pointwise energy conditions, so in this sense they try to combine the best of both.
 \end{remark}
 In literature the region onto which the contraction of the stress tensor is averaged to obtain an energy condition is nearly always a \emph{causal geodesic}, and besides it is precisely the sort of condition that will be helpful for us.
 
@@ -102,14 +102,14 @@ hold on any null geodesic, or on any achronal null geodesic, where \(\lambda\) i
 \noindent
 Indeed ANEC in Minkowski can only be violated by non minimally coupled fields if they take trans-Planckian values, and even the Casimir effect doesn't invalidate it.
 However, a counterexample that lies very close to our field of interest is provided by~\cite[]{levi2016versatile}, where Levi and Ori numerically compute the renormalized stress tensor for minimally coupled scalar fields in a Schwarzschild background, and show that ANEC could be violated in that context. 
-Even there instead AANEC keeps holding: the only known counter examples to this condition are believed unphysical, as they all involve Planck length distances, where the validity of QFT in curved spacetimes and semiclassical quantum gravity encounter its limit. This is suggesting that AANEC might be actually a consequence of some fundamental properties of a full theory of quantum gravity: the bridge towards such yearned for theory is the main motivation for its study, and has made of it the ultimate graal of energy conditions.
+Even there instead AANEC keeps holding: the only known counter examples to this condition are believed unphysical, as they all involve Planck length distances, where the validity of QFT in curved spacetimes and semiclassical quantum gravity encounter its limit. This is suggesting that AANEC might be actually a consequence of some fundamental properties of a full theory of quantum gravity: the bridge towards such yearned for theory is the main motivation for its study, and has made of it the ultimate Holy Grail of energy conditions.
 
 More precisely, the two formulations of the condition given by Kontou and Sanders are:
 \begin{itemize}
     \item[\ding{99}] In Minkowski space the ANEC holds for any reasonable QFT with a stress tensor which (locally) generates the translations of the theory.
     \item[\ding{99}] On-shell configurations can violate AANEC only over Planck scale distances in directions transversal to the null geodesic.
 \end{itemize}
-The second formulation is clearly at least slightly stronger, and is the one with the widest range of interest for approaches to semi-classical gravity. By weakening any of the hypothesis, such as the on-shell requirement or the achronality, counterexamples can be provided, from which this form of the condition was derived. 
+The second formulation is clearly at least slightly stronger, and is the one with the widest range of interest for approaches to semi-classical gravity. By weakening any of the hypotheses, such as the on-shell requirement or the achronality, counterexamples can be provided, from which this form of the condition was derived. 
 There have been various attempts to prove AANEC, especially in its first formulation, that relies on various ideas borrowed from various range of backgrounds, from thermodynamics to AdS/CFT correspondence. The most interesting results so far have been attained in \(2\) dimensional spacetimes:
 \begin{itemize}
     \item[\ding{99}] In \(2-\)Minkowski ANEC has been proved by Verch in~\cite[]{verch2000averaged} for general quantum fields with a mass gap, suggesting that the validity of this condition goes beyond free fields.
@@ -119,7 +119,7 @@ There have been various attempts to prove AANEC, especially in its first formula
 Even if this sounds all very exciting, unfortunately no relativity theorem -including our area theorem- can be proved under energy conditions that average \(T_{\mu\nu}U^{\mu}U^{\nu}\) over the all extension of the geodesics. As we have seen, the existence criteria for focal points derived in proposition~\ref{prop:fp-criteria} requires the integral to start from the surface \(P\) with respect to which the focal point will form. In order to derive our results then, we need that the geodesic segment onto which we control the contraction of \(T_{\mu\nu}\) is not infinite at both ends. 
 
 \noindent
-We are going to see in the next sections of this chapter how we weaken the condition in order to be both still reasonable and valid on non bi-infinite intervals, but it is worth pointing out that all the geodeisc segments onto which we will ask such conditions to hold are segments of achronal null geodesics, and hence - from what argued above - might have any chance to generalise our results to a proper full theory of quantum gravity.
+We are going to see in the next sections of this chapter how we weaken the condition in order to be both still reasonable and valid on non bi-infinite intervals, but it is worth pointing out that all the geodesic segments onto which we will ask such conditions to hold are segments of achronal null geodesics, and hence - from what argued above - might have any chance to generalise our results to a proper full theory of quantum gravity.
 
 \begin{wrapfigure}{r}{0.47\textwidth}
     \centering
@@ -151,17 +151,17 @@ We need to formulate an average condition that is valid on limited geodesic segm
 
 The name ``Sobolev condition'' is not in use in literature, but for shortness we denoted this condition with such name as in particular makes use of Sobolev norms.
 The first main reason for which we started analyzing this condition is that in section \(4\) of~\cite{fewster2020new} Fewster and Kontou make use of an analogous condition to derive semi-classical singularity theorems.
-Furthermore, the form of this bound is inspired to Quantum Energy Inequalities that have been proved from QFTs (refer again to the review~\cite[]{kontou2020energy} for more details). In particular, because of this similarity to QEIs we will have to insist on applying it only to functions with the Dirichlet boundary conditions \(f(0) = 0 = f(\ell) \). We will see that this will cause us quite a few problems, but it is important to restrict to compactly supported functions because otherwise - apart from the mathematical convergence properties coming along - counterexample might arise easily from the presence of singular negative energy densities, as motivated in~\cite[]{ford1998quantum}.
+Furthermore, the form of this bound is inspired to Quantum Energy Inequalities that have been proved from QFTs (refer again to the review~\cite[]{kontou2020energy} for more details). In particular, because of this similarity to QEIs we will have to insist on applying it only to functions with the Dirichlet boundary conditions \(f(0) = 0 = f(\ell) \). We will see that this will cause us quite a few problems, but it is important to restrict ourselves to compactly supported functions because - apart from the mathematical convergence properties coming along - otherwise counter-examples might arise easily from the presence of singular negative energy densities, as motivated in~\cite[]{ford1998quantum}.
 
-At last, even if it is true that bounds on half complete geodesics are yet to be proved, some arguments in favour of non divergence of such integrals have already been provided by many authors. To mention one that seems the most relevant for us, in~\cite[]{ford1996averaged}, where Ford and Roman prove bounds of this sort for \(2\) dimensional Schwarzschild, and argue that similar results might hold in \(4\) dimensions as well.
+At last, even if it is true that bounds on half complete geodesics are yet to be proved, some arguments in favour of non-divergence of such integrals have already been provided by many authors. To mention one that seems the most relevant for us, in~\cite[]{ford1996averaged}, where Ford and Roman prove bounds of this sort for \(2\) dimensional Schwarzschild, and argue that similar results might hold in \(4\) dimensions as well.
 
 \section{The Smeared Null Energy Condition}
 \label{sec:SNEC}
 
 In section~\ref{sec:pointwise-energy-conditions} we mentioned that non minimally coupled scalar fields violate all the main pointwise energy conditions; hence, by theorem \(4.1\) of~\cite[]{kontou2020energy}, the corresponding quantized field doesn't admit any of the corresponding quantum energy inequality. Nevertheless it can admit state-dependent QEIs, but this means that if we look for a condition of the form of~\eqref{eq:Sobolev-condition} we will have to make a non trivial choice of \(\omega\).
 
-Depending on the situation this might not be a big deal, nevertheless it is worth looking for state-independent results, when aiming at the highest level of generality.
-In~\cite[]{fewster2003null} Fewster and Roman showed that QEIs along null geodesics cannot exist in \(4\) dimensional Minkowski spacetime for the massless minimally coupled scalar field. However very recently, in~\cite[]{freivogel2018smeared} Freivogel and Krommydas argued that such example is not particularly physically relevant because it needs to pass through the creation of states from the vacuum using excitation of arbitrary momenta. Indeed, by restricting the momenta to be below the UV cut-off of the theory, they arrive to the proposal of a new energy condition, the Smeared Null Energy condition.
+Depending on the situation this might not present us with an insuperable problem, nevertheless it is worth looking for state-independent results, when aiming at the highest level of generality.
+In~\cite[]{fewster2003null} Fewster and Roman showed that QEIs along null geodesics cannot exist in \(4\) dimensional Minkowski spacetime for the massless minimally coupled scalar field. However very recently, in~\cite[]{freivogel2018smeared} Freivogel and Krommydas argued that such example is not particularly physically relevant because it needs to pass through the creation of states from the vacuum using excitations of arbitrary momenta. Indeed, by restricting the momenta to be below the UV cut-off of the theory, they arrive to the proposal of a new energy condition, the Smeared Null Energy condition.
 
 \begin{definition}
 	The Smeared Null Energy Condition asks that, on any achronal portion of a null geodesic it holds:
@@ -173,14 +173,14 @@ In~\cite[]{fewster2003null} Fewster and Roman showed that QEIs along null geodes
 
 Freivogel and Krommydas conjecture that this bound should always hold as long as the cut-off rule is satisfied, and it has been proved for gravity induced on a brane, by means of AdS/CFT correspondence, where it was retrieved \(B = \frac{1}/{32\pi}\).
 
-Jackson Fliss provided a nice motivation for believing in a bound like SNEC: the details are reported in~\cite[]{fliss2022semi} and a simple sketch of the argument can be found at the beginning of section \(2\) of~\cite[]{freivogel2020return}. The key idea is to foliate any null \(3\)-hypersurface in Minkowsky spacetime with \(2\)d-``pencils''; by pencils they mean \(2\)-dimensional ``stripes'' of cross section \(a\) generated by null geodesics. They are relevant because Wall showed that free or super-renormalizable theories in \(4\)-Minkowski, on the lightsheet factorize into \(2\)d theories leaving on these pencils.
+Jackson Fliss provided a nice motivation for believing in a bound like SNEC: the details are reported in~\cite[]{fliss2022semi} and a simple sketch of the argument can be found at the beginning of section \(2\) of~\cite[]{freivogel2020return}. The key idea is to foliate any null \(3\)-hypersurface in Minkowsky spacetime with \(2\)d-``pencils''; by pencils they mean \(2\)-dimensional ``stripes'' of cross-section \(a\) generated by null geodesics. They are relevant because Wall showed that free or super-renormalizable theories in \(4\)-Minkowski, on the lightsheet factorize into \(2\)d theories leaving on these pencils.
 
 Assuming \(a\) is the smallest scale of the problem, it coincides with the UV cut-off of the theory; assuming that the theory onto each pencil is a chiral \(2\)d CFT, the higher dimensional stress tensor is related to the \(2\)d stress tensor by a simple proportionality relation (of coefficient \(\frac{1}{a}\)), and the \(2\)d tensor is bounded by the CFT result:
 \[
     \int_{-\infty}^{+\infty} d\lambda g^2(\lambda) \langle T^{(2)}_{++}(x^{\mu}(\lambda))\rangle \ge -\frac{c}{12\pi}\int_{-\infty}^{+\infty} g'^2(\lambda) d\lambda,
 \]
 from where a bound for the \(4\)d tensor is derived.
-As \(a\) has been identified with the ultraviolat cut-off, the Newton constant can be introduced by remembering that the \(1\)-loop renormalized quantity reads
+As \(a\) has been identified with the ultraviolet cut-off, the Newton constant can be introduced by remembering that the \(1\)-loop renormalized quantity reads
 \[
 G_N \lesssim \frac{\ell_{UV}^{n - 2}}{N},    
 \]

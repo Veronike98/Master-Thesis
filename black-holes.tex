@@ -1,5 +1,5 @@
 \section{Asymptotically flat spacetime}
-For this section we refer mainly to chapter \(11\) of \cite{wald1991general}, entirely dedicated to this class of spacetimes.
+For this section we refer mainly to chapter \(11\) of~\cite{wald1991general}, entirely dedicated to this class of spacetimes.
 Here we are interested only to grasp the idea of the definition and understand why it's a fundamental concept, needed to lay the basis for good definitions of black holes and related objects, even if the idea of asymptotic flatness is interesting by itself.
 
 Once again, the definition of this concept is rather subtle: the intuitive idea would be to specify some fall-off rates with which the metric \(g_{\mu\nu}\) ``tends to'' the flat metric  \(\eta_{\mu\nu}\). However, we no longer have a background flat metric, in terms of which the fall-off rates can be specified; in particular, generally there is no global inertial reference frame where to define a preferred radial coordinate \(r\).
@@ -17,7 +17,7 @@ In spherical coordinates the metric of flat space takes the form:
 \[
 ds^2 = dt^2 - dr^2 - r^2(d\theta^2 + \sin^2\theta d\phi^2)
 \]
-Closely following what Wald \cite{wald2010general} shows, suppose we want to study properties of radiation carried to infinity by a massless field, such as a Klein-Gordon scalar field \(\varphi\). Since this means taking limits, going to infinity along null directions, it is convenient to introduce advanced and retarded null coordinates
+Closely following what Wald~\cite{wald2010general} shows, suppose we want to study properties of radiation carried to infinity by a massless field, such as a Klein-Gordon scalar field \(\varphi\). Since this means taking limits, going to infinity along null directions, it is convenient to introduce advanced and retarded null coordinates
 \[
 \begin{cases}
 	 v = t + r\\
@@ -70,7 +70,7 @@ R = \tan^{-1}v - \tan^{-1}u \text{ with } -\pi \le T - R \le \pi \text{ and } R 
 \end{equation}
 
 \subsection{Definition of asymptotic flatness}
-Remarkably, the line element in \eqref{eq:Einstein-static-metric} is exactly the natural Lorentz metric on \(S^3 \times \R\), better known as \emph{Einstein static universe}. Then we have learned the following, interesting fact:
+Remarkably, the line element in~\eqref{eq:Einstein-static-metric} is exactly the natural Lorentz metric on \(S^3 \times \R\), better known as \emph{Einstein static universe}. Then we have learned the following, interesting fact:
 \begin{prop}
 	There exists a conformal isometry of Minkowski spacetime \((\R^4, \eta_{\mu\nu})\) into an open region \(O\) of the Einstein static universe \((S^3 \times \R, \tilde{g}_{\mu\nu})\)
 \end{prop}
@@ -78,7 +78,7 @@ Remarkably, the line element in \eqref{eq:Einstein-static-metric} is exactly the
 This allows us to define what we mean by ``conformal infinity'' of Minkowski space, with which we refer to the boundary \(\partial O\) of the open region \(O\).
 
 
-As illustrated in figure \ref{fig:Einstein-static-universe}, this boundary \(\partial O\) can be naturally divided into \(5\) parts:
+As illustrated in figure~\ref{fig:Einstein-static-universe}, this boundary \(\partial O\) can be naturally divided into \(5\) parts:
 \begin{enumerate}[label=(\arabic*)]
 	\item \emph{Past timelike infinity} \(i^{-}\), the ``bottom vertex point'' given by the coordinates \((R = 0, T = -\pi)\).
 	\item \emph{Past null infinity} \(\mathscr{I}^-\), the \(3\)-dimensional null hypersurface given by \((R, T = -\pi + R)\), with \(R \in (0, \pi)\).
@@ -113,7 +113,7 @@ In this way we would clearly solve both problems mentioned at the beginning of t
 	\end{enumerate}
 \end{remark}
 
-All what has been said up to here is enough to give us the fundamental ideas with which we will need to work, but for the sake of completeness we conclude this section providing a formal definition of asymptotic flatness. The reader interested in further comments can refer to the already cited chapter \(11\) of \cite{wald2010general}, or even to the rather technical discussion of Ashtekar \emph{et.al} \cite{ashtekar1978unified}.
+All what has been said up to here is enough to give us the fundamental ideas with which we will need to work, but for the sake of completeness we conclude this section providing a formal definition of asymptotic flatness. The reader interested in further comments can refer to the already cited chapter \(11\) of~\cite{wald2010general}, or even to the rather technical discussion of Ashtekar \emph{et.al}~\cite{ashtekar1978unified}.
 \begin{definition}
 	A vacuum spacetime is called \emph{asymptotically flat at null and spatial infinity} if there exists a spacetime \((\tilde{M}, \tilde{g}_{\mu\nu})\), with \(\tilde{g}_{\mu\nu}\) \(C^{\infty}\) everywhere except possibly at a point \(i^0\) where it needs to be \(C^{>0}\), and a conformal isometry \(\psi: M \rightarrow \psi(M)\subset \tilde{M}\) with conformal factor \(\Omega\), so that the following conditions are satisfied:
 	\begin{enumerate}[label=(\arabic*)]
@@ -134,7 +134,7 @@ All what has been said up to here is enough to give us the fundamental ideas wit
 \end{definition}
 
 As last observation of these section, we remark that we can separately define asymptotically flat spacetimes only at \emph{spatial} or \emph{null} infinity, by simply eliminating the irrelevant parts on the definition above.
-Finally, as pointed out by Wald, the definition of \emph{weak asymptotically simplicity} given by Penrose in \cite{penrose1965zero}, and often taken as a criterion for asymptotic flatness, is formally different but implies all the conditions of the above definition, apart from \((5b)\); this last one is needed in order to make sure that asymptotic flatness does not cease to hold even at finite retarded time \cite{geroch1978asymptotically}.
+Finally, as pointed out by Wald, the definition of \emph{weak asymptotically simplicity} given by Penrose in~\cite{penrose1965zero}, and often taken as a criterion for asymptotic flatness, is formally different but implies all the conditions of the above definition, apart from \((5b)\); this last one is needed in order to make sure that asymptotic flatness does not cease to hold even at finite retarded time~\cite{geroch1978asymptotically}.
 
 \section{Strongly Asymptotically Predictable Spacetimes}
 In order to study some properties of black holes we first need a precise definition of these objects. The first idea would be to translate the concept of ``regions of no-escape'' into the requirement \(B \coloneqq \{p \in M\vert J^+(p)\subseteq B \}\).
@@ -163,7 +163,7 @@ Finally we are able to define what a black hole is from a topologically point of
 		\item The notion of asymptotic flatness is needed to specify a definition of the ``infinity'' that observers trapped in a black hole don't have any hope to reach anymore. The definition might be extended in some cases where a suitable notion of ``infinity'' is provided, but we are not able to say anything in general.
 		\item The requirement for strong asymptotic predictability is more an instrumental physical hypothesis, rather than a mathematical one, needed for well-posedness. It is really meant to ensure that physics is predictable on and outside \(H\).
 		
-		Indeed, asymptotically flat spacetimes which fail to be strongly predictable are said to contain a \emph{naked singularity}, but these cases are believed not to be physically relevant. This statement is the main content of the Cosmic Censorship Conjecture: the curious reader may find its definition in chapter \(12\) of \cite{wald2010general} and some endless literature browsing the internet, starting from \cite{dias2018strong}.
+		Indeed, asymptotically flat spacetimes which fail to be strongly predictable are said to contain a \emph{naked singularity}, but these cases are believed not to be physically relevant. This statement is the main content of the Cosmic Censorship Conjecture: the curious reader may find its definition in chapter \(12\) of~\cite{wald2010general} and some endless literature browsing the internet, starting from~\cite{dias2018strong}.
 	\end{enumerate}
 \end{remark}
 
@@ -181,9 +181,9 @@ However, the two different notions of ``time'' in the \emph{in} and \emph{out} r
 The most dramatic effect of this discrepancy is that two observers living in these separated regions will not agree on the notion of \emph{vacuum}: a state which contains no particles for observer \(A\) in \emph{in}, might not look empty to observer \(B\) in \emph{out}.
 Then of course, the all Fock space and the ladder operators will be different for \(A\) and \(B\), even if they can still be connected by a Bogoliubov transformation.
 
-The most astonishing consequence of this discrepancy is the so-called \emph{Hawking radiation}. With an incredibly modern approach, in \(1974\) Hawking predicted that indeed, an observer in the future region of a spacetime where gravitational collapse gives rise to a black hole, shall observe a thermal radiation with a Planck spectrum of Hawking temperature \(T_H\). Both the termal specturm of the radiation and the precise computation of the temperature arise from the analysis of the coefficient of the above mentioned Bogoliubov transformation. For additioanl details on this process, we shall refer to the original article \cite[]{hawking1975particle} or chapter \(3\) of the book by Fabbri and Navarro \cite[]{fabbri2005modeling}, where they introduce the topic in a very pleasantly didactic way.
+The most astonishing consequence of this discrepancy is the so-called \emph{Hawking radiation}. With an incredibly modern approach, in \(1974\) Hawking predicted that indeed, an observer in the future region of a spacetime where gravitational collapse gives rise to a black hole, shall observe a thermal radiation with a Planck spectrum of Hawking temperature \(T_H\). Both the termal specturm of the radiation and the precise computation of the temperature arise from the analysis of the coefficient of the above mentioned Bogoliubov transformation. For additioanl details on this process, we shall refer to the original article~\cite[]{hawking1975particle} or chapter \(3\) of the book by Fabbri and Navarro~\cite[]{fabbri2005modeling}, where they introduce the topic in a very pleasantly didactic way.
 
-The temperature of the Planck spectrum of the radioation can also be retrieved through a very neat and famous argument due to Gibbons and Hawking \cite[]{gibbons1993action}; when carrying out a Wick rotation in a black hole solution, in order to avoid the surgence of a conical singularity, one must impose a periodicity of the euclidean time coordinate corrisponding to exactly the Hawking temperature:
+The temperature of the Planck spectrum of the radioation can also be retrieved through a very neat and famous argument due to Gibbons and Hawking~\cite[]{gibbons1993action}; when carrying out a Wick rotation in a black hole solution, in order to avoid the surgence of a conical singularity, one must impose a periodicity of the euclidean time coordinate corrisponding to exactly the Hawking temperature:
 
 \begin{equation}
 	\label{eq:hawking-temperature}
@@ -191,14 +191,14 @@ The temperature of the Planck spectrum of the radioation can also be retrieved t
 \end{equation}
 
 \begin{remark}
-	It stands out immediately how the temperature in \eqref{eq:hawking-temperature} is proportional to \(\hbar\). In particular then, in the semiclassical limit, as \(\hbar \rightarrow 0\) also \(T_H \rightarrow 0\), and no Hawking radiation is left. This is precisely what we refer to when we say that Haking radiation is a purely quantum mechanical effect.
+	It stands out immediately how the temperature in~\eqref{eq:hawking-temperature} is proportional to \(\hbar\). In particular then, in the semiclassical limit, as \(\hbar \rightarrow 0\) also \(T_H \rightarrow 0\), and no Hawking radiation is left. This is precisely what we refer to when we say that Haking radiation is a purely quantum mechanical effect.
 \end{remark}
 
 According to the classical study of any radiation with Planck spectrum, each angular momentum component of the fields gives a contribution to the luminosity
 \[
 L_{\ell} = \frac{2\ell + 1}{2\pi} \int_0^{+\infty} d\omega \frac{\hbar\omega}{e^{8\pi M\omega} - 1}	d\omega  = (2\ell + 1) \cdot\frac{\hbar}{768\pi M^2}.
 \]
-However, simply summing over all the contributions would lead to a divergent result; as motivated in \cite[]{fabbri2005modeling} - among others - this is because we are neglecting backscattering. This is basically equivalent to saying that we are neglecting backreaction, and so we would have a black hole radiating forever: if not in the luminosity here we would get a divergence in the total emitted energy, in clear contrast with the finite amount contined by the black hole.
+However, simply summing over all the contributions would lead to a divergent result; as motivated in~\cite[]{fabbri2005modeling} - among others - this is because we are neglecting backscattering. This is basically equivalent to saying that we are neglecting backreaction, and so we would have a black hole radiating forever: if not in the luminosity here we would get a divergence in the total emitted energy, in clear contrast with the finite amount contined by the black hole.
 
 Backscattering effects are resumed by the \emph{gray-body factors} \(\Gamma_{\omega, \ell}\), that weight the energy distribution and decrease with \(\ell\). They could be estimated via the Page approximation~\cite[]{page1976particle}:
 \[
@@ -220,7 +220,7 @@ where \(\beta \sim \mathcal{O}(10^{-5})\) hides the precise knowledge of backsca
 
 \subsection{Causality violation}
 \label{subsec:causaliy-bh-evaporation}
-It has been pointed out (first of all by Kodama \cite{Kodama:1979vm}) that Black Hole evaporation is in tension with global hyperbolicity: in fact the region formed after the complete evaporation of the black hole would cause a ``chronology violation'', in the sense that the initial data collected on a Cauchy surface might not be enough to predict the evolution after the disappearance of the singularity.
+It has been pointed out (first of all by Kodama~\cite{Kodama:1979vm}) that Black Hole evaporation is in tension with global hyperbolicity: in fact the region formed after the complete evaporation of the black hole would cause a ``chronology violation'', in the sense that the initial data collected on a Cauchy surface might not be enough to predict the evolution after the disappearance of the singularity.
 
 \begin{wrapfigure}{r}{0.45\textwidth}
 	\centering
@@ -232,8 +232,8 @@ Such an hypothesis was assumed also for the original Black Hole Area theorem: in
 
 The problem might be easily worked around by observing that we only need to require global hyperbolicty for the region the horizon lies into. This wouldn't bring to any contradiction, as the chronology violation region only begins \emph{after} the complete evaporation of the black hole, where no horizon exists anymore. For the readers concearned about the scarce punctiliousness of the above statement, we have good news: it is possible to do even better than that! 
 
-As already commented by Hawking and Ellis in \cite[]{hawking1973large} (for Penrose's theorem, but it will be the same for our generalized area theorem), the globaly hyperbolicity assumption is only used to ensure that \((M, g)\) is causaly simple, so that the generators a surface \(K\), \(\partial J^+(\mathscr{K})\) have past endpoints on \(K\) [i.e. \(\partial J^+(K) = H^+(K)\)].
-In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework within which singularity formation can be derived. He argues that the hypothesis of globabl hyperbolicity can be relaxed to \emph{past reflectivity} and \emph{openess}, because what really is needed is a topological condition that prevents the horizon from ``swallowing up'' the all universe. We believe that the same framework can be adapted to our work as well, but in order to show it, we need to dig a little bit more into causal properties of spacetimes.
+As already commented by Hawking and Ellis in~\cite[]{hawking1973large} (for Penrose's theorem, but it will be the same for our generalized area theorem), the globaly hyperbolicity assumption is only used to ensure that \((M, g)\) is causaly simple, so that the generators a surface \(K\), \(\partial J^+(\mathscr{K})\) have past endpoints on \(K\) [i.e. \(\partial J^+(K) = H^+(K)\)].
+In~\cite{minguzzi2020gravitational} Minguzzi provides a coherent framework within which singularity formation can be derived. He argues that the hypothesis of globabl hyperbolicity can be relaxed to \emph{past reflectivity} and \emph{openess}, because what really is needed is a topological condition that prevents the horizon from ``swallowing up'' the all universe. We believe that the same framework can be adapted to our work as well, but in order to show it, we need to dig a little bit more into causal properties of spacetimes.
 
 \subsection{Past reflectivity}
 	\label{subsec:past-reflectivity}
@@ -250,7 +250,7 @@ In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework withi
 	\end{definition}
 	Here \(\uparrow I^-(p) \coloneqq Int\left[\cap_{r\in I^-(p)}I^+(p)\right]\) is the \emph{common future}, while \(\mu\) is any finite spacetime measure absolutely continuous with respect to the Lebesgue measure induced by the coordinate charts. Past reflectivity is defined similarly.
 
-	Future and past reflectivity are implied by \emph{causal continuity}, and hence by global hyperbolicity as well. We shall now show that an evaporating black hole spacetime is still \emph{past reflecting}, but not \emph{future reflecting}. Lesourd had already shown in \cite[]{lesourd2018causal} that past reflectivity cannot hold in presence of any evaporating null hypersurface, not just the specific case of the black hole horizon. 
+	Future and past reflectivity are implied by \emph{causal continuity}, and hence by global hyperbolicity as well. We shall now show that an evaporating black hole spacetime is still \emph{past reflecting}, but not \emph{future reflecting}. Lesourd had already shown in~\cite[]{lesourd2018causal} that past reflectivity cannot hold in presence of any evaporating null hypersurface, not just the specific case of the black hole horizon. 
 
 	But what is an evaporating null hypersurface then? Minguzzi observes that typically, what distinguishes an evaporating black hole is that, for an observer that escaped the fate of falling into it, he has the possibility to see the process of gravitational collapse to come to an end. This is in stark contrast with what happens in Schwarzschild, where an asymptotically far observer would see any object falling towards the horizon for an infinite time, without ever reaching it.
 
@@ -261,7 +261,7 @@ In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework withi
 		\label{fig:evaporating-surface}
 	\end{figure}
 
-	Let us refer to \ref{fig:evaporating-surface} to formalize that idea: two timelike curves leaves \(r\), \(\gamma\) falling into the black hole, while \(\sigma\) is future inextendible. Minguzzi is interested in those observers that can witness the whole falling history, \(\gamma ([0,a)) \subset J^-(\sigma([0,t]))\).
+	Let us refer to~\ref{fig:evaporating-surface} to formalize that idea: two timelike curves leaves \(r\), \(\gamma\) falling into the black hole, while \(\sigma\) is future inextendible. Minguzzi is interested in those observers that can witness the whole falling history, \(\gamma ([0,a)) \subset J^-(\sigma([0,t]))\).
 
 	\begin{definition}
 		The horizon \(H\) at point \(p\) is evaporating from the point of view of observer \(\sigma\) if there exists \(t > 0\) such that
@@ -273,7 +273,7 @@ In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework withi
 	\begin{theorem}
 		Past reflecting spacetimes which contain an evaporating \(C^0\) future null hypersurface \(H\) are not future reflecting.
 	\end{theorem}
-	Define \(\tau \coloneqq \inf t\) for which the inclusion \(gamma \left([0, a]\right) \subset J^-\left(\sigma\left([0, t]\right)\right)\), holds, and \(q = \sigma(\tau)\), as in figure \ref{fig:evaporating-surface}.
+	Define \(\tau \coloneqq \inf t\) for which the inclusion \(gamma \left([0, a]\right) \subset J^-\left(\sigma\left([0, t]\right)\right)\), holds, and \(q = \sigma(\tau)\), as in figure~\ref{fig:evaporating-surface}.
 	Past reflectivity is necessary to ensure that points to the future of \(q\) can see \(\gamma[0,a)\), and hence, \(p\) to their past, but future reflectivity fails because if any point to the future of \(q\) was in the future of \(p\), it would create a contradiction with the definition of horizon \(H\). 
 	\begin{remark}
 		It is interesting to notice that past reflectivity is not a causality condition (it does not belong to the ladder of causality definitions), but instead should be regarded as a restriction on \emph{how} information can propagate in the universe.
@@ -285,19 +285,19 @@ In \cite{minguzzi2020gravitational} Minguzzi provides a coherent framework withi
 	\end{definition}
 	It can be shown that compact null araying set lying in the non vicious region implies that the surface is trapped, and under very weak causality assumptions (like strong causality) the converse becomes true as well. Moreover
 	\begin{definition}
-		A compact non-empty set S that does not intresect the chronology violation region \(\mathcal{C}\) is said to have an \emph{unavoidable} or \emph{swallowing} horizon if there exists an open neighborhood U of \(H^+(S)\) such that its past in \(U\) is strictly contained in the past domain of dependence of \(H^+(S)\) 
+		A compact non-empty set S that does not intersect the chronology violation region \(\mathcal{C}\) is said to have an \emph{unavoidable} or \emph{swallowing} horizon if there exists an open neighborhood U of \(H^+(S)\) such that its past in \(U\) is strictly contained in the past domain of dependence of \(H^+(S)\) 
 		\[
 			I^-_U(H^+(S)) \subset Int D^-(H^+(S)).	
 		\]
 	\end{definition}
-	Under this condition any observer that were to pass through a neighborhood of the horizon \(H^+(S)\) would be forced to intersec it, and hence fall under its causal influence. This is a topological feature that we wish to avoid for the horizons that we study. In particular it can be proved that null future araying sets in the non vicious region have unavoidable horizons.
+	Under this condition any observer that were to pass through a neighborhood of the horizon \(H^+(S)\) would be forced to intersect it, and hence fall under its causal influence. This is a topological feature that we wish to avoid for the horizons that we study. In particular it can be proved that null future araying sets in the non vicious region have unavoidable horizons.
 
 	What is more similar to an actual causality condition, and that seems to be the other minimal requirement is
 	\begin{definition}
 		A spacetime is \emph{(spatially) open} if it does not contain a compact spacelike hypersurface.
 	\end{definition}	
-	In particular spacetimes with non-compact Cauchy hypersurfaces are \emph{open}, so globaly hyperbolicity implies also this new feature. 
-	Finally, theorem \(2.10\) of \cite[]{minguzzi2020gravitational} states:
+	In particular spacetimes with non-compact Cauchy hypersurfaces are \emph{open}, so globally hyperbolicity implies also this new feature. 
+	Finally, theorem \(2.10\) of~\cite[]{minguzzi2020gravitational} states:
 	\begin{theorem}
 		Let \((M,g)\) be a past reflecting and open spacetime. Then it does not admit compact future null araying sets that do not intersect \(\mathcal{C}\).
 	\end{theorem}

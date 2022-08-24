@@ -15,7 +15,7 @@ For the \((3 + 1)\) Unruh vacuum, it doesn't exist yet any analytic approximate 
     \end{pmatrix}
 \end{equation}
 
-Here \(\rho\), \(f\), \(p\) and  \(\tau\) are functions of the radial coordinate \(r\), the mass of the black hole \(M\) and \(\hbar\), and we have set \(G = 1\); for later convenience \eqref{eq:stress-tensor-s-wave} is to be thought valid in the coordinate system \(\{t, r^*, \theta, \phi\}\), even if naturally the form of the tensor shall be the same in all the other coordinate system that do not mix angular coordinates with radial or time ones. We will refer to \(\{t, r, \theta, \phi\}\) as spherical coordinates, where the metric is espressed by the well-known expression:
+Here \(\rho\), \(f\), \(p\) and  \(\tau\) are functions of the radial coordinate \(r\), the mass of the black hole \(M\) and \(\hbar\), and we have set \(G = 1\); for later convenience~\eqref{eq:stress-tensor-s-wave} is to be thought valid in the coordinate system \(\{t, r^*, \theta, \phi\}\), even if naturally the form of the tensor shall be the same in all the other coordinate system that do not mix angular coordinates with radial or time ones. We will refer to \(\{t, r, \theta, \phi\}\) as spherical coordinates, where the metric is espressed by the well-known expression:
 \[
 ds^2 =  \left(1 - \frac{R_s}{r}\right)dt^2  - \frac{dr^2}{1 - \frac{R_s}{r}} - r^2d\Omega^2,
 \]
@@ -205,12 +205,12 @@ so
    T^{\mu\nu}g_{\mu\alpha}g_{\nu\beta}U^{\alpha}U^{\beta}  = 
     4U^2\left[\rho - 2f - \tau \right].
 \]
-We need to be careful in taking the limit towards the horizion to compute correctly \(\frac{U^2}{1 - z}\). We choose to look at the family of null geodesics given by \(U \equiv U_0\) constant, and then taking \(U_0 \rightarrow 0\) (look at figure \ref{fig:Penrose-diagran-Kruskal-extension} for a visualization in the Penrose diagram). 
+We need to be careful in taking the limit towards the horizion to compute correctly \(\frac{U^2}{1 - z}\). We choose to look at the family of null geodesics given by \(U \equiv U_0\) constant, and then taking \(U_0 \rightarrow 0\) (look at figure~\ref{fig:Penrose-diagran-Kruskal-extension} for a visualization in the Penrose diagram). 
 
 \begin{figure}
     \centering
     \includegraphics[scale=1.1]{Immagini/Kruskal-extension/Kruskal-extension.pdf}
-    \caption{Penrose diagram of the maximally extended Schwarzschild solution. The cyclamen dashed line is the singularity, while the tuquoise arrows represent the vector field of null generators. When we take the limit \(U\rightarrow 0\) that finally leads us \eqref{eq:contraction-stress-tensor}, we choose to do it along the cyclamen solid arrow, where for each \(U_i\) we are considering the contraction with the field tangent to the null geodesic \(U \equiv U_i\), represented here by yellow solid lines.}
+    \caption{Penrose diagram of the maximally extended Schwarzschild solution. The cyclamen dashed line is the singularity, while the tuquoise arrows represent the vector field of null generators. When we take the limit \(U\rightarrow 0\) that finally leads us~\eqref{eq:contraction-stress-tensor}, we choose to do it along the cyclamen solid arrow, where for each \(U_i\) we are considering the contraction with the field tangent to the null geodesic \(U \equiv U_i\), represented here by yellow solid lines.}
     \label{fig:Penrose-diagran-Kruskal-extension}
 \end{figure}
 Recall the identity
@@ -246,6 +246,6 @@ Finally, it is worth pointing out that this computation also shows explicitely t
     \int_{V_0}^{+\infty} T_{\mu\nu}U^{\mu}U^{\nu} dV = - \frac{16ef_0}{V_0^2}.
 \end{equation}
 Speaking strictly about the Schwarzschild solution this bound would diverge because we would have \(V_0\rightarrow 0\), but this would correspond to integrating along the full future horizion on an eternal black hole spacetime, which physically corresponds to a black hole that Hawking-radiates for an infinite time: no surprise that we get a divergence!
-For the Unruh vacuum state to be everywhere well defined instead, we must consider instead physically realistic spacetimes where the black hole forms for gravitational collapse at a finite time in the past, corresponding to a minimal value of \(V_{min} = V_0\). For such spacetimes we find that the integral in  \eqref{eq:computation-averaged-contraction} is negative but finite, and hence energy conditions such as the Sobolev conditions gain credibility.
-Considerations of this sort had been made for \(2\) dimensional spacetimes already in \cite[]{ford1996averaged}, where however Ford and Roman rely on the analytical expansion of the stress tensor for the \(2\)-dimensional Unruh vacuum. They try to generalise the discussion to \(4\) dimensional spacetimes, claiming that equivalent bounds shall hold, (and anticipating they could be used to generalise Singularity theorems), but they don't manage to compute the contraction we derived in this appendix.
+For the Unruh vacuum state to be everywhere well defined instead, we must consider instead physically realistic spacetimes where the black hole forms for gravitational collapse at a finite time in the past, corresponding to a minimal value of \(V_{min} = V_0\). For such spacetimes we find that the integral in ~\eqref{eq:computation-averaged-contraction} is negative but finite, and hence energy conditions such as the Sobolev conditions gain credibility.
+Considerations of this sort had been made for \(2\) dimensional spacetimes already in~\cite[]{ford1996averaged}, where however Ford and Roman rely on the analytical expansion of the stress tensor for the \(2\)-dimensional Unruh vacuum. They try to generalise the discussion to \(4\) dimensional spacetimes, claiming that equivalent bounds shall hold, (and anticipating they could be used to generalise Singularity theorems), but they don't manage to compute the contraction we derived in this appendix.
 

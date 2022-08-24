@@ -1,12 +1,12 @@
 Now that we have covered all the background needed to understand our results and their proofs, let us finally introduce them. 
-All the material collected in this chapter should be understood as original; in order to introduce more didactically how the index form method unfolds, we are going to also review some previously known results (some of them very famously), but whenever this is going to happen, we are mentioning it explicitely, and in any case the proof that will be presented will be original. To the knowledge of the present authors in fact the index form methods has only been previously applied by Fewster, Kontou and Freivogel to prove some weakened singularity theorems, and by Chicone and Ehrlich in \cite[]{chicone1980line} to prove the existence of conjugate points along complete geodesics.
+All the material collected in this chapter should be understood as original; in order to introduce more didactically how the index form method unfolds, we are going to also review some previously known results (some of them very famously), but whenever this is going to happen, we are mentioning it explicitly, and in any case the proof that will be presented will be original. To the knowledge of the present authors in fact the index form methods has only been previously applied by Fewster, Kontou and Freivogel to prove some weakened singularity theorems, and by Chicone and Ehrlich in~\cite[]{chicone1980line} to prove the existence of conjugate points along complete geodesics.
 
 The idea itself that the area theorem could be extended to a semiclassical regime, is, in fact, to be attributed to the present authors. In literature there are many statements, even from the very early days of those famous results, that singularity theorems could be extended to a semiclassical regime, but no mention of the area theorem is usually found. This was regarded as a purely classical result, and despite the proof of this theorem and Penrose's singularity theorem were very similar, not much attention seems to have ever been dedicated to its actual regime of validity.
 
 \section{The classical Black Hole Area Theorem}
 \label{sec:classical-bh-area}
 
-Our statement of the original Black Hole area theorem comes from \cite{wald2010general} (theorem \(12.2.6\)):
+Our statement of the original Black Hole area theorem comes from~\cite{wald2010general} (theorem \(12.2.6\)):
 \begin{theorem}[Black Hole Area Theorem]
 	\label{th:classical-bh-area}
 	Let \((M, g_{\mu\nu})\) be a strongly asymptotically predictable spacetime satisfying \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) for all null vectors \(U^{\mu}\) (\emph{null convergence condition}). Let \(\Sigma_1\) and \(\Sigma_2\) be spacelike Cauchy surfaces for the globally hyperbolic region \(\tilde{V}\) such that \(\Sigma_2 \subset I^+(\Sigma_1)\), and given \(H\) the event horizon we define
@@ -17,7 +17,7 @@ Our statement of the original Black Hole area theorem comes from \cite{wald2010g
 \end{theorem}
 
 \begin{proof}
-	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators of \(H\) is everywhere non-negative. Here we wish to follow a slightly different path, inspired by the index form methods, that makes use of another object, defined in section \ref{sec:submanifolds}: the mean curvature.
+	This theorem is usually proven by showing, through a reductio ad absurdum, that the expansion \(\theta\) of the null geodesic generators of \(H\) is everywhere non-negative. Here we wish to follow a slightly different path, inspired by the index form methods, that makes use of another object, defined in section~\ref{sec:submanifolds}: the mean curvature.
 	
 	Let \(\Sigma_1\) be any Cauchy hypersurface for \(\tilde{V}\) through a generic point \(p\in H\), and call \(\mathscr{H}_1 = H \cap \Sigma_1\), as above. Finally refer to \(\mathrm{H}^{\mu}\) as the mean normal curvature of \(\mathscr{H}_1\).
 	The core of the proof is showing that, for the tangent field \(U^{\mu}\) of the null generators of the horizon \(H\), it holds everywhere that:
@@ -27,7 +27,7 @@ Our statement of the original Black Hole area theorem comes from \cite{wald2010g
 	\end{equation}
 	By contradiction, suppose instead that \(\mathrm{H}^{\mu}U_{\mu} < 0\) at \(p\in \mathscr{H}_1\). We then want to extend the function \(\mathrm{H}^{\mu}U_{\mu}\) in a continuous way on \(\Sigma_1\) (at least in a neighborhood of \(\mathscr{H}_1\)). 
 	\noindent
-	In order to do that, take any deformation of \(\mathscr{H}_1\) outward on \(\Sigma_1\), say \(\mathscr{H}_1'\) and call \(K\) the closed region in \(\Sigma_1\) between \(\mathscr{H}_1\) and \(\mathscr{H}_1'\); the boundary of its future \(\partial J^+(K)\) is a null hypersurface of codimension \(1\), and hence comes with its own null generators, with tangent field \(U'^{\mu}\) (see figure \ref{fig:extension-area-theorem}). This allows us to define the function in \(p' \in\mathscr{H}_1'\) as simply the contraction 
+	In order to do that, take any deformation of \(\mathscr{H}_1\) outward on \(\Sigma_1\), say \(\mathscr{H}_1'\) and call \(K\) the closed region in \(\Sigma_1\) between \(\mathscr{H}_1\) and \(\mathscr{H}_1'\); the boundary of its future \(\partial J^+(K)\) is a null hypersurface of codimension \(1\), and hence comes with its own null generators, with tangent field \(U'^{\mu}\) (see figure~\ref{fig:extension-area-theorem}). This allows us to define the function in \(p' \in\mathscr{H}_1'\) as simply the contraction 
 	\(\mathrm{H}'^{\mu}U'_{\mu}\) (with \(\mathrm{H}'^{\mu}\) mean normal curvature of \(\mathscr{H}_1'\)). Different deformations of \(\mathscr{H}_1\) may give different extensions, but that's not important, since we only need that there exists one so that the extension is smooth.
 	
 	\begin{figure}
@@ -51,7 +51,7 @@ Our statement of the original Black Hole area theorem comes from \cite{wald2010g
 	\]
 	Pick now a point \(q \in \mathscr{I}^+ \cap \partial J^+(K)\):  
 	% (\VS{This exists for sth similar to 12.2.6 of Wald})
-	the null geodesic generator through \(q\) will meet \(\mathscr{H}_1'\) orthogonally because of \ref{prop:global-existence} and \ref{prop:perp-critical-gamma}; however, in \(p' = \gamma \cap \mathscr{H}_1'\), \(U'_{\mu}\mathrm{H}'^{\mu} < 0\), so by proposition \ref{prop:fp-criteria} we know that a focal point to \(\mathscr{H}_1'\) must develop on \(\gamma\) before reaching \(q\). In fact, it is enough to choose \(f = 1 - \frac{\lambda}{\ell}\), with \(\lambda\) affine parameter such that:
+	the null geodesic generator through \(q\) will meet \(\mathscr{H}_1'\) orthogonally because of~\ref{prop:global-existence} and~\ref{prop:perp-critical-gamma}; however, in \(p' = \gamma \cap \mathscr{H}_1'\), \(U'_{\mu}\mathrm{H}'^{\mu} < 0\), so by proposition~\ref{prop:fp-criteria} we know that a focal point to \(\mathscr{H}_1'\) must develop on \(\gamma\) before reaching \(q\). In fact, it is enough to choose \(f = 1 - \frac{\lambda}{\ell}\), with \(\lambda\) affine parameter such that:
 	\[
 	\begin{cases}
 	\hat{\mathrm{H}}'^{\mu}U'_{\mu} = 1 \\
@@ -66,7 +66,7 @@ Our statement of the original Black Hole area theorem comes from \cite{wald2010g
 	\frac{n -2}{\ell} \le -(n -2) U'_{\mu} \mathrm{H}'^{\mu} =
 	-(n -2) g(f^2 U', \mathrm{H}')\Big\vert_{p},
 	\]}
-	This is impossible, because orthogonal null generators are prompt curves, and so cannot contain any focal point (see section \ref{sec:promptness}), hence 
+	This is impossible, because orthogonal null generators are prompt curves, and so cannot contain any focal point (see section~\ref{sec:promptness}), hence 
 	\[
 	\forall p \in H \quad \mathrm{H}^{\mu}U_{\mu}(p) \ge 0.
 	\]
@@ -82,16 +82,16 @@ Our statement of the original Black Hole area theorem comes from \cite{wald2010g
 \end{proof}
 
 \begin{remark}
-	As it has already been noticed in \cite[]{chrusciel2001regularity}, this statement of the area theorem is terribly vague about the proper definition of \emph{area}. The same flaw is found also in our main references \cite[]{wald2010general, hawking1973large} and in the original work on this theorem \cite[]{hawking1972black}, where it seems that picewise \(C^2\) differentiability of the horizon has been assumed. However, in \cite[]{chrusciel1998horizons} Chru\'sciel and Galloway point out that such surfaces can be pretty rough, potentially even \emph{nowhere} \(C^2\). In such cases it is not at all clear whether the notion of area or of mean normal curvature of cross-sections of the horizon would even be defined, not to mention the existence of a smooth extension of \(\mathrm{H}^{\mu}U_{\mu}\). 
+	As it has already been noticed in~\cite[]{chrusciel2001regularity}, this statement of the area theorem is terribly vague about the proper definition of \emph{area}. The same flaw is found also in our main references~\cite[]{wald2010general, hawking1973large} and in the original work on this theorem~\cite[]{hawking1972black}, where it seems that picewise \(C^2\) differentiability of the horizon has been assumed. However, in~\cite[]{chrusciel1998horizons} Chru\'sciel and Galloway point out that such surfaces can be pretty rough, potentially even \emph{nowhere} \(C^2\). In such cases it is not at all clear whether the notion of area or of mean normal curvature of cross-sections of the horizon would even be defined, not to mention the existence of a smooth extension of \(\mathrm{H}^{\mu}U_{\mu}\). 
 
-	The authors in \cite[]{chrusciel2001regularity} have been able to prove a refined version of the area theorem under some slightly more restrictive assumptions, such as a notion of regularity of \(\mathscr{I}^+\), that they refer to as \(H\)-regularity. This is a very technical mathematical requirement though, which doesn't add much physical insight to our discussion, and it can be extended to all the area theorems we will prove almost straightforwardly, so for streamlining we shall not mention it anymore in the coming discussion.
+	The authors in~\cite[]{chrusciel2001regularity} have been able to prove a refined version of the area theorem under some slightly more restrictive assumptions, such as a notion of regularity of \(\mathscr{I}^+\), that they refer to as \(H\)-regularity. This is a very technical mathematical requirement though, which doesn't add much physical insight to our discussion, and it can be extended to all the area theorems we will prove almost straightforwardly, so for streamlining we shall not mention it anymore in the coming discussion.
 \end{remark}
 
 \subsection{The damped Averaged Null Energy Condition}
 \label{subsec:dANEC-area-theorem}
-In theorem \ref{th:classical-bh-area} we proved the black hole area theorem under the usual assumption of NEC. As discussed in section \ref{sec:pointwise-energy-conditions} the Null Energy Condition is violated by any sort of quantum fields (theorem \ref{th:quantum-violation-pointwise-conditions}), hence we wonder in what cases - if any - the theorem can be extended to a semiclassical regime.
+In theorem~\ref{th:classical-bh-area} we proved the black hole area theorem under the usual assumption of NEC. As discussed in section~\ref{sec:pointwise-energy-conditions} the Null Energy Condition is violated by any sort of quantum fields (theorem~\ref{th:quantum-violation-pointwise-conditions}), hence we wonder in what cases - if any - the theorem can be extended to a semiclassical regime.
 
-One first attempt is obtained replacing the Null Energy Condition with its damped version; this result was already obtained by Lesourd in \cite{lesourd2018remark}, once again by means of the Raychaudhuri's equation, while here we would like to propose an alternative proof, in the same spirit of the one given for theorem \ref{th:classical-bh-area}.
+One first attempt is obtained replacing the Null Energy Condition with its damped version; this result was already obtained by Lesourd in~\cite{lesourd2018remark}, once again by means of the Raychaudhuri's equation, while here we would like to propose an alternative proof, in the same spirit of the one given for theorem~\ref{th:classical-bh-area}.
 \begin{definition}
 	A spacetime satisfies the \emph{damped averaged null energy condition} (dANEC) if along each future complete null geodesic \(\gamma\), affinely parameterized by \(\lambda\), there exists a non-negative constant \(c\ge 0\) such that:
 	\[
@@ -100,10 +100,10 @@ One first attempt is obtained replacing the Null Energy Condition with its dampe
 	where \(U^{\mu}\) is \(\gamma\)'s tangent field. The corresponding \emph{convergence condition} is obtained substituting \(T_{\mu\nu}U^{\mu}U^{\nu}\) with \(R_{\mu\nu}U^{\mu}U^{\nu}\), as guaranteed by Einstein equations.
 \end{definition}
 
-The statement of the theorem is the same as \ref{th:classical-bh-area}, but replacing the Null convergence condition with the dANEC equivalent; the proof is pretty similar as well but this time we will need to choose a different trial function when applying proposition \ref{prop:fp-criteria}.
+The statement of the theorem is the same as~\ref{th:classical-bh-area}, but replacing the Null convergence condition with the dANEC equivalent; the proof is pretty similar as well but this time we will need to choose a different trial function when applying proposition~\ref{prop:fp-criteria}.
 \begin{proof}
-	Define \(\mathscr{H}_1\), and consider \(U_{\mu}\mathrm{H}^{\mu}\) exactly as in \ref{th:classical-bh-area}. Again we want to show that it needs to be \(U_{\mu}\mathrm{H}^{\mu} > 0\) everywhere on the horizon. In order to do so, by contradiction assume there exists \(p\in \mathscr{H}_1\) for which this doesn't hold, and construct the extension \(U'_{\mu}\mathrm{H}'^{\mu}\) in a neighborhood of \(p\) in the same way as before.
-	Now, pick \(f = e^{-c\frac{\lambda}{2}}\); the left hand side of \ref{eq:fp-criteria} in \(n = 4\) dimensions becomes:
+	Define \(\mathscr{H}_1\), and consider \(U_{\mu}\mathrm{H}^{\mu}\) exactly as in~\ref{th:classical-bh-area}. Again we want to show that it needs to be \(U_{\mu}\mathrm{H}^{\mu} > 0\) everywhere on the horizon. In order to do so, by contradiction assume there exists \(p\in \mathscr{H}_1\) for which this doesn't hold, and construct the extension \(U'_{\mu}\mathrm{H}'^{\mu}\) in a neighborhood of \(p\) in the same way as before.
+	Now, pick \(f = e^{-c\frac{\lambda}{2}}\); the left hand side of~\ref{eq:fp-criteria} in \(n = 4\) dimensions becomes:
 	\[
 	\int_{0}^{+\infty} \left((n-2)\frac{c^2}{4} e^{-c\lambda} - e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}\right)d\lambda = \frac{c}{2} - \int_{0}^{+\infty} e^{-ct}R_{\mu\nu}U^{\mu}U^{\nu}d\lambda 
 	\]
@@ -114,7 +114,7 @@ The statement of the theorem is the same as \ref{th:classical-bh-area}, but repl
 	\]
 	Hence equation \eqref{eq:fp-criteria} holds, and so a focal point must form along \(\gamma\), which is - again - absurd. 
 	
-	By this contradiction we have that along the null generators it must hold \(U_{\mu}\mathrm{H}^{\mu} > 0\), and the conclusion is reached exactly as in \ref{th:classical-bh-area}.
+	By this contradiction we have that along the null generators it must hold \(U_{\mu}\mathrm{H}^{\mu} > 0\), and the conclusion is reached exactly as in~\ref{th:classical-bh-area}.
 \end{proof}
 
 From the assumption of dANEC we are still able to prove that the area cannot decrease: this is a signal that we are still working with a ``classical'' condition, in the sense that it generates a tension with the - quantum - phenomenon of black hole evaporation. We will now try to generalise the discussion, with the aim of including weaker energy conditions that could hopefully solve the tension above mentioned.
@@ -122,7 +122,7 @@ From the assumption of dANEC we are still able to prove that the area cannot dec
 
 \section{A more general point of view}
 
-The proofs of theorem \ref{th:classical-bh-area} and its dANEC version might inspire us to observe the following
+The proofs of theorem~\ref{th:classical-bh-area} and its dANEC version might inspire us to observe the following
 \begin{lemma}
 	\label{lemma:generalized-area-theorem}
 	In any strongly asymptotically predictable spacetime, let \(H\) be the black hole horizon, \(U^{\mu}\) the tangent field of its null generators, and \(\mathrm{H}^{\mu}\) the mean normal curvature of \(\mathscr{H} = \Sigma \cap H\), where \(\Sigma\) is any Cauchy surface. Then it must always hold:
@@ -154,9 +154,9 @@ Then, as before, we have that the change of the area of \(\mathscr{H}\) along th
 	So far we have proved that the rate of change of the area of the horizon near the reference ``time instance'' given by \(\Sigma\) cannot be lower than a certain (potentially negative) rate. 
 	
 \begin{remark}
-	As we shall discuss in the following, the right hand side of the inequality in the thesis of lemma \ref{lemma:generalized-area-theorem} might be negative! That means that such a black hole might be able to evaporate... but we know from section \ref{sec:black-holes-evaporation} that spacetimes containing evaporating black holes are not globally hyperbolic.
+	As we shall discuss in the following, the right hand side of the inequality in the thesis of lemma~\ref{lemma:generalized-area-theorem} might be negative! That means that such a black hole might be able to evaporate... but we know from section~\ref{sec:black-holes-evaporation} that spacetimes containing evaporating black holes are not globally hyperbolic.
 
-	This is not a problem however: the region before the complete evaporation of the black hole remains non vicious, and Minguzzi has shown in \cite[]{minguzzi2020gravitational} that past reflectivity and this non-viciousness requirement are enough to prove Penrose's singularity theorem; in the same way our area theorem can be generalized to settings where evaporation is allowed.
+	This is not a problem however: the region before the complete evaporation of the black hole remains non vicious, and Minguzzi has shown in~\cite[]{minguzzi2020gravitational} that past reflectivity and this non-viciousness requirement are enough to prove Penrose's singularity theorem; in the same way our area theorem can be generalized to settings where evaporation is allowed.
 \end{remark}
 
 % In some sense this infimum is really the minimal constraint we can put on \(U_{\mu}\mathrm{H}^{\mu}\)
@@ -231,13 +231,13 @@ One possible idea - that we have already been exploiting in the specific cases o
 
 	Accordingly, with this definition both NEC and dANEC are \emph{classical}. We explicit the examples in these two simple cases to facilitate the transition from the old proof of the area theorem to the new ideas we are exploiting.
 
-	\textbf{Example 1 -- NEC}: As one can see from the proof of the classical black hole area theorem \ref{th:classical-bh-area}, a class of functions that works fine enough for this condition is just:
+	\textbf{Example 1 -- NEC}: As one can see from the proof of the classical black hole area theorem~\ref{th:classical-bh-area}, a class of functions that works fine enough for this condition is just:
 	\[
 	\mathcal{A}_{NEC} = \left\{ f_{\ell}(\lambda) \coloneqq \left(1 - \frac{\lambda}{\ell}\right) \cdot \chi_{[0, \ell]}(\lambda) \vert \ell > 0 \right\},
 	\]
 	where with \(\chi_{[0, \ell]}\) we refer to the characteristic function of the interval \([0,\ell]\).
 
-	Now, as for NEC \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) everywhere, and \(f^2 \ge 0\) as well, \(B[f] \equiv 0\). So NEC is classical according to definition \ref{def:classical-energy-condition} if we could find \(f \in \mathcal{A}_{NEC}\) such that \(\vert\vert \nabla_U f \vert\vert^2 \le 0\). But it is easy to compute that:
+	Now, as for NEC \(R_{\mu\nu}U^{\mu}U^{\nu} \ge 0\) everywhere, and \(f^2 \ge 0\) as well, \(B[f] \equiv 0\). So NEC is classical according to definition~\ref{def:classical-energy-condition} if we could find \(f \in \mathcal{A}_{NEC}\) such that \(\vert\vert \nabla_U f \vert\vert^2 \le 0\). But it is easy to compute that:
 	\[
 		\vert\vert \nabla_U f_{\ell} \vert\vert^2 = \frac{1}{\ell} \longrightarrow 0 \text{ when } \ell \rightarrow +\infty.
 	\]
@@ -245,7 +245,7 @@ One possible idea - that we have already been exploiting in the specific cases o
 		From the above procedure it is clear that whenever we choose a class of functions \(\mathcal{A}\) we can always refer to its closure \(\bar{\mathcal{A}}\) and the all procedure remains unaffected. Consequentially, limit functions can be always considered included in the sets \(\mathcal{A}\) that we pick.
 	\end{remark}
 
-	\textbf{Example 2 -- dANEC}: Similarly, looking at the proof in section \ref{subsec:dANEC-area-theorem} we can pick the set:
+	\textbf{Example 2 -- dANEC}: Similarly, looking at the proof in section~\ref{subsec:dANEC-area-theorem} we can pick the set:
 	\[
 	\mathcal{A}_{dANEC} \coloneqq \{ f_c(\lambda) = e^{-c\frac{\lambda}{2}} \vert c >0\}.	
 	\]
@@ -256,7 +256,7 @@ One possible idea - that we have already been exploiting in the specific cases o
 
 
 	\begin{corollary}
-		From definition \ref{def:classical-energy-condition} it is pretty clear that any energy condition of the form
+		From definition~\ref{def:classical-energy-condition} it is pretty clear that any energy condition of the form
 		\[
 			\int_0^{+\infty} f^2 R_{\mu\nu}U^{\mu}U^{\nu} \ge -B[f]	
 		\]
@@ -290,14 +290,14 @@ One possible idea - that we have already been exploiting in the specific cases o
 \section{The Sobolev condition}
 Let us finally start from an energy condition which - to the present analysis at least - leads to some more interesting consequences.
 In this section we will assume the validity of a different energy condition, that uses Sobolev norms, and that's why we call it \emph{Sobolev condition}.
-We have already made some comments about how we came to the choice of this conditions in section \ref{sec:sobolev-conditions}, where its definition can also found.
+We have already made some comments about how we came to the choice of this conditions in section~\ref{sec:sobolev-conditions}, where its definition can also found.
 
 \subsection{Variational estimation}
 \label{subsec:V-optimization}
 
-First of all we would like to exploit this condition to obtain an estimation of \(\inf J\), using the variational procedure outlined in subsection \ref{subsec:variational-estimation}. However some care is required by the fact that the set of functions over which we need to minimize \(J\) and the one where the Sobolev condition is valid are quite different: the first one requires \(f(0) = 1\), while the second needs \(f(0) = 0\).
+First of all we would like to exploit this condition to obtain an estimation of \(\inf J\), using the variational procedure outlined in subsection~\ref{subsec:variational-estimation}. However some care is required by the fact that the set of functions over which we need to minimize \(J\) and the one where the Sobolev condition is valid are quite different: the first one requires \(f(0) = 1\), while the second needs \(f(0) = 0\).
 
-Closely following the analysis present in \cite[]{fewster2020new}, let us choose the set parameterized by the two real parameters \(\ell_0\) and \(\ell\):
+Closely following the analysis present in~\cite[]{fewster2020new}, let us choose the set parameterized by the two real parameters \(\ell_0\) and \(\ell\):
 
 \[
 \mathcal{A}_{\beta} \coloneqq \left\{f_{\ell_0, \ell} \vert \ell > \ell_0 >0\right\} \quad\quad f_{\ell_0, \ell}(\lambda) = 
@@ -312,7 +312,7 @@ p_m(0) = 0 \quad p_m(1) = 1 \quad\text{and}\quad p^{(k)}_m(0) = 0 = p^{(k)}_m(1)
 \]
 it is explicitly given by \(p_m(x) = \frac{1}{B(m, m)} \int_0^x y^{m - 1}(1 - y)^{m -1} dy\), where \(B(m,m)\) is the Beta function.
 
-In order to give an idea of what they look like, we have represented a few different such functions in figure \ref{fig:beta-functions}; finally, the values of the Sobolev norms \(A_m\) of the regularized incomplete \(m-\)Beta function, of its first derivative \(B_m\) and \(m-\)th derivative \(C_m\) are known analytically. For the sake of completeness their values are:
+In order to give an idea of what they look like, we have represented a few different such functions in figure~\ref{fig:beta-functions}; finally, the values of the Sobolev norms \(A_m\) of the regularized incomplete \(m-\)Beta function, of its first derivative \(B_m\) and \(m-\)th derivative \(C_m\) are known analytically. For the sake of completeness their values are:
 \[
 A_m = \frac{1}{2} - \frac{(2m)!^4}{4(4m)!m!^4} \quad 
 B_m= \frac{(2m-2)!^2(2m-1)!^2}{(4m-3)!(m - 1)!} \quad 
@@ -330,7 +330,7 @@ C_m = \frac{(2m-2)!(2m-1)!}{(m-1)!^2}.
 	\begin{minipage}{.45\textwidth}
 	  \centering
 	  \includegraphics[width=1.1\linewidth]{Immagini/beta-functions-proof-bound.png}
-	  \captionof{figure}{graphs of \(f\) and \(\varphi\) with \(\ell_0 = 1\), \(\ell=10\) and \(m = 14\), used in lemma \ref{lemma:J-sobolev-condition} to place a bound on \(J\). By taking the product of the two functions we obtain one that starts and ends at \(0\), and so can be used to apply the Sobolev energy condition.}
+	  \captionof{figure}{graphs of \(f\) and \(\varphi\) with \(\ell_0 = 1\), \(\ell=10\) and \(m = 14\), used in lemma~\ref{lemma:J-sobolev-condition} to place a bound on \(J\). By taking the product of the two functions we obtain one that starts and ends at \(0\), and so can be used to apply the Sobolev energy condition.}
 	  \label{fig:beta-functions-proof-bound}
 	\end{minipage}
 	\end{figure}
@@ -351,7 +351,7 @@ Now, assuming an additional condition on the stress energy tensor (or equivalent
 \end{lemma}
 
 \begin{proof}
-	The proof of this lemma can be found in \cite{fewster2020new} as lemma \(4.1\), and it proceeds as follows. Define a piecewise smooth function \(\varphi\) on \([0,\ell]\) by:
+	The proof of this lemma can be found in~\cite{fewster2020new} as lemma \(4.1\), and it proceeds as follows. Define a piecewise smooth function \(\varphi\) on \([0,\ell]\) by:
 	\[
 	\varphi(\lambda) = 
 	\begin{cases}
@@ -388,7 +388,7 @@ Now, assuming an additional condition on the stress energy tensor (or equivalent
 
 Now that for each function \(f_{\ell_0, \ell} \in \mathcal{A}_{\beta}\) we have an estimate for \(J\left[f_{\ell_0, \ell}\right] \le (n-2)\mathcal{V}_{\beta}(\ell_0, \ell)\), we can finally pursue the variational strategy: we need to minimize \(\mathcal{V}_{\beta}(\ell_0, \ell)\) on \(\ell \ge \ell_0\). In order to do so we will first minimize along \(\ell\), keeping \(\ell_0\) fixed, and then proceed to a second minimization over this last parameter.
 
-The first optimization has been already performed in \cite{fewster2020new}, even if in their computation they neglect some terms that instead will be relevant for us, because of the different regime of approximation that we will need to set. Let then us do that, with the additional restriction of \(m = 1\): in the following this request will always be fulfilled, so this is the most general we need to be, but this procedure could be generalized to arbitrary \(m\) at the price of solving a higher order algebraic equation.
+The first optimization has been already performed in~\cite{fewster2020new}, even if in their computation they neglect some terms that instead will be relevant for us, because of the different regime of approximation that we will need to set. Let then us do that, with the additional restriction of \(m = 1\): in the following this request will always be fulfilled, so this is the most general we need to be, but this procedure could be generalized to arbitrary \(m\) at the price of solving a higher order algebraic equation.
 
 \begin{prop}
     For \(m = 1\), the bound optimized on \(\ell \ge \ell_0\) is
@@ -402,10 +402,10 @@ The first optimization has been already performed in \cite{fewster2020new}, even
 \end{prop}
 
 \begin{proof}
-    The proof is very similar to the one given in \cite{fewster2020new}, but we have to pay attention to keep all the terms relevant for us.
+    The proof is very similar to the one given in~\cite{fewster2020new}, but we have to pay attention to keep all the terms relevant for us.
 	\noindent
     Set \(\ell = \ell_0\left(1 + B_1\mu\right)\), so that the constraint \(\ell\ge\ell_0\) becomes simply \(\mu \ge 0\).
-    % The interesting case presents when \(\mu \ge 1\), for which \(\frac{1}{\mu^{2m - 1}} \le \frac{1}{\mu} \) (in particular in subsection \ref{subsec:non-min-EKG-theory} we will focus on the \(m = 1\) case, where the equality holds). 
+    % The interesting case presents when \(\mu \ge 1\), for which \(\frac{1}{\mu^{2m - 1}} \le \frac{1}{\mu} \) (in particular in subsection~\ref{subsec:non-min-EKG-theory} we will focus on the \(m = 1\) case, where the equality holds). 
 	The expression in \(\eqref{eq:J-sobolev-condition}\) reduces to:
     \begin{align*}
         \mathcal{V}(\ell, \ell_0) &= E + F\mu + \frac{G}{\mu} \\
@@ -420,7 +420,7 @@ The first optimization has been already performed in \cite{fewster2020new}, even
 	where we neglected the second term of \(G\) under the assumption \(Q_1 \ll 1\); in the following we will see that \(Q_1 \sim \left(\frac{T}{T_{Pl}}\right)^2\), so assuming \(Q_1 \ll 1\) corresponds to be in the temperature regime where \(\left(\frac{T}{T_{Pl}}\right)^2 \ll 1\), which is not particularly restrictive as also the analysis of black hole evaporation is performed under the same assumption.
 \end{proof}
 
-Now we reduced to a bound that only depends on \(\ell_0\) (and some other global feature of the system, summarized within \(Q_0\) and \(Q_m\)); in light of the variational strategy, let us finally proceed to the last minimization and find the optimal value for \(\ell_0\)\footnote{Actually, there were several possibilities that could have been explored with the aim of providing an estimate for \(\ell_0\). The first idea was to pick some constant \(\ell_0\) (which is what has been done in \cite{fewster2020new}), fixed to be some relevant physical quantity, but we haven't been able to formulate one particularly convincing. Besides, requiring \(\ell_0\) to be constant in a background that will be dynamic didn't seem particularly reasonable after all, so we decided to minimize \(\mathcal{V}_{\beta}\) - and finally outlined the variational procedure.}. 
+Now we reduced to a bound that only depends on \(\ell_0\) (and some other global feature of the system, summarized within \(Q_0\) and \(Q_m\)); in light of the variational strategy, let us finally proceed to the last minimization and find the optimal value for \(\ell_0\)\footnote{Actually, there were several possibilities that could have been explored with the aim of providing an estimate for \(\ell_0\). The first idea was to pick some constant \(\ell_0\) (which is what has been done in~\cite{fewster2020new}), fixed to be some relevant physical quantity, but we haven't been able to formulate one particularly convincing. Besides, requiring \(\ell_0\) to be constant in a background that will be dynamic didn't seem particularly reasonable after all, so we decided to minimize \(\mathcal{V}_{\beta}\) - and finally outlined the variational procedure.}. 
 
 \begin{prop}
 	Assuming \(\rho_0 < 0\) the optimal bound, minimized along \(\ell_0\), is:
@@ -436,12 +436,12 @@ Now we reduced to a bound that only depends on \(\ell_0\) (and some other global
 	The computation is very similar to the preceding one, as in particular the shape of the function to be minimized is exactly the same.
 \end{proof}
 
-Lemma \ref{lemma:generalized-area-theorem} can now immediately tell us that, in an asymptotically flat spacetime, wherever on the null generators of the black horizon the Sobolev energy condition holds and \(R_{\mu\nu}U^{\mu}U^{\nu} \ge \rho_0\), then the instantaneous rate of expansion of the cross-sectional area is constrained by
+Lemma~\ref{lemma:generalized-area-theorem} can now immediately tell us that, in an asymptotically flat spacetime, wherever on the null generators of the black horizon the Sobolev energy condition holds and \(R_{\mu\nu}U^{\mu}U^{\nu} \ge \rho_0\), then the instantaneous rate of expansion of the cross-sectional area is constrained by
 \begin{equation}
 	\label{eq:area-sobolev-condition}
 	U_{\mu}\mathrm{H}^{\mu} \ge - \mathcal{V}_{\beta} \implies \delta_U\mathcal{A}_{\mathscr{H}_1} = \int_{\mathscr{H}_1} \mathrm{H}^{\mu}(p)U_{\mu} \ge - \mathcal{V}_{\beta}\cdot\mathcal{A}_{\mathscr{H}_1},
 \end{equation}
-where, again, the implication is possible thanks to lemma \ref{lemma:variation-area}. We will argue later that the assumption \(\rho(\lambda) \ge \rho_0\) in a small interval of the affine parameter is well motivated, and we will find \(\rho_0 < 0\), so \eqref{eq:minimized-V-beta} is well defined, and \(\mathcal{V}_{\beta} >0\). This means we have proved that the rate of change of the area of the horizon near the reference ``time instance'' given by \(\Sigma_1\) cannot be lower than a certain - negative - rate!
+where, again, the implication is possible thanks to lemma~\ref{lemma:variation-area}. We will argue later that the assumption \(\rho(\lambda) \ge \rho_0\) in a small interval of the affine parameter is well motivated, and we will find \(\rho_0 < 0\), so \eqref{eq:minimized-V-beta} is well defined, and \(\mathcal{V}_{\beta} >0\). This means we have proved that the rate of change of the area of the horizon near the reference ``time instance'' given by \(\Sigma_1\) cannot be lower than a certain - negative - rate!
 
 Equation \eqref{eq:area-sobolev-condition} can then truly claim to be a first non trivial generalization of Hawking's area theorem: it is still placing a lower bound on the rate of evolution of the area, but, as the bound is negative this time, it can - in principle - resolve the tension with the quantum phenomenon of evaporation, now potentially allowed.
 	
@@ -449,7 +449,7 @@ Notice however that, conversely to the original theorem, we have only constraine
 
 \subsection{The second idea -- a differential equation}
 \label{subsec:E-L-optimization}
-A potential weakness of the variational method is that, if the set \(\mathcal{A}\) onto which the optimization is performed is not chosen with enough care, its extremum may still lay very far from \(\inf J\). Referring to the above subsection \ref{subsec:V-optimization}, it might happen that even if \(\mathcal{V}_{\beta} > 0\), the actual \(\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J\) is negative, and hence evaporation is not allowed.
+A potential weakness of the variational method is that, if the set \(\mathcal{A}\) onto which the optimization is performed is not chosen with enough care, its extremum may still lay very far from \(\inf J\). Referring to the above subsection~\ref{subsec:V-optimization}, it might happen that even if \(\mathcal{V}_{\beta} > 0\), the actual \(\inf_{f\in C^{\infty}_{1,0}[0, \ell], \ell \ge 0}J\) is negative, and hence evaporation is not allowed.
 
 Such question can only be completely resolved by finding the true infimum, or a set \(\mathcal{A}\) where the minimum is negative. We are not able to do that unfortunately, but we can look at our results and see if anything stands out. 
 
@@ -484,11 +484,11 @@ where
 \Omega_1^2 = \frac{Q_0}{n - 2 + Q_1} \quad \quad  \Omega_2^2 = \frac{Q_0}{Q_1}.
 \]
 
-All the main ideas behind this procedure have already been explained with enough detail in the present section or in \ref{subsec:V-optimization}, so we defer the computation that proves equation \eqref{eq:V-euler-lagrange} to appendix \ref{app:V-E-L-optimization}.
+All the main ideas behind this procedure have already been explained with enough detail in the present section or in~\ref{subsec:V-optimization}, so we defer the computation that proves equation \eqref{eq:V-euler-lagrange} to appendix~\ref{app:V-E-L-optimization}.
 
 \begin{SCfigure}
 	\includegraphics[scale=0.3]{Immagini/V-E-L.png}
-	\caption[]{Plot of \(\mathcal{V}_{E.L.}(\ell_0, \ell)\); this plot can be directly compared to the one in figure \ref{fig:V-beta} and again it stands out that this time the minimum will lay at large \(\ell\).}
+	\caption[]{Plot of \(\mathcal{V}_{E.L.}(\ell_0, \ell)\); this plot can be directly compared to the one in figure~\ref{fig:V-beta} and again it stands out that this time the minimum will lay at large \(\ell\).}
 	\label{fig:V-E-L}
 \end{SCfigure}
 
@@ -510,7 +510,7 @@ Coherently, with the weakening of the energy condition we have obtained a weaker
 
 As extensively argued above, \(\mathcal{V}\) represents the bound on the instantaneous rate of change of the area of the black hole horizon. In order to understand how reasonable it is the expression we have obtained, we would need to compare it to some relevant physical quantity; in this scenario we are lucky enough to have a particular appealing one: the rate of black hole evaporation.
 
-With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:minimized-V-E-L}\) into a function of physical quantities only; once again we will let us be inspired by the work in section \(5.2\) of \cite{fewster2020new}, where Fewster and Kontou computed their bound in the specific framework of a non-minimally coupled classical Einstein-Klein Gordon theory.
+With that in mind, we need to translate the mathematical expression of \(\mathcal{V}\) given in \(\eqref{eq:minimized-V-E-L}\) into a function of physical quantities only; once again we will let us be inspired by the work in section \(5.2\) of~\cite{fewster2020new}, where Fewster and Kontou computed their bound in the specific framework of a non-minimally coupled classical Einstein-Klein Gordon theory.
 
 They needed such a computation to test the hypothesis of some weakened singularity theorems within astrophysical scenarios; here instead we would like to analyze the evaporation of black holes, and so we will need a different regime of approximations.
 
@@ -535,7 +535,7 @@ now the following observation comes along.
 \end{prop}
 
 \begin{proof}
-    The argument can be found in \cite{kontou2020energy} and starts by rearranging Einstein equations in the following form:
+    The argument can be found in~\cite{kontou2020energy} and starts by rearranging Einstein equations in the following form:
     \[
       \frac{1 - 8\pi\xi\phi^2}{8\pi}G_{\mu\nu} =  \underbrace{\nabla_{\mu}\phi\nabla_{\nu}\phi - \frac{1}{2}g_{\mu\nu}\left[\nabla_{\rho}\phi\nabla^{\rho}\phi - m^2\phi^2\right] - \xi\left(g_{\mu\nu}\square_g - \nabla_{\mu}\phi\nabla_{\nu}\right)\phi^2}_{T^{eff}_{\mu\nu}}.
     \]
@@ -555,7 +555,7 @@ From here onward we will assume that non-minimally coupled scalar fields will al
 \[
 \phi^2 < \frac{1}{8\pi\xi}.    
 \]
-Moreover we shall only consider \emph{massless} scalar fields; given that, it was shown in \cite{fewster2011singularity} and \cite{brown2018singularity} that the Ricci tensor contraction is bounded by a Sobolev-like energy condition.
+Moreover we shall only consider \emph{massless} scalar fields; given that, it was shown in~\cite{fewster2011singularity} and~\cite{brown2018singularity} that the Ricci tensor contraction is bounded by a Sobolev-like energy condition.
 
 \begin{prop}
     In the context of a massless non-minimally coupled Einstein-Klein Gordon field theory, the integral of the contraction of the Ricci tensor along any causal geodesic, weighted with any compactly supported real valued \(-\frac{1}{2}\)-density \(f\), is bounded by:
@@ -573,7 +573,8 @@ Moreover we shall only consider \emph{massless} scalar fields; given that, it wa
     \]
 \end{prop}
 
-The proof of is lengthy and not particularly interesting for the scope of this thesis, so we defer it to appendix \ref{app:proof-EKG-bound}.
+The proof of is lengthy and not particularly interesting for the scope of this thesis. Just to sketch it very quickly it is enough to start from the bound given as equation \((67)\) in~\cite{brown2018singularity}.
+Then it should be necessary to proceed as in corollary \(1\) of the same paper~\cite{brown2018singularity}, but reducing to the case of a massless field, and integrating along null geodesics.
 
 We have indeed found an energy condition of the form \(\eqref{eq:Sobolev-condition}\) with 
 \[
@@ -585,7 +586,7 @@ m = 1 \quad\quad Q_0 = Q\cdot\tilde{Q}^2 \quad\quad Q_1 = Q
 In order to finally convert \(Q_0\) and \(Q_1\), we need to compute \(\phi_{max}\) and \(\sup_{\gamma}\vert \nabla_U\phi\vert\) in terms of some physical quantities; in principle the field values may be not bounded, but here we only aim at estimating what a reasonable value for \(\mathcal{V}\) would be.
 Physically, it makes sense that the value of \(\phi_{max}\) is connected to some sort of background temperature, and we expect the higher \(T\) is, the higher values \(\phi\) might reach.
 
-In order to establish this connection we now change setting, and consider a \emph{quantum} field theory with a minimally coupled massless scalar field in a Minkowski background metric; we aim at computing the Wick square of our field averaged in a thermal state of temperature \(T\). As choice of thermal state, we pick the Kubo-Martin-Schwinger (KMS) state with temperature \(T\), as in section \(5.2\) of \cite{fewster2020new}, where we can compute the desired quantity in a way analogous to what has been done in the final appendix of \cite{brown2018singularity}.
+In order to establish this connection we now change setting, and consider a \emph{quantum} field theory with a minimally coupled massless scalar field in a Minkowski background metric; we aim at computing the Wick square of our field averaged in a thermal state of temperature \(T\). As choice of thermal state, we pick the Kubo-Martin-Schwinger (KMS) state with temperature \(T\), as in section \(5.2\) of~\cite{fewster2020new}, where we can compute the desired quantity in a way analogous to what has been done in the final appendix of~\cite{brown2018singularity}.
 
 % \begin{definition}
 %     The KMS state is defined as \dots
@@ -659,7 +660,7 @@ T_H = \frac{\hbar c^3}{8\pi Gk_B}\frac{1}{M}
 \]
     
 \begin{remark}
-	The toy model we relied on in this section has, of course, many limitations. One we have tried to resolve is due to the definition of the \(2\)-point function of KMS states - used to prove proposition \ref{prop:wick-squares-KMS} - only in Minkowski spacetime. The proper state to describe a black hole in thermal equilibrium within an underlying Schwarzschild geometry is the Hartle-Hawking state \cite[]{hartle1993path}. This state has been proved to be equivalent to the double KMS state with temperature equal to Hawking temperature, first in \cite[]{jacobson1994note, sanders2015construction} (with the path integral formulation), and lately in \cite[]{higuchi2022hartle} by means of the Schwinger-Keldysh operator formalism. Unfortunately the \(2\) point function is a little more complicated than the one in the flat space case:
+	The toy model we relied on in this section has, of course, many limitations. One we have tried to resolve is due to the definition of the \(2\)-point function of KMS states - used to prove proposition~\ref{prop:wick-squares-KMS} - only in Minkowski spacetime. The proper state to describe a black hole in thermal equilibrium within an underlying Schwarzschild geometry is the Hartle-Hawking state~\cite[]{hartle1993path}. This state has been proved to be equivalent to the double KMS state with temperature equal to Hawking temperature, first in~\cite[]{jacobson1994note, sanders2015construction} (with the path integral formulation), and lately in~\cite[]{higuchi2022hartle} by means of the Schwinger-Keldysh operator formalism. Unfortunately the \(2\) point function is a little more complicated than the one in the flat space case:
 	\[
 	W_{HH}(x, x') = \int_{0}^{+\infty} \frac{d\omega}{2\omega} \sum_{\sigma}\phi_{\omega\sigma}(x)\phi_{\omega\sigma}(x')\left(\frac{e^{-i\omega(t - t')}}{1 - e^{-\beta \omega}} + \frac{e^{i\omega(t - t')}}{e^{\beta \omega} - 1}\right),
 	\]
@@ -677,14 +678,14 @@ In order to estimate the value of the functional \(J[f]\) we required
 \[
 	\rho (\lambda)\coloneqq R_{\mu\nu}U^{\mu}U^{\nu}\ge -\vert\rho_0\vert
 \] 
-for \(\lambda\in [0, \ell_0]\); this is again a pointwise requirement, but notice that, as the lower bound is negative, it is not ruled out by the argument in \ref{th:quantum-violation-pointwise-conditions}.
+for \(\lambda\in [0, \ell_0]\); this is again a pointwise requirement, but notice that, as the lower bound is negative, it is not ruled out by the argument in~\ref{th:quantum-violation-pointwise-conditions}.
 
 It has been for long debated whether such contractions of the stress energy tensor should be finite or not; in literature there can be found arguments for both sides, and indeed a lot of attention must be payed to what contraction exactly is going to be computed. The presence of a coordinate singularity, and the lack of an analytical expression for the \(4\)-dimensional stress-tensor in the Unruh or Hartle-Hawking state complicate the matter, but we will try to argue that - as the one on the horizon is \emph{just} a coordinate singularity - the contraction of \(T_{\mu\nu}\) with the tangent field of the null generators shall be always finite.
 
 Let us again work within the framework of non-minimally coupled scalar fields, with \(\xi\in[0,\xi_c]\); developing a general treatment is very difficult because of the features mentioned above, but at the two extremities of this interval  a few observation can be inferred.
 
 For \(\xi = 0\) the field becomes minimally coupled; the classical minimally coupled Klein-Gordon field actually obeys the Null Energy condition, but this doesn't mean that the quantized field shouldn't bear any surprise.
-Indeed, in \cite{levi2016versatile} Levi and Ori have been able to overcome many of the complications for the computation of a renormalized stress tensor in the Unruh vacuum, and managed to run some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, within a background Schwarzschild metric. 
+Indeed, in~\cite{levi2016versatile} Levi and Ori have been able to overcome many of the complications for the computation of a renormalized stress tensor in the Unruh vacuum, and managed to run some numerical simulations to estimate \(\rho\) in the outer proximity of the horizon, within a background Schwarzschild metric. 
 Recasted with our convention (for us their \(a\) needs to be \(1\)), their result is 
 \begin{equation}
 	\label{eq:rho-Levi-Ori}
@@ -693,7 +694,7 @@ Recasted with our convention (for us their \(a\) needs to be \(1\)), their resul
 (where \(M\) is the mass of the black hole). This supports the legitimacy of our additional assumption, at least for large enough black holes, and suggests that such a condition might be commonly satisfied even with a rather small value of \(\vert\rho_0\vert\). The most important features of Levi and Ori's result~\eqref{eq:rho-Levi-Ori} are the negative sign and the \(M^{-4}\) dependence: we will see this is ultimately determining the temperature dependence of our bound \(\mathcal{V}\), and hence any variation of this power law would have major impact on our conclusions.
 
 The field we considered in~\ref{subsec:non-min-EKG-theory} however, is not minimally-coupled. Anyways, for conformally coupled fields a very similar result should hold. 
-In~\cite{visser1997gravitational} Visser develops a semi-analytical computation for the renormalized stress energy tensor (RSET) of a massless scalar field conformally coupled to the background Schwarzschild metric, averaged on the Unruh vacuum state. At first glance it seems that he proves that such contractions cannot be bounded, and actually has a pole divergence on the black hole horizon; at a closer look however, it is possible to realize that none of the contractions computed in~\cite{visser1997gravitational} is the one we need, because of the particular coordinate system he works with. In fact, it is necessary to rewrite the components of the stress tensor derived by Visser within the Kruskal-Szekeres coordinate system, and in such system we really are able to derive \(R_{\mu\nu}U^{\mu}U^{\nu}\). The computation is not particularly difficult, but is somewhat long and thorny, and shouldn't distract us from the main discussion: we will carefully explain the model and derive the result in appendix~\ref{app:visser}. At last, we find again that \(\rho\) is bounded by a negative quantity, that scales with \(M^{-4}\)! Precisely, the result in \eqref{eq:contraction-stress-tensor} traduces to:
+In~\cite{visser1997gravitational} Visser develops a semi-analytical computation for the renormalized stress energy tensor (RSET) of a massless scalar field conformally coupled to the background Schwarzschild metric, averaged on the Unruh vacuum state. At first glance it seems that he proves that such contractions cannot be bounded, and actually has a pole divergence on the black hole horizon; at a closer look however, it is possible to realize that none of the contractions computed in~\cite{visser1997gravitational} is the one we need, because of the particular coordinate system he works with. In fact, it is necessary to rewrite the components of the stress tensor derived by Visser within the Kruskal-Szekeres coordinate system, and in such system we really are able to derive \(R_{\mu\nu}U^{\mu}U^{\nu}\). The computation is not particularly difficult, but is somewhat long and thorny, and shouldn't distract us from the main discussion: we will carefully explain the model and derive the result in appendix~\ref{app:visser}. At last, we find again that \(\rho\) is bounded by a negative quantity, that scales with \(M^{-4}\)! Precisely, the result in~\eqref{eq:contraction-stress-tensor} traduces to:
 \[
 	\rho \simeq \frac{9}{10(16\pi)^2} \cdot \frac{e}{V_0^2} \cdot \frac{\hbar}{(2M)^4}.
 \] 
@@ -725,9 +726,9 @@ Finally, it should also be noticed how the pointwise restriction on \(\rho\) can
 The question we would like to ask ourselves now is: how robust is this result, and in particular the \(T^3\) dependence? Is it just an artifact of the specific examples and approximations we have been using, or is it the signal of a more general behaviour? 
 
 \section{The Smeared Null Energy Condition}
-The Smeared Null Energy condition is a bound on a contraction of the stress energy tensor, and it has been been first proposed in~\cite{freivogel2018smeared}; we have discussed some of the motivations for which we should consider it in section \ref{sec:SNEC}, and in particular all the work done in section~\ref{sec:physical-interpretation-V} is nearly directly applicable, as SNEC belongs to the class of Sobolev energy conditions.
+The Smeared Null Energy condition is a bound on a contraction of the stress energy tensor, and it has been been first proposed in~\cite{freivogel2018smeared}; we have discussed some of the motivations for which we should consider it in section~\ref{sec:SNEC}, and in particular all the work done in section~\ref{sec:physical-interpretation-V} is nearly directly applicable, as SNEC belongs to the class of Sobolev energy conditions.
 
-From the defintion we have given in \ref{eq:SNEC}, it stands out immediately that \(\eqref{eq:SNEC}\) is of the form of \(\eqref{eq:Sobolev-condition}\), with 
+From the defintion we have given in~\ref{eq:SNEC}, it stands out immediately that \(\eqref{eq:SNEC}\) is of the form of \(\eqref{eq:Sobolev-condition}\), with 
 \[
 m = 1 \quad \quad Q_0 = 0 \quad \quad Q_1 = 4B.	
 \]
@@ -735,7 +736,7 @@ But, there is a ``but''. Here \(B\), and hence \(Q_1\) is asked to be a \emph{st
 Indeed we will see shortly that this requirement will have some dramatic consequences on the connection of \(\mathcal{V}\) to temperature.
 
 \subsection{Variational estimation}
-It is immediate to re-apply the analysis of sections \ref{subsec:variational-estimation} and \ref{subsec:E-L-optimization} to this specific energy condition.
+It is immediate to re-apply the analysis of sections~\ref{subsec:variational-estimation} and~\ref{subsec:E-L-optimization} to this specific energy condition.
 
 In particular we can set \(Q_0 = 0\) in \eqref{eq:minimized-V-E-L} to obtain
 \[
@@ -750,12 +751,12 @@ We have found again that black hole evaporation is allowed, but the bound depend
 \[
 \frac{\tilde{T}}{T_{Pl}} = \frac{104\pi}{\beta}\cdot 10^{-4}\sqrt{B} \simeq 3\sqrt{B} \cdot 10^3.
 \]
-SNEC was proven in \cite{leichenauer2019upper} in the context of gravity induced on a brane, and in that specific case \(B\) was fixed to the value of \(\frac{1}{32\pi}\). However, as remarked in \ref{sec:SNEC}, it is often reasonable to consider \(B\ll 1\), condition that potentially could reduce dramatically the regime of validity of the bound we have found. This is consistent with the interpretation we have given of \(B\): \(B \ll 1\) would mean that, for the chosen field theory, semiclassical gravity is well under control, and therefore black holes can only evaporate ``very slowly''. 
+SNEC was proven in~\cite{leichenauer2019upper} in the context of gravity induced on a brane, and in that specific case \(B\) was fixed to the value of \(\frac{1}{32\pi}\). However, as remarked in~\ref{sec:SNEC}, it is often reasonable to consider \(B\ll 1\), condition that potentially could reduce dramatically the regime of validity of the bound we have found. This is consistent with the interpretation we have given of \(B\): \(B \ll 1\) would mean that, for the chosen field theory, semiclassical gravity is well under control, and therefore black holes can only evaporate ``very slowly''. 
 \noindent
 In other words, we expect rate of evaporation computed in \(\eqref{eq:evaporation-rate}\) to be allowed throughout the all region \(T\le T_{Pl}\) only with a field theory that induces proper non-classical effects (as large ``enough'' violations of \(T_{\mu\nu}U^{\mu}U^{\nu}\) for example), in which case \(B\) will be at least of order \(10^{-6}\) and \(\tilde{T} \gtrsim T_{Pl}\).
 
 Finally, if we were to believe SNEC to hold also with values of \(B\) small enough as for having \(\tilde{T} < T_{Pl}\), we might expect that at \(\tilde{T}\), other terms of \(\mathcal{V}\) become relevant, and push the bound above the rate of evaporation again.
-A possible attempt to find such terms would be to modify SNEC so to include terms depending on the curvature, as it has been attempted in \cite{kontou2015quantum}.
+A possible attempt to find such terms would be to modify SNEC so to include terms depending on the curvature, as it has been attempted in~\cite{kontou2015quantum}.
 % \VS{Cerca di aggiungere termini di curvatura!}
 
 \section{State independent bounds}
@@ -767,7 +768,7 @@ In other words, if we are able to expand \(\mathcal{V}\) in terms of the Hawking
 \[
 \mathcal{V} = v_0 + v_1T_H + v_2T_H^2 + v_3T_H^3 + \ldots	
 \]
-we expect at least one of the coefficients among \(\{v_0, v_1, v_2, v_3\}\) to be non-zero; if that wasn't the case in fact the evaporation rate in \(\eqref{eq:evaporation-rate}\) would be prohibited for some semi-classical regimes, but allowed when \(T_H\) is higher (see figures \ref{fig:state-independent-bounds} for a graphical representation).
+we expect at least one of the coefficients among \(\{v_0, v_1, v_2, v_3\}\) to be non-zero; if that wasn't the case in fact the evaporation rate in \(\eqref{eq:evaporation-rate}\) would be prohibited for some semi-classical regimes, but allowed when \(T_H\) is higher (see figures~\ref{fig:state-independent-bounds} for a graphical representation).
 
 This sets some restrictions onto the energy conditions we start from, in case they are state-independent. We are going to prove the following:
 \begin{prop}
@@ -776,11 +777,11 @@ This sets some restrictions onto the energy conditions we start from, in case th
 \begin{proof}
 	The reason why we need to ask for state-independence is that this way we make sure we don't have any non trivial contribution of the temperature to the coefficients \(Q_0\) and \(Q_m\). If they were to depend on \(T\) in principle it is not easy to restrict what dependence they should bear, as the presence of \(T_{Pl}\) invalids the power of dimensional analysis.
 
-	Again, it is enough to look at the set \(\mathcal{V}_{\beta}\) of incomplete beta functions, and study the bound retrieved in lemma \ref{lemma:J-sobolev-condition}:
+	Again, it is enough to look at the set \(\mathcal{V}_{\beta}\) of incomplete beta functions, and study the bound retrieved in lemma~\ref{lemma:J-sobolev-condition}:
 	\[
 	(n - 2)\mathcal{V}_{\beta}(\ell, \ell_0) \coloneqq \frac{(n - 2) B_m}{\ell - \ell_0} + \frac{Q_mC_m}{\ell_0^{2m - 1}} + \frac{Q_mC_m}{(\ell - \ell_0)^{2m - 1}}	+ Q_0A_m\ell + \vert\rho_0\vert\ell_0(1 - A_m)
 	\]
-	As in subsection \ref{subsec:V-optimization} we set out to minimize \(\mathcal{V}\) with respect to \(\ell \ge \ell_0\). Again we choose to parameterize \(\ell = (1 + B_m\mu)\ell_0\); however, this time we need to deal with a \(2m\)-degree equation, which in general is not explicitly solvable.
+	As in subsection~\ref{subsec:V-optimization} we set out to minimize \(\mathcal{V}\) with respect to \(\ell \ge \ell_0\). Again we choose to parameterize \(\ell = (1 + B_m\mu)\ell_0\); however, this time we need to deal with a \(2m\)-degree equation, which in general is not explicitly solvable.
 	\[
 		(n - 2)\frac{d\mathcal{V}}{d\mu} = -\frac{n - 2}{\ell_0} \frac{1}{\mu^2} + \frac{Q_mC_m}{(B_m \ell_0)^{2m - 1}} \cdot \frac{1 - 2m}{\mu^{2m}} + Q_0A_mB_m\ell_0 = 0.
 	\]
@@ -807,7 +808,7 @@ This sets some restrictions onto the energy conditions we start from, in case th
 	\]
 	Here we think it makes sense to neglect the additional additive constant as it seems plausible that it only is an artifact of the ``small'' set of functions we are using for the minimization. This is for two reasons: there is no such constant in \eqref{eq:minimized-V-E-L} (where the minimization was indeed run on a larger set), and physically we should expect no evaporation at all when \(T_H = 0\).
 
-	Finally, motivated once more by the work in \cite{levi2016versatile} and in appendix \ref{app:visser}, we take \(\rho_0 \propto T^4\), so that \(\mathcal{V} \propto T^{4 - \frac{2}{m}}\). 
+	Finally, motivated once more by the work in~\cite{levi2016versatile} and in appendix~\ref{app:visser}, we take \(\rho_0 \propto T^4\), so that \(\mathcal{V} \propto T^{4 - \frac{2}{m}}\). 
 	Hence, 
 	\[
 		4 - \frac{2}{m} \le 3 \iff m \le 2,	
@@ -826,28 +827,28 @@ and even if we can Taylor-expand the expression, the resulting additive constant
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.77]{Immagini/state-independent-bounds/state-independent-bounds.pdf}
-	\caption[]{representation of the idea at the base of section \ref{subsec:state-independent-bounds}. We expect any physical bound to grow faster than the expected black hole evaporation rate, at least in the region \(T \lesssim T_{Pl}\). Energy conditions leading to bounds that do not share this feature would lead to similar problems as the classical area theorem; we therefore would try to rule out those energy conditions, believed unphysical.}
+	\caption[]{representation of the idea at the base of section~\ref{subsec:state-independent-bounds}. We expect any physical bound to grow faster than the expected black hole evaporation rate, at least in the region \(T \lesssim T_{Pl}\). Energy conditions leading to bounds that do not share this feature would lead to similar problems as the classical area theorem; we therefore would try to rule out those energy conditions, believed unphysical.}
 	\label{fig:state-independent-bounds}
 \end{figure}
 
 \subsection{Singularity theorems}
 
-Let us finally present a small result, interesting for the application of singularity theorems. In order to explain it, it is necessary for us to venture on a quick journey to how a singularity theorem can be proved by means of index form methods. This is the central topic of the article we have mainly been referring to, namely \cite[]{fewster2020new}, so we will proceed to take a quick review of it.
+Let us finally present a small result, interesting for the application of singularity theorems. In order to explain it, it is necessary for us to venture on a quick journey to how a singularity theorem can be proved by means of index form methods. This is the central topic of the article we have mainly been referring to, namely~\cite[]{fewster2020new}, so we will proceed to take a quick review of it.
 
-According to Senovilla \cite[]{senovilla1998singularity}, a singularity theorem needs three main ingredients:
+According to Senovilla~\cite[]{senovilla1998singularity}, a singularity theorem needs three main ingredients:
 \begin{itemize}
-	\item[\ding{99}] A causality condition, typically global hyperbolicity, or, following Minguzzi, past reflectivity and openess.
-	\item[\ding{99}] An energy condition, of the like we have already been discussing enough about in chapter \ref{ch:energy-conditions}.
+	\item[\ding{99}] A causality condition, typically global hyperbolicity, or, following Minguzzi, past reflectivity and openness.
+	\item[\ding{99}] An energy condition, of the like we have already been discussing enough about in chapter~\ref{ch:energy-conditions}.
 	\item[\ding{99}] A boundary or initial condition.
 \end{itemize}
 It is precisely of this last ingredient that we are going to discuss in this section.
-The classical Penrose singularity theorem relies on global hyperbolicity, the null energy condition and the presence of a future trapped surface, as the ones defined in \ref{def:trapped-surface}. Precisely, it states
+The classical Penrose singularity theorem relies on global hyperbolicity, the null energy condition and the presence of a future trapped surface, as the ones defined in~\ref{def:trapped-surface}. Precisely, it states
 \begin{theorem}
 	Any globally hyperbolic spacetime \((M,g)\), where the null energy condition holds everywhere and it contains a trapped surface cannot be future null geodesically complete, or, in other words, it contains at least one incomplete causal geodesic.
 \end{theorem}
 
 \begin{proof}
-	A sketch of the proof proceeds as follows: suppose that \(M\) is geodesically complete and consider its trapped surface \(P\). Take any congruence of null geodesics leaving normally from \(P\); by means of criteria \ref{prop:fp-criteria} (it is enought to choose the same set of functions \(\mathcal{A}_{NEC}\) used in \ref{th:classical-bh-area}) it is possible to show that any congruence must develop a focal point within distance \(L_{\hat{\mathrm{H}}} = \frac{1}{\vert \mathrm{H} \vert}\) from the manifold \(P\), which is in contradiction with the supposed geodesic completeness.
+	A sketch of the proof proceeds as follows: suppose that \(M\) is geodesically complete and consider its trapped surface \(P\). Take any congruence of null geodesics leaving normally from \(P\); by means of criteria~\ref{prop:fp-criteria} (it is enought to choose the same set of functions \(\mathcal{A}_{NEC}\) used in~\ref{th:classical-bh-area}) it is possible to show that any congruence must develop a focal point within distance \(L_{\hat{\mathrm{H}}} = \frac{1}{\vert \mathrm{H} \vert}\) from the manifold \(P\), which is in contradiction with the supposed geodesic completeness.
 \end{proof}
  
 It is immediate to spot out that here the \emph{initial condition} mentioned in Senovilla's structure is nothing but the presence of a trapped surface, or better, of a surface whose mean normal curvature is such that:
@@ -855,17 +856,17 @@ It is immediate to spot out that here the \emph{initial condition} mentioned in 
 \mathrm{H}^{\mu}U_{\mu} < 0,
 \]
 for all \(U^{\mu}\) future pointing null vectors.
-In Wald \cite[]{wald2010general} and Hawking and Ellis \cite[]{hawking1973large} it was already present a theorem stating that trapped surfaces, under the validity of the null energy condition, had to be hidden beyond the horizion, an observation which is clear here given that for theorem \ref{th:classical-bh-area} any surface outside the horizon must fulfill \(\mathrm{H}^{\mu}U_{\mu} \ge 0\).
+In Wald~\cite[]{wald2010general} and Hawking and Ellis~\cite[]{hawking1973large} it was already present a theorem stating that trapped surfaces, under the validity of the null energy condition, had to be hidden beyond the horizon, an observation which is clear here given that for theorem~\ref{th:classical-bh-area} any surface outside the horizon must fulfill \(\mathrm{H}^{\mu}U_{\mu} \ge 0\).
 
-With the possibility of an evaporating horizion this is not true anymore, as surfaces outside the horizion are allowed to shrink too. However, under the weaker energy conditions that allow an horizion to evaporate, the intial condition to prove a singularity theorem must be strengthened, namely it is not enough anymore to start from a trapped surfaced, but a ``sufficiently trapped'' surface is needed (see \cite[]{fewster2020new}). Is it possible then to find such surfaces outside the horizion? Well, naturally the answer is no.
+With the possibility of an evaporating horizon this is not true anymore, as surfaces outside the horizon are allowed to shrink too. However, under the weaker energy conditions that allow an horizon to evaporate, the initial condition to prove a singularity theorem must be strengthened, namely it is not enough anymore to start from a trapped surfaced, but a ``sufficiently trapped'' surface is needed (see~\cite[]{fewster2020new}). Is it possible then to find such surfaces outside the horizon? Well, naturally the answer is no.
 \begin{prop}
 	Any surface giving the sufficient initial condition to prove the formation of a singularity must lay in the black hole region.
 \end{prop}
 
 \begin{proof}
-	Focal points form along every othogonal null geodesic leaving from a codimension \(2\) surface \(P\) if and only if equation \eqref{eq:fp-criteria} holds for any \(U^{\mu}\). However, outside the horizion the null generators of the boundary of the future of \(P\) must satisfy the opposite inequality because of the definition of horizion itself. Hence, any surface \(P\) satsifying such criteria must lay in the black hole region.
+	Focal points form along every orthogonal null geodesic leaving from a codimension \(2\) surface \(P\) if and only if equation \eqref{eq:fp-criteria} holds for any \(U^{\mu}\). However, outside the horizon the null generators of the boundary of the future of \(P\) must satisfy the opposite inequality because of the definition of horizon itself. Hence, any surface \(P\) satisfying such criteria must lay in the black hole region.
 \end{proof}
 
-This is a generalization of proposition \(12.2.3\) of \cite{wald2010general}, but notice that, where Wald needs to ask for the null energy condition to hold, here no enwegy condition is required: this is indeed only a statement of geometric properties of the spacetime, the energy condition is only needed to estimate ``how far'' the black hole region extends.
+This is a generalization of proposition \(12.2.3\) of~\cite{wald2010general}, but notice that, where Wald needs to ask for the null energy condition to hold, here no energy condition is required: this is indeed only a statement of geometric properties of the spacetime, the energy condition is only needed to estimate ``how far'' the black hole region extends.
 
-Such a result is in accordance with the already mentioned proof of singularity theorems for evaporating black holes given in \cite[]{freivogel2020return}. In that article the authors also proceed to estimate how fare into the black hole they might need to go in order to find the required trapped surface. In some sense, that distance can be turned into a measure of ``how accurate'' is the energy condition that has been applied: the smaller the distance, the less information has been wahsed out and hence the strongest is the theorem.
+Such a result is in accordance with the already mentioned proof of singularity theorems for evaporating black holes given in~\cite[]{freivogel2020return}. In that article the authors also proceed to estimate how fare into the black hole they might need to go in order to find the required trapped surface. In some sense, that distance can be turned into a measure of ``how accurate'' is the energy condition that has been applied: the smaller the distance, the less information has been washed out and hence the strongest is the theorem.

@@ -18,10 +18,21 @@ Supervisor: Eleni A. Kontou\thanks{e.a.kontou@uva.nl}}
 \addbibresource{bibliografia.bib}
 \renewcommand*{\bibfont}{\fontsize{12}{14.48}\selectfont}
 
+%Header e footer
+\newpagestyle{ruled}[\large]{
+	\sethead[\thepage][][\MakeUppercase{Chapter \thechapter.\space\chaptertitle}]  % even
+			{\MakeUppercase{\thesection.\space\sectiontitle}}{}{\thepage} % odd
+	\headrule
+	\setfoot{}{}{}\footrule
+}
+\pagestyle{ruled}
+% \pagestyle{fancy}
+
 \begin{document}
 
 \maketitle
 
+\pagenumbering{Roman}
 \tableofcontents
 \clearpage
 
@@ -97,6 +108,7 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 	\item[\ding{99}]  Einstein equations are \(R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = 8\pi T_{\mu\nu}\).
 \end{itemize}
 
+\pagenumbering{arabic}
 \chapter{Introduction}
 \label{ch:introduction}
 \input{introduction}
@@ -124,7 +136,7 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 \input{area-theorem}
 % \clearpage
 
-\chapter{Conclusions}
+\chapter[Conclusions]{Conclusions and future perspectives}
 \input{Conclusions}
 
 \appendix

@@ -27,8 +27,22 @@
 	\headrule
 	\setfoot{}{}{}
 }
+\newpagestyle{appendix-ruled}[\large]{
+	\sethead[\thepage][][\MakeUppercase{Appendix \thechapter.\space\chaptertitle}]  % even
+			{\MakeUppercase{\thesection.\space\sectiontitle}}{}{\thepage} % odd
+	\headrule
+	\setfoot{}{}{}
+}
+
+\newpagestyle{acknowledgments}[\large]{
+	\sethead[\thepage][][\MakeUppercase{\chaptertitle}]  % even
+			{\MakeUppercase{}}{}{\thepage} % odd
+	\headrule
+	\setfoot{}{}{}
+}
+
+
 \pagestyle{empty}
-% \pagestyle{fancy}
 
 \begin{document}
 \pagenumbering{Roman}
@@ -155,22 +169,23 @@ In this work we are going to use the \([-, + , +]\) conventions as labelled in t
 \input{Conclusions}
 
 \appendix
-
 \chapter[Euler-Lagrange optimization]{Functional optimiziation via Euler-Lagrange equation}
 \label{app:V-E-L-optimization}
+\pagestyle{appendix-ruled}
 \input{V-E-L-optimization}
-
 
 \chapter{Vacuum polarization}{Gravitational polarization of vacuum}
 \label{app:visser}
 \input{visser-computation}
 
-% \chapter*{Acknoweledgements}
-% \addcontentsline{toc}{chapter}{Acknoweledgements}
-% \pagestyle{plain}
-% \input{acknowledgments.tex}
+\chapter*{Acknoweledgements}
+\addcontentsline{toc}{chapter}{Acknoweledgements}
+\chaptermark{Acknowledgments}
+\pagestyle{acknowledgments}
+\input{acknowledgments.tex}
 
-\pagestyle{ruled}
+
 \printbibliography[heading=bibintoc]
+
 
 \end{document}          

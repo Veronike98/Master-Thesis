@@ -17,5 +17,8 @@
 *-blx.bib
 *.xdv
 *.synctex
+*.nav
+*.snm
+slides.s*
 
 venv*

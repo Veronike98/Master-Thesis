@@ -14,7 +14,6 @@ For the \((3 + 1)\) Unruh vacuum, there is as yet no analytic approximate expres
         0 & 0 & 0 & p
     \end{pmatrix}
 \end{equation}
-
 Here \(\rho\), \(f\), \(p\) and  \(\tau\) are functions of the radial coordinate \(r\), the mass of the black hole \(M\) and \(\hbar\), and we have set \(G = 1\); for later convenience~\eqref{eq:stress-tensor-s-wave} is to be thought valid in the coordinate system \(\{t, r^*, \theta, \phi\}\), even if naturally the form of the tensor shall be the same in all the other coordinate system that do not mix angular coordinates with radial or time ones. We will refer to \(\{t, r, \theta, \phi\}\) as spherical coordinates, where the metric is espressed by the well-known expression:
 \[
 ds^2 =  \left(1 - \frac{R_s}{r}\right)dt^2  - \frac{dr^2}{1 - \frac{R_s}{r}} - r^2d\Omega^2,
@@ -23,7 +22,6 @@ while \(r^*\) is the standard \emph{Tortoise} coordinate
 \[
 r^* \coloneqq r + R_s\ln\left(\frac{r}{R_s} - 1\right).    
 \]
-
 For compactness of notation we shall define \(z \coloneqq \frac{R_s}{r}\), where \(R_s = 2M\) is the Schwarzschild radius.
 Visser relies on the decomposition of the stress energy tensor into \(4\) separately conserved quantities (in the Schwarzschild spacetime), as was shown in~\cite[]{christensen1977trace}: 
 \[
@@ -62,12 +60,10 @@ The conserved tensor \(\left[T_{trace}\right]^{\mu\nu}\) depends only on the tra
     H(z) &= \frac{1}{2}T\vert_{z = 1}(1 - z) + O[(1 - z)^2],\\
     G(z) &= -p\vert_{z = 1}(1 - z) + O[(1 - z)^2].\\
 \end{align*}
-
 Visser chooses to rearrange \(G(z)\) into \(F(z)\) through an integration by parts
 \[
 G(z) = - \frac{1 - z}{z^2}p(z) - F(z) \quad \quad F(z) \equiv \int_z^1 \bar{z}^2(1 - \bar{z})\frac{d}{d\bar{z}}\left(\frac{p(\bar{z})}{\bar{z}^4}\right) d\bar{z}.   
 \]
-
 Finally the outgoing and ingoing flux parts are defined as 
 \[
     \left[T_{\pm}\right]^{\mu\nu} = f_{\pm} \frac{z^2}{(1 - z)^2}
@@ -109,7 +105,6 @@ substituting the expressions for \(\rho\) and \(f\) in terms of \(f_0\) and \(F(
 \[
 f_0 = \frac{\Upsilon}{20}p_{\infty} - \frac{F(0)}{2}.
 \]
-
 Notice then that the all physical details of the physic near the horizon is encoded in \(F(0)\). It is precisely for the determination of \(F\) that the numerical approach shall be used. However, a rough idea can be already attained by matching the total luminosity of a black hole
 \[
     L = 4\pi f_0(2M)^2
@@ -150,7 +145,6 @@ The Jacobian of the change to spherical coordinates then looks like:
     0 & \frac{\partial r}{\partial r^*} = 1 - z
 \end{pmatrix}.   
 \]
-
 Changing to the usual coordinates \((t, r)\) is now easy, and brings to (we drop the angle parenthesis for compactness of notation)
 \[
    T^{\mu\nu} = \begin{pmatrix}
@@ -169,7 +163,6 @@ where \((u,v)\) are the so called Eddington-Finkelstein coordinates
 u = t - r - R_s\ln\left(\frac{r - R_s}{R_s}\right)    \quad \quad 
 v = t + r + R_s\ln\left(\frac{r - R_s}{R_s}\right).
 \]
-
 The Jacobian is then
 \[
 J = \begin{pmatrix}
@@ -177,7 +170,6 @@ J = \begin{pmatrix}
     \frac{\partial V}{\partial t} = \frac{V}{2R_s} & \frac{\partial V}{\partial r} = \frac{1}{1 - z} \frac{V}{2R_s}
 \end{pmatrix}    
 \]
-
 so that the metric becomes
 \[
     ds^2 = \frac{32M^3e^{-\frac{r}{R_s}}}{r}dUdV
@@ -192,8 +184,6 @@ and the stress tensor
         V^2 \left[\rho + 2f - \tau \right]
     \end{pmatrix}.
 \]
-
-
 The outgoing null geodesics, generating the future horizons are given by \((U \equiv 0, V)\), and the tangent vector is 
 \[
 U^{\mu} = \frac{2rR_s}{16M^3e^{-\frac{r}{R_s}}} \begin{pmatrix}

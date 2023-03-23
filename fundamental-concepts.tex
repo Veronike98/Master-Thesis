@@ -10,17 +10,12 @@ The first fundamental definition we need is:
 \begin{definition}
 	Let \((M, g)\) be a spacetime and \(I \subseteq \R\) an interval; a smooth curve \(\gamma : I \rightarrow M\) is a \emph{geodesic} if its tangent field is parallel transported along \(\gamma\).
 \end{definition}    
-
-%\EAK{Below you are talking about timelike geodesics, clarify it and mention that the parametrization is proper time}
-
 Restricting to the case of timelike geodesics parameterized by proper time, we may call \(U\indices{^{\mu}} \coloneqq \dot{\gamma}^{\mu}\) the tangent field, and the previous definition is equivalent to the equation:
 
 \begin{equation}
 \label{eq:tang-trans-fields}
 \nabla_U U^{\mu} \coloneqq \frac{D\tensor{U}{^\mu} }{dt} \equiv 0.
 \end{equation}
-
-
 
 A \emph{curve} is a \(1\)-parameter map; similarly we can define a \emph{family of curves} as a \(2\)-parameter map \(\zeta: I \times J \rightarrow M\), where \(I, J \subseteq \R\) are intervals. This gives us \(2\) tangent fields, which we call respectively \emph{longitudinal} and \emph{transverse}:
 \[
@@ -53,17 +48,14 @@ An example is provided in figure~\ref{fig:family-curves}.
 	[\nabla_U, \nabla_V]W^{\mu} = R\indices{^{\mu}_{\nu\alpha\beta}}W^{\nu}U^{\alpha}V^{\beta}.
 	\]
 \end{remark}
-
 By this remark we can compute the second derivative of the transverse field:
 \[
 \frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} = \nabla_V\nabla_U U^{\mu} + R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}
 \]
-
 which leads us to the second fundamental object we need to define. 
 \begin{definition}
 	Given a family of \emph{geodesics} \(\gamma_s(t) \coloneqq \zeta(s,t)\), the transversal field \(V^{\mu} \coloneqq \frac{\partial}{\partial s} \zeta^{\mu}(t,s)\) is said to be a \emph{Jacobi field}.
 \end{definition}
-
 This vector field has a very important characterization, which here we'll only state:
 \begin{lemma}
 \(V^{\mu}\) is a \emph{Jacobi field} if and only if it satisfies the equation
@@ -72,7 +64,6 @@ This vector field has a very important characterization, which here we'll only s
 		\frac{D^2\tensor{V}{^\mu} }{dt^2} = \nabla_U\nabla_V U^{\mu} =  R\indices{^{\mu}_{\nu\alpha\beta}}U^{\nu}U^{\alpha}V^{\beta}.
 	\end{equation}
 \end{lemma}
-
 Jacobi fields also have some nice properties we will find helpful in the prosecution of our work.
 \begin{lemma}
 	\label{lemma:Jacobi-fields-properties}
@@ -111,13 +102,11 @@ Adopting a similar notation, we can decompose the set of all smooth fields in \(
 \[
 \bar{\mathfrak{X}}(M) = \mathfrak{X}(M) + \mathfrak{X}(M)^{\perp}.
 \]
-
 Now, the connection \(\bar{D}\) on \(\bar{M}\) will naturally give raise to a connection on \(M\)
 \begin{align*}
 \bar{D} : \mathfrak{X}(M) \times \bar{\mathfrak{X}}(M) & \rightarrow \bar{\mathfrak{X}}(M) \\
 	 V \times X &\mapsto \bar{D}_V X
 \end{align*}
-
 by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\bar{M})\), and then restricting again on \(M\). It can be proved that \(\bar{D}_V X\) is a well-defined smooth vector field on \(M\). In particular
 \begin{lemma} 
 	if \(V, W \in \mathfrak{X}(M)\) and \(D\) is the Levi-Civita connection on \(M\), it holds that
@@ -125,7 +114,6 @@ by taking any smooth extension of the fields \(V\) and \(X\) to \(\mathfrak{X}(\
 	D_V W = \Pi^{\parallel}\left(\bar{D}_V W\right).
 	\]
 \end{lemma}
-
 It's evident then that the Levi-Civita connection on \(M\) is missing something with respect to the induced connection from \(\bar{M}\). This is precisely the object we have been looking for:
 
 %\EAK{Math symbol for second fundamental form: $\mathrm{I\!I}$}
@@ -146,7 +134,6 @@ It is then easy to prove that:
 \[
 \ddot{\alpha} = \alpha'' + \mathrm{I\!I}(\alpha', \alpha')
 \]
-
 and hence, we can think of \(\mathrm{I\!I}\) as the additional external ``force'' needed to prevent a point from leaving \(M \subset \bar{M}\), a sort of constraining force.
 This can be visualized within the example in figure~\ref{fig:shape-tensor}: any particle moving on the yellow curve would leave \(M\) unless an external force - such as the yellow vector - is applied.
 Finally, an equivalent interpretation of \(\mathrm{I\!I}\) is by how much a vector paralleled transported in \(M\) according to \(D\) is actually changing from the point of view of \(\bar{D}\).
@@ -181,8 +168,6 @@ We now prove an identity which will be useful to remember in the future. First o
 		(\Pi^{\parallel}\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_Ue_i)_{\mu}e_j^{\mu} = (\nabla_{e_i}U_{\mu}) e_j^{\mu} = - U_{\mu}\left(\Pi^{\perp}\nabla_{e_i}e_j^{\mu}\right) = - \mathrm{I\!I}(e_i, e_j)^{\mu}U_{\mu}.
 		\]
 	\end{proof}
-
-
 The second fundamental form induces a vector field on \(M\) called \emph{mean curvature}.
 
 
@@ -200,7 +185,6 @@ The second fundamental form induces a vector field on \(M\) called \emph{mean cu
 		\end{cases}
 		\]
 \end{definition}
-
 This definition will be particularly important for the proof of the Null Singularity theorem and the Black Hole Area theorem, as it is instrumental to define the concept of a \emph{trapped surface}, the initial condition needed to eventually develop a singularity (in the classical limit). 
 
 Finally, let us prove a quick lemma that will be useful here and there throughout the all analysis of the thesis.
@@ -230,7 +214,6 @@ Finally, let us prove a quick lemma that will be useful here and there throughou
 	\label{def:trapped-surface}
 	A spacelike submanifold \(P\) is said to be \emph{future-converging} or \emph{future-trapped} provided its mean curvature vector field \(\mathrm{H}\) is past-pointing timelike everywhere.
 \end{definition}
-
 
 It is only a matter of simple linear algebra in each normal space \(T_p(P)^{\perp}\) to show that
 \begin{lemma} \label{lemma:charact-trapped}
@@ -291,8 +274,7 @@ Moreover,
 	\theta^{-} = \texttt{tr}\left[\tilde{B}\right] = g^{\mu\nu}\tilde{B}_{\mu\nu}.
 	\]
 \end{definition}
-
-It's clear that for any point of the submanifold it is possible to compute the positive and the negative expansion; this finally leads to the definition of trapped surface
+It is clear that for any point of the submanifold it is possible to compute the positive and the negative expansion; this finally leads to the definition of trapped surface
 \begin{definition}
 	A codimension \(2\) spacelike hypersurface is called \emph{trapped} if both its positive and negative expansions are negative:
 	\[
@@ -335,7 +317,6 @@ We finally want to prove that the \(2\) definitions are indeed equivalent.
 	It's worth pointing out that, as Wald states in section \(9.2\) of~\cite{wald2010general} about the expansion of a null congruence of geodesics, there is no natural way to directly compute \(\theta\), which appears to clash with what we have done above. The point is that we didn't have only the congruence, but also a submanifold \(P\) to which the congruence is orthogonal, and that indeed infers a natural basis with which is possible to compute \(\theta\). Given only the congruence instead, there are infinitely many possible spacelike submanifolds orthogonal to it, as one can see by studying the system in \(\R^{2,1}\) as in figure~\ref{fig:expansion-computation}.
 \end{remark}
 
-
 Even if we already have \(2\) good definitions of \emph{trapped} surface, they are both rather mathematical, while we would like to develop a better intuition of the features of these objects. The most outstanding property is described by the following lemma; we report the statement given in~\cite{senovilla2022critical}. A proof for hypersurfaces of codimension \(1\) can be found in~\cite{kriele1999spacetime} under Lemma \(4.4.8\), and can be generalized to submanifolds of any dimension, but due to the need for conciseness, we don't report the proof here.
 \begin{lemma}
 	\label{lemma:variation-area}
@@ -372,8 +353,6 @@ Now, for each \(p\) we can choose one half of the light cone to be the ``future'
 	\centering
 	\includegraphics[scale=1.2]{Immagini/time-orientable/time-orientable.pdf}
 \end{figure}
-
-
 We will call \((M, g_{\mu\nu})\) \emph{time-orientable} if such a  choice can be pursued; in the following we will always assume that the manifold under consideration is time-orientable, otherwise we would have to deal with the highly unphysical case of not being able to distinguish between the notions of moving ``forward in time'' or ``backward in time''.
 
 We will denote causality relations with the following notation, following~\cite{o1983semi}.
@@ -381,7 +360,6 @@ We will denote causality relations with the following notation, following~\cite{
 	\item  \(p \pprec q\) means there is a future-pointing \emph{timelike} curve in \(M\) connecting \(p\) to \(q\).
 	\item \(p \prec q\) means there is a future-pointing \emph{causal} curve from \(p\) to \(q\); \(p \preceq q\) means either \(p \prec q\) or \(p = q\).
 \end{enumerate}
-
 Evidently \(p\pprec q\) implies \(p\prec q\) but not vice versa. For a subset \(A \subseteq M\) we also define:
 \begin{enumerate}
 	\item the \emph{chronological future} of \(A\)
@@ -409,7 +387,6 @@ What we are really interested in though, is the following corollary, that follow
 	
 	If \(\gamma\) failed to be a null geodesic in any of these neighborhoods we could deform it to a \emph{timelike} curve in that neighborhood, and then extend this deformation to the other ones, to obtain a timelike curve from \(p\) to \(q\). Hence \(q\) would be in \(I^+(p)\) as well.
 \end{proof}
-
 With similar arguments we have that \(J^+(A) \subseteq \bar{I}^+(A)\), and since clearly \(I^+(A) \cup A \subseteq J^+(A)\) it's clear that \(\overline{J^+(A)} = \overline{I^+(A)}\) and \(\partial J^+(A) = \partial I^+(A)\).
 
 \subsection{The boundary of the future}
@@ -476,14 +453,12 @@ Given a submanifold \(A\), \(\partial J^+(A)\) will be called the \emph{boundary
 	contradiction as \(I^+(S)\) is open, which is 
 	\(I^+(S) \cap \partial I^+(S) = \emptyset\).
 \end{proof}
-
 Curves on this submanifold are, in some weak sense, protected from ending: none of the points in \(\partial I^+(S)\) is able to prevent a curve from being extended further. To prove this statement precisely we need to introduce the concept of \emph{endpoint}.
 	\begin{definition}
 		A point \(p\in M\) is a \emph{future endpoint} of a curve \(\gamma\) if for every neighborhood \(O\) of \(p\) there exists a \(t_0\) such that \(\gamma(t) \in O \quad \forall t >t_0\). 
 		
 		A curve is said to be \emph{future inextendible} is it has no future endpoint.
 	\end{definition}
-
 	This concept of future inextendibility locally can pass to the limit, 
 	so it is possible to prove the following important result:
 \begin{theorem}
@@ -493,7 +468,6 @@ Curves on this submanifold are, in some weak sense, protected from ending: none 
 	geodesic \(\gamma\) which lies entirely in \(\partial I^+(C)\) and either is 
 	past inextendible or has a past endpoint on \(C\). Such geodesics are called \emph{null generators} of \(\partial J^+(C)\).
 \end{theorem}
-
 The proof can be found in many books and doesn't add a particular insight, so we 
 decided not to include it, but the curious reader might look at chapter \(8\) 
 of~\cite{wald2010general}. 
@@ -609,7 +583,7 @@ We can see why this is still a causality condition: instead of merely asking for
 
 Whether this is a reasonable assumption or not is debated and not at all clear: failure of global hyperbolicity would mean that even knowing the all state of the universe at a fixed point in time, we wouldn't be able to predict the all future, or infer everything that happened in the past. Such a breakdown of predictability might be given - for example - by the existence of a ``naked '' singularity or by information coming from infinity (as suggested by Hawking in~\cite{hawking1973large}). He in particular argues that there doesn't seem to be any physically compelling reason for believing in the existence of a Cauchy surface, supported by the existence of a number of solutions to Einstein field equations that are not globally hyperbolic.
 
-It therefore makes sense to introduce the following definition:
+\noindent It therefore makes sense to introduce the following definition:
 \begin{definition}
 	Let \(S\) be a closed achronal set. Its \emph{future Cauchy Horizon} is defined as 
 	\[

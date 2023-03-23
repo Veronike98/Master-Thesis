@@ -1,0 +1,42 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\usetikzlibrary{patterns,patterns.meta}
+
+\begin{document}
+	\begin{tikzpicture}[scale=0.5]
+    
+        \draw[red, dashed, very thick] (0,0.07) -- (13.8,0.07) node[above] {\(\mathcal{V}_{classical}\)};
+        \draw[black, ->] (0,0) -- (14,0) node[below] {\(T_H\)};
+        \draw[black, ->] (0,0) -- (0, 14) node[left] {\(\frac{\delta\mathcal{A}}{\mathcal{A}_H}\)};
+        
+        % \fill[pattern={Lines[angle=-45,distance={10pt/sqrt(2)}]}, pattern color=turquoise] (0,0) to[out=20, in=-120] (11,11);
+        \fill[pattern=bricks, pattern color=turquoise] (0,0) to[out=26, in=-137] (11,11) to[out=30, in=-140] (13.5, 13.7) to[out=180, in=0] (0,13.7) to[out=-90, in=90] (0,0);
+
+        \draw[turquoise, thick, shorten >=-2cm] (0,0) to[out=25, in=-140] (11,11);
+
+        \draw[goldenyellow, very thick, shorten >=-2cm, looseness=1.5] (0,0) to[out=20, in=-120] (11,11);
+
+        \draw[fuchsia, very thick, dashdotted, looseness=1.4] (0,0) to[out=5, in=-100] (9.5, 13.1);
+
+        \draw[dotted] (11, 11) -- (11, 0) node[below] {\(\sim T_{Pl}\)};
+    
+        \node[turquoise] at (12.7, 11) {\(\mathcal{V}_{E.L.}\)};
+
+        \node[goldenyellow] at (10, 7) {\(R_{Ev}\)};
+        \node[fuchsia] at (8, 1.4) {\(\mathcal{V}_{unphysical}\)};
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

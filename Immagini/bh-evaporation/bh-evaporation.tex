@@ -1,0 +1,58 @@
+\documentclass[border=0.5mm,11pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\usetikzlibrary{math,decorations.markings,backgrounds,calc}
+\input{../../newcommands}
+
+\makeatletter
+\tikzset{
+cloud setup/.style={cloud@settings/.cd,settings=,#1},
+cloud@settings/.is family,
+cloud@settings/.cd,
+image file/.store in=\cloud@img,
+settings/.store in=\cloud@settings
+}
+\NewDocumentCommand{\cloud}{}{\path[path picture={\node at (cloud centre) {\expandafter\includegraphics\expandafter[\cloud@settings]{\cloud@img}};}]}
+\makeatother
+
+\tikzset{
+cloud/.pic={
+\tikzmath{\l=(#1)/10;}
+\path[rounded corners=2*\l cm,decorate,decoration={markings,mark=between positions 0 and 1 step {.67*\l cm} with {\xdef\lastcloud{\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}}\tikzmath{\x=rand*0.4*\l;\y=rand*.4*\l;\r=(rnd*.5+.6)*\l;} \cloud (\x cm,\y cm) coordinate (cloud-\lastcloud) circle (\r cm);\scoped[on background layer]\fill[black] (\x cm,\y cm) circle ({\r cm+2pt});}}] ($(cloud centre)+(-135:{5*\l})$) rectangle ($(cloud centre)+(45:{5*\l})$);
+\cloud (cloud-1) \foreach \i in {2,...,\lastcloud} { -- (cloud-\i) } -- cycle;
+}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Change until happy :)
+\pgfmathsetseed{7}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{tikzpicture}[cloud setup={image file=../DALLE/DALLE-bh-evaporation.png,settings={width=20cm}}]
+\coordinate (cloud centre) at (5,5);
+\pic {cloud={20}};
+
+\node[graduate, stripes=turquoise!80!black, minimum size = 3.4cm, mirrored] (A) at (12,16.7){};
+\filldraw[black] (10.4, 17.5) circle (0.24cm);
+\filldraw[white] (10.38, 17.47) circle (0.17cm);
+
+\filldraw[black] (9.1, 17) circle (0.45cm);
+\filldraw[white] (9.05, 17.03) circle (0.37cm);
+
+\filldraw[black] (8, 15.4) circle (0.7cm);
+\filldraw[white] (8.07, 15.4) circle (0.6cm);
+
+\end{tikzpicture}
+\end{document} 
+
+
+	
+	
+	
+	
+	
+
+
+

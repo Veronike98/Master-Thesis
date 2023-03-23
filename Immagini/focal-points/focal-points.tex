@@ -1,0 +1,45 @@
+\documentclass[border=0.5mm,11pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+
+    \draw[thick, goldenyellow, dashdotted] (2.9, -0.41) to [out=20, in=-137] (5,3);
+    \draw[thick, goldenyellow, dashdotted] (3.3, -0.38) to [out=17, in=-135] (5,3);
+    \draw[thick, goldenyellow, dashdotted] (2.5, -0.27) to [out=42, in=-142] (5,3);
+    \draw[thick, goldenyellow, dashdotted] (2.33, -0.02) to [out=71, in=-147] (5,3);
+    
+    \draw[fuchsia, thick, ->] (3.8, 0.97) to [out=120, in=-10] (3.1, 1.45);
+    \draw[fuchsia, thick, ->] (3.8, 0.97) to [out=-60, in=-110] (4.3, 1.17);
+    
+    \draw[fuchsia, thick, ->] (4.22, 1.9) to [out=150, in=0] (3.7, 2.1);
+    \draw[fuchsia, thick, ->] (4.22, 1.9) to [out=-30, in=-160] (4.5, 2);
+
+    \draw[very thick, goldenyellow] (2.7, -0.37) to [out=30, in=-140] (5,3);
+
+    \draw[turquoise, very thick, looseness=3] (0,3) to[out=22, in=200] (5,0);
+
+    \draw[fuchsia, thick, ->] (2.7, -0.37) to [out=160, in=-77] (2.33, -0.02);
+    \draw[fuchsia, thick, ->] (2.7, -0.37) to [out=-20, in=190] (3.3, -0.42);
+
+    \node[turquoise] at (1.7, 3) {\(P\)};
+    \filldraw[black] (2.7, -0.37) circle (1.1pt) node[below] {\(p\)};
+    \filldraw[black] (5,3) circle (0.9pt) node[above] {\(\gamma(r)\)};
+    \node[goldenyellow] at (4.9, 2.4) {\(\gamma\)};
+    \node[fuchsia] at (2.9, 1.5) {\(V\)};
+
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

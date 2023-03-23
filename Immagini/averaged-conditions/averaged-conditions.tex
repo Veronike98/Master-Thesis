@@ -1,0 +1,30 @@
+\documentclass[border=0.5mm,12pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+
+    \draw[black, ->] (0,0) -- (11,0) node[below] {\(\lambda\)};
+    \draw[black, ->] (0,-2.3) -- (0, 3) node[right] {\(E\)};
+    \filldraw[black] (0, 0) circle (1.5pt) node[left] {\(0\)};
+    
+    \fill[goldenyellow, looseness=2] (0,0) to[out=60, in=100] (1.7, 0);
+    \fill[goldenyellow, looseness=2] (5.5, 0) to[out=50, in=110] (10.7,0);
+    \fill[fuchsia!60, looseness=2] (1.7, 0) to[out=-80, in=-130] (5.5, 0);
+    \draw[turquoise, very thick, looseness=2] (0,0) to[out=60, in=100] (1.7, 0) to[out=-80, in=-130] (5.5, 0) to[out=50, in=110] (10.7,0);
+    
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+

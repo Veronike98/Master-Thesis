@@ -10,20 +10,20 @@
     
     \foreach \i in {0, 1,..., 10}{
         \begin{scope}[shift={(\i, 0)}, rotate=0]
-        \draw[fuchsia] (0, -0.25) -- (0.5, 0.25) -- (1, -0.25);
+        \draw[thick, fuchsia] (0, -0.25) -- (0.5, 0.25) -- (1, -0.25);
         \end{scope}
     }
     \draw[black, thick] (0, -11.25) -- (11, -0.25);
     \draw[turquoise, very thick, shorten >=-2cm] (11,-8) to[out=110, in=-50] (8, -3.25);
-    \draw[turquoise, very thick, shorten >=-1cm] (11,-8) to[out=70, in=-60] (14, 5) node[left] {\Large\(\sigma\)};
+    \draw[turquoise, very thick, shorten >=-1cm] (11,-8) to[out=70, in=-60] (14, 5) node[left] {\LARGE\(\sigma\)};
     \draw[goldenyellow, very thick, dashed] (11, -0.25) -- (16, 4.75);
-    \filldraw[black] (8, -3.25) circle (2pt) node[below] {\(p\)};
+    \filldraw[black] (8, -3.25) circle (2pt) node[below] {\Large\(p\)};
     \filldraw[black, fill=white] (11, -0.25) circle (1.5pt);
-    \filldraw[black] (11, -8) circle (2pt) node[below] {\(r\)};
-    \filldraw[black] (14.5, 3.25) circle (2pt) node[right] {\(q=\sigma(\tau)\)};
+    \filldraw[black] (11, -8) circle (2pt) node[below] {\Large\(r\)};
+    \filldraw[black] (14.5, 3.25) circle (2pt) node[right] {\Large\(q=\sigma(\tau)\)};
 
-    \node[turquoise, above] at (6.5, -1.75) {\Large\(\gamma\)};
-    \node[above] at (3, -8) {\Large\(H\)};
+    \node[turquoise, above] at (6.5, -1.75) {\LARGE\(\gamma\)};
+    \node[above] at (3, -8) {\LARGE\(H\)};
     
     \end{tikzpicture}
 \end{document}

@@ -1,0 +1,37 @@
+\documentclass[border=0.5mm,11pt]{standalone}
+
+% !TeX program = lualatex
+
+\usepackage{../pacchetti-immagini}
+\input{../../newcommands}
+
+\begin{document}
+	\begin{tikzpicture}
+        \draw[thick, turquoise] (0,0) ellipse (1 and 3);
+
+        \draw[goldenyellow, very thick] (0, -3) to[out=0, in=180] (4, -0.4);
+        \draw[goldenyellow, very thick] (0,3) to[out=0, in=180] (4, 2.4);
+        \draw[goldenyellow, very thick] (-0.75, -2) to[out=0, in=180] (3.6,0);
+        \draw[goldenyellow, very thick] (-0.98, -0.3) to[out=0, in=180] (3.4, 0.8);
+        \draw[goldenyellow, very thick] (-0.8, 1.8) to[out=0, in=180] (3.7, 1.7);
+
+        \draw[fuchsia, very thick, ->] (0, -3) -- (1, -3);
+        \draw[fuchsia, very thick, ->] (0, 3) -- (1, 3);
+        \draw[fuchsia, very thick, ->] (-0.75, -2) -- (0.25, -2);
+        \draw[fuchsia, very thick, ->] (-0.98, -0.3) -- (0.02, -0.3);
+        \draw[fuchsia, very thick, ->] (-0.8, 1.8) -- (0.2, 1.8);
+        
+        \filldraw[thick, turquoise] (4,1) ellipse (0.7 and 1.4);
+        \node[fuchsia, thick, above] at (-0.25, -2) {\(U^{\mu}\)};
+
+    \end{tikzpicture}
+\end{document}
+
+	
+	
+	
+	
+	
+
+
+
